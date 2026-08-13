@@ -1,0 +1,158 @@
+site_name: AI Agent 面试真题库 · 240 道大厂真实面试题
+site_description: 240 道真实大厂 AI Agent 面试题（附答题框架）+ Java/Python/Go 语言八股文 + 3 个亲手 Agent 项目档案。AI Agent 面试准备、大模型应用开发面试、后端面试八股。
+site_url: https://supergodog.github.io/ai-agent-interview-240/
+repo_url: https://github.com/SuperGODOG/ai-agent-interview-240
+repo_name: ai-agent-interview-240
+edit_uri: blob/main/docs/
+theme:
+  name: material
+  language: zh
+  features:
+  - navigation.instant
+  - navigation.tracking
+  - navigation.expand
+  - navigation.top
+  - search.suggest
+  - search.highlight
+  - toc.follow
+  - content.code.copy
+  palette:
+  - scheme: default
+    primary: indigo
+    accent: indigo
+    toggle:
+      icon: material/weather-night
+      name: 切换暗色模式
+  - scheme: slate
+    primary: indigo
+    accent: indigo
+    toggle:
+      icon: material/weather-sunny
+      name: 切换亮色模式
+plugins:
+- search:
+    lang:
+    - zh
+    - en
+extra:
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/SuperGODOG
+copyright: Copyright &copy; 2026 SuperGODOG · 仅供学习使用
+markdown_extensions:
+- admonition
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.highlight
+- pymdownx.inlinehilite
+- pymdownx.tabbed
+- toc:
+    permalink: true
+    slugify: !!python/object/apply:pymdownx.slugs.slugify {case: lower}
+nav:
+- 面试八股文:
+  - 01-Agent应用开发: 01-面试八股文/01-Agent应用开发.md
+  - 02-八股基础: 01-面试八股文/02-八股基础.md
+  - 03-Transformer与大模型: 01-面试八股文/03-Transformer与大模型.md
+  - 04-LeetCode算法: 01-面试八股文/04-LeetCode算法.md
+  - 05-反问与国企特别版: 01-面试八股文/05-反问与国企特别版.md
+- 语言八股:
+  - 总览: 02-语言八股/README.md
+  - Java 手撕笔记:
+    - 00-学习路线图: 02-语言八股/Java/00-学习路线图.md
+    - 01-Java集合: 02-语言八股/Java/01-Java集合.md
+    - 02-并发编程: 02-语言八股/Java/02-并发编程.md
+    - 03-JVM: 02-语言八股/Java/03-JVM.md
+    - 04-Spring: 02-语言八股/Java/04-Spring.md
+    - 05-MySQL: 02-语言八股/Java/05-MySQL.md
+    - 06-Redis: 02-语言八股/Java/06-Redis.md
+    - 07-计算机网络: 02-语言八股/Java/07-计算机网络.md
+    - 08-操作系统: 02-语言八股/Java/08-操作系统.md
+    - 09-消息队列: 02-语言八股/Java/09-消息队列.md
+    - 10-高并发锁: 02-语言八股/Java/10-高并发锁.md
+    - 11-设计模式: 02-语言八股/Java/11-设计模式.md
+  - Java 体系化课件（66 篇）:
+    - 0001-jvm-jdk-jre-bytecode: 02-语言八股/Java/课件/0001-jvm-jdk-jre-bytecode.md
+    - 0002-oop-interfaces-value-passing: 02-语言八股/Java/课件/0002-oop-interfaces-value-passing.md
+    - 0003-keywords-value-passing: 02-语言八股/Java/课件/0003-keywords-value-passing.md
+    - 0004-exceptions-generics-reflection-overview: 02-语言八股/Java/课件/0004-exceptions-generics-reflection-overview.md
+    - 0005-generics-wildcards: 02-语言八股/Java/课件/0005-generics-wildcards.md
+    - 0006-reflection: 02-语言八股/Java/课件/0006-reflection.md
+    - 0007-proxy: 02-语言八股/Java/课件/0007-proxy.md
+    - 0008-spi-serialization-sugar: 02-语言八股/Java/课件/0008-spi-serialization-sugar.md
+    - 0009-bigdecimal-money-unsafe: 02-语言八股/Java/课件/0009-bigdecimal-money-unsafe.md
+    - 0010-collection-overview: 02-语言八股/Java/课件/0010-collection-overview.md
+    - 0011-arraylist-source: 02-语言八股/Java/课件/0011-arraylist-source.md
+    - 0012-linkedlist-source: 02-语言八股/Java/课件/0012-linkedlist-source.md
+    - 0013-hashmap-source: 02-语言八股/Java/课件/0013-hashmap-source.md
+    - 0014-linkedhashmap-lru: 02-语言八股/Java/课件/0014-linkedhashmap-lru.md
+    - 0015-concurrent-hashmap-source: 02-语言八股/Java/课件/0015-concurrent-hashmap-source.md
+    - 0016-copyonwritearraylist: 02-语言八股/Java/课件/0016-copyonwritearraylist.md
+    - 0017-blocking-queue: 02-语言八股/Java/课件/0017-blocking-queue.md
+    - 0018-thread-basics: 02-语言八股/Java/课件/0018-thread-basics.md
+    - 0019-synchronized: 02-语言八股/Java/课件/0019-synchronized.md
+    - 0020-volatile-jmm: 02-语言八股/Java/课件/0020-volatile-jmm.md
+    - 0021-cas: 02-语言八股/Java/课件/0021-cas.md
+    - 0022-atomic-classes: 02-语言八股/Java/课件/0022-atomic-classes.md
+    - 0023-aqs: 02-语言八股/Java/课件/0023-aqs.md
+    - 0024-reentrantlock: 02-语言八股/Java/课件/0024-reentrantlock.md
+    - 0025-threadlocal: 02-语言八股/Java/课件/0025-threadlocal.md
+    - 0026-thread-pool: 02-语言八股/Java/课件/0026-thread-pool.md
+    - 0027-thread-pool-best-practices: 02-语言八股/Java/课件/0027-thread-pool-best-practices.md
+    - 0028-concurrent-collections-cf: 02-语言八股/Java/课件/0028-concurrent-collections-cf.md
+    - 0029-virtual-thread: 02-语言八股/Java/课件/0029-virtual-thread.md
+    - 0030-jvm-overview: 02-语言八股/Java/课件/0030-jvm-overview.md
+    - 0031-jvm-memory-area: 02-语言八股/Java/课件/0031-jvm-memory-area.md
+    - 0032-object-creation-layout: 02-语言八股/Java/课件/0032-object-creation-layout.md
+    - 0033-jvm-gc: 02-语言八股/Java/课件/0033-jvm-gc.md
+    - 0034-class-file-structure: 02-语言八股/Java/课件/0034-class-file-structure.md
+    - 0035-class-loading-process: 02-语言八股/Java/课件/0035-class-loading-process.md
+    - 0036-classloader: 02-语言八股/Java/课件/0036-classloader.md
+    - 0037-jvm-params-tools: 02-语言八股/Java/课件/0037-jvm-params-tools.md
+    - 0038-io-basis-patterns: 02-语言八股/Java/课件/0038-io-basis-patterns.md
+    - 0039-io-model: 02-语言八股/Java/课件/0039-io-model.md
+    - 0040-nio-core: 02-语言八股/Java/课件/0040-nio-core.md
+    - 0041-mysql-overview: 02-语言八股/Java/课件/0041-mysql-overview.md
+    - 0042-sql-execution: 02-语言八股/Java/课件/0042-sql-execution.md
+    - 0043-mysql-index: 02-语言八股/Java/课件/0043-mysql-index.md
+    - 0044-mysql-index-invalidation: 02-语言八股/Java/课件/0044-mysql-index-invalidation.md
+    - 0045-mysql-explain: 02-语言八股/Java/课件/0045-mysql-explain.md
+    - 0046-transaction-isolation: 02-语言八股/Java/课件/0046-transaction-isolation.md
+    - 0047-mysql-mvcc: 02-语言八股/Java/课件/0047-mysql-mvcc.md
+    - 0048-mysql-lock: 02-语言八股/Java/课件/0048-mysql-lock.md
+    - 0049-mysql-logs: 02-语言八股/Java/课件/0049-mysql-logs.md
+    - 0050-mysql-optimization: 02-语言八股/Java/课件/0050-mysql-optimization.md
+    - 0051-cache-basics: 02-语言八股/Java/课件/0051-cache-basics.md
+    - 0052-redis-basic-types: 02-语言八股/Java/课件/0052-redis-basic-types.md
+    - 0053-redis-special-types: 02-语言八股/Java/课件/0053-redis-special-types.md
+    - 0054-redis-skiplist: 02-语言八股/Java/课件/0054-redis-skiplist.md
+    - 0055-redis-persistence: 02-语言八股/Java/课件/0055-redis-persistence.md
+    - 0056-cache-3-brothers: 02-语言八股/Java/课件/0056-cache-3-brothers.md
+    - 0057-redis-blocking: 02-语言八股/Java/课件/0057-redis-blocking.md
+    - 0058-redis-delayed-mq: 02-语言八股/Java/课件/0058-redis-delayed-mq.md
+    - 0059-redis-cluster: 02-语言八股/Java/课件/0059-redis-cluster.md
+    - 0060-spring-overview: 02-语言八股/Java/课件/0060-spring-overview.md
+    - 0061-spring-ioc-aop: 02-语言八股/Java/课件/0061-spring-ioc-aop.md
+    - 0062-spring-aop-deep: 02-语言八股/Java/课件/0062-spring-aop-deep.md
+    - 0063-spring-transaction: 02-语言八股/Java/课件/0063-spring-transaction.md
+    - 0064-spring-annotations: 02-语言八股/Java/课件/0064-spring-annotations.md
+    - 0065-springboot-autoconfig: 02-语言八股/Java/课件/0065-springboot-autoconfig.md
+    - 0066-spring-design-patterns: 02-语言八股/Java/课件/0066-spring-design-patterns.md
+    - 课件索引: 02-语言八股/Java/课件/README.md
+  - Python 八股:
+    - 01-Python基础: 02-语言八股/Python/01-Python基础.md
+    - 02-Python并发: 02-语言八股/Python/02-Python并发.md
+    - 03-Python进阶: 02-语言八股/Python/03-Python进阶.md
+  - Go 八股:
+    - 01-Go基础: 02-语言八股/Go/01-Go基础.md
+    - 02-Go并发: 02-语言八股/Go/02-Go并发.md
+    - 03-Go内存与GC: 02-语言八股/Go/03-Go内存与GC.md
+    - 04-Go进阶与陷阱: 02-语言八股/Go/04-Go进阶与陷阱.md
+    - 05-Go与Python对比: 02-语言八股/Go/05-Go与Python对比.md
+- 项目档案:
+  - TripPlanner: https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/SuperGODOG__tripplanner/README.md
+  - SkillForge: https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/SuperGODOG__skillforge/README.md
+  - JeecgBoot: https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/jeecgboot__JeecgBoot/README.md
+- 模拟面试 Skill:
+  - 项目拷问引擎: https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/skills/project-mock-interview/SKILL.md
+  - 大厂模拟面试官: https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/skills/interview-skills/SKILL.md

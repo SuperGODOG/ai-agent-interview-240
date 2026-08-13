@@ -1,0 +1,61 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
+
+      - name: Generate site config
+        run: |
+          python3 scripts/gen_mkdocs.py
+
+      - name: Build site
+        run: |
+          mkdocs build --site-dir site
+
+      - name: Add robots.txt (allow all + sitemap pointer)
+        run: |
+          cat > site/robots.txt <<'EOF'
+          User-agent: *
+          Allow: /
+          Sitemap: https://supergodog.github.io/ai-agent-interview-240/sitemap.xml
+          EOF
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

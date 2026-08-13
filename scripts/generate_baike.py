@@ -126,10 +126,9 @@ for fname, major, title, desc in VOLUMES:
         minors[q["minor"]].append(q)
 
     def gh_anchor(text: str) -> str:
-        """GitHub 锚点规则: 小写, 移除标点(保留字母数字空格连字符), 空格转连字符"""
+        """锚点规则与 mkdocs pymdownx.slugs.slugify 对齐: 移除标点(保留字母数字空格连字符), 空格转连字符, 保留大小写"""
         import re as _re
-        t = text.lower()
-        t = _re.sub(r"[^\w\u4e00-\u9fff\s-]", "", t)
+        t = _re.sub(r"[^\w\u4e00-\u9fff\s-]", "", text)
         t = t.replace(" ", "-")
         return t
 

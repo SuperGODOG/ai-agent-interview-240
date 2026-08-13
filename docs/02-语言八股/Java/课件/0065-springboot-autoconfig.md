@@ -2,7 +2,7 @@
 
 # 0065 · SpringBoot 自动装配原理 & starter & 条件注解
 
-这一课覆盖的完整链条。SpringBoot 的核心魔法就一句话：**引入一个 starter，剩下全都不用配**。面试官几乎必问：**「`@SpringBootApplication` 底层做了什么？」「怎么写一个自定义 starter？」「`@ConditionalOnMissingBean` 为什么这么重要？」**—— 这三个问题连起来，就是本节课的骨架。
+这一课覆盖 的完整链条。SpringBoot 的核心魔法就一句话：**引入一个 starter，剩下全都不用配**。面试官几乎必问：**「`@SpringBootApplication` 底层做了什么？」「怎么写一个自定义 starter？」「`@ConditionalOnMissingBean` 为什么这么重要？」**—— 这三个问题连起来，就是本节课的骨架。
 
 ## 学前热身
 

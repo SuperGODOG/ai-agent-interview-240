@@ -2,7 +2,7 @@
 
 # 0007 · 代理模式深挖：静态代理 & JDK 动态代理 & CGLIB & Spring AOP 应用
 
-这一课覆盖的全部核心内容。一句话概括：**代理 = 在不修改原类的前提下增强行为**。`@Transactional`、`@Cacheable`、`@Async`、`@PreAuthorize`、Feign、MyBatis Mapper —— 这些日常用得飞起的注解和框架，底层无一例外都建立在**反射 + 动态代理**之上。上一课我们把反射讲透了，这一课就是把「反射能干什么」中最重要的那件事讲透。
+这一课覆盖 的全部核心内容。一句话概括：**代理 = 在不修改原类的前提下增强行为**。`@Transactional`、`@Cacheable`、`@Async`、`@PreAuthorize`、Feign、MyBatis Mapper —— 这些日常用得飞起的注解和框架，底层无一例外都建立在**反射 + 动态代理**之上。上一课我们把反射讲透了，这一课就是把「反射能干什么」中最重要的那件事讲透。
 
 面试频度极高，且几乎必定追问细节：**「Spring AOP 用的是 JDK 还是 CGLIB？」「`this.xxx()` 内部调用为什么让 `@Transactional` 失效？」「CGLIB 为什么不能代理 final 方法？」**—— 这些追问是筛掉「只会背 API」和「真理解原理」的分水岭。
 

@@ -6,7 +6,7 @@
 
 ## 目录
 
-- [Leetcode相关（8 题）](#leetcode相关)
+- [Leetcode相关（8 题）](#Leetcode相关)
 
 ---
 

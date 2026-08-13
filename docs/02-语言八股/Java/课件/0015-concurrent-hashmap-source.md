@@ -2,7 +2,7 @@
 
 # 0015 · ConcurrentHashMap 源码深挖
 
-这一课覆盖的最高频考点。**ConcurrentHashMap（简称 CHM）是 `java.util.concurrent` 里最具代表性的容器**，也是和 HashMap 齐名的两大硬骨头之一。1.7 → 1.8 的演进堪称「并发调优活教材」——从*分段锁 + ReentrantLock* 演进到 *桶级 synchronized + CAS + 红黑树*，几乎能把并发编程的核心思想（细粒度锁、CAS、无锁读、分片计数、协作扩容）全串起来。面试频次极高，几乎必问。
+这一课覆盖 的最高频考点。**ConcurrentHashMap（简称 CHM）是 `java.util.concurrent` 里最具代表性的容器**，也是和 HashMap 齐名的两大硬骨头之一。1.7 → 1.8 的演进堪称「并发调优活教材」——从*分段锁 + ReentrantLock* 演进到 *桶级 synchronized + CAS + 红黑树*，几乎能把并发编程的核心思想（细粒度锁、CAS、无锁读、分片计数、协作扩容）全串起来。面试频次极高，几乎必问。
 
 ## 学前热身
 

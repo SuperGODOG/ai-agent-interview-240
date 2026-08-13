@@ -5,10 +5,10 @@
 **大模型 Agent 岗面试准备 | 大厂真题 + 语言八股 + 亲手项目 + 模拟面试**
 
 [![GitHub stars](https://img.shields.io/github/stars/SuperGODOG/ai-agent-interview-240?style=flat-square&color=7c3aed)](https://github.com/SuperGODOG/ai-agent-interview-240/stargazers)
-[![Questions](https://img.shields.io/badge/真题-240%20道-3b82f6?style=flat-square)](docs/01-面试八股文/01-Agent应用开发.md)
-[![八股文](https://img.shields.io/badge/语言八股-85%20篇-10b981?style=flat-square)](docs/02-语言八股/README.md)
-[![Projects](https://img.shields.io/badge/项目档案-3%20个-f59e0b?style=flat-square)](projects/SuperGODOG__tripplanner/README.md)
-[![License](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
+[![Questions](https://img.shields.io/badge/真题-240%20道-3b82f6?style=flat-square)](./01-面试八股文/01-Agent应用开发.md)
+[![八股文](https://img.shields.io/badge/语言八股-85%20篇-10b981?style=flat-square)](./02-语言八股/README.md)
+[![Projects](https://img.shields.io/badge/项目档案-3%20个-f59e0b?style=flat-square)](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/SuperGODOG__tripplanner/README.md)
+[![License](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](./LICENSE)
 
 **240 道真实大厂 AI Agent 面试题（附答题框架）· Java/Python/Go 语言八股 · 3 个亲手 Agent 项目档案 · 模拟面试拷问引擎**
 
@@ -31,14 +31,14 @@
 
 | 模块 | 内容 | 说明 |
 |------|------|------|
-| [📌 01-面试八股文](docs/01-面试八股文/01-Agent应用开发.md) | **240 道真实大厂真题** | 5 大卷 · 深度分级 · 答题框架 · 学习路径 |
-| [📚 02-语言八股](docs/02-语言八股/README.md) | **Java / Python / Go 面试八股** | 85 篇 · 考点+要点+代码+追问 |
-| [🏢 03-企业招聘分析](docs/03-企业招聘分析/README.md) | 大厂 AI Agent 岗分析 | 规划中 |
-| [📖 04-开源项目学习笔记](docs/04-开源项目学习笔记/README.md) | 优秀开源项目剖析 | 规划中 |
-| [📄 05-简历模板](docs/05-简历模板/README.md) | AI Agent 简历写法 | 规划中 |
-| [🗣 06-STAR面试稿](docs/06-STAR面试稿/README.md) | 面试话术准备 | 规划中 |
-| [❓ 07-面试问答集](docs/07-面试问答集/README.md) | 项目面试问答 | 规划中 |
-| [🤖 skills/](skills/project-mock-interview/SKILL.md) | **模拟面试 Skill 包** | 拷问引擎 + 大厂模拟面试官 |
+| [📌 01-面试八股文](./01-面试八股文/01-Agent应用开发.md) | **240 道真实大厂真题** | 5 大卷 · 深度分级 · 答题框架 · 学习路径 |
+| [📚 02-语言八股](./02-语言八股/README.md) | **Java / Python / Go 面试八股** | 85 篇 · 考点+要点+代码+追问 |
+| [🏢 03-企业招聘分析](./03-企业招聘分析/README.md) | 大厂 AI Agent 岗分析 | 规划中 |
+| [📖 04-开源项目学习笔记](./04-开源项目学习笔记/README.md) | 优秀开源项目剖析 | 规划中 |
+| [📄 05-简历模板](./05-简历模板/README.md) | AI Agent 简历写法 | 规划中 |
+| [🗣 06-STAR面试稿](./06-STAR面试稿/README.md) | 面试话术准备 | 规划中 |
+| [❓ 07-面试问答集](./07-面试问答集/README.md) | 项目面试问答 | 规划中 |
+| [🤖 skills/](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/skills/project-mock-interview/SKILL.md) | **模拟面试 Skill 包** | 拷问引擎 + 大厂模拟面试官 |
 
 ---
 
@@ -46,27 +46,27 @@
 
 | 卷 | 题数 | 覆盖范围 |
 |----|------|----------|
-| [01-Agent应用开发](docs/01-面试八股文/01-Agent应用开发.md) | **182** | 宏观认知、主流框架、工具调用、Prompt、记忆、架构设计、数据库、工程落地、性能评估 |
-| [02-八股基础](docs/01-面试八股文/02-八股基础.md) | **38** | JVM/并发/网络/OS/数据库/Redis |
-| [03-Transformer与大模型](docs/01-面试八股文/03-Transformer与大模型.md) | **10** | 注意力、长上下文、KV Cache、推理优化、微调对齐 |
-| [04-LeetCode算法](docs/01-面试八股文/04-LeetCode算法.md) | **8** | 手撕代码高频题 |
-| [05-反问与国企特别版](docs/01-面试八股文/05-反问与国企特别版.md) | **2** | 反问环节与国企面试 |
+| [01-Agent应用开发](./01-面试八股文/01-Agent应用开发.md) | **182** | 宏观认知、主流框架、工具调用、Prompt、记忆、架构设计、数据库、工程落地、性能评估 |
+| [02-八股基础](./01-面试八股文/02-八股基础.md) | **38** | JVM/并发/网络/OS/数据库/Redis |
+| [03-Transformer与大模型](./01-面试八股文/03-Transformer与大模型.md) | **10** | 注意力、长上下文、KV Cache、推理优化、微调对齐 |
+| [04-LeetCode算法](./01-面试八股文/04-LeetCode算法.md) | **8** | 手撕代码高频题 |
+| [05-反问与国企特别版](./01-面试八股文/05-反问与国企特别版.md) | **2** | 反问环节与国企面试 |
 
 ## 📚 语言八股（85 篇）
 
 | 语言 | 篇数 | 内容 |
 |------|------|------|
-| [Java](docs/02-语言八股/Java/00-学习路线图.md) | **77** | [11 篇手撕笔记](docs/02-语言八股/README.md)（集合/并发/JVM/Spring/MySQL/Redis/网络/OS/MQ/锁/设计模式）+ [66 篇体系化课件](docs/02-语言八股/Java/课件/README.md)（面试场景+追问+代码+自测） |
-| [Python](docs/02-语言八股/Python/01-Python基础.md) | **3** | 基础（GIL/可变不可变）/ 并发与异步 / 进阶陷阱 |
-| [Go](docs/02-语言八股/Go/01-Go基础.md) | **5** | 基础（slice/map）/ 并发（GMP）/ 内存与 GC / 进阶陷阱 / Go与Python对比 |
+| [Java](./02-语言八股/Java/00-学习路线图.md) | **77** | [11 篇手撕笔记](./02-语言八股/README.md)（集合/并发/JVM/Spring/MySQL/Redis/网络/OS/MQ/锁/设计模式）+ [66 篇体系化课件](./02-语言八股/Java/课件/README.md)（面试场景+追问+代码+自测） |
+| [Python](./02-语言八股/Python/01-Python基础.md) | **3** | 基础（GIL/可变不可变）/ 并发与异步 / 进阶陷阱 |
+| [Go](./02-语言八股/Go/01-Go基础.md) | **5** | 基础（slice/map）/ 并发（GMP）/ 内存与 GC / 进阶陷阱 / Go与Python对比 |
 
 ## 🛠 项目档案（3 个亲手项目）
 
 | 项目 | 技术栈 | 一句话定位 |
 |------|--------|------------|
-| [TripPlanner](projects/SuperGODOG__tripplanner/README.md) | LangGraph + ReAct + MCP + FastAPI | 多智能体旅行规划系统 |
-| [SkillForge](projects/SuperGODOG__skillforge/README.md) | Python + bge + DeepSeek + SQLite | Agent Skill 自进化元 Agent 系统 |
-| [JeecgBoot](projects/jeecgboot__JeecgBoot/README.md) | Java + 低代码平台 | 低代码平台二次开发与架构理解 |
+| [TripPlanner](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/SuperGODOG__tripplanner/README.md) | LangGraph + ReAct + MCP + FastAPI | 多智能体旅行规划系统 |
+| [SkillForge](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/SuperGODOG__skillforge/README.md) | Python + bge + DeepSeek + SQLite | Agent Skill 自进化元 Agent 系统 |
+| [JeecgBoot](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/jeecgboot__JeecgBoot/README.md) | Java + 低代码平台 | 低代码平台二次开发与架构理解 |
 
 ---
 
@@ -74,19 +74,19 @@
 
 ### 1. 刷题路径（按深度梯度）
 
-1. 从 [01-Agent应用开发](docs/01-面试八股文/01-Agent应用开发.md) 开始，按小类顺序刷
+1. 从 [01-Agent应用开发](./01-面试八股文/01-Agent应用开发.md) 开始，按小类顺序刷
 2. 每道题先自己答，再对照"核心考点 + 答题框架"查漏
 3. 按"学习路径"的前置/后置关系扩展
 
 ### 2. 项目准备路径
 
-1. 每个项目先读 [项目画像](projects/SuperGODOG__tripplanner/README.md)，建立 30 秒自我介绍
-2. 看 [面试题匹配表](projects/SuperGODOG__tripplanner/面试题匹配表.md)，了解该项目能扛哪些题
-3. 用 [项目内作答](projects/SuperGODOG__tripplanner/项目内作答.md) 准备追问应答
+1. 每个项目先读 [项目画像](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/SuperGODOG__tripplanner/README.md)，建立 30 秒自我介绍
+2. 看 [面试题匹配表](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/SuperGODOG__tripplanner/面试题匹配表.md)，了解该项目能扛哪些题
+3. 用 [项目内作答](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/projects/SuperGODOG__tripplanner/项目内作答.md) 准备追问应答
 
 ### 3. 用 AI 模拟面试（Skill 包）
 
-将 [skills/project-mock-interview](skills/project-mock-interview/SKILL.md) 或 [skills/interview-skills](skills/interview-skills/SKILL.md) 作为 Skill 加载到你的 AI 助手（Claude Code / Hermes / Antigravity 等），即可获得：
+将 [skills/project-mock-interview](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/skills/project-mock-interview/SKILL.md) 或 [skills/interview-skills](https://github.com/SuperGODOG/ai-agent-interview-240/blob/main/skills/interview-skills/SKILL.md) 作为 Skill 加载到你的 AI 助手（Claude Code / Hermes / Antigravity 等），即可获得：
 
 - 大厂 AI 模拟面试官：覆盖阿里/腾讯/字节/百度/美团等大厂，逐题提问 + 四维点评
 - 项目拷问引擎：基于 240 题匹配表对三个项目深度拷问

@@ -2,7 +2,7 @@
 
 # 0014 · LinkedHashMap 源码 & 手撕 LRU 实现
 
-这一课覆盖的所有考点。`LinkedHashMap` 是 `HashMap` 的亲兄弟 —— **底层就是 HashMap，只是在每个 Entry 上加了 `before`/`after` 两个指针，串成一条独立于桶数组的双向链表**。
+这一课覆盖 的所有考点。`LinkedHashMap` 是 `HashMap` 的亲兄弟 —— **底层就是 HashMap，只是在每个 Entry 上加了 `before`/`after` 两个指针，串成一条独立于桶数组的双向链表**。
 
 面试官为什么爱考它？因为它是**「手撕 LRU 缓存」**这道经典题最优雅的答案 —— *不用手写双向链表，不用手动维护指针，5 行代码搞定*。搞懂它，你既能过面试题，又能理解 Redis / Caffeine / Guava Cache 背后的驱逐策略。
 
