@@ -75,10 +75,15 @@ def q_in_volume(q, major):
 
 def render_question(q):
     """渲染单题 markdown"""
-    depth = DEPTH_LABEL.get(q["depth"], "综合")
+    if q["depth"] >= 99:
+        depth_label = "综合（未分级）"
+        depth_str = "**深度**: 综合（未分级）"
+    else:
+        depth_label = DEPTH_LABEL.get(q["depth"], "综合")
+        depth_str = f"**深度**: {q['depth']}/5 · {depth_label}"
     lines = [f"### {q['id']} · {q['text']}"]
     lines.append("")
-    meta = [f"**深度**: {q['depth']}/5 · {depth}"]
+    meta = [depth_str]
     if q["fuzzy"]:
         meta.append("**定位**: 模糊归位（按语义近似归类）")
     lines.append("  \n".join(meta) if len(meta) > 1 else meta[0])
