@@ -20,11 +20,12 @@
 | 目录 | 内容 | 说明 |
 |------|------|------|
 | [01-面试八股文](docs/01-面试八股文/01-Agent应用开发.md) | 240 道真实大厂真题 | 5 大卷，按逻辑深度排序，附答题框架 |
-| [02-企业招聘分析](docs/02-企业招聘分析/README.md) | 大厂 AI Agent 岗分析 | 规划中 |
-| [03-开源项目学习笔记](docs/03-开源项目学习笔记/README.md) | 优秀开源项目剖析 | 规划中 |
-| [04-简历模板](docs/04-简历模板/README.md) | AI Agent 简历写法 | 规划中 |
-| [05-STAR面试稿](docs/05-STAR面试稿/README.md) | 面试话术准备 | 规划中 |
-| [06-面试问答集](docs/06-面试问答集/README.md) | 项目面试问答 | 规划中 |
+| [02-语言八股](docs/02-语言八股/README.md) | Java / Python / Go 语言面试八股 | 19 篇手撕笔记，考点+要点+代码+追问 |
+| [03-企业招聘分析](docs/03-企业招聘分析/README.md) | 大厂 AI Agent 岗分析 | 规划中 |
+| [04-开源项目学习笔记](docs/04-开源项目学习笔记/README.md) | 优秀开源项目剖析 | 规划中 |
+| [05-简历模板](docs/05-简历模板/README.md) | AI Agent 简历写法 | 规划中 |
+| [06-STAR面试稿](docs/06-STAR面试稿/README.md) | 面试话术准备 | 规划中 |
+| [07-面试问答集](docs/07-面试问答集/README.md) | 项目面试问答 | 规划中 |
 
 ### 实战项目档案
 
@@ -54,12 +55,16 @@
 ai-agent-interview-240/
 ├── README.md                          # 本文件
 ├── docs/
-│   └── 01-面试八股文/                 # 240 道真实大厂真题（5 卷）
-│       ├── 01-Agent应用开发.md        # 182 题 · 核心战场
-│       ├── 02-八股基础.md             # 38 题
-│       ├── 03-Transformer与大模型.md  # 10 题
-│       ├── 04-LeetCode算法.md         # 8 题
-│       └── 05-反问与国企特别版.md     # 2 题
+│   ├── 01-面试八股文/                 # 240 道真实大厂真题（5 卷）
+│   │   ├── 01-Agent应用开发.md        # 182 题 · 核心战场
+│   │   ├── 02-八股基础.md             # 38 题
+│   │   ├── 03-Transformer与大模型.md  # 10 题
+│   │   ├── 04-LeetCode算法.md         # 8 题
+│   │   └── 05-反问与国企特别版.md     # 2 题
+│   ├── 02-语言八股/                   # Java/Python/Go 语言面试八股
+│   │   ├── Java/                      # 11 篇 + 学习路线图
+│   │   ├── Python/                    # 3 篇
+│   │   └── Go/                        # 5 篇
 ├── projects/                          # 亲手项目档案（面试能扛追问）
 │   ├── SuperGODOG__tripplanner/       # 项目画像 + 匹配表 + 项目内作答
 │   ├── SuperGODOG__skillforge/
@@ -109,3 +114,16 @@ python3 scripts/generate_baike.py
 ## 免责声明
 
 题目来源于本人面试经历与公开渠道搜集整理，仅供个人学习使用。
+
+---
+
+## SEO / 关键词索引
+
+本仓库面向以下搜索场景（供搜索引擎与爬虫索引）：
+
+- **AI Agent 面试题**：Agent 面试真题、大模型 Agent 岗面试、Agent 架构面试、Multi-Agent 面试、RAG 面试、MCP 面试、Prompt 工程面试、Agent 记忆系统面试、工具调用面试、AI Agent 八股文
+- **大厂面试**：字节跳动面试、腾讯面试、阿里面试、百度面试、大模型应用开发面试、LLM 面试题、AI 工程面试
+- **语言八股**：Java 八股文、Java 集合面试题、并发编程面试、JVM 面试题、Spring 面试、MySQL 面试、Redis 面试、计算机网络面试、操作系统面试、消息队列面试、设计模式面试、Python 面试题、Python GIL、Go 面试题、Go 并发 GMP、Go GC、Go channel
+- **项目实战**：LangGraph 项目、ReAct Agent 项目、多智能体项目、MCP 项目、Skill 系统项目、低代码平台
+
+> 提示：题库与语言八股均为 Markdown 纯文本，无 JS 渲染依赖，搜索引擎可直接抓取正文内容。
