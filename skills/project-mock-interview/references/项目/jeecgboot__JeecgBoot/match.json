@@ -1,0 +1,805 @@
+{
+ "candidates": [
+  {
+   "id": "L6",
+   "text": "请介绍一下常见的 Agent 工作流范式（如 ReAct、Plan-and-Execute 等）的区别与适用场景。",
+   "major": "二_Agent应用开发相关",
+   "minor": "1.agent宏观认知",
+   "depth": 1,
+   "concepts": [
+    "ReAct 与 Agent 工作流范式",
+    "Workflow 与自主 Agent 权衡"
+   ],
+   "hit_concepts": [
+    "ReAct 与 Agent 工作流范式",
+    "Workflow 与自主 Agent 权衡"
+   ],
+   "evidence": [
+    "<内容命中>"
+   ]
+  },
+  {
+   "id": "L74",
+   "text": "在AI应用架构中，旨在统一大模型与外部数据源或工具集成接口的连接协议（如Model Context Protocol / MCP），其本质和核心设计思想是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "1.agent宏观认知",
+   "depth": 1,
+   "concepts": [
+    "MCP",
+    "上下文管理与压缩"
+   ],
+   "hit_concepts": [
+    "MCP",
+    "上下文管理与压缩"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-boot-module/jeecg-module-demo/src/main/java/org/jeecg/modules/demo/mcp/McpDemoController.java",
+    "jeecgboot-vue3/src/views/super/airag/aimcp/AiragMcp.api.ts",
+    "jeecgboot-vue3/src/views/super/airag/aimcp/AiragMcpList.vue",
+    "jeecgboot-vue3/src/views/super/airag/aimcp/AiragMcp.data.ts"
+   ]
+  },
+  {
+   "id": "L80",
+   "text": "在大模型应用落地中，确定性工作流（Workflow）与自主智能体（Agent）在业务场景选择、决策机制及容错成本上有何本质区别？如何理解自主智能体（Agent）与工作流（Workflow）的区别、联系及适用场景？",
+   "major": "二_Agent应用开发相关",
+   "minor": "1.agent宏观认知",
+   "depth": 1,
+   "concepts": [
+    "Workflow 与自主 Agent 权衡",
+    "容错限流与高可用"
+   ],
+   "hit_concepts": [
+    "Workflow 与自主 Agent 权衡",
+    "容错限流与高可用"
+   ],
+   "evidence": [
+    "<内容命中>"
+   ]
+  },
+  {
+   "id": "L93",
+   "text": "在复杂的、多步骤的任务场景中，Agent应如何进行任务拆解、步骤规划和动态决策？你是否实践过ReAct、ToT（Tree of Thoughts）等框架或相关思路？",
+   "major": "二_Agent应用开发相关",
+   "minor": "2.agent主流框架",
+   "depth": 3,
+   "concepts": [
+    "ReAct 与 Agent 工作流范式",
+    "思维链与推理提示"
+   ],
+   "hit_concepts": [
+    "ReAct 与 Agent 工作流范式",
+    "思维链与推理提示"
+   ],
+   "evidence": [
+    "jeecgboot-vue3/src/views/demo/jeecg/TableTotal.vue",
+    "jeecgboot-vue3/src/views/system/loginmini/MiniForgotpad.vue"
+   ]
+  },
+  {
+   "id": "L9",
+   "text": "多Agent系统（Multi-Agent System）的编排模式有哪些？在框架选型（如LangChain、LangGraph、AutoGen等）时有哪些核心考量因素？",
+   "major": "二_Agent应用开发相关",
+   "minor": "2.agent主流框架",
+   "depth": 4,
+   "concepts": [
+    "LangGraph 与图编排",
+    "Multi-Agent 多智能体协作",
+    "JVM 与 Java 并发"
+   ],
+   "hit_concepts": [
+    "LangGraph 与图编排",
+    "JVM 与 Java 并发"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/config/AuthStateConfiguration.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/cache/AuthStateRedisCache.java",
+    "jeecgboot-vue3/tests/server/nodemon.json",
+    "jeecgboot-vue3/src/qiankun/state.ts",
+    "jeecgboot-vue3/src/views/super/airag/aiknowledge/AiKnowledgeBaseList.vue"
+   ]
+  },
+  {
+   "id": "L34",
+   "text": "在基于 Harness 的自动评估与执行框架下，如何通过 Prompt Engineering 或 RAG 策略降低 Human-in-the-loop（人工介入）的成本？",
+   "major": "二_Agent应用开发相关",
+   "minor": "4.Prompt_engineering",
+   "depth": 3,
+   "concepts": [
+    "RAG 与知识库",
+    "Prompt Engineering",
+    "Badcase 闭环与数据飞轮"
+   ],
+   "hit_concepts": [
+    "RAG 与知识库",
+    "Prompt Engineering",
+    "Badcase 闭环与数据飞轮"
+   ],
+   "evidence": [
+    "jeecgboot-vue3/src/views/super/airag/aiprompts/AiragExtDataList.vue",
+    "jeecgboot-vue3/src/views/super/airag/aiprompts/AiragExtDataExperiment.vue",
+    "jeecgboot-vue3/src/views/super/airag/aiprompts/AiragPrompts.api.ts",
+    "jeecgboot-vue3/src/views/super/airag/aiprompts/AiragPromptsList.vue",
+    "jeecgboot-vue3/src/views/super/airag/aiprompts/AiragExtData.api.ts"
+   ]
+  },
+  {
+   "id": "L137",
+   "text": "在Agent或插件化系统中，系统的技能（Skills/Plugins）动态加载与初始化流程是如何设计的？",
+   "major": "二_Agent应用开发相关",
+   "minor": "4.Prompt_engineering",
+   "depth": 3,
+   "concepts": [
+    "技能体系"
+   ],
+   "hit_concepts": [
+    "技能体系"
+   ],
+   "evidence": [
+    "<内容命中>"
+   ]
+  },
+  {
+   "id": "L49",
+   "text": "当Prompt优化达到瓶颈后，后续的性能提升路径如何规划？是进行模型选型替换、调整超参数，还是转向SFT/DPO？",
+   "major": "二_Agent应用开发相关",
+   "minor": "4.Prompt_engineering",
+   "depth": 5,
+   "concepts": [
+    "Prompt Engineering",
+    "模型微调与对齐"
+   ],
+   "hit_concepts": [
+    "Prompt Engineering",
+    "模型微调与对齐"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/model/SysUserSysDepPostModel.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysUserDepPost.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysUserDepPostService.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/mapper/SysUserDepPostMapper.java",
+    "jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/util/ShiroThreadPoolExecutor.java"
+   ]
+  },
+  {
+   "id": "L17",
+   "text": "在意图识别与前置拦截（Guards/Gatekeeping）环节，如何设计并引入上下文记忆机制（Memory Mechanism）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "5.agent记忆设计",
+   "depth": 3,
+   "concepts": [
+    "Agent 记忆机制",
+    "意图识别与分发",
+    "上下文管理与压缩",
+    "Guardrails 护栏"
+   ],
+   "hit_concepts": [
+    "Agent 记忆机制",
+    "意图识别与分发",
+    "上下文管理与压缩",
+    "Guardrails 护栏"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/controller/ActuatorMemoryController.java",
+    "jeecgboot-vue3/src/utils/cache/memory.ts"
+   ]
+  },
+  {
+   "id": "L19",
+   "text": "在 Agent 架构中，长短期记忆模块（Short/Long-term Memory）的具体实现方案与状态持久化策略是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "5.agent记忆设计",
+   "depth": 3,
+   "concepts": [
+    "Agent 记忆机制",
+    "存储选型与状态持久化"
+   ],
+   "hit_concepts": [
+    "Agent 记忆机制",
+    "存储选型与状态持久化"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/model/DuplicateCheckVo.java"
+   ]
+  },
+  {
+   "id": "L21",
+   "text": "记忆的写入与读取，是采用大模型自主决策（LLM-routed）还是基于规则路由（Rule-based Router）更合理？",
+   "major": "二_Agent应用开发相关",
+   "minor": "5.agent记忆设计",
+   "depth": 4,
+   "concepts": [
+    "Agent 记忆机制",
+    "Workflow 与自主 Agent 权衡",
+    "路由机制"
+   ],
+   "hit_concepts": [
+    "Agent 记忆机制",
+    "Workflow 与自主 Agent 权衡",
+    "路由机制"
+   ],
+   "evidence": [
+    "jeecgboot-vue3/types/vue-router.d.ts",
+    "jeecgboot-vue3/src/utils/monorepo/dynamicRouter.ts",
+    "jeecgboot-vue3/src/router/types.ts",
+    "jeecgboot-vue3/src/router/router.ts",
+    "jeecgboot-vue3/src/router/constant.ts"
+   ]
+  },
+  {
+   "id": "L8",
+   "text": "在结构化工作流中，哪些类型的节点/算子更适合引入ReAct决策机制？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "depth": 3,
+   "concepts": [
+    "ReAct 与 Agent 工作流范式",
+    "Workflow 与自主 Agent 权衡"
+   ],
+   "hit_concepts": [
+    "ReAct 与 Agent 工作流范式",
+    "Workflow 与自主 Agent 权衡"
+   ],
+   "evidence": [
+    "<内容命中>"
+   ]
+  },
+  {
+   "id": "L16",
+   "text": "针对类似 Claude Code / GitHub Copilot Workspace 的 AI Coding 工具，其底层的 Agentic Workflow 与系统架构是怎样的？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "depth": 3,
+   "concepts": [
+    "Workflow 与自主 Agent 权衡",
+    "AI Coding Agent"
+   ],
+   "hit_concepts": [
+    "Workflow 与自主 Agent 权衡",
+    "AI Coding Agent"
+   ],
+   "evidence": [
+    "<内容命中>"
+   ]
+  },
+  {
+   "id": "L27",
+   "text": "在多轮对话（Multi-turn Dialogue）中，如何解决指代消解（Coreference Resolution）和上下文省略的问题？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "depth": 3,
+   "concepts": [
+    "上下文管理与压缩"
+   ],
+   "hit_concepts": [
+    "上下文管理与压缩"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/util/SpringContextUtils.java",
+    "jeecgboot-vue3/src/views/demo/feat/context-menu/index.vue",
+    "jeecgboot-vue3/src/hooks/core/useContext.ts",
+    "jeecgboot-vue3/src/hooks/component/usePageContext.ts",
+    "jeecgboot-vue3/src/hooks/web/useContextMenu.ts"
+   ]
+  },
+  {
+   "id": "L63",
+   "text": "RAG生成后校验层（Post-generation Guardrails/Validation）主要解决哪些安全、幻觉及一致性（Factuality）问题？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "depth": 3,
+   "concepts": [
+    "RAG 与知识库",
+    "Guardrails 护栏"
+   ],
+   "hit_concepts": [
+    "RAG 与知识库",
+    "Guardrails 护栏"
+   ],
+   "evidence": [
+    "<内容命中>"
+   ]
+  },
+  {
+   "id": "L30",
+   "text": "在Agent/RAG pipeline中，Query改写（Query Rewriting）模块最适合放在哪个阶段？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "depth": 3,
+   "concepts": [
+    "RAG 与知识库",
+    "Query 改写"
+   ],
+   "hit_concepts": [
+    "RAG 与知识库"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-cloud-api/src/main/java/org/jeecg/common/airag/api/IAiragBaseApi.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-local-api/src/main/java/org/jeecg/common/airag/api/IAiragBaseApi.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/config/jimureport/JimuDragExternalServiceImpl.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/airag/JeecgBizToolsProvider.java",
+    "jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/pom.xml"
+   ]
+  },
+  {
+   "id": "L57",
+   "text": "在知识检索和问答场景中，什么情况下基于规则/意图识别的确定性链路比大模型生成链路更具优势？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "depth": 4,
+   "concepts": [
+    "Workflow 与自主 Agent 权衡",
+    "意图识别与分发"
+   ],
+   "hit_concepts": [
+    "Workflow 与自主 Agent 权衡",
+    "意图识别与分发"
+   ],
+   "evidence": [
+    "<内容命中>"
+   ]
+  },
+  {
+   "id": "L214",
+   "text": "向量数据库中分层可导航小世界算法（HNSW）的核心工作原理是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "depth": 2,
+   "concepts": [
+    "向量数据库与 HNSW",
+    "算法与 LeetCode"
+   ],
+   "hit_concepts": [
+    "算法与 LeetCode"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysFillRule.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysFillRuleService.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysFillRuleController.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/mapper/SysFillRuleMapper.java",
+    "jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/util/FillRuleUtil.java"
+   ]
+  },
+  {
+   "id": "L213",
+   "text": "在 Agent 与大模型应用中，常用的存储数据库（如关系型、NoSQL、向量数据库）的选型标准是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "depth": 4,
+   "concepts": [
+    "向量数据库与 HNSW",
+    "存储选型与状态持久化",
+    "数据库索引与事务"
+   ],
+   "hit_concepts": [
+    "存储选型与状态持久化",
+    "数据库索引与事务"
+   ],
+   "evidence": [
+    "jeecg-boot/db/jeecgboot-mysql-5.7.sql",
+    "jeecg-boot/db/tables_nacos.sql",
+    "jeecg-boot/db/tables_xxl_job.sql",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/resources/jeecg/code-template-online/erp/onetomany/java/${bussiPackage}/${entityPackage}/vue/V${currentDate}_1__menu_insert_${entityName}.sql",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/resources/jeecg/code-template-online/erp/onetomany/java/${bussiPackage}/${entityPackage}/vue3Native/V${currentDate}_1__menu_insert_${entityName}.sql"
+   ]
+  },
+  {
+   "id": "L43",
+   "text": "在缺乏用户主动反馈（如点击、点赞点踩）的数据场景下，如何设计自动化的抽检与评估机制？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "depth": 3,
+   "concepts": [
+    "Badcase 闭环与数据飞轮"
+   ],
+   "hit_concepts": [
+    "Badcase 闭环与数据飞轮"
+   ],
+   "evidence": [
+    "jeecgboot-vue3/src/views/monitor/trace/trace.api.ts",
+    "jeecgboot-vue3/src/views/monitor/trace/index.vue",
+    "jeecgboot-vue3/src/views/monitor/trace/trace.data.ts"
+   ]
+  },
+  {
+   "id": "L39",
+   "text": "如何构建 Agent 的效果评估体系（Evaluation Framework）？有哪些主流的 Benchmark 维度？是依赖人工标注、LLM-as-a-judge还是线上业务指标？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "depth": 3,
+   "concepts": [
+    "评测体系与 Benchmark"
+   ],
+   "hit_concepts": [
+    "评测体系与 Benchmark"
+   ],
+   "evidence": [
+    "<内容命中>"
+   ]
+  },
+  {
+   "id": "L337",
+   "text": "请对比进程和线程的区别。为什么主流应用（如Java）更倾向于使用多线程而非多进程？线程上下文切换的开销主要体现在哪些方面？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "depth": 1,
+   "concepts": [
+    "上下文管理与压缩",
+    "JVM 与 Java 并发"
+   ],
+   "hit_concepts": [
+    "上下文管理与压缩",
+    "JVM 与 Java 并发"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/openapi/controller/OpenApiLogController.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/rule/OrgCodeRule.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysDataLogController.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysLogController.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-start/src/main/resources/logback-spring.xml"
+   ]
+  },
+  {
+   "id": "L319",
+   "text": "请介绍 HTTP 状态码 503 和 504 的具体含义、区别及常见产生原因。",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "depth": 1,
+   "concepts": [
+    "存储选型与状态持久化",
+    "网络与操作系统基础"
+   ],
+   "hit_concepts": [
+    "存储选型与状态持久化",
+    "网络与操作系统基础"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/vo/SysPositionSelectTreeVo.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/model/TreeSelectModel.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/util/HttpFileToMultipartFileUtil.java",
+    "jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/system/vo/SelectTreeModel.java",
+    "jeecgboot-vue3/mock/demo/select-demo.ts"
+   ]
+  },
+  {
+   "id": "L330",
+   "text": "请对比Redis的两种持久化机制（RDB和AOF）的优缺点，并解释混合持久化的原理。在系统宕机重启后，数据恢复的优先级应该如何选择？请介绍Redis的过期键删除策略。在已经存在惰性删除和定期删除的情况下，为什么还需要配置内存淘汰策略？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "depth": 2,
+   "concepts": [
+    "存储选型与状态持久化",
+    "Redis 与缓存"
+   ],
+   "hit_concepts": [
+    "存储选型与状态持久化",
+    "Redis 与缓存"
+   ],
+   "evidence": [
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/domain/RedisInfo.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/exception/RedisConnectException.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/service/RedisService.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/controller/ActuatorRedisController.java",
+    "jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/cache/AuthStateRedisCache.java"
+   ]
+  }
+ ],
+ "per_concept": {
+  "ReAct 与 Agent 工作流范式": [
+   "L6",
+   "L7",
+   "L8",
+   "L93",
+   "L94"
+  ],
+  "Workflow 与自主 Agent 权衡": [
+   "L6",
+   "L8",
+   "L16",
+   "L21",
+   "L23",
+   "L25",
+   "L57",
+   "L80",
+   "L99",
+   "L101",
+   "L122",
+   "L193",
+   "L206",
+   "L242",
+   "L259"
+  ],
+  "LangGraph 与图编排": [
+   "L9",
+   "L12",
+   "L188",
+   "L206",
+   "L207",
+   "L237"
+  ],
+  "JVM 与 Java 并发": [
+   "L9",
+   "L337",
+   "L338",
+   "L339",
+   "L340",
+   "L341",
+   "L344",
+   "L345",
+   "L346",
+   "L347",
+   "L349",
+   "L350",
+   "L351",
+   "L355",
+   "L379"
+  ],
+  "AI Coding Agent": [
+   "L16",
+   "L35",
+   "L38"
+  ],
+  "Agent 记忆机制": [
+   "L17",
+   "L18",
+   "L19",
+   "L20",
+   "L21",
+   "L155",
+   "L156",
+   "L159",
+   "L163",
+   "L164",
+   "L165",
+   "L166",
+   "L168",
+   "L172",
+   "L176",
+   "L177",
+   "L205",
+   "L347"
+  ],
+  "意图识别与分发": [
+   "L17",
+   "L57",
+   "L197",
+   "L198",
+   "L199",
+   "L200",
+   "L201"
+  ],
+  "上下文管理与压缩": [
+   "L17",
+   "L27",
+   "L32",
+   "L56",
+   "L74",
+   "L75",
+   "L99",
+   "L100",
+   "L101",
+   "L111",
+   "L131",
+   "L132",
+   "L133",
+   "L134",
+   "L138",
+   "L156",
+   "L163",
+   "L172",
+   "L177",
+   "L180",
+   "L182",
+   "L200",
+   "L205",
+   "L238",
+   "L246",
+   "L337"
+  ],
+  "Guardrails 护栏": [
+   "L17",
+   "L63",
+   "L195",
+   "L242"
+  ],
+  "存储选型与状态持久化": [
+   "L19",
+   "L20",
+   "L177",
+   "L188",
+   "L207",
+   "L213",
+   "L222",
+   "L229",
+   "L237",
+   "L259",
+   "L262",
+   "L276",
+   "L280",
+   "L319",
+   "L321",
+   "L324",
+   "L330",
+   "L332",
+   "L334",
+   "L378"
+  ],
+  "路由机制": [
+   "L21",
+   "L32",
+   "L143",
+   "L144",
+   "L198",
+   "L205",
+   "L365"
+  ],
+  "RAG 与知识库": [
+   "L30",
+   "L34",
+   "L54",
+   "L56",
+   "L58",
+   "L59",
+   "L60",
+   "L61",
+   "L63",
+   "L64",
+   "L65",
+   "L72",
+   "L107",
+   "L108",
+   "L109",
+   "L110",
+   "L111",
+   "L114",
+   "L115",
+   "L116",
+   "L117",
+   "L119",
+   "L120",
+   "L151",
+   "L172",
+   "L244",
+   "L250",
+   "L264",
+   "L280",
+   "L295"
+  ],
+  "Prompt Engineering": [
+   "L34",
+   "L46",
+   "L47",
+   "L49",
+   "L51",
+   "L64",
+   "L104",
+   "L127",
+   "L128",
+   "L150",
+   "L151",
+   "L244",
+   "L246",
+   "L257",
+   "L259",
+   "L286",
+   "L289",
+   "L293"
+  ],
+  "Badcase 闭环与数据飞轮": [
+   "L34",
+   "L43",
+   "L45",
+   "L46",
+   "L47",
+   "L244",
+   "L246",
+   "L257",
+   "L262",
+   "L286",
+   "L293"
+  ],
+  "评测体系与 Benchmark": [
+   "L39",
+   "L40",
+   "L41",
+   "L46",
+   "L119",
+   "L120",
+   "L192",
+   "L201",
+   "L244",
+   "L248",
+   "L270",
+   "L273",
+   "L274",
+   "L275",
+   "L277",
+   "L278",
+   "L289"
+  ],
+  "模型微调与对齐": [
+   "L49",
+   "L50",
+   "L64",
+   "L65",
+   "L157",
+   "L246",
+   "L250",
+   "L286",
+   "L293",
+   "L305",
+   "L306",
+   "L307",
+   "L310",
+   "L311"
+  ],
+  "MCP": [
+   "L74",
+   "L75",
+   "L99",
+   "L100",
+   "L101"
+  ],
+  "容错限流与高可用": [
+   "L80",
+   "L87",
+   "L88",
+   "L207",
+   "L232",
+   "L233",
+   "L237",
+   "L239",
+   "L255"
+  ],
+  "思维链与推理提示": [
+   "L93",
+   "L127",
+   "L128",
+   "L301",
+   "L302"
+  ],
+  "技能体系": [
+   "L137",
+   "L139",
+   "L143",
+   "L147",
+   "L246"
+  ],
+  "数据库索引与事务": [
+   "L213",
+   "L215",
+   "L321",
+   "L322",
+   "L323",
+   "L324",
+   "L342",
+   "L343"
+  ],
+  "算法与 LeetCode": [
+   "L214",
+   "L250",
+   "L310",
+   "L355",
+   "L373",
+   "L374",
+   "L375",
+   "L376",
+   "L377",
+   "L378",
+   "L380"
+  ],
+  "网络与操作系统基础": [
+   "L319",
+   "L320",
+   "L326",
+   "L327"
+  ],
+  "Redis 与缓存": [
+   "L330",
+   "L331",
+   "L332",
+   "L333",
+   "L334"
+  ]
+ }
+}

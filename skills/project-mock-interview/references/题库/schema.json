@@ -1,0 +1,61 @@
+{
+ "majors": [
+  {
+   "name": "二_Agent应用开发相关",
+   "display": "二、Agent应用开发相关",
+   "minors": [
+    "1.agent宏观认知",
+    "2.agent主流框架",
+    "3.工具相关",
+    "4.Prompt_engineering",
+    "5.agent记忆设计",
+    "6.agent处理情景的架构设计",
+    "7.数据库",
+    "8.工程落地",
+    "9.业务评估(性能优化与诊断)"
+   ]
+  },
+  {
+   "name": "三_transformer相关",
+   "display": "三、transformer相关",
+   "minors": [
+    "三_transformer相关"
+   ]
+  },
+  {
+   "name": "四_八股相关",
+   "display": "四、八股相关",
+   "minors": [
+    "四_八股相关"
+   ]
+  },
+  {
+   "name": "Leetcode相关",
+   "display": "Leetcode相关",
+   "minors": [
+    "Leetcode相关"
+   ]
+  },
+  {
+   "name": "五_业务流相关",
+   "display": "五、业务流相关",
+   "minors": [
+    "五_业务流相关"
+   ]
+  },
+  {
+   "name": "反问",
+   "display": "反问",
+   "minors": [
+    "反问"
+   ]
+  },
+  {
+   "name": "国企特别版",
+   "display": "国企特别版",
+   "minors": [
+    "国企特别版"
+   ]
+  }
+ ]
+}
