@@ -1,0 +1,14 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+
+# 本地临时
+*.tmp
+*.bak
+
+# 题库源数据（不公开原始素材，只公开生成的八股文）
+__pycache__/
