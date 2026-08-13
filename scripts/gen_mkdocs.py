@@ -9,7 +9,7 @@ import os
 import re
 import yaml
 
-ROOT = "/home/caoruixin/桌面/ai-agent-interview-240"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 脚本上级 = 仓库根(本地与CI通用)
 DOCS = os.path.join(ROOT, "docs")
 GH = "https://github.com/SuperGODOG/ai-agent-interview-240/blob/main"
 
