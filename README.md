@@ -1,16 +1,16 @@
 <div align="center">
 
-# 🎯 AI Agent 面试真题库 · 318 道公共题库
+# 🎯 AI Agent 面试真题库 · 477 道公共题库
 
 **大模型 Agent 岗面试准备 | 大厂真题 + 语言八股 + 当前项目范式 + 模拟面试**
 
 [![GitHub stars](https://img.shields.io/github/stars/SuperGODOG/ai-agent-interview-240?style=flat-square&color=7c3aed)](https://github.com/SuperGODOG/ai-agent-interview-240/stargazers)
-[![Questions](https://img.shields.io/badge/公共题库-318%20道-3b82f6?style=flat-square)](https://github.com/SuperGODOG/interview-mock-skill)
+[![Questions](https://img.shields.io/badge/公共题库-477%20道-3b82f6?style=flat-square)](https://github.com/SuperGODOG/interview-mock-skill)
 [![八股文](https://img.shields.io/badge/语言八股-85%20篇-10b981?style=flat-square)](docs/02-语言八股/README.md)
 [![Projects](https://img.shields.io/badge/当前主线项目-2%20个-f59e0b?style=flat-square)](https://github.com/SuperGODOG/skillforge)
 [![License](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
 
-**318 道公共面试题（原 240 道题持续扩展，新增部分更侧重后端）· Java/Python/Go 语言八股 · 2 个当前主线项目 · 模拟面试拷问引擎**
+**477 道公共面试题（首批 240 道持续扩展，后续新增部分更侧重后端）· Java/Python/Go 语言八股 · 2 个当前主线项目 · 模拟面试拷问引擎**
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ## ✨ 项目亮点
 
-- 🏆 **318 道公共真题**：完整题库由 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 统一维护；本仓库当前保留首批 240 道五卷文档，扩展题与原题属于同一题库，新增部分更侧重秒杀、Redis、MQ、MySQL 等后端高频考点
+- 🏆 **477 道公共真题**：完整题库由 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 统一维护；本仓库当前保留首批 240 道五卷文档，扩展题与首批题属于同一题库、权重相同，新增部分更侧重秒杀、Redis、MQ、MySQL 等后端高频考点；另有独立 schema 的 [agent-review-audit](https://github.com/SuperGODOG/interview-mock-skill/tree/main/agent-review-audit) 420 张审查题卡
 - 📝 **每题带答题框架**：核心考点 + 大厂四步答题框架（概念澄清 → 架构机制 → 工程权衡 → 实战经验）+ 学习路径（前置/后置题目）
 - 📚 **85 篇语言八股**：Java 77 篇（含 66 篇体系化课件）、Python 3 篇、Go 5 篇，覆盖 JVM/并发/集合/Spring/MySQL/Redis/网络/OS/GMP/GC/GIL
 - 🛠 **2 个当前主线项目**：[SkillForge](https://github.com/SuperGODOG/skillforge)（Skill 注册、路由、评测与受控演化）与 [miaosha](https://github.com/SuperGODOG/miaosha)（限流、Redis Lua 预扣库存、RabbitMQ 异步削峰、条件扣库与订单落库）；旧版项目档案仍保留在 `projects/` 供历史对照
@@ -71,9 +71,12 @@
 
 ## 🧭 题库口径与更新
 
-- **公共题库**：当前由 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 统一维护，共 318 道题；六件套 Skill 共享同一份题库，新增题与原 240 道题权重相同，只是新增部分更侧重后端。
+- **公共题库**：当前由 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 统一维护，共 477 道题；六件套 Skill 共享同一份题库，首批 240 道与后续扩展题权重相同，只是新增部分更侧重后端。
+- **独立审查语料**：`agent-review-audit` 维护 420 张独立 schema 的 Agent/RAG 审查题卡，服务代码体检与架构 Gap 分析，不与公共题库合并。
 - **本仓库文档**：`docs/01-面试八股文/` 是首批 240 道题的静态文档，不代表题库中的优先级，也不会自动随公共题库增长。
 - **项目匹配**：题库扩充后，已有项目的 `match.json` 仍是静态候选快照；重新执行项目的 `match/finalize`，新题才会进入候选列表。
+
+本仓库是介绍与静态首批文档壳；动态公共题库、六件套 Skill 及更新流程以 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 为准。
 
 ---
 
