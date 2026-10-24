@@ -1,0 +1,12 @@
+{
+  "slug": "SuperGODOG__skillforge",
+  "url": ".",
+  "commit_hash": "249e848978b8dc23ad3ab7ae2364918afb4fcf60",
+  "commit_short": "249e848",
+  "branch": "linux",
+  "commit_date": "Sat Sep 26 14:28:20 2026 +0800",
+  "commit_message": "feat(v2): complete Architecture V2 Evolution Loop, Three-Tier Memory & Narrow Local Repair",
+  "synced_at": "2026-09-28T19:11:11.799520",
+  "file_count": 120,
+  "pipeline_version": "1.2.0"
+}

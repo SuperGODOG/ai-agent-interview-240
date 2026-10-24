@@ -1,10 +1,10 @@
 # project-mock-interview · 项目面试拷问引擎
 
-> 针对 GitHub 项目的面试拷问引擎：根据项目内容路由匹配内嵌题库（**240 道大厂 AI Agent / RAG 面试题合集**），逐题提问、四维点评、复盘沉淀；支持对代码做三维诊断审查。全部语料内嵌于 `references/`，走路由按需加载，不依赖外部目录即可运行。
+> 针对 GitHub 项目的面试拷问引擎：根据项目内容路由匹配同包主入口提供的公共题库（**497 道大厂 AI Agent / RAG / 后端 / AI Infra 面试题（共 557 条语料记录）**），逐题提问、四维点评、复盘沉淀；支持对代码做三维诊断审查。题库由 `../agent-project-grill/references/题库/` 统一维护，项目档案仍保留在本 skill 的 `references/项目/`。
 
 ## 核心特性
 
-- **240 道大厂面试题**：来自一线大厂真实面试搜集（Agent 架构 / 记忆 / RAG / MCP / 评测闭环 / 工程落地 / 八股 / LeetCode），每题带**大厂四步答题框架**（概念澄清 → 架构机制 → 工程权衡 → 生产实战）与 **434 条学习路径边**（前置 / 后置）
+- **497 道大厂面试题（共 557 条语料记录）**：来自一线大厂真实面试搜集（Agent 架构 / 记忆 / RAG / MCP / 评测闭环 / 工程落地 / 秒杀后端 / 八股 / LeetCode / AI Infra），每题带学习路径边（前置 / 后置）与多维检索索引，具体答案只依据项目生产端生成，公共题库不存固定模板答案
 - **项目级路由匹配**：概念词典三级联动（仓库关键词 → 概念 → 题目），每个项目 20+ 候选题目，每题带证据文件
 - **四维点评**：概念理解 / 原理深度 / 落地证据 / 结构完整度，固定输出模板 + 1/3/5 评分锚点 + 首题校准基准
 - **复习状态机**：答错 / 低分题自动进「待复习清单」，下场优先清；已掌握进「已掌握清单」
@@ -17,12 +17,8 @@
 project-mock-interview/
 ├── SKILL.md                 # 技能主体：路由、出题策略、问答循环、复盘、诊断模式
 ├── README.md                # 本文件
-└── references/              # 语料（内嵌，走路由加载，绝不整载）
-    ├── README.md            # 语料同步说明（从源目录一键刷新）
-    ├── 题库/
-    │   ├── items.json       # 240 题（id/text/分类/答题框架/学习路径/状态初始值）
-    │   ├── concepts.yaml    # 33 概念词典（路由索引）
-    │   └── schema.json      # 分类骨架
+└── references/              # 项目档案与公共题库同步说明
+    ├── README.md            # 语料同步说明（公共题库由主入口统一维护）
     └── 项目/                 # 每个项目一套档案
         ├── <slug>/match.json        # 路由表（候选题目 + 命中概念 + 证据文件 + 深度）
         ├── <slug>/项目画像.md        # 技术档案 / 自我介绍底稿（含钩子）
@@ -35,8 +31,8 @@ project-mock-interview/
 ## 安装
 
 1. 克隆或下载本仓库
-2. 放入 Hermes Agent 技能目录：`~/.hermes/skills/project-mock-interview/`
-3. 重启 / 新开会话即可使用（语料自包含，无需其他依赖）
+2. 将六个 skill 目录整包放入任一 agent 的 skills 目录（本机统一入口 `~/.cc-switch/skills/`，Codex/Claude/Gemini/Hermes 用软链指向）
+3. 重启 / 新开会话即可使用（整包语料自包含；复盘需 `INTERVIEW_WORKSPACE`，未设置时回退 `~/.interview-workbench`）
 
 ## 使用
 
@@ -66,19 +62,19 @@ project-mock-interview/
 
 ## 配套流水线（可选）
 
-数据源与生成工具位于 `~/桌面/面试文档裁切/`：
+数据源位于 `$INTERVIEW_WORKSPACE`（未设置时回退 `~/.interview-workbench`），生成工具已内嵌于 interview-bank-pipeline 的 `scripts/`：
 
 - **interview-bank-pipeline skill**：文档清洗分类（pipeline.py）+ Obsidian 知识图谱（concepts.yaml → export）+ GitHub 项目融合（repo_fuse.py fetch/match/finalize）
 - 新项目接入三步：`repo_fuse fetch <url>` → subagent 逐题作答 → `finalize` → 同步 references
 
 ## 设计缘起
 
-融合自 **agent-review-audit**（Antigravity 生态 243 题卡体系）的改进：答题框架蒸馏、学习路径边（prerequisites/downstream）、复习状态、代码诊断姿势；保留自研优势：概念级路由（非类目级）、项目证据锚点、复盘闭环、断链校验、语料同步机制。详细规格见 `docs/融合版改进说明.md`。
+融合自 **agent-review-audit**（Antigravity 生态原 243 题卡体系）的改进：答题框架蒸馏、学习路径边（prerequisites/downstream）、复习状态、代码诊断姿势；保留自研优势：概念级路由（非类目级）、项目证据锚点、复盘闭环、断链校验、语料同步机制。详细规格见 `docs/融合版改进说明.md`。
 
 ## 更新记录
 
 | 版本 | 内容 |
 |---|---|
 | v2.1.0 | 多 Agent 评审修复：复习状态外迁 vault、预算校准（≤20K/3 题）、四维打分模板与评分锚点、use_when 补齐、6 个作答锚点补全（**最终版**） |
-| v2.0.0 | 融合版：240 题答题框架蒸馏、434 条学习路径边、复习状态机、诊断模式 |
+| v2.0.0 | 融合版：公共题库答题框架蒸馏、学习路径、复习状态机、诊断模式 |
 | v1.0.0 | 初始版：题库 + 三项目档案 + 拷问流程 |

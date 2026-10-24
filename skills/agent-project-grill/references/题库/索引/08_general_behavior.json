@@ -1,0 +1,152 @@
+{
+ "category": "general_behavior",
+ "title": "通用综合、行为面与反问面试题索引",
+ "description": "涵盖国企特别版、团队反问、业务反问、综合行为面、技术成长与职业规划沟通。",
+ "count": 16,
+ "items": [
+  {
+   "id": "L82",
+   "line": 82,
+   "text": "单 Agent 系统与多 Agent 系统（Multi-Agent）各自的优缺点是什么？在实际业务中，如何评估和选择使用单 Agent 还是多 Agent 架构？",
+   "major": "二_Agent应用开发相关",
+   "minor": "1.agent宏观认知",
+   "tag": "传统区别",
+   "depth": null
+  },
+  {
+   "id": "L120",
+   "line": 120,
+   "text": "在评测 RAG 时，测试集通常是如何构建的？采用 AI 生成数据与人工标注数据集各自的优缺点是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L228",
+   "line": 228,
+   "text": "hard在高并发场景下，团队实践过哪些具体的推理加速手段？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L300",
+   "line": 300,
+   "text": "混合专家模型（MoE）与传统稠密（Dense）Transformer 架构的核心区别和优缺点是什么？",
+   "major": "三_transformer相关",
+   "minor": "三_transformer相关",
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L330",
+   "line": 330,
+   "text": "请对比Redis的两种持久化机制（RDB和AOF）的优缺点，并解释混合持久化的原理。在系统宕机重启后，数据恢复的优先级应该如何选择？请介绍Redis的过期键删除策略。在已经存在惰性删除和定期删除的情况下，为什么还需要配置内存淘汰策略？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Redis",
+   "depth": null
+  },
+  {
+   "id": "L334",
+   "line": 334,
+   "text": "请对比分析 Redis 的 RDB 和 AOF 持久化机制的工作原理及优缺点。",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Redis",
+   "depth": null
+  },
+  {
+   "id": "L389",
+   "line": 389,
+   "text": "了解团队当前AI Agent的实际落地场景、业务价值以及未来的技术迭代规划。",
+   "major": "反问",
+   "minor": "反问",
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L392",
+   "line": 392,
+   "text": "为什么去互联网实习，最后却来我们国企？",
+   "major": "国企特别版",
+   "minor": "国企特别版",
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L454",
+   "line": 454,
+   "text": "JVM 内存分区、CMS 和 G1 垃圾回收流程及优缺点是什么？线上如何判断 GC 瓶颈并调优？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": 3
+  },
+  {
+   "id": "L469",
+   "line": 469,
+   "text": "介绍你负责的核心模块、项目功能点和完整架构；如何用证据讲清最难技术问题的排查与收获？",
+   "major": "国企特别版",
+   "minor": "国企特别版",
+   "tag": "项目表达/行为面",
+   "depth": 3
+  },
+  {
+   "id": "L470",
+   "line": 470,
+   "text": "HR 面如何回答稳定性、到岗、岗位意愿、常用 App、AI 使用和 Codex 解决实际问题？",
+   "major": "国企特别版",
+   "minor": "国企特别版",
+   "tag": "项目表达/行为面",
+   "depth": 3
+  },
+  {
+   "id": "L505",
+   "line": 505,
+   "text": "到岗时间和实习时长？",
+   "major": "国企特别版",
+   "minor": "国企特别版",
+   "tag": "HR/到岗",
+   "depth": 2
+  },
+  {
+   "id": "L514",
+   "line": 514,
+   "text": "项目从 0 到 1 做了多久？",
+   "major": "国企特别版",
+   "minor": "国企特别版",
+   "tag": "项目周期/项目表达",
+   "depth": 2
+  },
+  {
+   "id": "L531",
+   "line": 531,
+   "text": "你是如何在实习中有感悟并且去优化你的个人项目的（因为自我介绍提到了）？",
+   "major": "国企特别版",
+   "minor": "国企特别版",
+   "tag": "实习感悟/项目优化",
+   "depth": 3
+  },
+  {
+   "id": "L538",
+   "line": 538,
+   "text": "聊聊你实习的项目遇到的技术问题并如何解决的。",
+   "major": "国企特别版",
+   "minor": "国企特别版",
+   "tag": "实习项目/问题解决",
+   "depth": 3
+  },
+  {
+   "id": "L590",
+   "line": 590,
+   "text": "操作系统的进程间通信（IPC）有哪些常见方式？各有什么优缺点与性能差异？在现代分布式或高并发服务端架构中，进程间如何高效交互？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "OS/IPC/进程间通信",
+   "depth": 3
+  }
+ ]
+}

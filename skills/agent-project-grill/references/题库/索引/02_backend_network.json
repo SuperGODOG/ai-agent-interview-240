@@ -1,0 +1,116 @@
+{
+ "category": "backend_network",
+ "title": "后端基建 · 计算机网络面试题索引",
+ "description": "涵盖 TCP/IP 协议栈、三次握手/四次挥手、HTTP/1.1 与 HTTP/2、SSE 流式、WebSocket、Nginx 反向代理与负载均衡。",
+ "count": 12,
+ "items": [
+  {
+   "id": "L319",
+   "line": 319,
+   "text": "请介绍 HTTP 状态码 503 和 504 的具体含义、区别及常见产生原因。",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "408 and SQL",
+   "depth": null
+  },
+  {
+   "id": "L320",
+   "line": 320,
+   "text": "请详细说明 TCP 三次握手的具体过程及设计原理。",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "408 and SQL",
+   "depth": null
+  },
+  {
+   "id": "L411",
+   "line": 411,
+   "text": "RPC 框架主要解决什么问题？一次 RPC 从代理、服务发现、编码、网络、解码到响应的完整流程是什么？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "RPC/网络",
+   "depth": 3
+  },
+  {
+   "id": "L412",
+   "line": 412,
+   "text": "TCP 为什么会出现半包和粘包？如何用长度字段、固定长度或分隔符设计报头协议？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "RPC/网络",
+   "depth": 3
+  },
+  {
+   "id": "L413",
+   "line": 413,
+   "text": "JDK 动态代理和 CGLIB 有什么区别？同类方法调用 @Transactional 方法为什么可能不生效？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "RPC/网络",
+   "depth": 3
+  },
+  {
+   "id": "L415",
+   "line": 415,
+   "text": "RPC 或服务调用的超时、重试、熔断和降级如何设计？如何避免重试风暴和非幂等重复执行？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "RPC/网络",
+   "depth": 3
+  },
+  {
+   "id": "L442",
+   "line": 442,
+   "text": "MCP 的 stdio 与 Streamable HTTP 在连接、生命周期、并发和部署上有什么区别？Streamable HTTP 是否等同于音视频流？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Skill",
+   "depth": 3
+  },
+  {
+   "id": "L457",
+   "line": 457,
+   "text": "TCP 和 UDP 有什么区别？TCP 如何可靠传输并进行拥塞避免，UDP 适合什么场景？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "408 and SQL",
+   "depth": 3
+  },
+  {
+   "id": "L559",
+   "line": 559,
+   "text": "负责负载均衡的 Nginx 挂了怎么办？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Nginx/高可用",
+   "depth": 3
+  },
+  {
+   "id": "L568",
+   "line": 568,
+   "text": "正向代理和反向代理有什么区别？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "代理/网络",
+   "depth": 2
+  },
+  {
+   "id": "L569",
+   "line": 569,
+   "text": "如何写一个脚本查询 Nginx AccessLog 中特定的状态码或者字段？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Nginx日志/脚本",
+   "depth": 3
+  },
+  {
+   "id": "L581",
+   "line": 581,
+   "text": "能介绍一下 SSE 是什么吗？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "网络协议/SSE流式",
+   "depth": 2
+  }
+ ]
+}

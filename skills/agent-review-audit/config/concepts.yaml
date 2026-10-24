@@ -1,0 +1,1392 @@
+concept_react_loop:
+  name: ReAct与思考-行动-观察循环
+  keywords:
+  - react
+  - execution loop
+  - 思考-行动-观察
+  - 推理机制
+  cards:
+  - Q001
+  - Q002
+  - Q003
+  - Q056
+  - Q369
+  - Q377
+concept_plan_and_execute:
+  name: Plan-and-Execute规划执行范式
+  keywords:
+  - plan-and-execute
+  - plan-and-solve
+  - 规划执行
+  - 步骤拆解
+  cards:
+  - Q001
+  - Q065
+  - Q064
+  - Q056
+  - Q127
+  - Q017
+  - Q369
+concept_reflection:
+  name: Reflection自我反思机制
+  keywords:
+  - reflection
+  - 自我反思
+  - 反思范式
+  cards:
+  - Q065
+  - Q157
+  - Q109
+  - Q180
+  - Q183
+  - Q031
+  - Q377
+concept_tree_of_thoughts:
+  name: Tree of Thoughts (ToT)思维树
+  keywords:
+  - tot
+  - tree of thoughts
+  - 思维树
+  - 搜索树
+  cards:
+  - Q064
+  - Q189
+  - Q190
+  - Q085
+  - Q086
+  - Q002
+concept_multi_agent_topo:
+  name: Multi-Agent拓扑与协同
+  keywords:
+  - multi-agent
+  - 多agent
+  - 编排拓扑
+  - 多智能体
+  - 协同
+  cards:
+  - Q004
+  - Q006
+  - Q015
+  - Q016
+  - Q055
+  - Q057
+  - Q058
+  - Q129
+  - Q131
+  - Q133
+  - Q134
+  - Q349
+  - Q376
+concept_master_sub:
+  name: Master-Sub主从代理架构
+  keywords:
+  - master-sub
+  - 主从代理
+  - 主从架构
+  cards:
+  - Q015
+  - Q126
+  - Q129
+  - Q130
+  - Q004
+  - Q016
+concept_langgraph_workflow:
+  name: LangGraph与状态机工作流
+  keywords:
+  - langgraph
+  - autogen
+  - 状态机
+  - 工作流编排
+  - node
+  - edge
+  - 框架选型
+  - 框架比较
+  cards:
+  - Q131
+  - Q004
+  - Q006
+  - Q132
+  - Q116
+  - Q152
+  - Q056
+  - Q343
+concept_ai_coding_arch:
+  name: AI Coding工具底层架构
+  keywords:
+  - ai coding
+  - claude code
+  - copilot workspace
+  - agentic workflow
+  - 核心代码
+  - 大项目
+  - AI辅助开发
+  cards:
+  - Q005
+  - Q007
+  - Q008
+  - Q009
+  - Q017
+  - Q022
+  - Q024
+  - Q050
+  - Q059
+  - Q115
+  - Q117
+  - Q118
+  - Q119
+  - Q124
+  - Q126
+  - Q127
+  - Q128
+  - Q137
+  - Q139
+  - Q143
+  - Q153
+  - Q155
+  - Q158
+  - Q161
+  - Q163
+  - Q164
+  - Q167
+  - Q168
+  - Q170
+  - Q171
+  - Q175
+  - Q176
+  - Q182
+  - Q206
+  - Q242
+  - Q351
+  - Q352
+  - Q356
+concept_short_long_memory:
+  name: 短/长期与摘要记忆分层
+  keywords:
+  - short-term memory
+  - long-term memory
+  - summary memory
+  - 短期记忆
+  - 长期记忆
+  - 上下文窗口
+  - token预算
+  cards:
+  - Q011
+  - Q012
+  - Q013
+  - Q100
+  - Q104
+  - Q105
+  - Q106
+  - Q108
+  - Q109
+  - Q111
+  - Q130
+  - Q345
+  - Q370
+concept_memory_persistence:
+  name: 记忆持久化与Schema设计
+  keywords:
+  - memory schema
+  - 存储介质
+  - 状态持久化
+  - recall & load
+  cards:
+  - Q013
+  - Q012
+  - Q106
+  - Q111
+  - Q108
+  - Q133
+  - Q345
+  - Q100
+concept_memory_router:
+  name: 记忆路由与指代消解
+  keywords:
+  - 指代消解
+  - coreference
+  - llm-routed
+  - rule-based router
+  - 记忆路由
+  cards:
+  - Q010
+  - Q014
+  - Q018
+  - Q099
+  - Q101
+  - Q102
+  - Q103
+  - Q107
+  - Q110
+  - Q112
+  - Q113
+  - Q114
+  - Q174
+  - Q220
+concept_pdf_formula_parser:
+  name: 复杂PDF/表格/公式解析
+  keywords:
+  - pdf解析
+  - 表格解析
+  - 公式解析
+  - 扫描件解析
+  cards:
+  - Q041
+  - Q077
+  - Q037
+  - Q072
+  - Q075
+  - Q042
+concept_semantic_chunking:
+  name: 语义边界Chunking切分
+  keywords:
+  - chunking
+  - semantic chunking
+  - 文档切分
+  - 语义边界
+  cards:
+  - Q037
+  - Q041
+  - Q042
+concept_hybrid_search:
+  name: Dense+Sparse/BM25混合检索
+  keywords:
+  - hybrid search
+  - bm25
+  - dense retrieval
+  - sparse retrieval
+  - 混合检索
+  - RRF
+  - reciprocal rank fusion
+  - 多路召回
+  - 重排序
+  cards:
+  - Q038
+  - Q039
+  - Q087
+  - Q088
+  - Q184
+  - Q188
+  - Q373
+  - Q398
+concept_topk_truncation:
+  name: Top-K截断与召回/幻觉Trade-off
+  keywords:
+  - top-k
+  - 截断阈值
+  - 召回率
+  - 生成幻觉
+  cards:
+  - Q039
+  - Q184
+  - Q087
+  - Q088
+  - Q128
+  - Q073
+concept_metadata_auto_retrieval:
+  name: 元数据过滤与Auto-retrieval
+  keywords:
+  - metadata
+  - 元数据
+  - auto-retrieval
+  - 硬过滤
+  - 增量更新
+  cards:
+  - Q043
+  - Q044
+concept_post_guardrails:
+  name: RAG事实性与后置Guardrails
+  keywords:
+  - guardrails
+  - post-generation
+  - 后置校验
+  - 一致性
+  - factuality
+  cards:
+  - Q020
+  - Q021
+  - Q023
+  - Q040
+  - Q045
+  - Q046
+  - Q047
+  - Q048
+  - Q049
+  - Q085
+  - Q086
+  - Q089
+  - Q090
+  - Q097
+  - Q098
+  - Q123
+  - Q125
+  - Q135
+  - Q136
+  - Q166
+  - Q177
+  - Q185
+  - Q186
+  - Q187
+  - Q189
+  - Q190
+  - Q191
+  - Q192
+  - Q193
+  - Q194
+  - Q195
+concept_query_rewriting:
+  name: Query改写与延迟优化
+  keywords:
+  - query rewriting
+  - query改写
+  - 延迟优化
+  - latency
+  cards:
+  - Q020
+  - Q021
+  - Q166
+  - Q121
+  - Q122
+  - Q019
+concept_mcp_core:
+  name: MCP模型上下文协议核心标准
+  keywords:
+  - mcp
+  - model context protocol
+  - 模型上下文协议
+  - 标准接口
+  cards:
+  - Q051
+  - Q052
+  - Q066
+  - Q067
+  - Q068
+  - Q069
+  - Q070
+  - Q071
+  - Q072
+  - Q073
+  - Q074
+  - Q075
+  - Q076
+  - Q077
+  - Q078
+  - Q079
+  - Q080
+  - Q081
+  - Q082
+  - Q083
+  - Q084
+concept_tool_calling_action:
+  name: Tool Calling与Action原语
+  keywords:
+  - tool calling
+  - action原语
+  - 处置指令
+  - 工具调用
+  cards:
+  - Q053
+  - Q091
+  - Q092
+  - Q093
+  - Q094
+  - Q095
+  - Q096
+concept_action_rollback:
+  name: 事务回滚与操作撤销机制
+  keywords:
+  - 事务回滚
+  - 操作撤销
+  - rollback
+  cards:
+  - Q054
+concept_cross_service_orchestration:
+  name: 跨域异构服务编排
+  keywords:
+  - 异构服务
+  - 跨域编排
+  - 服务编排
+  cards:
+  - Q055
+  - Q141
+  - Q147
+  - Q095
+  - Q148
+  - Q149
+  - Q054
+concept_harness_benchmark:
+  name: Harness自动化评估与Benchmark
+  keywords:
+  - harness
+  - benchmark
+  - 测试基准
+  - 沙箱
+  cards:
+  - Q025
+  - Q026
+  - Q027
+  - Q028
+  - Q120
+  - Q156
+  - Q169
+  - Q172
+concept_eval_metrics:
+  name: Recall@K/Precision@K/Latency/Cost评估
+  keywords:
+  - recall@k
+  - precision@k
+  - latency
+  - token cost
+  - tool call accuracy
+  cards:
+  - Q027
+  - Q028
+  - Q026
+  - Q184
+  - Q128
+  - Q171
+  - Q175
+  - Q181
+concept_trace_attribution:
+  name: Badcase全链路Trace归因
+  keywords:
+  - badcase
+  - trace
+  - 归因
+  - 定位节点
+  cards:
+  - Q031
+  - Q165
+  - Q167
+  - Q180
+  - Q032
+  - Q176
+  - Q183
+concept_data_flywheel:
+  name: 用户反馈与数据飞轮
+  keywords:
+  - data flywheel
+  - 数据飞轮
+  - implicit feedback
+  - explicit feedback
+  - 抽检
+  cards:
+  - Q029
+  - Q030
+  - Q031
+  - Q032
+  - Q033
+  - Q034
+  - Q035
+  - Q036
+  - Q157
+  - Q165
+  - Q179
+  - Q180
+  - Q183
+concept_prompt_see_saw:
+  name: Prompt迭代与跷跷板效应
+  keywords:
+  - 跷跷板效应
+  - prompt工程
+  - case回退
+  cards:
+  - Q033
+  - Q036
+  - Q034
+  - Q085
+  - Q086
+  - Q156
+  - Q183
+  - Q378
+concept_dspy_ape:
+  name: DSPy与自动Prompt优化(APE)
+  keywords:
+  - dspy
+  - ape
+  - 自动prompt生成
+  - 调优
+  cards:
+  - Q036
+  - Q156
+  - Q158
+  - Q034
+  - Q033
+  - Q085
+concept_sft_dpo_alignment:
+  name: SFT/DPO/Reward Model(RM)对齐
+  keywords:
+  - sft
+  - dpo
+  - reward model
+  - rm
+  - 偏好对齐
+  cards:
+  - Q159
+  - Q173
+  - Q196
+  - Q197
+  - Q198
+  - Q199
+  - Q200
+  - Q201
+  - Q202
+  - Q203
+  - Q204
+concept_high_concurrency_limiter:
+  name: 高并发限流/熔断与降级
+  keywords:
+  - 高并发
+  - 限流
+  - 熔断
+  - 降级
+  - 点赞/计数
+  - 滑动窗口
+  - 令牌桶
+  - 漏桶
+  - Worker
+  - checkpoint
+  - 幂等
+  - 任务恢复
+  - 双重检查锁
+  - 分布式锁
+  - QPS
+  - 缓存击穿
+  - 慢查询
+  - 单线程轮询
+  - 任务调度
+  - 多实例
+  - CPU
+  - OutOfMemory
+  - OOM
+  - Nginx
+  - 分片上传
+  - 断点续传
+  - 文件服务器
+  - 代码沙箱
+  cards:
+  - Q060
+  - Q061
+  - Q062
+  - Q063
+  - Q064
+  - Q065
+  - Q116
+  - Q132
+  - Q138
+  - Q141
+  - Q142
+  - Q144
+  - Q147
+  - Q152
+  - Q154
+  - Q160
+  - Q207
+  - Q212
+  - Q225
+  - Q241
+  - Q334
+  - Q344
+  - Q359
+  - Q361
+  - Q362
+  - Q363
+  - Q389
+  - Q390
+  - Q392
+  - Q393
+  - Q403
+  - Q406
+  - Q407
+  - Q409
+  - Q410
+  - Q443
+  - Q444
+  - Q412
+  - Q436
+  - Q437
+  - Q445
+concept_prefix_caching:
+  name: Prefix Caching前缀缓存结构优化
+  keywords:
+  - prefix caching
+  - 前缀缓存
+  - 缓存命中率
+  cards:
+  - Q019
+  - Q121
+  - Q122
+  - Q146
+  - Q162
+  - Q181
+  - Q228
+  - Q229
+  - Q230
+  - Q231
+  - Q232
+  - Q233
+  - Q234
+  - Q235
+  - Q236
+  - Q237
+  - Q238
+  - Q239
+  - Q240
+concept_lru_algorithm:
+  name: LRU Cache与核心基础数据结构
+  keywords:
+  - lru
+  - 缓存约束
+  - 双蛋问题
+  - 合并数组
+  - 算法
+  cards:
+  - Q140
+  - Q145
+  - Q148
+  - Q149
+  - Q150
+  - Q151
+  - Q178
+  - Q205
+  - Q208
+  - Q209
+  - Q210
+  - Q211
+  - Q213
+  - Q214
+  - Q215
+  - Q216
+  - Q217
+  - Q218
+  - Q219
+  - Q221
+  - Q222
+  - Q223
+  - Q224
+  - Q226
+  - Q227
+concept_career_interview:
+  name: 团队项目落地与职业反问
+  keywords:
+  - 反问
+  - 落地场景
+  - 业务价值
+  - 国企
+  cards:
+  - Q243
+concept_flash_sale_batch:
+  name: 秒杀库存与高并发扣减
+  keywords:
+  - 秒杀
+  - 秒杀系统
+  - 库存
+  - 分桶库存
+  - 预扣
+  - 超卖
+  cards:
+  - Q244
+  - Q245
+  - Q246
+  - Q247
+  - Q248
+  - Q249
+  - Q250
+  - Q252
+  - Q258
+  - Q260
+  - Q322
+  - Q323
+  - Q324
+  - Q366
+  - Q367
+  - Q368
+concept_rabbitmq_reliability_batch:
+  name: RabbitMQ与可靠消息
+  keywords:
+  - RabbitMQ
+  - Quorum Queue
+  - Producer
+  - Exchange
+  - Queue
+  - Consumer
+  - Outbox
+  - PendingList
+  - Kafka
+  - Partition
+  - 分区
+  - 消费者组
+  - consumer group
+  - 消息重试
+  - Celery
+  - 任务队列
+  - Worker
+  cards:
+  - Q251
+  - Q254
+  - Q255
+  - Q256
+  - Q257
+  - Q324
+  - Q325
+  - Q359
+  - Q368
+  - Q402
+concept_rpc_service_batch:
+  name: RPC、服务发现与容错
+  keywords:
+  - RPC
+  - 序列化
+  - 半包
+  - 粘包
+  - 动态代理
+  - 注册中心
+  - watch
+  - 假死
+  - 重试
+  - 服务发现
+  - 微服务
+  cards:
+  - Q262
+  - Q263
+  - Q264
+  - Q265
+  - Q266
+  - Q267
+concept_rag_engineering_batch:
+  name: RAG检索与代码知识库
+  keywords:
+  - RAG
+  - Embedding
+  - 向量数据库
+  - 余弦相似度
+  - BM25
+  - 关键词
+  - 混合召回
+  - Chunk
+  - 切分
+  - JavaParser
+  - MyBatis
+  - Code RAG
+  - LangChain4j
+  - 智能客服
+  - 商家
+  - 事实性
+  - 准确性
+  - HitRate
+  - MRR
+  - 消融实验
+  - 多模态
+  - 召回发散
+  - 向量数据库选型
+  - 向量模型
+  - 幻觉
+  - 普通检索
+  - 向量检索
+  - PostgreSQL
+  - Rerank
+  - 精排
+  - Cross-Encoder
+  cards:
+  - Q269
+  - Q270
+  - Q271
+  - Q272
+  - Q273
+  - Q274
+  - Q275
+  - Q276
+  - Q339
+  - Q340
+  - Q347
+  - Q348
+  - Q371
+  - Q372
+  - Q373
+  - Q378
+  - Q379
+  - Q394
+  - Q395
+  - Q396
+  - Q397
+  - Q398
+  - Q404
+  - Q433
+concept_agent_state_tools_batch:
+  name: Agent状态、工具与多智能体
+  keywords:
+  - Agent
+  - 会话
+  - sessionID
+  - ReAct
+  - Tool
+  - A2A
+  - SubAgent
+  - 决策树
+  - Workflow
+  - MCP
+  - 死循环
+  - Worker
+  - checkpoint
+  - 幂等
+  - 工具预算
+  - 权限确认
+  cards:
+  - Q280
+  - Q281
+  - Q282
+  - Q283
+  - Q284
+  - Q285
+  - Q286
+  - Q287
+  - Q288
+  - Q289
+  - Q292
+  - Q293
+  - Q294
+  - Q295
+  - Q350
+  - Q353
+concept_agent_eval_batch:
+  name: Agent评测、Trace与成本
+  keywords:
+  - 评测
+  - Evaluation
+  - Case
+  - Grader
+  - Trace
+  - Hit@1
+  - Hit@3
+  - HitRate
+  - MRR
+  - Fake LLM
+  - Harness
+  - 高并发测试
+  - Mock
+  - 数据飞轮
+  - 成本
+  - Token
+  cards:
+  - Q277
+  - Q278
+  - Q279
+  - Q290
+  - Q291
+  - Q346
+  - Q347
+  - Q348
+  - Q374
+  - Q379
+  - Q397
+  - Q399
+  - Q410
+  - Q443
+  - Q444
+concept_java_batch:
+  name: Java集合、并发与JVM
+  keywords:
+  - HashMap
+  - ConcurrentHashMap
+  - synchronized
+  - volatile
+  - ThreadLocal
+  - CompletableFuture
+  - JVM
+  - CMS
+  - G1
+  - 泛型
+  - Spring
+  - Executor
+  - 线程池
+  - Spark
+  - 进程
+  - 线程
+  - ReentrantLock
+  - JMM
+  - 内存屏障
+  - happens-before
+  - 扰动函数
+  - OOM
+  cards:
+  - Q268
+  - Q302
+  - Q303
+  - Q304
+  - Q305
+  - Q306
+  - Q307
+  - Q365
+  - Q375
+  - Q391
+  - Q392
+  - Q407
+  - Q408
+  - Q411
+  - Q412
+  - Q436
+  - Q437
+  - Q445
+  - Q413
+  - Q441
+  - Q442
+concept_mysql_redis_batch:
+  name: MySQL事务索引与Redis基础
+  keywords:
+  - Redis
+  - MULTI
+  - EXEC
+  - WATCH
+  - BigKey
+  - ZSet
+  - MySQL
+  - 隔离级别
+  - 幻读
+  - Redo Log
+  - Undo Log
+  - Binlog
+  - B+Tree
+  - 联合索引
+  - 缓存
+  - 缓存击穿
+  - 缓存穿透
+  - 缓存雪崩
+  - Caffeine
+  - 逻辑过期
+  - 缓存一致性
+  - 多级缓存
+  - 一致性哈希
+  - slot
+  - 持久化
+  - RDB
+  - 主从同步
+  - 慢查询
+  - 深分页
+  - 游标分页
+  - 延迟关联
+  - EXPLAIN
+  - 覆盖索引
+  - 索引失效
+  cards:
+  - Q253
+  - Q259
+  - Q261
+  - Q296
+  - Q297
+  - Q298
+  - Q299
+  - Q300
+  - Q301
+  - Q326
+  - Q327
+  - Q328
+  - Q329
+  - Q330
+  - Q331
+  - Q332
+  - Q333
+  - Q335
+  - Q336
+  - Q337
+  - Q338
+  - Q341
+  - Q342
+  - Q357
+  - Q358
+  - Q359
+  - Q360
+  - Q361
+  - Q362
+  - Q363
+  - Q382
+  - Q383
+  - Q384
+  - Q385
+  - Q386
+  - Q387
+  - Q405
+  - Q414
+  - Q415
+  - Q416
+  - Q417
+  - Q434
+  - Q435
+concept_network_batch:
+  name: 网络、消息与基础设施
+  keywords:
+  - TCP
+  - UDP
+  - Elasticsearch
+  - 软连接
+  - 阻塞队列
+  - 消息队列
+  - Nginx
+  - 分片上传
+  - 断点续传
+  - 文件服务器
+  - 代码沙箱
+  - 正向代理
+  - 反向代理
+  - AccessLog
+  - 协程
+  - FastAPI
+  - asyncio
+  - IPC
+  - 进程间通信
+  cards:
+  - Q308
+  - Q309
+  - Q310
+  - Q418
+  - Q419
+  - Q439
+  - Q440
+concept_algorithm_batch:
+  name: 算法与手撕补充
+  keywords:
+  - 摩尔投票
+  - 最近公共祖先
+  - 序列化
+  - 层序遍历
+  - 编辑距离
+  - LC667
+  - 最大数
+  - 最长无重复
+  - 超时控制
+  - LRU
+  - 快速选择
+  - 反转链表
+  - 多叉树
+  cards:
+  - Q311
+  - Q312
+  - Q313
+  - Q314
+  - Q315
+  - Q316
+  - Q317
+  - Q318
+  - Q319
+  - Q380
+  - Q400
+  - Q420
+  - Q446
+  - Q447
+  - Q448
+concept_project_story_batch:
+  name: 项目表达与行为面
+  keywords:
+  - 项目功能
+  - 核心模块
+  - 最难问题
+  - HR
+  - Codex
+  - 岗位
+  - 到岗
+  - 实习
+  - 输入输出
+  - 实习感悟
+  - 项目优化
+  - 技术问题
+  - AI工具
+  cards:
+  - Q320
+  - Q321
+  - Q350
+  - Q354
+  - Q355
+  - Q356
+  - Q364
+  - Q375
+  - Q381
+  - Q388
+  - Q399
+  - Q401
+concept_cuda_graph_tp_hang:
+  name: CUDA Graph与TP并行通信
+  keywords:
+  - cuda graph
+  - 通信flag
+  - nccl graph
+  - graph capture
+  - 融合通信
+  - tp卡死
+  cards:
+  - Q450
+  - Q449
+concept_moe_router_ep:
+  name: MoE架构Router Replay与EP通信
+  keywords:
+  - router replay
+  - expert parallelism
+  - moe
+  - ep通信
+  - token dispatch
+  - all-to-all
+  cards:
+  - Q452
+  - Q188
+concept_deterministic_attention_backward:
+  name: 滑窗Attention与确定性反向计算
+  keywords:
+  - deterministic backward
+  - sliding window attention
+  - dQ累加
+  - 确定性反向
+  - 确定性计算
+  - atomicadd
+  cards:
+  - Q453
+  - Q451
+concept_gpu_operator_benchmark:
+  name: 国产GPU算子Benchmark与性能评测
+  keywords:
+  - 国产gpu benchmark
+  - gpu benchmark
+  - 国产加速卡
+  - 算子benchmark
+  - 国产gpu
+  - 国产gpu算子
+  - 算子评测
+  - fair baseline
+  cards:
+  - Q454
+  - Q455
+concept_kernel_tooling_cute_triton:
+  name: 算子开发工具与Triton/CuTe DSL选型
+  keywords:
+  - triton
+  - cute dsl
+  - kernel选型
+  - cute
+  - 算子优化
+  cards:
+  - Q451
+  - Q449
+concept_tf_operator_delivery:
+  name: TensorFlow算子工程交付与场景适配
+  keywords:
+  - tensorflow算子
+  - tensorflow 算子
+  - 算子适配
+  - 算子交付
+  - 团队职责
+  cards:
+  - Q449
+  - Q451
+concept_hardware_arch_profiling:
+  name: AI加速卡硬件架构与通信Profiling
+  keywords:
+  - 显存带宽
+  - 硬件架构
+  - roofline
+  - 卡间互联
+  - nvlink
+  - communication-bound
+  cards:
+  - Q455
+  - Q454
+concept_agent_loop_coding:
+  name: Agent Loop手撕实现与控制流鲁棒性
+  keywords:
+  - agent loop
+  - 手写agent loop
+  - 工具注册
+  - read_file
+  - 大文件读取
+  - 参数错误
+  - 退出反思
+  - 任务完成判断
+  - 独立judge
+  cards:
+  - Q472
+  - Q473
+  - Q474
+concept_shopping_reward_grpo:
+  name: 电商Shopping Agent奖励打分与GRPO过程奖励
+  keywords:
+  - shopping reward
+  - grpo过程奖励
+  - grpo reward
+  - 中间过程奖励
+  - reward打分
+  - 奖励打分
+  - 奖励函数
+  - 步惩罚
+  - reward
+  - shopping reward grpo
+  - grpo
+  cards:
+  - Q461
+  - Q468
+  - Q463
+concept_shopping_budget_truncation:
+  name: Shopping Agent 35步预算与搜索截断
+  keywords:
+  - 35步预算
+  - 第10个商品
+  - 35步
+  - 搜索截断
+  - 目标商品排在第10
+  - 预算截断
+  cards:
+  - Q467
+  - Q464
+concept_agent_loop_param_validation:
+  name: Agent Loop工具注册与参数校验容错
+  keywords:
+  - 参数校验
+  - 参数错误处理
+  - 工具名称
+  - 参数错误
+  - 传入了错误参数
+  - 工具执行失败
+  - 参数错误
+  cards:
+  - Q474
+  - Q473
+concept_agent_loop_large_file:
+  name: Agent read_file大文件防爆与按需检索
+  keywords:
+  - read_file
+  - 大文件读取
+  - 十几mb
+  - 十几mb的小说
+  - 文件非常大
+  - 长文本文件
+  cards:
+  - Q475
+  - Q473
+concept_agent_loop_premature_exit:
+  name: Agent Loop提前退出反思与独立Judge验证
+  keywords:
+  - 提前退出
+  - 输出结束未完成
+  - 未完成而输出结束
+  - 帮助它反思
+  - 退出反思
+  - 独立judge
+  - 任务是否真正完成
+  - 另一个模型
+  cards:
+  - Q476
+  - Q478
+  - Q477
+concept_shopping_agent_workflow:
+  name: 电商Shopping Agent任务流与交互架构
+  keywords:
+  - shopping agent
+  - 购物agent
+  - 电商agent
+  - webshop
+  - 商品搜索
+  - 购物模拟器
+  - simulator
+  cards:
+  - Q456
+  - Q458
+  - Q460
+concept_speculative_tree_attention:
+  name: 投机解码Tree Attention与动态树验证
+  keywords:
+  - tree attention mask
+  - tree attention
+  - attention mask
+  - eagle3 tree
+  - 动态树生成
+  - proposal verify accept
+  - 动态树
+  cards:
+  - Q486
+  - Q485
+  - Q484
+  - Q483
+concept_speculative_rejection_sampling:
+  name: 投机解码拒绝采样与分布保全
+  keywords:
+  - sampling rejection
+  - rejection sampling
+  - 拒绝采样
+  - 采样模式
+  - 保持分布
+  - 保证最终分布
+  cards:
+  - Q487
+  - Q486
+  - Q484
+concept_awq_fp8_calibration:
+  name: AWQ-FP8量化与校准数据选择
+  keywords:
+  - awq-fp8 calibration
+  - awq-fp8
+  - calibration data
+  - 校准数据
+  - 缩放尺度
+  - scale选择
+  cards:
+  - Q497
+  - Q496
+  - Q498
+concept_moe_router_quantization:
+  name: MoE量化与Router保留BF16
+  keywords:
+  - moe router bf16
+  - router bf16
+  - router保留bf16
+  - router精度
+  - moe quantization
+  - moe量化
+  cards:
+  - Q500
+  - Q496
+concept_speculative_framework_integration:
+  name: 投机解码草稿架构与推理引擎接入
+  keywords:
+  - eagle3
+  - dflash
+  - dspark
+  - speculative decoding
+  - 投机解码
+  - draft model
+  - 草稿模型
+  - sglang
+  - vllm speculative
+  cards:
+  - Q479
+  - Q480
+  - Q481
+  - Q482
+concept_speculative_performance_training:
+  name: 投机解码性能瓶颈与草稿模型训练
+  keywords:
+  - decode memory bound
+  - memory bound
+  - 显存带宽瓶颈
+  - 草稿模型训练
+  - draft model training
+  - 平均接受长度
+  - mal
+  - benchmark结果
+  cards:
+  - Q488
+  - Q489
+  - Q490
+  - Q491
+  - Q492
+  - Q493
+  - Q494
+  - Q495
+concept_llm_quantization_mechanisms:
+  name: 大模型量化机理与误差重构
+  keywords:
+  - awq
+  - gptq
+  - smoothquant
+  - weight error
+  - output reconstruction error
+  - 重构误差
+  - 模型量化
+  cards:
+  - Q496
+  - Q498
+  - Q499
+  - Q497

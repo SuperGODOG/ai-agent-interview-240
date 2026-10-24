@@ -1,0 +1,197 @@
+{
+ "category": "backend_java",
+ "title": "Java 核心、JVM 与并发编程面试题索引",
+ "description": "涵盖 HashMap 底层与位运算寻址、ConcurrentHashMap、线程池核心参数、JMM 内存模型、volatile 内存屏障、GC 垃圾收集与类加载机制。",
+ "count": 21,
+ "items": [
+  {
+   "id": "L337",
+   "line": 337,
+   "text": "请对比进程和线程的区别。为什么主流应用（如Java）更倾向于使用多线程而非多进程？线程上下文切换的开销主要体现在哪些方面？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L338",
+   "line": 338,
+   "text": "请详细阐述 Java 线程池的工作原理、核心参数以及任务拒绝策略。",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L339",
+   "line": 339,
+   "text": "请介绍JVM的内存区域划分，说明哪些区域是线程私有、哪些是线程共享的，并解释为什么程序计数器不会发生内存溢出（OOM）。在JVM堆内存的分代模型中，为什么新生代要设计成一个Eden区加两个Survivor区的结构？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L340",
+   "line": 340,
+   "text": "如果让你脱离 JDK 自行设计一个线程池组件，你会如何设计它的核心数据结构和任务调度流程？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L341",
+   "line": 341,
+   "text": "Java 中的 Class 文件是如何被加载到 JVM 中的？请详细描述类加载的双亲委派模型及生命周期。",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L347",
+   "line": 347,
+   "text": "在生产环境中，如果遇到堆内存溢出（OOM），通常的排查思路和步骤是什么？如何有效区分内存泄漏（Memory Leak）与内存溢出（Out of Memory）？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L349",
+   "line": 349,
+   "text": "请谈谈对 Spring Boot 框架核心设计思想的理解，是否深入阅读过其核心源码？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L350",
+   "line": 350,
+   "text": "请详细阐述 Spring Boot 的启动流程与自动装配原理（Auto-Configuration）。",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L351",
+   "line": 351,
+   "text": "在阅读 Spring Boot 源码的过程中，针对配置加载机制（如 PropertySource、Binder 等）的源码实现有何理解？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L353",
+   "line": 353,
+   "text": "在高并发或生产环境下使用 RocketMQ 时，遇到过哪些常见问题（如消息堆积、重复消费、消息丢失），如何解决？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L354",
+   "line": 354,
+   "text": "针对分布式消息传递，如何设计可靠的消息消费幂等性方案？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L417",
+   "line": 417,
+   "text": "CompletableFuture 三个方法并行时一个失败怎么办？线程池机制、超时、重试和降级如何设计？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": 3
+  },
+  {
+   "id": "L424",
+   "line": 424,
+   "text": "Code RAG 如何按 Java 方法、JavaParser AST 和 MyBatis XML 切 Chunk？Lua 等非 Java 文件怎么处理？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "tag": "RAG",
+   "depth": 3
+  },
+  {
+   "id": "L451",
+   "line": 451,
+   "text": "HashMap 扩容和红黑树转换条件是什么？并发为什么不安全，ConcurrentHashMap 如何保证安全？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": 3
+  },
+  {
+   "id": "L453",
+   "line": 453,
+   "text": "volatile 如何实现可见性？ThreadLocal 为什么可能内存泄漏，项目中如何规避？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": 3
+  },
+  {
+   "id": "L515",
+   "line": 515,
+   "text": "Spring AOP 有哪些应用场景？底层原理是什么？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Spring AOP",
+   "depth": 3
+  },
+  {
+   "id": "L525",
+   "line": 525,
+   "text": "了解 Spark 吗？用它做过什么？除了 Java、Spring Boot 还会哪些技术栈？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Spark/技术栈",
+   "depth": 2
+  },
+  {
+   "id": "L558",
+   "line": 558,
+   "text": "如果出现 OutOfMemory 应该怎么排查问题？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "OOM/JVM排障",
+   "depth": 4
+  },
+  {
+   "id": "L580",
+   "line": 580,
+   "text": "既然有 GC，为什么还会出现内存泄漏？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java/JVM内存泄漏",
+   "depth": 3
+  },
+  {
+   "id": "L591",
+   "line": 591,
+   "text": "HashMap 的容量为什么必须设计为 2 的幂次方？hash() 扰动函数与 (n - 1) & hash 寻址优化的底层原理是什么？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java/HashMap底层/位运算",
+   "depth": 3
+  },
+  {
+   "id": "L592",
+   "line": 592,
+   "text": "请详细阐述 Java 内存模型（JMM）：主内存与工作内存抽象、可见性与有序性保证、happens-before 原则，以及 volatile 底层如何通过内存屏障保证共享变量的可见性与禁止指令重排？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java/JMM/volatile/可见性",
+   "depth": 3
+  }
+ ]
+}

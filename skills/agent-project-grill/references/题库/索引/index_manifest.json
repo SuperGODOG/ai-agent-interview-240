@@ -1,0 +1,85 @@
+{
+  "total_questions": 497,
+  "total_items_in_bank": 557,
+  "version": "1.0.0",
+  "categories": {
+    "business_projects": {
+      "title": "业务线与项目实战面试题索引",
+      "count": 49,
+      "json_index": "01_business_projects.json",
+      "md_index": "01_business_projects.md"
+    },
+    "frontend": {
+      "title": "前端工程、渲染与页面交互题索引",
+      "count": 3,
+      "json_index": "02_frontend.json",
+      "md_index": "02_frontend.md"
+    },
+    "backend_os": {
+      "title": "后端基建 · 操作系统（OS）面试题索引",
+      "count": 11,
+      "json_index": "02_backend_os.json",
+      "md_index": "02_backend_os.md"
+    },
+    "backend_network": {
+      "title": "后端基建 · 计算机网络面试题索引",
+      "count": 12,
+      "json_index": "02_backend_network.json",
+      "md_index": "02_backend_network.md"
+    },
+    "backend_database": {
+      "title": "后端基建 · 数据库与存储面试题索引",
+      "count": 65,
+      "json_index": "02_backend_database.json",
+      "md_index": "02_backend_database.md"
+    },
+    "backend_mq": {
+      "title": "后端基建 · 消息队列与异步流面试题索引",
+      "count": 9,
+      "json_index": "02_backend_mq.json",
+      "md_index": "02_backend_mq.md"
+    },
+    "agent_harness": {
+      "title": "Agent Harness 核心设计与评测沙箱面试题索引",
+      "count": 69,
+      "json_index": "03_agent_harness.json",
+      "md_index": "03_agent_harness.md"
+    },
+    "agent_architecture": {
+      "title": "Agent 架构设计、工作流与编排面试题索引",
+      "count": 160,
+      "json_index": "04_agent_architecture.json",
+      "md_index": "04_agent_architecture.md"
+    },
+    "rag_retrieval": {
+      "title": "RAG 检索增强生成与知识库面试题索引",
+      "count": 41,
+      "json_index": "05_rag_retrieval.json",
+      "md_index": "05_rag_retrieval.md"
+    },
+    "backend_java": {
+      "title": "Java 核心、JVM 与并发编程面试题索引",
+      "count": 21,
+      "json_index": "06_backend_java.json",
+      "md_index": "06_backend_java.md"
+    },
+    "algorithms": {
+      "title": "算法与手撕代码题索引",
+      "count": 32,
+      "json_index": "07_algorithms.json",
+      "md_index": "07_algorithms.md"
+    },
+    "general_behavior": {
+      "title": "通用综合、行为面与反问面试题索引",
+      "count": 16,
+      "json_index": "08_general_behavior.json",
+      "md_index": "08_general_behavior.md"
+    },
+    "ai_infra": {
+      "title": "AI Infra · 高性能算子、分布式并行与加速卡架构面试题索引",
+      "count": 31,
+      "json_index": "09_ai_infra.json",
+      "md_index": "09_ai_infra.md"
+    }
+  }
+}

@@ -1,0 +1,1094 @@
+concepts:
+- name: MCP
+  aliases:
+  - 模型上下文协议
+  - Model Context Protocol
+  keywords:
+  - MCP
+  - 模型上下文协议
+  - Model Context Protocol
+  summary: 统一大模型与外部工具/数据源的标准化连接协议；本质是把工具接入从各家私有协议变成"标准接口 + 注册发现"，核心设计思想是协议层解耦。
+  related:
+  - Tool Calling 与 Function Calling
+  - 路由机制
+  - 技能体系
+- name: Tool Calling 与 Function Calling
+  aliases:
+  - 工具调用
+  - 函数调用
+  - FunctionCalling
+  - ToolCalling
+  keywords:
+  - 工具调用
+  - Tool Calling
+  - ToolCalling
+  - Function Calling
+  - FunctionCalling
+  - 函数调用
+  - 工具参数
+  - 工具链
+  - Confirmation
+  - 权限确认
+  - 调用次数
+  - 工具预算
+  - 工具滥用
+  - 副作用审计
+  summary: 模型按结构化 schema 生成调用外部工具的指令；关键难点是参数生成可靠性、纠错机制与跨域工具编排。
+  related:
+  - MCP
+  - 技能体系
+  - 意图识别与分发
+- name: RAG 与知识库
+  aliases:
+  - 检索增强生成
+  - 知识库
+  - 向量检索
+  keywords:
+  - RAG
+  - 检索增强生成
+  - 知识库
+  - 文档解析
+  - Chunking
+  - 切分
+  - 召回
+  - 知识图谱
+  - HitRate
+  - MRR
+  - 召回评估
+  - 消融实验
+  - 多模态
+  - 召回发散
+  - RRF
+  - 重排序
+  summary: 先检索后生成的架构范式；完整链路含解析/切分/索引/检索/生成与后校验，核心权衡是召回率与幻觉噪声的平衡。
+  related:
+  - Agentic RAG
+  - 混合检索与重排
+  - 向量数据库与 HNSW
+- name: Agentic RAG
+  aliases:
+  - 智能体检索增强
+  - 智能体 RAG
+  keywords:
+  - Agentic RAG
+  - 智能体检索
+  summary: 由 Agent 自主决策检索时机、改写与多轮检索的 RAG 演进形态；与传统 RAG 的本质区别在"检索成为可规划的决策动作"。
+  related:
+  - RAG 与知识库
+  - Query 改写
+  - Multi-Agent 多智能体协作
+- name: ReAct 与 Agent 工作流范式
+  aliases:
+  - ReAct
+  - 思考行动观察循环
+  - Execution Loop
+  keywords:
+  - ReAct
+  - Execution Loop
+  - 思考-行动-观察
+  - 工作流范式
+  - Plan-and-Execute
+  - Reflection
+  - 范式
+  summary: ReAct 是"思考-行动-观察"交替的推理范式；与 Plan-and-Execute、Reflection 等的区别在于决策粒度与规划方式。
+  related:
+  - LangGraph 与图编排
+  - 思维链与推理提示
+- name: 思维链与推理提示
+  aliases:
+  - CoT
+  - 思维链
+  - 思维树
+  - ToT
+  - GoT
+  - 思维图
+  keywords:
+  - 思维链
+  - CoT
+  - Chain of Thought
+  - 思维树
+  - ToT
+  - 思维图
+  - GoT
+  - 复杂推理
+  summary: 通过显式中间推理步骤提升复杂任务表现的技术族；CoT 线性、ToT 树状搜索、GoT 图结构，按任务复杂度递进。
+  related:
+  - Prompt Engineering
+  - ReAct 与 Agent 工作流范式
+- name: LangGraph 与图编排
+  aliases:
+  - LangGraph
+  - 图结构状态机
+  - Node/Edge/State
+  keywords:
+  - LangGraph
+  - Node
+  - Edge
+  - State
+  - 状态机
+  - 图结构
+  - 防死循环
+  - 循环结构
+  - 框架选型
+  - 框架比较
+  - 自研编排
+  summary: 以图（节点/边/状态）显式建模 Agent 链路的编排框架；价值在可控性、循环与条件分支、失败回退边界。
+  related:
+  - ReAct 与 Agent 工作流范式
+  - Multi-Agent 多智能体协作
+  - 路由机制
+- name: Multi-Agent 多智能体协作
+  aliases:
+  - 多Agent
+  - 多智能体
+  - 主从代理
+  - Master-Sub
+  keywords:
+  - Multi-Agent
+  - 多Agent
+  - 多智能体
+  - Master-Sub
+  - 主从代理
+  - 多Agent协同
+  - Agent分工
+  - 跨工具共享
+  - Worker
+  - A2A
+  - 消息协议
+  - Agent交互
+  summary: 多角色 Agent 分工协作的架构模式；核心问题是角色划分、通信协议、基座模型分配与任务路由。
+  related:
+  - LangGraph 与图编排
+  - 路由机制
+  - Agent 记忆机制
+- name: Agent 记忆机制
+  aliases:
+  - 记忆
+  - 长期记忆
+  - 短期记忆
+  - 情景记忆
+  - 记忆压缩
+  keywords:
+  - 记忆
+  - Memory
+  - 短期记忆
+  - 长期记忆
+  - 情景记忆
+  - 摘要记忆
+  - 记忆压缩
+  - 记忆检索
+  - 遗忘
+  - 上下文窗口
+  - token预算
+  - 超过窗口
+  summary: Agent 跨会话利用信息的能力分层：短/中/长期与情景记忆；实现难点在写入时机、检索召回、压缩与持久化选型。
+  related:
+  - 上下文管理与压缩
+  - 存储选型与状态持久化
+- name: Workflow 与自主 Agent 权衡
+  aliases:
+  - 工作流
+  - 自主智能体
+  - 确定性流程
+  keywords:
+  - Workflow
+  - 工作流
+  - Autonomous Agent
+  - 自主智能体
+  - 混合架构
+  - 确定性链路
+  - 自主决策
+  summary: 确定性流程与自主决策的架构取舍：可控/成本/可测 vs 灵活/泛化；生产系统常见两者的混合编排。
+  related:
+  - ReAct 与 Agent 工作流范式
+  - 意图识别与分发
+- name: 意图识别与分发
+  aliases:
+  - 意图分类
+  - Intent Recognition
+  keywords:
+  - 意图识别
+  - 意图分类
+  - Intent
+  - 复合意图
+  - 多任务输入
+  - Hit@3
+  summary: 入口语义理解层，决定后续链路；难点是复合意图拆分、规则/向量/LLM 三路的准确率-耗时权衡。
+  related:
+  - 路由机制
+  - 上下文管理与压缩
+- name: 路由机制
+  aliases:
+  - Router
+  - 语义路由
+  - 分层路由
+  - LLM Router
+  keywords:
+  - 路由
+  - Router
+  - 语义路由
+  - 分层路由
+  - 技能路由
+  - 冲突解决
+  - 分发
+  summary: 请求到技能/子Agent/数据源的决策分发；大规模技能库场景下仅靠向量检索不够，需规则+语义+LLM 混合路由。
+  related:
+  - 技能体系
+  - Multi-Agent 多智能体协作
+  - 意图识别与分发
+- name: 上下文管理与压缩
+  aliases:
+  - 上下文裁剪
+  - Context Compression
+  - 上下文窗口
+  keywords:
+  - 上下文
+  - Context
+  - 上下文压缩
+  - Context Compression
+  - 上下文裁剪
+  - 截断
+  - 拼接
+  - 长对话
+  - 上下文组装
+  - token预算
+  - 上下文窗口
+  summary: 在有限窗口内组织信息的策略：组装/截断/压缩/裁剪/渐进式披露；目标是在降 Token 成本的同时保决策准确度。
+  related:
+  - Agent 记忆机制
+  - 长上下文与注意力
+- name: Prompt Engineering
+  aliases:
+  - 提示词工程
+  - System Prompt
+  - 少样本
+  - Few-Shot
+  keywords:
+  - Prompt
+  - 提示词
+  - System Prompt
+  - 系统提示词
+  - Few-Shot
+  - 少样本
+  - 指令遵循
+  - 结构化输出
+  - 幻觉
+  - 输出约束
+  - 行为约束
+  summary: 通过输入设计稳定模型行为；基础原则+高级技术（Few-Shot/CoT/结构化输出）以及自动优化（APE/DSPy）。
+  related:
+  - 思维链与推理提示
+  - 评测体系与 Benchmark
+- name: Prompt Injection 与安全
+  aliases:
+  - 提示词注入
+  - 越狱
+  - Jailbreak
+  keywords:
+  - 提示词注入
+  - Prompt Injection
+  - 越狱
+  - Jailbreak
+  - 注入
+  - 安全风险
+  summary: 通过输入内容劫持模型指令的安全威胁；间接注入（经检索内容）比直接注入更隐蔽，需输入输出双向防御。
+  related:
+  - Guardrails 护栏
+  - Prompt Engineering
+- name: Guardrails 护栏
+  aliases:
+  - 安全护栏
+  - 内容复核
+  - 前置拦截
+  keywords:
+  - Guardrails
+  - 护栏
+  - 安全合规
+  - 内容质量复核
+  - 前置拦截
+  - Gatekeeping
+  - 风险控制
+  summary: 输入输出两侧的安全与质量闸门：内容审核、合规拦截、幻觉校验、人工介入点设计。
+  related:
+  - Prompt Injection 与安全
+  - 评测体系与 Benchmark
+- name: 评测体系与 Benchmark
+  aliases:
+  - 评估
+  - Evaluation
+  - LLM-as-a-judge
+  - 评测指标
+  keywords:
+  - 评测
+  - 评估体系
+  - Evaluation
+  - Benchmark
+  - LLM-as-a-judge
+  - 大模型作为裁判
+  - 测试集
+  - 标注
+  - 评估指标
+  - 指标
+  - HitRate
+  - MRR
+  - Fake LLM
+  - Harness
+  - 消融实验
+  - A/B实验
+  - 效果归因
+  - Mock
+  - 高并发测试
+  - 正确性判定
+  summary: 效果量化的整套方法：离线 Benchmark、在线指标（成功率/Recall@K/延迟/Token 成本）、人工标注与 LLM 裁判的取舍。
+  related:
+  - Badcase 闭环与数据飞轮
+  - 模型微调与对齐
+- name: Badcase 闭环与数据飞轮
+  aliases:
+  - 坏例复盘
+  - 数据回流
+  - 跷跷板效应
+  keywords:
+  - Badcase
+  - 坏例
+  - 复盘
+  - 回流
+  - Flywheel
+  - 飞轮
+  - 跷跷板
+  - 抽检
+  - 自动评估
+  - 归因
+  - Trace
+  summary: 线上缺陷→Trace 归因→评测集更新→Prompt/模型迭代的闭环；核心挑战是跷跷板效应与全链路归因。
+  related:
+  - 评测体系与 Benchmark
+  - Prompt Engineering
+  - 模型微调与对齐
+- name: 模型微调与对齐
+  aliases:
+  - SFT
+  - DPO
+  - RLHF
+  - 监督微调
+  - 偏好对齐
+  keywords:
+  - SFT
+  - DPO
+  - RLHF
+  - GRPO
+  - PPO
+  - KTO
+  - 微调
+  - 对齐
+  - 监督微调
+  - 偏好对齐
+  - 强化学习
+  summary: 训练侧优化路径：SFT 学格式与知识、DPO/RLHF 做偏好对齐；与 Prompt/RAG 优化的边界选择是效果瓶颈期的关键决策。
+  related:
+  - 评测体系与 Benchmark
+  - Badcase 闭环与数据飞轮
+- name: 推理优化与 KV Cache
+  aliases:
+  - vLLM
+  - 推理加速
+  - 前缀缓存
+  - Prefix Caching
+  keywords:
+  - vLLM
+  - TensorRT-LLM
+  - Continuous Batching
+  - PagedAttention
+  - Prefix Caching
+  - 前缀缓存
+  - KV Cache
+  - TTFT
+  - 吞吐量
+  - 推理加速
+  - 推理性能
+  summary: 服务侧性能工程：批处理/KV Cache 管理/前缀缓存/量化；动态多 Agent 场景下 Prompt 结构设计要最大化缓存命中。
+  related:
+  - 容错限流与高可用
+  - 上下文管理与压缩
+- name: 容错限流与高可用
+  aliases:
+  - 熔断
+  - 降级
+  - 限流
+  - 重试
+  - Failover
+  keywords:
+  - 熔断
+  - 降级
+  - 限流
+  - 重试
+  - 容错
+  - 高可用
+  - Failover
+  - 故障转移
+  - 回切
+  - 超时
+  - 负载均衡
+  - 退避
+  - 单线程轮询
+  - 任务调度
+  - 多实例
+  - 任务幂等
+  - 选主
+  summary: 外部依赖与自身服务的稳定性工程：超时/重试/退避、熔断降级、故障转移与自动回切、成本与稳定性平衡。
+  related:
+  - 推理优化与 KV Cache
+  - 存储选型与状态持久化
+- name: 向量数据库与 HNSW
+  aliases:
+  - 向量检索
+  - 向量存储
+  keywords:
+  - 向量数据库
+  - HNSW
+  - 向量检索
+  - 相似度计算
+  - 向量
+  - 向量模型
+  - Embedding
+  - 索引
+  - efConstruction
+  - efSearch
+  - 选型
+  summary: 向量近邻检索的存储与索引技术；HNSW 的 M/efConstruction/efSearch 参数权衡精度与读写性能。
+  related:
+  - RAG 与知识库
+  - 混合检索与重排
+  - 存储选型与状态持久化
+- name: 混合检索与重排
+  aliases:
+  - Hybrid Search
+  - BM25
+  - 重排
+  - 双路召回
+  keywords:
+  - 混合检索
+  - Hybrid Search
+  - BM25
+  - Dense
+  - Sparse
+  - 稀疏检索
+  - 稠密检索
+  - 重排
+  - Rerank
+  - 精排
+  - Cross-Encoder
+  - Bi-Encoder
+  - 重排模型
+  - 双路召回
+  - 多路召回
+  - RRF
+  - Reciprocal Rank Fusion
+  - 召回率
+  summary: 向量+关键词双路召回再融合重排的检索策略；解决语义与精确匹配互补问题，Top-K 与噪声平衡是调参重点。
+  related:
+  - RAG 与知识库
+  - 向量数据库与 HNSW
+  - 评测体系与 Benchmark
+- name: Query 改写
+  aliases:
+  - Query Rewriting
+  - 查询改写
+  keywords:
+  - Query改写
+  - Query Rewriting
+  - 查询改写
+  - 改写
+  summary: 检索前对用户问题做规范化/补全/拆解；放哪个阶段、如何控制额外延迟是落地关键。
+  related:
+  - RAG 与知识库
+  - 意图识别与分发
+- name: 长上下文与注意力
+  aliases:
+  - 大海捞针
+  - 无限上下文
+  - 注意力分散
+  keywords:
+  - 长上下文
+  - 无限上下文
+  - 大海捞针
+  - 注意力分散
+  - 超长
+  - 全局上下文一致性
+  - 长文本
+  summary: 超长输入下的能力边界：注意力分散、大海捞针失效；分模块输入时如何保持全局一致性是工程难点。
+  related:
+  - 上下文管理与压缩
+  - Agent 记忆机制
+- name: 技能体系
+  aliases:
+  - Skill
+  - 技能库
+  - 渐进式披露
+  keywords:
+  - 技能
+  - Skill
+  - 技能库
+  - 渐进式披露
+  - Progressive Disclosure
+  - 插件
+  summary: 将可复用能力封装为带说明的技能单元；与 Function Calling 的区别在语义层抽象，路由与渐进式披露提升稳定性。
+  related:
+  - 路由机制
+  - Tool Calling 与 Function Calling
+- name: AI Coding Agent
+  aliases:
+  - 代码智能体
+  - Claude Code
+  - Cursor
+  - Copilot
+  keywords:
+  - AI Coding
+  - Code Agent
+  - Claude Code
+  - Cursor
+  - Copilot
+  - 代码编辑
+  - 全自动软件工程
+  - Vibe Coding
+  - 代码生成
+  - 核心代码
+  - 大项目
+  - AI辅助开发
+  - 提效
+  summary: 自动写码/改码的 Agent 产品方向；核心壁垒在文件编辑可靠性、代码库理解与端到端自动化的瓶颈。
+  related:
+  - 评测体系与 Benchmark
+  - Tool Calling 与 Function Calling
+- name: 存储选型与状态持久化
+  aliases:
+  - 数据库选型
+  - KV 缓存
+  - 关系型数据库
+  keywords:
+  - 存储
+  - 持久化
+  - 数据库选型
+  - KV
+  - 缓存
+  - 关系型
+  - NoSQL
+  - 状态
+  - 多级存储
+  summary: Agent 状态与数据的介质选择：KV/向量/关系型的取舍；内存态、会话态、画像态的分层存储设计。
+  related:
+  - Agent 记忆机制
+  - 向量数据库与 HNSW
+- name: Redis 与缓存
+  aliases:
+  - 缓存穿透
+  - 缓存雪崩
+  - RDB
+  - AOF
+  keywords:
+  - Redis
+  - 缓存
+  - 缓存穿透
+  - 缓存击穿
+  - 缓存雪崩
+  - 缓存更新
+  - 缓存一致性
+  - 多级缓存
+  - Caffeine
+  - 逻辑过期
+  - 一致性哈希
+  - slot
+  - RDB
+  - AOF
+  - 内存淘汰
+  - 主从复制
+  - 过期键
+  - 双重检查锁
+  - 分布式锁
+  - QPS
+  - Mock
+  - 高并发测试
+  summary: 经典缓存中间件八股：持久化机制、过期与淘汰策略、穿透/雪崩/击穿、主从同步。
+  related:
+  - 容错限流与高可用
+- name: JVM 与 Java 并发
+  aliases:
+  - 线程池
+  - 死锁
+  - 垃圾回收
+  - Spring
+  keywords:
+  - JVM
+  - 线程池
+  - 死锁
+  - 单例
+  - volatile
+  - OOM
+  - 内存溢出
+  - 垃圾回收
+  - GC
+  - Spring
+  - AOP
+  - Spark
+  - 进程
+  - 线程
+  - ReentrantLock
+  - 双亲委派
+  - 上下文切换
+  - JMM
+  - 内存屏障
+  - happens-before
+  - 扰动函数
+  summary: Java 生态八股群：JVM 内存模型、GC、线程池参数、并发原语、Spring 启动与自动装配。
+  related:
+  - 数据库索引与事务
+- name: 数据库索引与事务
+  aliases:
+  - MySQL
+  - 慢查询
+  - 分库分表
+  - 2PC
+  keywords:
+  - 索引
+  - 慢查询
+  - 存储引擎
+  - 聚簇索引
+  - InnoDB
+  - B+Tree
+  - B+ 树
+  - 行锁
+  - 表锁
+  - 意向锁
+  - 分库分表
+  - 2PC
+  - 两阶段提交
+  - binlog
+  - redo log
+  - undo log
+  - SQL
+  - log
+  - 深分页
+  - 游标分页
+  - 延迟关联
+  - EXPLAIN
+  - 覆盖索引
+  - 索引失效
+  - PostgreSQL
+  - MySQL
+  - CAS
+  - 状态机
+  - 乐观锁
+  - 自旋
+  - 联合索引
+  summary: 关系库八股群：索引结构与失效、锁机制、日志体系、事务一致性、分库分表与跨片查询。
+  related:
+  - JVM 与 Java 并发
+  - 存储选型与状态持久化
+- name: 网络与操作系统基础
+  aliases:
+  - TCP
+  - HTTP
+  - IO多路复用
+  - epoll
+  keywords:
+  - TCP
+  - HTTP
+  - 三次握手
+  - '503'
+  - '504'
+  - IO多路复用
+  - epoll
+  - select
+  - poll
+  - 阻塞IO
+  - 非阻塞IO
+  - 进程创建
+  - Nginx
+  - 正向代理
+  - 反向代理
+  - AccessLog
+  - 协程
+  - FastAPI
+  - asyncio
+  - IPC
+  - 进程间通信
+  summary: 网络与 OS 八股群：TCP 握手、HTTP 状态码、IO 模型演进、进程/线程与事件循环。
+  related:
+  - JVM 与 Java 并发
+- name: 算法与 LeetCode
+  aliases:
+  - 算法题
+  - 动态规划
+  - LRU
+  keywords:
+  - 算法
+  - 动态规划
+  - 二叉搜索树
+  - 回文
+  - 快速排序
+  - LRU
+  - 双蛋
+  - 抢红包
+  - 合并两个有序数组
+  - 三数之和
+  - LeetCode 15
+  - 最大子数组和
+  - Leetcode
+  - 快速选择
+  - 反转链表
+  - 多叉树
+  - LeetCode 215
+  - LeetCode 206
+  summary: 手撕算法与代码题：经典 DP、数据结构实现与并发场景设计题。
+  related: []
+- name: 秒杀库存与高并发扣减
+  aliases:
+  - 秒杀系统
+  - 秒杀库存
+  - 分桶库存
+  - Flash Sale
+  keywords:
+  - 秒杀
+  - 秒杀系统
+  - 秒杀库存
+  - 分桶库存
+  - 库存热点
+  - Flash Sale
+  - 超卖
+  - Lua
+  - 原子性
+  - 预扣
+  - 压测
+  - DB 请求
+  summary: 高并发秒杀的库存与订单链路；核心权衡是流量保护、原子扣减、热点拆分、异步落库与一致性修复。
+  related:
+  - Redis 与缓存
+  - 容错限流与高可用
+  - 存储选型与状态持久化
+- name: RabbitMQ与可靠消息
+  aliases:
+  - RabbitMQ
+  - Quorum Queue
+  - Outbox
+  keywords:
+  - RabbitMQ
+  - Kafka
+  - Celery
+  - 任务队列
+  - Quorum Queue
+  - Producer
+  - Exchange
+  - Queue
+  - Consumer
+  - Partition
+  - 消费者组
+  - 消息重试
+  - Outbox
+  - PendingList
+  summary: 消息发布、复制、确认、重试和延迟事件的可靠性设计。
+  related:
+  - 容错限流与高可用
+  - 幂等性与去重
+  - 秒杀库存与高并发扣减
+- name: Kafka与分区消费
+  aliases:
+  - Kafka
+  - Partition
+  - 消费者组
+  keywords:
+  - Kafka
+  - Partition
+  - 分区
+  - 消费者组
+  - consumer group
+  - offset
+  - 再均衡
+  summary: Kafka 以分区提供有序追加日志和并行消费能力；同一消费组内一个分区同一时刻只分配给一个消费者，跨组可独立消费。
+  related:
+  - RabbitMQ与可靠消息
+  - 容错限流与高可用
+  - 秒杀库存与高并发扣减
+- name: RPC与服务治理
+  aliases:
+  - RPC
+  - 服务发现
+  - 动态代理
+  keywords:
+  - RPC
+  - 远程过程调用
+  - 序列化
+  - 半包
+  - 粘包
+  - 注册中心
+  - 动态代理
+  - 重试
+  - 服务发现
+  summary: 微服务远程调用、协议边界、服务发现和容错治理。
+  related:
+  - 容错限流与高可用
+  - 存储选型与状态持久化
+- name: RAG表示与代码知识库
+  aliases:
+  - Embedding
+  - 向量数据库
+  - Code RAG
+  keywords:
+  - Embedding
+  - 向量数据库
+  - 余弦相似度
+  - BM25
+  - JavaParser
+  - MyBatis
+  - Code RAG
+  - LangChain4j
+  - 智能客服
+  - 商家
+  - 事实性
+  - HitRate
+  - MRR
+  - 向量模型
+  - 混合检索
+  - 幻觉
+  - 普通检索
+  - 向量检索
+  - PostgreSQL
+  summary: 表示学习、向量/关键词检索与代码结构化切块的知识库工程。
+  related:
+  - RAG 与知识库
+  - 混合检索与重排
+  - 文档切分与解析
+- name: 文档切分与解析
+  aliases:
+  - Chunking
+  - 递归字符切分
+  - 表格解析
+  keywords:
+  - Chunk
+  - 切分
+  - 递归字符切分
+  - chunk size
+  - 表格
+  - PDF
+  - OCR
+  summary: 以结构、语义和长度约束组织文档与代码片段，处理超长、表格、图片和父子上下文。
+  related:
+  - RAG 与知识库
+  - 长上下文与注意力
+- name: Agent会话与状态恢复
+  aliases:
+  - 会话隔离
+  - sessionID
+  - checkpoint
+  keywords:
+  - 会话隔离
+  - sessionID
+  - 重连
+  - checkpoint
+  - 中断恢复
+  - 状态机
+  - Worker
+  - 幂等
+  - 任务恢复
+  - 半完成
+  - 失败恢复
+  summary: 多会话隔离、清理、断线重连和任务恢复的状态管理。
+  related:
+  - Agent 记忆机制
+  - 上下文管理与压缩
+- name: Agent工具与多智能体协作
+  aliases:
+  - Tool Registry
+  - A2A
+  - SubAgent
+  keywords:
+  - Tool Registry
+  - 自定义工具
+  - A2A
+  - SubAgent
+  - 决策树
+  - Workflow
+  - 工具执行器
+  - Worker
+  - 消息协议
+  - Confirmation
+  - 权限确认
+  - 调用预算
+  summary: 工具注册、权限确认、跨 Agent 通信、上下文边界和故障兜底。
+  related:
+  - 技能体系
+  - Multi-Agent 多智能体协作
+  - 容错限流与高可用
+- name: Agent评测与Trace事实
+  aliases:
+  - Eval Case
+  - Grader
+  - Trace
+  keywords:
+  - Eval Case
+  - Grader
+  - Trace
+  - Hit@1
+  - Hit@3
+  - HitRate
+  - MRR
+  - Fake LLM
+  - Harness
+  - 数据飞轮
+  - 评测事实
+  - 消融实验
+  - 效果归因
+  summary: 从 Case/Run/Trace 到评分的可复现评测链路，以及时效 Case 和数据飞轮治理。
+  related:
+  - 评测体系与 Benchmark
+  - Badcase 闭环与数据飞轮
+- name: AI Infra 与高性能算子
+  aliases:
+  - AI Infra
+  - 高性能算子
+  - CUDA Graph
+  - 分布式并行
+  - 算子优化
+  keywords:
+  - AI Infra
+  - CUDA Graph
+  - Triton
+  - CuTe
+  - Tensor Parallelism
+  - Expert Parallelism
+  - Router Replay
+  - MoE
+  - 滑动窗口 Attention
+  - GPU Benchmark
+  - NCCL
+  - 算子优化
+  - 显存带宽
+  - 算子适配
+  - 确定性反向
+  - 投机解码
+  - Speculative Decoding
+  - EAGLE3
+  - DFlash
+  - DSpark
+  - Tree Attention
+  - 拒绝采样
+  - Rejection Sampling
+  - 模型量化
+  - AWQ
+  - GPTQ
+  - SmoothQuant
+  - FP8
+  summary: 大模型底层基础设施与算子加速；涵盖单卡 Kernel 开发（CUDA/Triton/CuTe）、分布式并行（TP/EP/All-to-All）、图捕获与通信协同（CUDA
+    Graph × TP）、确定性梯度反向及硬件 Benchmark。
+  related:
+  - 评测体系与 Benchmark
+  - 存储选型与状态持久化
+- name: 电商与 Shopping Agent
+  aliases:
+  - Shopping Agent
+  - 购物Agent
+  - 电商智能体
+  - WebShop
+  keywords:
+  - Shopping Agent
+  - 购物
+  - 电商
+  - WebShop
+  - 商品搜索
+  - 详情页
+  - 模拟器
+  - Simulator
+  - 35步
+  - 购买决策
+  summary: 面向电商场景的自主决策智能体；涵盖商品检索、多约束规格对比、状态回溯、长轨迹交互与步数预算控制。
+  related:
+  - Agent 强化学习与奖励函数
+  - ReAct 与 Agent 工作流范式
+  - Tool Calling 与 Function Calling
+- name: Agent 强化学习与奖励函数
+  aliases:
+  - Reward
+  - 奖励函数
+  - 过程奖励
+  - GRPO
+  - 信用分配
+  keywords:
+  - Reward
+  - 奖励函数
+  - 密集奖励
+  - 稀疏奖励
+  - GRPO
+  - 信用分配
+  - 步惩罚
+  - 奖励抵消
+  - 势能塑形
+  summary: 目标导向 Agent 的策略优化与对齐机制；核心考点包括稀疏终局奖励 vs 过程密集奖励（Dense/Sparse Reward）、步惩罚偏置、势能塑形及避免奖励黑客。
+  related:
+  - 电商与 Shopping Agent
+  - 评测基准与 Harness
+  - 模型微调与对齐
+- name: Agent Loop 与控制流工程
+  aliases:
+  - Agent Loop
+  - 循环控制
+  - 工具注册
+  - 退出反思
+  - 重试机制
+  keywords:
+  - Agent Loop
+  - 控制循环
+  - 工具注册
+  - read_file
+  - 大文件读取
+  - 参数错误
+  - 提前退出
+  - 退出反思
+  - 重试机制
+  - 独立Judge
+  summary: 智能体底层的执行与决策循环（Agent Loop）；核心在于状态维护、工具注册与异常参数校验、超大文件窗口化读取、任务完成守卫、退出反思与重试机制。
+  related:
+  - ReAct 与 Agent 工作流范式
+  - Tool Calling 与 Function Calling
+  - 评测基准与 Harness
+- name: 投机解码与推理加速
+  aliases:
+  - 投机解码
+  - Speculative Decoding
+  - 草稿模型
+  - Draft Model
+  keywords:
+  - 投机解码
+  - Speculative Decoding
+  - EAGLE3
+  - DFlash
+  - DSpark
+  - Draft Model
+  - Tree Attention
+  - 拒绝采样
+  - Rejection Sampling
+  - Memory Bound
+  summary: 大模型推理加速范式；通过草稿模型并行生成候选 Token，由目标模型单次前向并行验证并保全输出分布一致性。
+  related:
+  - AI Infra 与高性能算子
+  - 推理优化与 KV Cache
+- name: 大模型量化与精度保持
+  aliases:
+  - 模型量化
+  - Quantization
+  - AWQ
+  - GPTQ
+  - SmoothQuant
+  keywords:
+  - 量化
+  - Quantization
+  - AWQ
+  - GPTQ
+  - SmoothQuant
+  - FP8
+  - Calibration Data
+  - Weight Error
+  - Output Reconstruction Error
+  - MoE Quantization
+  summary: 大模型低比特量化技术；涵盖激活感知缩放保护关键通道（AWQ）、二阶 Hessian 逆矩阵补偿（GPTQ）、异常值平滑迁移（SmoothQuant）及
+    MoE Router 保留高精度。
+  related:
+  - AI Infra 与高性能算子

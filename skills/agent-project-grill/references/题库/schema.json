@@ -1,0 +1,130 @@
+{
+ "majors": [
+  {
+   "name": "二_Agent应用开发相关",
+   "display": "二、Agent应用开发相关",
+   "minors": [
+    "1.agent宏观认知",
+    "2.agent主流框架",
+    "3.工具相关",
+    "4.Prompt_engineering",
+    "5.agent记忆设计",
+    "6.agent处理情景的架构设计",
+    "7.数据库",
+    "8.工程落地",
+    "9.业务评估(性能优化与诊断)"
+   ]
+  },
+  {
+   "name": "三_transformer相关",
+   "display": "三、transformer相关",
+   "minors": [
+    "三_transformer相关"
+   ]
+  },
+  {
+   "name": "四_八股相关",
+   "display": "四、八股相关",
+   "minors": [
+    "1.操作系统与线程底层",
+    "2.计算机网络与通讯协议",
+    "3.数据库与缓存存储",
+    "4.消息队列与异步流",
+    "5.Java与并发编程核心",
+    "6.高并发业务流与秒杀自愈"
+   ]
+  },
+  {
+   "name": "全栈与前端工程交互",
+   "display": "全栈与前端工程交互",
+   "minors": [
+    "1.全栈与前端工程交互"
+   ]
+  },
+  {
+   "name": "Leetcode相关",
+   "display": "Leetcode相关",
+   "minors": [
+    "Leetcode相关"
+   ]
+  },
+  {
+   "name": "五_业务流相关",
+   "display": "五、业务流相关",
+   "minors": [
+    "五_业务流相关"
+   ]
+  },
+  {
+   "name": "反问",
+   "display": "反问",
+   "minors": [
+    "反问"
+   ]
+  },
+  {
+   "name": "国企特别版",
+   "display": "国企特别版",
+   "minors": [
+    "国企特别版"
+   ]
+  },
+  {
+   "name": "六_AI_Infra与高性能算子",
+   "display": "六、AI Infra与高性能算子",
+   "minors": [
+    "1.算子开发与编译优化",
+    "2.分布式并行与通信",
+    "3.硬件架构与Benchmark"
+   ]
+  }
+ ],
+ "relation_types": [
+  {
+   "type": "hard_prereq",
+   "name": "前置基础",
+   "description": "回答或深入理解本题所必须掌握的基石概念、物理原理或强前置底层机制"
+  },
+  {
+   "type": "progressive",
+   "name": "建议递进",
+   "description": "基于本题进一步深化的工程权衡、高阶优化、边界场景、调优实战或推荐演进方向"
+  }
+ ],
+ "item_relation_schema": {
+  "type": "object",
+  "required": [
+   "target",
+   "direction",
+   "type",
+   "reason"
+  ],
+  "properties": {
+   "target": {
+    "type": "string",
+    "pattern": "^L\\d+$",
+    "description": "关联目标题目 ID"
+   },
+   "direction": {
+    "type": "string",
+    "enum": [
+     "in",
+     "out"
+    ],
+    "description": "边方向：in 为输入前置 (target -> self)；out 为输出递进 (self -> target)"
+   },
+   "type": {
+    "type": "string",
+    "enum": [
+     "hard_prereq",
+     "progressive"
+    ],
+    "description": "关系类型：hard_prereq (前置基础) 或 progressive (建议递进)"
+   },
+   "reason": {
+    "type": "string",
+    "description": "简要关系理由与场景依据"
+   }
+  }
+ }
+}

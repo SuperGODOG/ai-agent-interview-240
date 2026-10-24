@@ -1,0 +1,377 @@
+{
+ "category": "rag_retrieval",
+ "title": "RAG 检索增强生成与知识库面试题索引",
+ "description": "涵盖文档解析、Semantic Chunking 分块、父子切分、向量表示（Embedding）、BM25 关键词检索、混合检索（RRF）、Rerank 精排策略与幻觉抑制。",
+ "count": 41,
+ "items": [
+  {
+   "id": "L30",
+   "line": 30,
+   "text": "在Agent/RAG pipeline中，Query改写（Query Rewriting）模块最适合放在哪个阶段？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L54",
+   "line": 54,
+   "text": "生产级RAG系统从离线文档解析（Ingestion Pipeline）到在线检索（Retrieval Pipeline）的完整链路设计是怎样的？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L55",
+   "line": 55,
+   "text": "混合检索（Hybrid Search）的必要性是什么？向量检索（Dense Retrieval）与关键词检索（Sparse Retrieval/BM25）各自的优势与互补场景是什么？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L59",
+   "line": 59,
+   "text": "文档切分（Chunking）时，为什么不推荐单一的固定长度切分？如何设计基于语义边界（Semantic Chunking）的切分策略？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L60",
+   "line": 60,
+   "text": "元数据（Metadata）在RAG中除了用于硬过滤（Hard Filtering）外，如何通过自适应检索（Auto-retrieval）或混合打分参与召回？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L61",
+   "line": 61,
+   "text": "知识库的文档版本控制、生命周期管理（TTL）以及增量更新（Incremental Update）机制如何设计？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L63",
+   "line": 63,
+   "text": "RAG生成后校验层（Post-generation Guardrails/Validation）主要解决哪些安全、幻觉及一致性（Factuality）问题？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L64",
+   "line": 64,
+   "text": "在RAG或Agent的特定场景中，为什么直接进行监督微调（SFT）的效果有时可能不如Prompt Engineering或RAG优化？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L65",
+   "line": 65,
+   "text": "奖励模型（Reward Model/RM）在对齐（Alignment）或RAG/Agent的反馈机制中，适合解决哪些偏好对齐与效果评判问题？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L72",
+   "line": 72,
+   "text": "从产品和技术愿景角度看，你认为一个理想的AI智能助手应具备哪些核心能力？它与传统的客服机器人或FAQ知识库检索系统有何本质区别？",
+   "major": "二_Agent应用开发相关",
+   "minor": "1.agent宏观认知",
+   "tag": "内部组件和工具",
+   "depth": null
+  },
+  {
+   "id": "L107",
+   "line": 107,
+   "text": "请简述检索增强生成（RAG）的技术架构、核心步骤与常见优化方向。",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "RAG/知识库/知识图谱",
+   "depth": null
+  },
+  {
+   "id": "L108",
+   "line": 108,
+   "text": "在构建RAG（检索增强生成）系统时，你会如何设计知识检索与匹配策略（如向量相似度、混合检索及重排机制）以确保获取信息的关联度？对于数据的清洗、结构化与过期信息如何处理？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "RAG/知识库/知识图谱",
+   "depth": null
+  },
+  {
+   "id": "L109",
+   "line": 109,
+   "text": "在检索增强生成架构中，有哪些策略来缓解和限制大模型的幻觉？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "RAG/知识库/知识图谱",
+   "depth": null
+  },
+  {
+   "id": "L110",
+   "line": 110,
+   "text": "针对新增文档或动态知识，系统如何进行增量解析并实时纳入知识库？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "RAG/知识库/知识图谱",
+   "depth": null
+  },
+  {
+   "id": "L111",
+   "line": 111,
+   "text": "混合分块策略： a. 父子文档混合分块主要解决了传统固定大小分块的什么痛点？ b. 在底层的向量数据库中，父子文档是如何关联的？ c. 子文档在检索召回后，如何引入父文档的上下文信息？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "RAG/知识库/知识图谱",
+   "depth": null
+  },
+  {
+   "id": "L114",
+   "line": 114,
+   "text": "请详细介绍一个你主导或参与过的 Agentic RAG（智能体检索增强生成）系统的架构设计。",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L115",
+   "line": 115,
+   "text": "Agentic RAG 与传统/普通 RAG 在文档解析、知识切片及前置处理策略上有什么本质区别？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L116",
+   "line": 116,
+   "text": "从技术演进和落地效果的大视角来看，你认为 Agentic RAG 的终局形态会是怎样的？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L117",
+   "line": 117,
+   "text": "在大模型与智能体广泛应用的背景下，知识库数据管理与数据治理的终局是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L122",
+   "line": 122,
+   "text": "在复杂Agent工作流中，信息聚合/总结（Summary）节点在整体链路中起到的核心作用是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L123",
+   "line": 123,
+   "text": "在Agent调用工具时，针对工具参数的纠错机制，除了硬编码外还有哪些主流的技术方案？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L124",
+   "line": 124,
+   "text": "利用大模型进行参数纠错时，如何避免纠错过度或导致语义漂移的问题？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L143",
+   "line": 143,
+   "text": "当Agent面对规模化技能库（Skill Bank）时，应如何设计路由选择机制？为什么仅靠向量检索（Embedding）难以满足要求？",
+   "major": "二_Agent应用开发相关",
+   "minor": "4.Prompt_engineering",
+   "tag": "路由",
+   "depth": null
+  },
+  {
+   "id": "L150",
+   "line": 150,
+   "text": "提示词注入（Prompt Injection）与大模型越狱（Jailbreak）的区别与联系是什么？如何优化Prompt的鲁棒性，并有效防范提示词注入与越狱等安全风险？",
+   "major": "二_Agent应用开发相关",
+   "minor": "4.Prompt_engineering",
+   "tag": "安全风险 RAG",
+   "depth": null
+  },
+  {
+   "id": "L151",
+   "line": 151,
+   "text": "在检索增强生成（RAG）系统中，如何有效防御间接提示词注入（Indirect Prompt Injection）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "4.Prompt_engineering",
+   "tag": "安全风险 RAG",
+   "depth": null
+  },
+  {
+   "id": "L156",
+   "line": 156,
+   "text": "在大模型 Agent 的架构设计中，短期记忆（如上下文管理）和长期记忆（如向量数据库检索）分别是如何实现的？",
+   "major": "二_Agent应用开发相关",
+   "minor": "5.agent记忆设计",
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L168",
+   "line": 168,
+   "text": "如何设计Agent的长期记忆与短期记忆机制，以支持用户画像、个性化偏好和持续交互？在工程上如何结合向量数据库与传统数据库来实现这些记忆的读写与更新？",
+   "major": "二_Agent应用开发相关",
+   "minor": "5.agent记忆设计",
+   "tag": "记忆与数据库",
+   "depth": null
+  },
+  {
+   "id": "L198",
+   "line": 198,
+   "text": "在构建通用Agent系统时，如何设计端到端的意图识别与分发流程？如何平衡基于规则、向量检索与LLM在准确性与响应耗时上的权衡？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "tag": "意图识别",
+   "depth": null
+  },
+  {
+   "id": "L213",
+   "line": 213,
+   "text": "在 Agent 与大模型应用中，常用的存储数据库（如关系型、NoSQL、向量数据库）的选型标准是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L216",
+   "line": 216,
+   "text": "在向量检索中，常用的相似度/距离计算方法有哪些？各自适用于什么场景？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L420",
+   "line": 420,
+   "text": "关键词片段如何检索？BM25 的核心计算原理是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "tag": "RAG",
+   "depth": 3
+  },
+  {
+   "id": "L421",
+   "line": 421,
+   "text": "BM25 和向量检索结果如何融合？融合后为什么还需要重排或 LLM 筛选？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "tag": "RAG",
+   "depth": 3
+  },
+  {
+   "id": "L422",
+   "line": 422,
+   "text": "文档有章节、一级标题、二级标题和正文时，父块/子块如何划分？递归字符切分的执行逻辑是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "tag": "RAG",
+   "depth": 3
+  },
+  {
+   "id": "L423",
+   "line": 423,
+   "text": "递归切分后仍超长怎么办？表格、图片和超长 PDF 表格如何切分，怎样避免表格行残缺？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "tag": "RAG",
+   "depth": 3
+  },
+  {
+   "id": "L425",
+   "line": 425,
+   "text": "用户只问“这个项目是做什么的”，方法级代码 Chunk 可能召回什么？如何解决全局问题与局部粒度不匹配？",
+   "major": "二_Agent应用开发相关",
+   "minor": "7.数据库",
+   "tag": "RAG",
+   "depth": 3
+  },
+  {
+   "id": "L521",
+   "line": 521,
+   "text": "RAG 数据量多大？纯文本还是多模态？文档量大、召回发散怎么优化？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "RAG/多模态/召回",
+   "depth": 4
+  },
+  {
+   "id": "L544",
+   "line": 544,
+   "text": "向量数据库如何选择、利弊是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "向量数据库/选型",
+   "depth": 3
+  },
+  {
+   "id": "L545",
+   "line": 545,
+   "text": "向量模型怎么选择？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Embedding/向量模型",
+   "depth": 3
+  },
+  {
+   "id": "L548",
+   "line": 548,
+   "text": "你怎么实现混合检索的？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "混合检索/BM25",
+   "depth": 3
+  },
+  {
+   "id": "L554",
+   "line": 554,
+   "text": "普通检索和向量检索的区别是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "关键词检索/向量检索",
+   "depth": 3
+  },
+  {
+   "id": "L583",
+   "line": 583,
+   "text": "在 RAG 检索链路中，Rerank 精排策略与重排模型（Cross-Encoder vs Bi-Encoder）如何选型？如何平衡重排精度与端到端检索延迟？",
+   "major": "二_Agent应用开发相关",
+   "minor": "8.工程落地",
+   "tag": "RAG/Rerank精排策略",
+   "depth": 3
+  }
+ ]
+}

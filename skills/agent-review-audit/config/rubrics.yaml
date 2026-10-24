@@ -1,0 +1,18 @@
+Architectural_Soundness:
+  max_score: 100
+  deductions:
+    tight_coupling: -15
+    missing_state_management: -20
+    unhandled_loop_deadlock: -25
+Production_Readiness:
+  max_score: 100
+  deductions:
+    missing_rate_limiter: -20
+    unhandled_llm_timeout: -15
+    lack_of_eval_metrics: -15
+Robustness_Guardrails:
+  max_score: 100
+  deductions:
+    no_hallucination_validation: -25
+    missing_action_rollback: -20
+    unhandled_prompt_injection: -20

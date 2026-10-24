@@ -1,0 +1,89 @@
+{
+ "category": "backend_mq",
+ "title": "后端基建 · 消息队列与异步流面试题索引",
+ "description": "涵盖 RabbitMQ 与 Kafka 核心架构、Quorum 队列、分区消费模型、消息积压治理、死信队列、ACK 与幂等消费。",
+ "count": 9,
+ "items": [
+  {
+   "id": "L352",
+   "line": 352,
+   "text": "引入消息队列（MQ）的典型业务场景有哪些？RocketMQ 主要解决哪些分布式系统痛点？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Java",
+   "depth": null
+  },
+  {
+   "id": "L363",
+   "line": 363,
+   "text": "请阐述在单线程异步模型中，“消息队列（Message Queue） + 事件循环（Event Loop）”这一并发机制的工作原理与核心组件设计。",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "异步与并发",
+   "depth": null
+  },
+  {
+   "id": "L365",
+   "line": 365,
+   "text": "在事件驱动的架构中，事件分发器（Dispatcher/Looper）的核心职责是什么？它是如何协调消息队列与任务执行的？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "异步与并发",
+   "depth": null
+  },
+  {
+   "id": "L369",
+   "line": 369,
+   "text": "采用“消息队列 + 事件循环”的异步机制时，在实际工程中可能会遇到哪些潜在问题或设计劣势（如内存泄露风险、队列积压、优先级倒置等）？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "异步与并发",
+   "depth": null
+  },
+  {
+   "id": "L416",
+   "line": 416,
+   "text": "不同微服务之间如何通信？消息队列与阻塞队列分别解决什么问题？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "RPC/网络",
+   "depth": 3
+  },
+  {
+   "id": "L474",
+   "line": 474,
+   "text": "一个 Partition 可以被几个消费者消费？如果一个消费组里面有多个消费者，一个 Partition 会被几个消费者消费？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Kafka",
+   "depth": 2
+  },
+  {
+   "id": "L488",
+   "line": 488,
+   "text": "除了 DB、Redis、Kafka，还用了哪些中间件？用 LangChain4j 如何保证智能客服回答的准确性？",
+   "major": "二_Agent应用开发相关",
+   "minor": "8.工程落地",
+   "tag": "LangChain4j/RAG",
+   "depth": 4
+  },
+  {
+   "id": "L552",
+   "line": 552,
+   "text": "什么是 Celery？Kafka 和 Celery 有什么区别？",
+   "major": "四_八股相关",
+   "minor": "四_八股相关",
+   "tag": "Celery/Kafka/消息",
+   "depth": 3
+  },
+  {
+   "id": "L588",
+   "line": 588,
+   "text": "在多 Agent 系统中，子 Agent 底层到底是进程、线程还是协程？主控与子 Agent 之间、以及子 Agent 相互之间在单机与分布式场景下的通信方式（IPC / RPC / 消息队列）如何选型？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "tag": "Multi-Agent/通信机制/运行时",
+   "depth": 3
+  }
+ ]
+}

@@ -1,0 +1,629 @@
+{
+ "category": "agent_harness",
+ "title": "Agent Harness 核心设计与评测沙箱面试题索引",
+ "description": "涵盖 Harness 测试基准、Loop Engineering 迭代循环、自动评测（LLM-as-a-Judge）、Grader 评分器、Trace 归因、Badcase 数据飞轮、代码沙箱隔离执行与环境部署。",
+ "count": 69,
+ "items": [
+  {
+   "id": "L34",
+   "line": 34,
+   "text": "在基于 Harness 的自动评估与执行框架下，如何通过 Prompt Engineering 或 RAG 策略降低 Human-in-the-loop（人工介入）的成本？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L38",
+   "line": 38,
+   "text": "是否了解 AI Coding 领域的专业概念，如 Harness（测试基准/沙箱）、Loop Engineering（循环迭代工程）？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L39",
+   "line": 39,
+   "text": "如何构建 Agent 的效果评估体系（Evaluation Framework）？有哪些主流的 Benchmark 维度？是依赖人工标注、LLM-as-a-judge还是线上业务指标？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L40",
+   "line": 40,
+   "text": "Agent 系统上线后，在生产环境（Production）中应关注哪些核心的评估指标（如 Recall@K, Precision@K, Latency, Token Cost, Tool Call Accuracy 等）？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L41",
+   "line": 41,
+   "text": "如何设计系统化的Agent评测体系（包含Tool Use准确率、轨迹评估及recall@k等Benchmark指标）？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L43",
+   "line": 43,
+   "text": "在缺乏用户主动反馈（如点击、点赞点踩）的数据场景下，如何设计自动化的抽检与评估机制？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L44",
+   "line": 44,
+   "text": "如何将用户显式/隐式反馈（Implicit/Explicit Feedback）作为Agent线上效果的实时评估信号？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L45",
+   "line": 45,
+   "text": "当系统出现Badcase时，如何进行全链路Trace与归因，定位具体是哪个Agent或节点的问题？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L46",
+   "line": 46,
+   "text": "生产环境中的Badcase如何设计自动化回流（Data Flywheel）机制，以更新评测集并指导模型/Prompt迭代？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L47",
+   "line": 47,
+   "text": "在进行Prompt工程迭代时，如何解决“跷跷板效应”（即修复A类Badcase导致B类Case效果回退/recall@K下降）？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L50",
+   "line": 50,
+   "text": "在复杂的Multi-Agent协同体系中，如何量化评估并筛选出最急需进行SFT（监督微调）的特定Agent？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L119",
+   "line": 119,
+   "text": "引入 Agentic RAG 架构后，如何设计一套系统性的评测方案？",
+   "major": "二_Agent应用开发相关",
+   "minor": "3.工具相关",
+   "tag": "Agentic RAG理解/测评",
+   "depth": null
+  },
+  {
+   "id": "L192",
+   "line": 192,
+   "text": "在评估ASR模型时，您会重点考察哪些技术指标（如WER/SER，以及特定噪声/口音下的recall@K）？",
+   "major": null,
+   "minor": null,
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L201",
+   "line": 201,
+   "text": "在评估意图识别模块时，为什么选择 Hit@3 作为评估指标，而不是 Hit@1？",
+   "major": "二_Agent应用开发相关",
+   "minor": "6.agent处理情景的架构设计",
+   "tag": "意图识别",
+   "depth": null
+  },
+  {
+   "id": "L244",
+   "line": 244,
+   "text": "关于自动化Prompt迭代（AutoResearch）：如何基于评测Benchmark（重点关注Recall@K、F1-Score等召回与精确度指标），构建“自动运行实验-Badcase分析-Prompt自动优化”的闭环系统，以降低对人工专家经验的依赖？",
+   "major": "二_Agent应用开发相关",
+   "minor": "8.工程落地",
+   "tag": "人工介入",
+   "depth": null
+  },
+  {
+   "id": "L246",
+   "line": 246,
+   "text": "关于垂类场景的Skill自进化：在Code或复杂垂类交互场景中，如何通过沉淀Badcase修复经验和错误尝试路径（Self-Reflection），构建动态Skill库以提升模型在In-Context Learning下的Few-shot能力，从而减少不必要的模型微调（SFT）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "8.工程落地",
+   "tag": "人工介入",
+   "depth": null
+  },
+  {
+   "id": "L248",
+   "line": 248,
+   "text": "关于AutoResearch在搜广推策略探索中的应用：如何看待利用Agent进行多维策略探索（例如排序阶段的融合参自动搜索、多目标超参调优），以及如何建立评测机制以确保自动生成的策略能稳定提升线上大盘指标？",
+   "major": "二_Agent应用开发相关",
+   "minor": "8.工程落地",
+   "tag": "人工介入",
+   "depth": null
+  },
+  {
+   "id": "L253",
+   "line": 253,
+   "text": "直接使用物理文件系统进行数据读写时，通常会遇到哪些性能瓶颈和并发安全挑战？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L255",
+   "line": 255,
+   "text": "在 Agent 场景中，工具（Tool/Function Call）调用失败时的常见容错与重试策略有哪些？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "设计与优化",
+   "depth": null
+  },
+  {
+   "id": "L256",
+   "line": 256,
+   "text": "针对AI Agent系统的并发能力与高可靠性，通常可以从哪些维度进行深度优化？请详细拆解系统架构。",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "设计与优化",
+   "depth": null
+  },
+  {
+   "id": "L257",
+   "line": 257,
+   "text": "从系统架构角度看，构建一个企业级、可运维、可持续迭代的AI Agent平台，需要哪些核心中间件或平台能力支持（如提示词管理、评估平台、A/B测试、数据回流等）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "设计与优化",
+   "depth": null
+  },
+  {
+   "id": "L259",
+   "line": 259,
+   "text": "请介绍 Prefix Caching（前缀缓存）的原理。在动态的多 Agent 工作流中，如何设计 Prompt 结构以最大化缓存命中率，避免框架破坏缓存？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "设计与优化-multi Agent",
+   "depth": null
+  },
+  {
+   "id": "L262",
+   "line": 262,
+   "text": "如何构建Agent系统的在线监控与Trace追踪？如何实时捕获并分析LLM、Tool Call和Reasoning等中间状态的异常？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "监测诊断与反制",
+   "depth": null
+  },
+  {
+   "id": "L264",
+   "line": 264,
+   "text": "针对工具调用出错、检索召回不足（未召回或噪声多）等常见缺陷，有哪些具体的优化策略（如Query改写、双路召回、重排、Self-RAG等）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "监测诊断与反制",
+   "depth": null
+  },
+  {
+   "id": "L266",
+   "line": 266,
+   "text": "故障诊断或根因分析Agent的整体Pipeline是如何设计的？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "监测诊断与反制",
+   "depth": null
+  },
+  {
+   "id": "L269",
+   "line": 269,
+   "text": "如何构建用于评估大模型或 Agent 性能的测试数据集？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L270",
+   "line": 270,
+   "text": "用于系统评估与Benchmark测试的标注数据集，是采用人工标注还是大模型自动化标注？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L271",
+   "line": 271,
+   "text": "对于高准确性、高可信要求的业务场景，你会采用哪些工程和技术手段来缓解或控制大语言模型的幻觉问题？如何评估这些手段的效果？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L273",
+   "line": 273,
+   "text": "如何建立客观的Agent系统评估体系？除了任务成功率，还需要引入哪些多维度指标？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L274",
+   "line": 274,
+   "text": "如何系统性地构建一个大模型/智能体（LLM/Agent）项目链路，并建立可量化的效果评估体系（Evaluation Framework）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L275",
+   "line": 275,
+   "text": "在评估大模型生成质量时，自动化评分体系通常包含哪些维度？如何保障LLM-as-a-judge（大模型作为裁判）的客观性与可信度？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L276",
+   "line": 276,
+   "text": "如何定义多轮对话的任务完成率？有哪些方法来判定对话状态是已完成、部分完成还是未完成？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L277",
+   "line": 277,
+   "text": "如何建立端到端Agent系统的评估框架？如何合理定义和落地线上与线下的评测指标（如任务达成率、幻觉率、链路耗时等）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L278",
+   "line": 278,
+   "text": "误差分析：在系统整体准确率指标之外，未命中的主要分布和成因是什么？哪一类特定的意图准确率最低？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "评估",
+   "depth": null
+  },
+  {
+   "id": "L280",
+   "line": 280,
+   "text": "在大模型/RAG/Agent 项目落地中，如何进行系统的项目成本估算（如Token消耗、算力、存储等）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "成本",
+   "depth": null
+  },
+  {
+   "id": "L282",
+   "line": 282,
+   "text": "在你过往的项目中，你是如何分析并优化系统的启动性能与资源初始化效率的？请详细阐述你的诊断工具、优化策略及量化结果。",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "结合过往",
+   "depth": null
+  },
+  {
+   "id": "L285",
+   "line": 285,
+   "text": "如何让Agent从真实的用户交互中安全地吸收反馈、优化行为（持续学习），而不需要频繁进行全量重训？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "迭代",
+   "depth": null
+  },
+  {
+   "id": "L286",
+   "line": 286,
+   "text": "如何系统性地进行大模型/Agent 应用的 Badcase 分析，并建立持续迭代的闭环机制？在大模型应用的效果优化与Badcase复盘中，如何界定并选择应该使用工程手段、Prompt工程还是模型微调来解决问题？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "迭代",
+   "depth": null
+  },
+  {
+   "id": "L289",
+   "line": 289,
+   "text": "如何对AI Agent系统进行监控和可观测性建设？除了常规的QPS、延迟、错误率之外，你还会重点关注哪些AI特有指标（如Token消耗、Prompt版本效果、工具调用成功率、任务完成率等）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "迭代",
+   "depth": null
+  },
+  {
+   "id": "L291",
+   "line": 291,
+   "text": "如何评估一个Agent系统在真实生产环境中的鲁棒性与泛化能力，避免其沦为“Demo型产品”？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "迭代",
+   "depth": null
+  },
+  {
+   "id": "L293",
+   "line": 293,
+   "text": "在大模型应用的效果优化与Badcase复盘中，如何界定并选择应该使用工程手段、Prompt工程还是模型微调来解决问题？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "迭代",
+   "depth": null
+  },
+  {
+   "id": "L295",
+   "line": 295,
+   "text": "检索召回率参数调优：在召回阶段，召回深度参数Recall@K的选型依据是什么？为什么从高Recall阈值调整到低Recall阈值？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "检索召回",
+   "depth": null
+  },
+  {
+   "id": "L301",
+   "line": 301,
+   "text": "针对复杂推理任务（如数学或逻辑推理），如何评估并选择使用思维链（CoT）、思维树（ToT）还是思维图（GoT）？",
+   "major": "三_transformer相关",
+   "minor": "三_transformer相关",
+   "tag": null,
+   "depth": null
+  },
+  {
+   "id": "L426",
+   "line": 426,
+   "text": "Hit@1/Hit@3 已有基线后，继续提升 RAG 召回精确度应从哪些方向定位和优化？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Evaluation",
+   "depth": 4
+  },
+  {
+   "id": "L427",
+   "line": 427,
+   "text": "意图识别→多意图拆分→并发 RAG→总结链路的 Trace 应记录什么？如何转换成 Grader 可用的评测事实？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Evaluation",
+   "depth": 4
+  },
+  {
+   "id": "L428",
+   "line": 428,
+   "text": "Eval Case 带有用户、商家、订单等时效状态时，如何保证测试可重复并处理 Case 失效？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Evaluation",
+   "depth": 4
+  },
+  {
+   "id": "L439",
+   "line": 439,
+   "text": "Agent 如何保证分析和输出准确？评测 Case 覆盖、优质 Case 筛选、集合替换和数据飞轮如何持续？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Evaluation",
+   "depth": 4
+  },
+  {
+   "id": "L440",
+   "line": 440,
+   "text": "Agent 成本如何控制？Token 优化、上下文裁剪、模型路由和效果/延迟预算如何协同？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Evaluation",
+   "depth": 4
+  },
+  {
+   "id": "L444",
+   "line": 444,
+   "text": "Agent 执行时如何感知当前状态？通过日志和 Trace 如何定位卡住的节点或工具？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Agent",
+   "depth": 3
+  },
+  {
+   "id": "L495",
+   "line": 495,
+   "text": "Harness test 里的 Fake LLM 测什么？不能测什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Harness/Fake LLM",
+   "depth": 3
+  },
+  {
+   "id": "L496",
+   "line": 496,
+   "text": "RAG 怎么做？HitRate/MRR 怎么评估？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "RAG/HitRate/MRR",
+   "depth": 3
+  },
+  {
+   "id": "L497",
+   "line": 497,
+   "text": "RAG 对最终效果有没有影响？怎么证明？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "RAG/效果归因",
+   "depth": 4
+  },
+  {
+   "id": "L524",
+   "line": 524,
+   "text": "Agent/RAG 是否做过评测？常见评测方式和完整评测流程是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Agent/RAG Evaluation",
+   "depth": 4
+  },
+  {
+   "id": "L529",
+   "line": 529,
+   "text": "结合项目，如何降低幻觉，并判断 Agent 最终结果是否正确？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "幻觉/结果校验",
+   "depth": 4
+  },
+  {
+   "id": "L560",
+   "line": 560,
+   "text": "平时部署的服务都会关注哪些指标？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "可观测性/服务指标",
+   "depth": 3
+  },
+  {
+   "id": "L573",
+   "line": 573,
+   "text": "这套 Agent 的评测条件怎么设计？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Agent评测/门禁条件",
+   "depth": 3
+  },
+  {
+   "id": "L576",
+   "line": 576,
+   "text": "负向 Prompt 和“不要重复调用工具”这样的简单声明有什么区别？怎么验证它是否有效？",
+   "major": "二_Agent应用开发相关",
+   "minor": "4.Prompt_engineering",
+   "tag": "负向Prompt/评测验证",
+   "depth": 3
+  },
+  {
+   "id": "L593",
+   "line": 593,
+   "text": "对于 AI 自动生成的业务代码，如何进行自动化集成测试？当接口变更波及前端页面或下游微服务时，如何设计变更影响面分析与端到端回归测试？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "AI代码/集成测试/影响面分析",
+   "depth": 3
+  },
+  {
+   "id": "L594",
+   "line": 594,
+   "text": "如何设计基于 AI Agent 的自动化测试闭环以替代传统人工测试？从需求理解、测试用例生成、契约断言到缺陷归因的端到端流程是怎样的？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "AI测试/自动化测试闭环",
+   "depth": 3
+  },
+  {
+   "id": "L595",
+   "line": 595,
+   "text": "在 AI 代码生成与评测系统中，本地生成的代码如何安全推送到隔离沙箱（如 Docker / Firecracker / gVisor）中执行？沙箱环境如何快速拉起依赖服务、配置网络隔离与端口映射，并防范代码逃逸？",
+   "major": "二_Agent应用开发相关",
+   "minor": "8.工程落地",
+   "tag": "代码沙箱/隔离执行/安全部署",
+   "depth": 3
+  },
+  {
+   "id": "L607",
+   "line": 607,
+   "text": "电商 Agent 评测基准与测试集构建：你在项目中使用了什么数据集或测试集评估 Shopping Agent 的决策效果？离线模拟评测集（如公开商品基准、合成 Query）与线上真实电商环境在商品分布、动态库存及搜索召回上有何差异？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Shopping Agent/测试数据集",
+   "depth": 2
+  },
+  {
+   "id": "L611",
+   "line": 611,
+   "text": "购物 Agent 奖励函数打分机制设计：在强化学习或策略优化中，Reward 具体是如何量化打分的？是基于商品属性完全匹配、软语义重合度、价格约束满足，还是依赖外部评审模型打分？各项分值如何配比？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Shopping Agent/Reward打分",
+   "depth": 3
+  },
+  {
+   "id": "L612",
+   "line": 612,
+   "text": "任务成功判定准则：任务成功的判定是否要求模型必须选中全局最符合要求（Top-1）的商品？如果候选集中存在多个同等满足硬性约束但附加属性略有差异的商品，判据如何处理？严格精确匹配与软约束容错如何平衡？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Shopping Agent/成功判定准则",
+   "depth": 2
+  },
+  {
+   "id": "L613",
+   "line": 613,
+   "text": "过程奖励（Dense Reward）设计与探索激励：为了缓解长链任务中的稀疏奖励（Sparse Reward）问题，中间过程奖励具体是如何设计的？哪些中间行为（如有效关键词搜索、进入高相关详情页）会被赋予正向引导，如何避免奖惩噪声？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Shopping Agent/过程奖励设计",
+   "depth": 3
+  },
+  {
+   "id": "L618",
+   "line": 618,
+   "text": "GRPO 算法中过程奖励机制与信用分配：在基于群组相对策略优化（GRPO）或类似强化学习微调中，算法通常依据采样轨迹的最终结果进行相对打分，若引入中间过程奖励具体应如何实现？如何避免中间奖励破坏策略优化的信用分配（Credit Assignment）？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Shopping Agent/GRPO过程奖励与信用分配",
+   "depth": 4
+  },
+  {
+   "id": "L619",
+   "line": 619,
+   "text": "奖励函数单调性假设与局部最优辨析：“找到的商品与目标描述越接近，获得的奖励就越高”这一假设在实际场景中是否恒成立？在离散属性不匹配、反向约束违背或组合特征互斥时，简单的属性相似度单调奖励是否会导致模型陷入局部最优？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Shopping Agent/奖励单调性与局部最优",
+   "depth": 3
+  },
+  {
+   "id": "L620",
+   "line": 620,
+   "text": "步惩罚（Step Penalty）对工具调用频次与探索深度的激励偏置：在奖励函数中设置的步成本（Step Cost/Penalty）或中间奖励，会让模型倾向于发起更多的工具调用进行充分探索，还是倾向于尽早退出以避免惩罚？如何调优参数以平衡决策严谨度与工具调用效率？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Shopping Agent/步惩罚与调用频次偏置",
+   "depth": 3
+  },
+  {
+   "id": "L621",
+   "line": 621,
+   "text": "状态循环转移中奖惩抵消机制与终局奖励等价性辨析：若模型从商品 A 切换到 B 再切回 A，中间的探索奖励与返回惩罚在数值上相互抵消，是否就等价于“只依据最终状态决定奖励”？从势能塑形（Potential-based Shaping）、累积步成本与折扣因子的角度，两者的本质区别是什么？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Shopping Agent/循环奖惩抵消与状态等价性",
+   "depth": 4
+  },
+  {
+   "id": "L628",
+   "line": 628,
+   "text": "手撕追问：引入独立 Judge 模型校验任务完成度与防自满偏置。能否在 Agent Loop 终止前引入另一个独立的评估模型（LLM-as-a-Judge）对当前执行结果与原始需求进行端到端验证？如何设计独立 Judge 的输入 Prompt、证据核对规则，以及应对 Judge 自身误判的机制？",
+   "major": "二_Agent应用开发相关",
+   "minor": "9.业务评估(性能优化与诊断)",
+   "tag": "Agent Loop/独立Judge校验",
+   "depth": 4
+  }
+ ]
+}

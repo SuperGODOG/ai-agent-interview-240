@@ -1,10 +1,10 @@
-# agent-review-audit 对比与融合计划（2026-08-11 评审）
+# agent-review-audit 对比与融合计划（2026-08-11 评审；现行题库规模见下文）
 
 ## 姊妹技能位置与结构
 
 - 路径：`~/.gemini/antigravity-cli/builtin/skills/agent-review-audit/`（用户 Antigravity/Gemini CLI 的内置 skill，与本技能并行）
-- 结构：SKILL.md（4.4KB 轻量路由表，6 大类）+ `references/03_Cards/Q001~Q243.md`（243 张题卡，~1MB）+ `scripts/route_project.py`（3.8KB，关键词路由）
-- 题源同族：243 卡与本题库 240 题同源（如 Q006≈L9），可做 Q↔L 映射
+- 结构：SKILL.md（轻量路由表，6 大类）+ `references/03_Cards/Q001~Q420.md`（448 张题卡）+ `scripts/route_project.py`（关键词路由）
+- 题源关系：Q001~Q243 保留原有同源映射；Q244~Q420 是本轮面经扩充后按独立 schema 新增的 177 张审查卡
 
 ## 题卡 schema（它比我们强的部分）
 
@@ -18,7 +18,7 @@ frontmatter 字段：`qid / title / primary_category / sub_category / depth_leve
 ## route_project.py 路由机制与局限
 
 - 机制：6 类关键词频次打分（×2/命中）→ 取最高类目 → 固定返回该类目 cards 列表前 3 张
-- 局限：只到**类目级**（非题级/概念级）；路由表只覆盖约 50/243 张卡，八成题卡不可达；无语义匹配；无证据文件；`os.walk` 无跳过目录/大小限制（大仓库会慢）；无复盘/薄弱优先
+- 历史局限（2026-08-11 基线）：只到**类目级**（非题级/概念级）；当时路由表只覆盖约 50/243 张卡，八成题卡不可达；无语义匹配；无证据文件；`os.walk` 无跳过目录/大小限制（大仓库会慢）；无复盘/薄弱优先
 
 ## 对比结论
 
@@ -29,7 +29,7 @@ frontmatter 字段：`qid / title / primary_category / sub_category / depth_leve
 
 ## 融合计划（用户认可方向，未执行）
 
-1. **答题思路移植**：按 Q↔L 映射把 243 卡"答题思路与知识点分析"批量搬进 items.json（用户自家文件，无版权问题）——一举补上"题库无答案"缺口
+1. **答题思路移植**：按 Q↔L 映射把原有卡片的"答题思路与知识点分析"批量搬进 items.json（用户自家文件，无版权问题）——已形成公共题库的答题框架；本轮新增面经继续按两套 schema 分别收录
 2. **学习路径边**：prerequisites/downstream 引入概念图谱 → 图谱出现"前置→后置"有向边，学习顺序可视化
 3. **诊断模式**：把"架构对齐/坑点预警/演进建议"三维审查姿势作为本技能第二模式（拷问模式审人，诊断模式审代码）
 4. **待复习状态**：答错的题自动进待复习清单，下场开场先打（并入复盘机制）
