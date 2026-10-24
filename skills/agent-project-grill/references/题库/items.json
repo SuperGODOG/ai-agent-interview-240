@@ -18169,7 +18169,9 @@
       "L783",
       "L784",
       "L785",
-      "L786"
+      "L786",
+      "L830",
+      "L831"
     ],
     "relations": [
       {
@@ -18303,6 +18305,18 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L786"
+      },
+      {
+        "target": "L830",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L830"
+      },
+      {
+        "target": "L831",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L831"
       }
     ],
     "line": 718,
@@ -18331,7 +18345,8 @@
       "L781",
       "L782",
       "L795",
-      "L796"
+      "L796",
+      "L838"
     ],
     "relations": [
       {
@@ -18387,6 +18402,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L796"
+      },
+      {
+        "target": "L838",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L838"
       }
     ],
     "line": 719,
@@ -18634,7 +18655,8 @@
       "L737",
       "L738",
       "L739",
-      "L740"
+      "L740",
+      "L840"
     ],
     "relations": [
       {
@@ -18702,6 +18724,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L740"
+      },
+      {
+        "target": "L840",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L840"
       }
     ],
     "line": 725,
@@ -19885,7 +19913,10 @@
       "L805",
       "L811",
       "L815",
-      "L816"
+      "L816",
+      "L838",
+      "L841",
+      "L842"
     ],
     "relations": [
       {
@@ -19947,6 +19978,24 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L816"
+      },
+      {
+        "target": "L838",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L838"
+      },
+      {
+        "target": "L841",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L841"
+      },
+      {
+        "target": "L842",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L842"
       }
     ],
     "line": 667,
@@ -20301,8 +20350,24 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L830",
+      "L831"
+    ],
+    "relations": [
+      {
+        "target": "L830",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L830"
+      },
+      {
+        "target": "L831",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L831"
+      }
+    ],
     "line": 678,
     "assigned": true,
     "in_comment": false,
@@ -20381,8 +20446,52 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L832",
+      "L833",
+      "L834",
+      "L835",
+      "L836",
+      "L837"
+    ],
+    "relations": [
+      {
+        "target": "L832",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L832"
+      },
+      {
+        "target": "L833",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L833"
+      },
+      {
+        "target": "L834",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L834"
+      },
+      {
+        "target": "L835",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L835"
+      },
+      {
+        "target": "L836",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L836"
+      },
+      {
+        "target": "L837",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L837"
+      }
+    ],
     "line": 682,
     "assigned": true,
     "in_comment": false,
@@ -20407,7 +20516,8 @@
       "L801",
       "L802",
       "L803",
-      "L804"
+      "L804",
+      "L839"
     ],
     "relations": [
       {
@@ -20445,6 +20555,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L804"
+      },
+      {
+        "target": "L839",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L839"
       }
     ],
     "line": 683,
@@ -20797,8 +20913,38 @@
     "prereq": [
       "L760"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L833",
+      "L834",
+      "L835",
+      "L836"
+    ],
+    "relations": [
+      {
+        "target": "L833",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L833"
+      },
+      {
+        "target": "L834",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L834"
+      },
+      {
+        "target": "L835",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L835"
+      },
+      {
+        "target": "L836",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L836"
+      }
+    ],
     "line": 698,
     "assigned": true,
     "in_comment": false,
@@ -20999,8 +21145,17 @@
     "prereq": [
       "L776"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L839"
+    ],
+    "relations": [
+      {
+        "target": "L839",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L839"
+      }
+    ],
     "line": 708,
     "assigned": true,
     "in_comment": false,
@@ -21574,6 +21729,274 @@
     "downstream": [],
     "relations": [],
     "line": 736,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L830",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "2.agent主流框架",
+    "depth": 3,
+    "text": "使用 LangGraph 构建包含“决策（Plan/Decide）- 取证（Retrieve/Tools）- 生成（Draft/Synthesize）- 审核（Audit/Critique）”的有界循环工作流时，其核心底层架构与状态设计是什么？详细说明如何通过 TypedDict 定义共享状态（State）、基于条件边（Conditional Edges）实现循环流转与分支路由、以及如何在图拓扑中通过最大步数限制（recursion_limit）构建有界安全防线。",
+    "tag": "LangGraph/状态图StateGraph/有界循环/决策取证生成审核/条件边/State定义/recursion_limit/架构设计",
+    "status": "ready",
+    "prereq": [
+      "L718",
+      "L771"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 737,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L831",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "2.agent主流框架",
+    "depth": 2,
+    "text": "相比普通无状态、一次性的单次大模型 API 调用（Single-turn LLM Completion），基于 LangGraph 搭建的有界循环工作流到底解决了生产环境中的哪些根本性缺陷？从长链路中间状态确定性持久化（Checkpointer / Time-travel）、失败自动自愈修正、人机协同断点恢复（Human-in-the-Loop Interrupt）以及可观测性流控等维度展开论述。",
+    "tag": "LangGraph优势/单次调用缺陷/状态持久化Checkpointer/时光旅行/自愈重试/HITL断点/可控流",
+    "status": "ready",
+    "prereq": [
+      "L718",
+      "L771"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 738,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L832",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在复杂 Agent 执行循环中，工具执行预算（Max Tool Steps）、回复修正预算（Max Reflection Count）以及整体资源配额的具体停止条件是如何在代码与状态机中落地的？详细说明如何在 State 中维护步数计数器、Token 累计阈值，并在达到预算上限时触发优雅降级（Graceful Degradation）直接输出兜底回答。",
+    "tag": "预算控制/执行预算/修正预算/停止条件/State计数器/Token门禁/优雅降级/防无限自旋",
+    "status": "ready",
+    "prereq": [
+      "L775"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 739,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L833",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "当用户提出的问题在知识库或现有业务工具中根本没有相关答案或数据时，Agent 循环应该如何安全、迅速地终止，以防止模型陷入无休止的换词瞎猜和死循环？详细阐述通过检索相关度分数阈值截断（Relevance Score Gate）、LLM 自省拒答判定（I Don't Know / Out-of-Domain Detection）、以及单步熔断逻辑的设计。",
+    "tag": "无答案终止/知识库空结果/置信度门禁/拒答判定/快速失败FailFast/防幻觉瞎猜/安全熔断",
+    "status": "ready",
+    "prereq": [
+      "L775",
+      "L791"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 740,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L834",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在 Agent 自主取证多轮检索中，系统是如何精准检测“重复查询（Duplicated / Redundant Query）”的？判断两次查询构成重复的技术依据有哪些？详细对比基于 Query 字符串哈希/编辑距离/语义向量余弦相似度匹配，与基于返回文档结果集重合度（Jaccard 相似度）的检测机制在准确率与算力开销上的权衡。",
+    "tag": "重复查询检测/Query去重/语义相似度/编辑距离/Jaccard重合度/冗余检索/检测机制",
+    "status": "ready",
+    "prereq": [
+      "L775",
+      "L791"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 741,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L835",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "是否只要两次检索返回的结果集（Documents Top-K）完全相同，就能够直接认定这两次是“重复查询”？深入分析其边界特例：如果两次不同的 Query（例如反义词对比或不同侧面的探索）由于知识库数据稀疏而碰巧召回了相同的兜底文档，直接判定重复是否会扼杀模型的探索空间？反之，空结果（0 Documents）如何判定？",
+    "tag": "重复判定边界/召回结果相同/数据稀疏陷阱/探索空间保护/空结果判定/工程严谨性",
+    "status": "ready",
+    "prereq": [
+      "L775",
+      "L791"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 742,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L836",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "为什么系统通常不建议在检索前仅凭查询文本的语义相似度（Semantic Similarity）直接拦截并跳过检索，而要在实际检索之后比对结果集？语义非常相近的两次微调 Query（如改变修饰词或限定范围）是否可能命中完全不同的切片？在检索前做相似度比对能否真正减少一次耗时耗算力的向量检索调用，其工程代价是什么？",
+    "tag": "检索前比对vs检索后比对/向量相似度拦截/检索开销权衡/细微提示词差异/向量检索收益/工程权衡",
+    "status": "ready",
+    "prereq": [
+      "L775",
+      "L791"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 743,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L837",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 2,
+    "text": "在 Agent 执行引擎中，专门耗费算力去检测“相似或重复检索行为”，其核心业务与工程目标到底是什么？除了防止模型陷入无休止的“死胡同”无效自旋、节省外部向量库与大模型 Token 成本之外，如何利用该检测信号反向刺激 Agent 触发反思（Self-Correction）机制、强制调整探索策略或向用户主动求助？",
+    "tag": "重复检索目的/死循环消除/成本节省/反思机制触发/策略动态调整/主动求助/系统自愈",
+    "status": "ready",
+    "prereq": [
+      "L775"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 744,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L838",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 2,
+    "text": "在企业级技能库（Skill Registry）设计中，行为 Skill（Action Skill）和回复 Skill（Response / Formatter Skill）在架构职责、执行上下文与副作用上有什么本质区别？详细说明为什么必须将产生外部环境状态变更（如调用支付、修改数据库、发起网络请求）的 Action Skill 与仅负责数据格式化、语气拟人化或前端组件渲染的 Response Skill 进行分层解耦。",
+    "tag": "Skill分类/行为Skill/回复Skill/ActionSkill/副作用隔离/状态变更/渲染解耦/分层架构",
+    "status": "ready",
+    "prereq": [
+      "L719",
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 745,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L839",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "工作记忆（Working Memory）、情景记忆（Episodic Memory）与个人语义记忆（Personal Semantic Memory）在检索召回方式与数据生命周期上各自有何不同？系统性对比：工作记忆的直接提示词注入与即时销毁、情景记忆基于语义向量+时间衰减函数的混合召回与按周/月渐进归档、以及个人语义记忆基于结构化属性/Key-Value 精准匹配与长期持久保留。",
+    "tag": "记忆检索方式/生命周期/工作记忆/情景记忆/个人语义记忆/提示词注入/向量混合检索/属性精确匹配",
+    "status": "ready",
+    "prereq": [
+      "L776",
+      "L801"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 746,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L840",
+    "kind": "question",
+    "domain": "S_ALGO_GENERAL",
+    "major": "反问与国企特别版",
+    "minor": "2.反问与国企特别版",
+    "depth": 2,
+    "text": "在技术面试的尾声，当面试官问出“你有什么问题想问我的吗？”时，作为求职大模型 Agent 架构或后端核心岗位的候选人，应该如何设计高质量的反问问题？从团队当前落地 Agent 业务的核心工程瓶颈、生产环境大模型基础设施建设演进、业务对技术团队的期望与团队工程文化等维度给出专业提问策略与避坑指南。",
+    "tag": "反问面试官/面试软实力/技术团队痛点/基础设施演进/工程文化/求职策略/高质量反问",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 747,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L841",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 2,
+    "text": "你平时在实际研发工作中是否深度使用过 AI Coding 工具链（如 Cursor, GitHub Copilot, Cline, Windsurf 等）？结合实际项目研发，说明你是如何将 AI 编程辅助工具深度融入需求拆解、单元测试编写（TDD）、复杂重构以及代码审查（Code Review）工作流中的，并阐述 AI 辅助开发在提升个人研发效能上的具体体现。",
+    "tag": "AICoding/Cursor/Copilot/研发提效/需求拆解/TDD单测/代码审查/研发工作流",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 748,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L842",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在使用 AI Coding 工具生成核心业务代码之前，你是习惯于已经写好了极其详尽的技术方案（如架构图、接口契约、时序图与边界防御），还是习惯于心里只有一个大致想法就直接开始边写边改（Vibe Coding）？深入对比“设计驱动开发（Spec-Driven Development, SDD）”与盲目即兴编码在工程一致性、避免架构劣化腐烂、防范隐藏缺陷上的决定性优势。",
+    "tag": "AICoding工作流/设计驱动开发SDD/VibeCoding/架构设计先行/接口契约/防架构腐烂/工程严谨性",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 749,
     "assigned": true,
     "in_comment": false,
     "comment_label": ""
