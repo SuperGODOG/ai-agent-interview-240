@@ -7570,6 +7570,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从事务并发控制底层回溯至 Server 层与引擎层的完整查询调用生命周期"
+   },
+   {
+    "target": "L686",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "基于数据库行级排他锁理解 CAS 状态条件更新的原子性"
    }
   ],
   "domain": "B_BACKEND"
@@ -7735,6 +7741,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "从单机 SQL Join 语法语义递进至分布式架构下的跨库跨分片 Join 规避与解决方案"
+   },
+   {
+    "target": "L688",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "对比行级排他锁持有周期与 CAS 条件更新的资源开销差异"
    }
   ],
   "domain": "B_BACKEND"
@@ -9307,6 +9319,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "一人一单去重Set导致BigKey的高并发拆桶优化"
+   },
+   {
+    "target": "L680",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合 Redis Set 校验一人一单进一步设计全链路高并发防御"
    }
   ],
   "domain": "B_BACKEND"
@@ -9581,6 +9599,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "消息消费保证At-Least-Once后，落库时依靠幂等更新与状态机CAS"
+   },
+   {
+    "target": "L682",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从底层 Broker/Confirm 机制深入至业务维度的消息补偿与本地消息表"
    }
   ],
   "domain": "B_BACKEND"
@@ -9618,7 +9642,14 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L685",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从延时关单事件一致性递进至亿级海量订单的分片与削峰调度"
+   }
+  ],
   "domain": "B_BACKEND"
  },
  {
@@ -9644,6 +9675,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "异步下单后客户端轮询降压与超时关单ZSet补偿机制"
+   },
+   {
+    "target": "L683",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合前端高频轮询设计异步订单查询降级与孤儿流水清理"
    }
   ],
   "domain": "B_BACKEND"
@@ -10876,7 +10913,14 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L696",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "巩固经典高频字符串与栈结构操作能力"
+   }
+  ],
   "domain": "S_ALGO_GENERAL"
  },
  {
@@ -10999,6 +11043,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "从商品展示页浏览设计递进至下单链路中的库存原子预扣与高并发秒杀"
+   },
+   {
+    "target": "L680",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从单点 Lua 库存原子预扣递进至全链路防超卖与一人一单强一致约束"
    }
   ],
   "domain": "B_BACKEND"
@@ -11411,7 +11461,14 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L692",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从框架对比深入至项目打造受控自进化元 Agent 工厂的核心目的"
+   }
+  ],
   "domain": "A_AGENT"
  },
  {
@@ -11951,6 +12008,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "权衡秒杀场景低延迟、单条ACK与Kafka批量高吞吐的选型差异"
+   },
+   {
+    "target": "L681",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "深入探讨 Redis 内存校验与后端数据库落库之间的 MQ 削峰缓冲价值"
    }
   ],
   "domain": "B_BACKEND"
@@ -15158,6 +15221,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从单点对话模型成本递进至全系统多模型统一接入、动态路由与降级体系"
+   },
+   {
+    "target": "L694",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合具体模型调用单价完善全链路 Token 计量体系"
    }
   ]
  },
@@ -15270,6 +15339,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "结合规范驱动开发（SDD）论证接口与设计模式必须由工程师严格把控"
+   },
+   {
+    "target": "L693",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合控制循环机制深入分析有界预算在防止模型死循环中的作用"
    }
   ]
  },
@@ -15389,6 +15464,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从单机双写一致性递进深入至高并发秒杀库存合并同步策略"
+   },
+   {
+    "target": "L691",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合 Cache-Aside 模式深入至本地缓存的广播失效与短 TTL 容错"
    }
   ]
  },
@@ -15465,6 +15546,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从读写链路解耦进一步递进至长期记忆的向量化筛选、语义去噪与相关性召回"
+   },
+   {
+    "target": "L695",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合读写解耦架构深入说明长短期记忆在对话前的召回拼装与对话后的异步提炼"
    }
   ]
  },
@@ -16151,6 +16238,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "从关系型数据库 B+ 树索引检索与回表开销递进至内存型缓存存储的查询性能对比"
+   },
+   {
+    "target": "L690",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从单层 Redis 性能优势递进至引入 Caffeine 应对热点 Key 网络打爆"
    }
   ]
  },
@@ -16196,6 +16289,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从单节点 SETNX 锁递进至主从切换锁丢失问题与 Redlock 算法争议探讨"
+   },
+   {
+    "target": "L689",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合分布式锁的高成本与故障切换风险论证单行业务中 CAS 的优越性"
    }
   ]
  },
@@ -16317,6 +16416,711 @@
     "direction": "in",
     "type": "progressive",
     "reason": "构成大厂综合面试中'1道复杂数据统计 SQL + 1道高频数据结构算法'的双重手撕考核"
+   },
+   {
+    "target": "L696",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "大厂手撕高频题进阶题组"
+   }
+  ]
+ },
+ {
+  "id": "L680",
+  "line": 680,
+  "kind": "question",
+  "text": "秒杀场景中，怎么防止库存超卖和一人一单？",
+  "major": "四_八股相关",
+  "minor": "6.高并发业务流与秒杀自愈",
+  "domain": "B_BACKEND",
+  "tag": "秒杀高并发/库存防超卖/一人一单/Redis Lua预扣/MySQL唯一索引兜底",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L471",
+   "L394"
+  ],
+  "downstream": [
+   "L681"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L471",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从单点 Lua 库存原子预扣递进至全链路防超卖与一人一单强一致约束"
+   },
+   {
+    "target": "L394",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合 Redis Set 校验一人一单进一步设计全链路高并发防御"
+   },
+   {
+    "target": "L681",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从资格校验与原子扣减完成递进至下游异步消息削峰与解耦"
+   }
+  ]
+ },
+ {
+  "id": "L681",
+  "line": 681,
+  "kind": "question",
+  "text": "Redis 判断完下单资格后，为什么还要通过消息队列处理？",
+  "major": "四_八股相关",
+  "minor": "6.高并发业务流与秒杀自愈",
+  "domain": "B_BACKEND",
+  "tag": "秒杀架构/异步下单/消息队列/削峰填谷/保护数据库/接口耗时优化",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L680",
+   "L518"
+  ],
+  "downstream": [
+   "L682"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L680",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从完成预扣库存递进至为什么必须将请求写入消息队列异步化"
+   },
+   {
+    "target": "L518",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "深入探讨 Redis 内存校验与后端数据库落库之间的 MQ 削峰缓冲价值"
+   },
+   {
+    "target": "L682",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从引入 MQ 异步下单递进至消息传输过程中的防丢与补偿保障"
+   }
+  ]
+ },
+ {
+  "id": "L682",
+  "line": 682,
+  "kind": "question",
+  "text": "消息在发布、消费时丢失，或消费失败，有什么补偿措施？",
+  "major": "四_八股相关",
+  "minor": "4.消息队列与异步流",
+  "domain": "B_BACKEND",
+  "tag": "MQ可靠性/消息防丢/Confirm确认/死信队列DLQ/本地消息表/对账补偿",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L681",
+   "L404"
+  ],
+  "downstream": [
+   "L683"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L681",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从建立 MQ 异步链路递进至发布确认、死信队列与补偿机制设计"
+   },
+   {
+    "target": "L404",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从底层 Broker/Confirm 机制深入至业务维度的消息补偿与本地消息表"
+   },
+   {
+    "target": "L683",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从通用消息补偿递进至极端丢单场景下的用户排队体验与对账自愈"
+   }
+  ]
+ },
+ {
+  "id": "L683",
+  "line": 683,
+  "kind": "question",
+  "text": "如果 Redis 已返回抢购成功，但异步订单始终没有生成，用户查不到订单，怎么处理？",
+  "major": "四_八股相关",
+  "minor": "6.高并发业务流与秒杀自愈",
+  "domain": "B_BACKEND",
+  "tag": "极端异常处理/秒杀丢单自愈/前端排队轮询/死信回滚库存/离线对账补偿",
+  "depth": 4,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L682",
+   "L407"
+  ],
+  "downstream": [
+   "L684"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L682",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "针对极端消息丢失或落库失败导致的订单未生成设计自愈闭环"
+   },
+   {
+    "target": "L407",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合前端高频轮询设计异步订单查询降级与孤儿流水清理"
+   },
+   {
+    "target": "L684",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从订单生成异常转入订单生命周期中的超时未支付关单处理"
+   }
+  ]
+ },
+ {
+  "id": "L684",
+  "line": 684,
+  "kind": "question",
+  "text": "Spring Task 是怎么扫描并关闭超时未支付订单的？",
+  "major": "四_八股相关",
+  "minor": "6.高并发业务流与秒杀自愈",
+  "domain": "B_BACKEND",
+  "tag": "定时任务/Spring Task/@Scheduled/超时关单/状态轮询/全表扫描瓶颈",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L683"
+  ],
+  "downstream": [
+   "L685"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L683",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从订单落库状态推进至未支付超时订单的主动扫描与关单"
+   },
+   {
+    "target": "L685",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从单机定时扫库的瓶颈递进至延迟队列（RocketMQ/ZSet）架构演进"
+   }
+  ]
+ },
+ {
+  "id": "L685",
+  "line": 685,
+  "kind": "question",
+  "text": "如果定时扫描数据库，订单量变大的话怎么办？",
+  "major": "四_八股相关",
+  "minor": "6.高并发业务流与秒杀自愈",
+  "domain": "B_BACKEND",
+  "tag": "架构演进/超时关单优化/延迟消息队列/RocketMQ延迟消息/RabbitMQ死信/XXL-JOB分片",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L684",
+   "L406"
+  ],
+  "downstream": [
+   "L686"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L684",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "解决定时扫描大表时的深分页与锁表压力，演进为事件驱动延时队列"
+   },
+   {
+    "target": "L406",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从延时关单事件一致性递进至亿级海量订单的分片与削峰调度"
+   },
+   {
+    "target": "L686",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从触发关单事件深入至关单与用户支付并发发生时的锁控制"
+   }
+  ]
+ },
+ {
+  "id": "L686",
+  "line": 686,
+  "kind": "question",
+  "text": "支付与关单并发时，乐观锁锁的是什么？具体怎么实现？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "并发控制/支付关单竞争/乐观锁版本号/CAS条件更新/状态机幂等",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L685",
+   "L320"
+  ],
+  "downstream": [
+   "L687"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L685",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "在关单执行时重点解决与第三方支付异步回调并发冲突的防重问题"
+   },
+   {
+    "target": "L320",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "基于数据库行级排他锁理解 CAS 状态条件更新的原子性"
+   },
+   {
+    "target": "L687",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从乐观锁更新语法深入至冲突发生后（0行更新）的退款与发货履约"
+   }
+  ]
+ },
+ {
+  "id": "L687",
+  "line": 687,
+  "kind": "question",
+  "text": "支付和关单发生冲突后，各自会怎么处理？",
+  "major": "四_八股相关",
+  "minor": "6.高并发业务流与秒杀自愈",
+  "domain": "B_BACKEND",
+  "tag": "业务自愈/支付关单冲突/资金安全/自动退款/履约发货/影响行数判定",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L686"
+  ],
+  "downstream": [
+   "L688"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L686",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从 CAS 状态判断结果落地至关单成功后的原路退款与支付成功后的正常履约"
+   },
+   {
+    "target": "L688",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从冲突处理业务流反推并发控制中选择乐观锁的核心技术权衡"
+   }
+  ]
+ },
+ {
+  "id": "L688",
+  "line": 688,
+  "kind": "question",
+  "text": "这里为什么选乐观锁，不选悲观锁？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "锁机制权衡/乐观锁vs悲观锁/吞吐量/死锁防范/连接池保护/低冲突场景",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L687",
+   "L324"
+  ],
+  "downstream": [
+   "L689"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L687",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从低冲突概率特点论证乐观锁相比悲观锁在数据库吞吐量与连接池上的优势"
+   },
+   {
+    "target": "L324",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "对比行级排他锁持有周期与 CAS 条件更新的资源开销差异"
+   },
+   {
+    "target": "L689",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从数据库层面锁选型进一步拓展至为什么不需要引入外部分布式锁"
+   }
+  ]
+ },
+ {
+  "id": "L689",
+  "line": 689,
+  "kind": "question",
+  "text": "既然项目用了 Redis，为什么不直接用 Redis 分布式锁？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "分布式架构权衡/Redis锁局限性/网络RTT/锁与事务边界/主从切换锁丢失/数据库原子性",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L688",
+   "L676"
+  ],
+  "downstream": [
+   "L690"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L688",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从轻量级 CAS 机制递进至分析引入 Redis 分布式锁带来的额外 RTT 与一致性负担"
+   },
+   {
+    "target": "L676",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合分布式锁的高成本与故障切换风险论证单行业务中 CAS 的优越性"
+   },
+   {
+    "target": "L690",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 Redis 并发控制角色回退至其作为缓存核心层与本地缓存的搭配设计"
+   }
+  ]
+ },
+ {
+  "id": "L690",
+  "line": 690,
+  "kind": "question",
+  "text": "为什么需要 Caffeine、Redis、数据库这几层缓存？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "多级缓存架构/Caffeine进程内缓存/Redis分布式缓存/HotKey防御/分层吞吐时延矩阵",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L689",
+   "L675"
+  ],
+  "downstream": [
+   "L691"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L689",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从单纯的存储/锁组件拓展至 L1 本地内存 + L2 分布式缓存的多级架构"
+   },
+   {
+    "target": "L675",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从单层 Redis 性能优势递进至引入 Caffeine 应对热点 Key 网络打爆"
+   },
+   {
+    "target": "L691",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从多级缓存架构深入至各实例本地内存如何与 Redis 保持一致"
+   }
+  ]
+ },
+ {
+  "id": "L691",
+  "line": 691,
+  "kind": "question",
+  "text": "各实例的本地缓存如何与 Redis、数据库保持一致？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "多级缓存一致性/Redis PubSub广播/Canal监听Binlog/短TTL主动过期/最终一致性",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L690",
+   "L657"
+  ],
+  "downstream": [
+   "L692"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L690",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "针对 Caffeine 进程内隔离的痛点设计 Redis Pub/Sub 与消息广播失效方案"
+   },
+   {
+    "target": "L657",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合 Cache-Aside 模式深入至本地缓存的广播失效与短 TTL 容错"
+   },
+   {
+    "target": "L692",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从传统高并发后端缓存拓扑切换至 AI Agent 系统的工程目标与框架选型"
+   }
+  ]
+ },
+ {
+  "id": "L692",
+  "line": 692,
+  "kind": "question",
+  "text": "Agent项目的主要目的是什么？使用了现成的 Agent 框架吗？",
+  "major": "二_Agent应用开发相关",
+  "minor": "1.agent宏观认知",
+  "domain": "A_AGENT",
+  "tag": "Agent项目定位/元Agent工厂/自研原生Loop/框架选型/LangGraph旁路受控回环",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L691",
+   "L492"
+  ],
+  "downstream": [
+   "L693"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L691",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从确定性后端系统切换至自主 Agent 系统的工程化演化与受控目标"
+   },
+   {
+    "target": "L492",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从框架对比深入至项目打造受控自进化元 Agent 工厂的核心目的"
+   },
+   {
+    "target": "L693",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 Agent 项目受控目标递进至运行过程中的关键防御控制：预算管理"
+   }
+  ]
+ },
+ {
+  "id": "L693",
+  "line": 693,
+  "kind": "question",
+  "text": "Agent 的预算控制主要控制什么？",
+  "major": "二_Agent应用开发相关",
+  "minor": "9.业务评估(性能优化与诊断)",
+  "domain": "A_AGENT",
+  "tag": "Agent治理/有界预算控制/Token预算/递归步数限制/API调用超时/防死循环",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L692",
+   "L654"
+  ],
+  "downstream": [
+   "L694"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L692",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "围绕系统确定性约束展开 Token、递归步数、工具时延与经济成本的四维控制"
+   },
+   {
+    "target": "L654",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合控制循环机制深入分析有界预算在防止模型死循环中的作用"
+   },
+   {
+    "target": "L694",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从预算控制策略落地至底层 Token 消耗的计量与上报实现"
+   }
+  ]
+ },
+ {
+  "id": "L694",
+  "line": 694,
+  "kind": "question",
+  "text": "Token 使用量是怎么统计的？",
+  "major": "二_Agent应用开发相关",
+  "minor": "9.业务评估(性能优化与诊断)",
+  "domain": "A_AGENT",
+  "tag": "成本度量/Token统计机制/API Usage解析/本地Tiktoken估算/网关层统一计量上报",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L693",
+   "L651"
+  ],
+  "downstream": [
+   "L695"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L693",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从预算策略深入至网关层与 SDK 层的 Token 统计、计费与 Prometheus 指标上报"
+   },
+   {
+    "target": "L651",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合具体模型调用单价完善全链路 Token 计量体系"
+   },
+   {
+    "target": "L695",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 Token 统计与上下文长度限制递进至通过长短期记忆分层降低 Context 消耗"
+   }
+  ]
+ },
+ {
+  "id": "L695",
+  "line": 695,
+  "kind": "question",
+  "text": "短期记忆和长期记忆分别存什么，怎么参与对话？",
+  "major": "二_Agent应用开发相关",
+  "minor": "5.agent记忆设计",
+  "domain": "A_AGENT",
+  "tag": "记忆架构/Working Memory/长期语义记忆/上下文窗口组装/Top-K向量召回/异步知识蒸馏",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L694",
+   "L659"
+  ],
+  "downstream": [
+   "L696"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L694",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "为控制 Context 长度，将记忆严格拆分为短期 Working Memory 与长期向量存储"
+   },
+   {
+    "target": "L659",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合读写解耦架构深入说明长短期记忆在对话前的召回拼装与对话后的异步提炼"
+   },
+   {
+    "target": "L696",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 Agent 记忆栈与括号解析结构切入经典数据结构与字符串解码手撕"
+   }
+  ]
+ },
+ {
+  "id": "L696",
+  "line": 696,
+  "kind": "question",
+  "text": "手撕代码：LC394 字符串解码。给定一个经过编码的字符串，输出它解码后的字符串。编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。",
+  "major": "Leetcode相关",
+  "minor": "1.LeetCode算法",
+  "domain": "S_ALGO_GENERAL",
+  "tag": "算法手撕/LeetCode 394/字符串解码/双栈模拟/辅助数字栈与字符栈/递归括号解析",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L695",
+   "L467",
+   "L679"
+  ],
+  "downstream": [],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L695",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从嵌套上下文与符号解析递进至 LeetCode 394 经典双栈（数字栈+字符栈）手撕"
+   },
+   {
+    "target": "L467",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "巩固经典高频字符串与栈结构操作能力"
+   },
+   {
+    "target": "L679",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "大厂手撕高频题进阶题组"
    }
   ]
  }
