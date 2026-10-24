@@ -18577,7 +18577,8 @@
       "L723"
     ],
     "downstream": [
-      "L725"
+      "L725",
+      "L819"
     ],
     "relations": [
       {
@@ -18597,6 +18598,12 @@
         "type": "progressive",
         "direction": "in",
         "reason": "反向关联: 衔接 L723 (从浏览器底层进程协同延伸到上层多标签页复用WebSocket长连接的前端架构)"
+      },
+      {
+        "target": "L819",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L819"
       }
     ],
     "line": 724,
@@ -18897,7 +18904,8 @@
       "L755",
       "L756",
       "L757",
-      "L758"
+      "L758",
+      "L826"
     ],
     "relations": [
       {
@@ -19031,6 +19039,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L758"
+      },
+      {
+        "target": "L826",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L826"
       }
     ],
     "line": 730,
@@ -19655,8 +19669,94 @@
     "prereq": [
       "L730"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L817",
+      "L818",
+      "L819",
+      "L820",
+      "L821",
+      "L822",
+      "L823",
+      "L824",
+      "L826",
+      "L827",
+      "L828",
+      "L829"
+    ],
+    "relations": [
+      {
+        "target": "L817",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L817"
+      },
+      {
+        "target": "L818",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L818"
+      },
+      {
+        "target": "L819",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L819"
+      },
+      {
+        "target": "L820",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L820"
+      },
+      {
+        "target": "L821",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L821"
+      },
+      {
+        "target": "L822",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L822"
+      },
+      {
+        "target": "L823",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L823"
+      },
+      {
+        "target": "L824",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L824"
+      },
+      {
+        "target": "L826",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L826"
+      },
+      {
+        "target": "L827",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L827"
+      },
+      {
+        "target": "L828",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L828"
+      },
+      {
+        "target": "L829",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L829"
+      }
+    ],
     "line": 662,
     "assigned": true,
     "in_comment": false,
@@ -19675,8 +19775,17 @@
     "prereq": [
       "L730"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L825"
+    ],
+    "relations": [
+      {
+        "target": "L825",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L825"
+      }
+    ],
     "line": 663,
     "assigned": true,
     "in_comment": false,
@@ -19772,7 +19881,11 @@
       "L790",
       "L791",
       "L795",
-      "L796"
+      "L796",
+      "L805",
+      "L811",
+      "L815",
+      "L816"
     ],
     "relations": [
       {
@@ -19810,6 +19923,30 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L796"
+      },
+      {
+        "target": "L805",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L805"
+      },
+      {
+        "target": "L811",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L811"
+      },
+      {
+        "target": "L815",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L815"
+      },
+      {
+        "target": "L816",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L816"
       }
     ],
     "line": 667,
@@ -19830,8 +19967,52 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L805",
+      "L806",
+      "L807",
+      "L808",
+      "L809",
+      "L810"
+    ],
+    "relations": [
+      {
+        "target": "L805",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L805"
+      },
+      {
+        "target": "L806",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L806"
+      },
+      {
+        "target": "L807",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L807"
+      },
+      {
+        "target": "L808",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L808"
+      },
+      {
+        "target": "L809",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L809"
+      },
+      {
+        "target": "L810",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L810"
+      }
+    ],
     "line": 668,
     "assigned": true,
     "in_comment": false,
@@ -19850,8 +20031,45 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L809",
+      "L811",
+      "L812",
+      "L813",
+      "L814"
+    ],
+    "relations": [
+      {
+        "target": "L809",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L809"
+      },
+      {
+        "target": "L811",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L811"
+      },
+      {
+        "target": "L812",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L812"
+      },
+      {
+        "target": "L813",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L813"
+      },
+      {
+        "target": "L814",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L814"
+      }
+    ],
     "line": 669,
     "assigned": true,
     "in_comment": false,
@@ -19870,8 +20088,17 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L810"
+    ],
+    "relations": [
+      {
+        "target": "L810",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L810"
+      }
+    ],
     "line": 670,
     "assigned": true,
     "in_comment": false,
@@ -19915,7 +20142,8 @@
       "L793",
       "L794",
       "L797",
-      "L798"
+      "L798",
+      "L813"
     ],
     "relations": [
       {
@@ -19947,6 +20175,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L798"
+      },
+      {
+        "target": "L813",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L813"
       }
     ],
     "line": 672,
@@ -20288,7 +20522,8 @@
       "L718"
     ],
     "downstream": [
-      "L789"
+      "L789",
+      "L807"
     ],
     "relations": [
       {
@@ -20296,6 +20531,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L789"
+      },
+      {
+        "target": "L807",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L807"
       }
     ],
     "line": 686,
@@ -20396,8 +20637,17 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L814"
+    ],
+    "relations": [
+      {
+        "target": "L814",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L814"
+      }
+    ],
     "line": 691,
     "assigned": true,
     "in_comment": false,
@@ -20498,8 +20748,17 @@
       "L760",
       "L779"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L812"
+    ],
+    "relations": [
+      {
+        "target": "L812",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L812"
+      }
+    ],
     "line": 696,
     "assigned": true,
     "in_comment": false,
@@ -20805,6 +21064,516 @@
     "downstream": [],
     "relations": [],
     "line": 711,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L805",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "6.agent处理情景的架构设计",
+    "depth": 3,
+    "text": "Agent Harness 执行框架具体是如何运转的？主智能体（Business Agent）和审核智能体（Audit / Guardrail Agent）在请求生命周期中是如何编排配合的？详细梳理包含前置请求拦截、动态上下文注入、主智能体推理与工具分发、执行期敏感调用挂起审核、以及后置结果合规审查的双环异步状态机流转。",
+    "tag": "AgentHarness/执行框架/主审协同/双环流水线/异步状态机/前置拦截/执行期挂起/后置合规",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L761"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 712,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L806",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在企业级 AI 咨询与工具交互场景中，风险识别（Risk Identification）在底层具体是如何实现的？详细阐述包含本地轻量规则引擎过滤、向量语义近似匹配、以及大模型上下文深度研判的三层分流纵深防御链路，说明各层在召回率与推理时延上的分工取舍。",
+    "tag": "风险识别/三层防御链路/规则引擎/向量近似检索/大模型研判/召回率/时延权衡/安全防线",
+    "status": "ready",
+    "prereq": [
+      "L761"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 713,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L807",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "风险识别模块采用的是专门微调训练的小模型（如基于 BERT / RoBERTa / Qwen-1.5B 精调的分类器），还是直接调用通用大模型？对比两种方案在冷启动成本、推理毫秒级延迟（P99 < 50ms）、对抗性越狱泛化识别能力、以及私有化部署算力开销上的核心差异与工业界混合落地实践。",
+    "tag": "风险模型选型/专有小模型/通用大模型/BERT精调/毫秒级延迟/对抗泛化/算力成本/混合实践",
+    "status": "ready",
+    "prereq": [
+      "L761",
+      "L779"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 714,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L808",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在风险识别的第一道防线中，本地规则引擎具体执行了哪些处理逻辑？除了基于 Aho-Corasick（AC 自动机）的多模式关键词快速匹配之外，还包括哪些处理机制（如正则表达式提取、文本归一化与繁简转换、同音变体替换、语义信息熵检测、敏感实体正则捕获以及高频请求频率限流）？",
+    "tag": "本地规则引擎/AC自动机/敏感词过滤/正则捕获/文本归一化/变体识别/信息熵检测/频次限流",
+    "status": "ready",
+    "prereq": [
+      "L761"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 715,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L809",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "4.Prompt_engineering",
+    "depth": 3,
+    "text": "当调用大模型对复杂会话进行二次深度风险研判时，系统具体提供了哪些 Prompt 提示词结构、输入上下文与防御约束？详细说明如何通过 Few-shot 典型对抗案例、严格的 JSON Schema 强类型输出、风险类别等级定义（如合规/敏感/高危）以及思维链（CoT）推理来防范审核模型自身被 Prompt Injection 劫持反噬。",
+    "tag": "风险研判Prompt/Few-shot案例/JSONSchema/风险等级定义/CoT思维链/防注入反噬/结构化约束",
+    "status": "ready",
+    "prereq": [
+      "L761",
+      "L762"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 716,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L810",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "系统如何验证与校准大模型给出的风险判定结果的可信度？审核结果中是否包含判定依据、溯源证据片段与置信度评分（Confidence Score）？在工程上如何通过模型置信度阈值门禁（如 Score > 0.85 自动处置，0.5~0.85 转人机协同 HITL 复核）避免高风险误杀或漏放？",
+    "tag": "可信度验证/置信度评分/溯源证据/人机协同HITL/阈值门禁/误杀防范/模型校准",
+    "status": "ready",
+    "prereq": [
+      "L761",
+      "L763"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 717,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L811",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "6.agent处理情景的架构设计",
+    "depth": 3,
+    "text": "为什么系统架构必须把前置意图判断、核心业务推理与后置安全审核拆分为独立的处理阶段，而不能在一个统揽全局的单次请求提示词中合并完成？深入剖析合并执行引发的注意力分散、提示词越狱交叉污染、单阶段失败导致全流程崩溃、以及无法对不同环节实施独立超时与熔断策略的工程弊端。",
+    "tag": "架构拆分/关注点分离/意图与审核解耦/单阶段合并弊端/提示词污染/独立超时熔断/容灾控制",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L762"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 718,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L812",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在端到端链路中，路由分发、核心逻辑推理、敏感工具拦截与后置审核等不同环节所使用的底层大模型是否不同？详细阐述采用“异构模型组合（Heterogeneous Model Ensembles）”的驱动因素：结合模型推理时延敏感度、强逻辑推理能力要求、安全合规分类专长以及算力成本最优配比说明各环节模型选型方案。",
+    "tag": "异构模型/模型组合/路由小模型/核心推理模型/审查模型/成本延迟配比/工业落地实践",
+    "status": "ready",
+    "prereq": [
+      "L762",
+      "L789"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 719,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L813",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "“同一大模型往往容易给自己的回答或同一模型家族生成的输出打出偏高的分数（自我偏好偏差 / LLM Self-Enhancement Bias）”，这个结论在业界有哪些权威学术依据与量化实验支撑？在你们的实际业务系统或评测基准观察中，是否复现了该现象？在做裁判模型（LLM-as-a-Judge）时如何通过交叉模型评测、位置打乱与基准对齐来消除偏见？",
+    "tag": "自恋偏见/Self-Enhancement Bias/LLM-as-a-Judge/学术依据/交叉评测/位置打乱/裁判模型消偏",
+    "status": "ready",
+    "prereq": [
+      "L762",
+      "L765"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 720,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L814",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "6.agent处理情景的架构设计",
+    "depth": 3,
+    "text": "除了为了避免单一模型的自我偏好与调用异构小模型降低成本之外，在大型工业级系统中还有哪些强有力的架构理由驱动我们采用多智能体（Multi-Agent）而非单智能体设计？从上下文物理隔离（防 Context 溢出）、权限细粒度沙箱管控、各领域独立迭代演进与独立灰度发布等维度展开论证。",
+    "tag": "多智能体架构理由/上下文隔离/沙箱权限管控/独立演进/独立灰度发布/系统解耦/生产高可用",
+    "status": "ready",
+    "prereq": [
+      "L762",
+      "L784"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 721,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L815",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "Agent 系统的全生命周期执行流程是如何实现端到端完整可追溯（Auditability & Traceability）的？系统具体需要记录哪些维度的元数据与交互数据？详细阐述基于 OpenTelemetry 规范实现的统一 TraceID 穿透、用户原始输入、Prompt 模板版本、工具调用入参出参、LLM 思考时间、Token 开销及审核决断依据的结构化落盘方案。",
+    "tag": "可追溯体系/OpenTelemetry/TraceID穿透/全链路追踪/工具调用抓取/Token审计/结构化落盘",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 722,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L816",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在高并发企业级服务中，每一次用户的咨询与 Agent 交互是否都会被 100% 完整保留落盘？面对海量对话数据，如何平衡全量审计合规要求与海量存储成本？详细说明冷热数据分层（Hot: ES/Redis 实时检索，Cold: S3/OSS 压缩归档）、敏感 PII 字段脱敏存储机制、以及数据生命周期（TTL Retention Policy）的设计方案。",
+    "tag": "执行记录留存/冷热分层存储/ES实时检索/对象存储归档/PII脱敏/合规审计/生命周期策略",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 723,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L817",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "高并发秒杀系统整体业务流是如何端到端设计的？详细梳理秒杀全链路：前端页面动静分离与静态资源 CDN 缓存、Nginx 网关层限流防刷、Redis Lua 脚本原子预扣库存与一人一单资格校验、RabbitMQ/RocketMQ 异步削峰排队、后端 Worker 消费异步创建订单与扣减 MySQL 库存、以及前端轮询结果的闭环架构。",
+    "tag": "秒杀架构/端到端设计/动静分离/网关限流/Redis预扣/MQ削峰/异步落库/高并发闭环",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 724,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L818",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "在秒杀异步削峰架构中，当 Redis 原子预扣减库存成功且下单消息已投入 MQ，但后端 Worker 在消费消息执行 MySQL 实际扣库（UPDATE goods SET stock = stock - 1 WHERE id = ? AND stock > 0）时因行锁冲突、死锁或数据库异常最终扣减失败，系统应该如何处理？详细说明消息重试、死信队列（DLX）、Redis 库存回滚补偿（反向补库存）与订单状态置为失败的容灾设计。",
+    "tag": "秒杀异常处理/MySQL扣减失败/消息重试/死信队列DLX/Redis反向补库存/数据一致性补偿",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 725,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L819",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 2,
+    "text": "在将下单流程完全异步化交给消息队列处理的秒杀场景下，客户端前端用户如何能够实时、准确地获知自己最终是否抢购秒杀成功？详细对比前端基于时间退避机制（Exponential Backoff）向轻量缓存短轮询（Polling）订单生成结果，与基于 WebSocket / SSE 长连接服务端主动推送结果两种方案在并发网络连接数、负载均衡支持及开发复杂度上的权衡。",
+    "tag": "秒杀异步通知/订单状态查询/短轮询/指数退避/WebSocket推送/SSE/前端交互方案",
+    "status": "ready",
+    "prereq": [
+      "L724",
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 726,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L820",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "如果业务方强要求“在用户点击抢购并成功支付的瞬间，必须立即给用户返回确切的秒杀成功结果，且付款成功就代表 100% 锁死商品买到（绝不允许异步取消或提示排队失败）”，整体系统架构方案应该如何彻底调整？对比同步本地扣库、预支付扣库模式（Authorize & Capture）、基于分布式事务（TCC / Seata AT）以及分布式锁的改造代价与系统吞吐量损失。",
+    "tag": "同步秒杀/强一致要求/即时结果/预支付锁库/分布式事务/TCC/Seata/吞吐量折损",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 727,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L821",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "如果希望通过核心关系型数据库（MySQL）的事务机制来绝对保证最终结果明确与强一致性，同时又必须在接入层把海量超出库存的无效并发请求提前拦截在数据库之外，应该如何巧妙设计架构？阐述基于前置 Redis 令牌桶发牌机制（Token Bucket Pre-allocation）拦截多余流量、仅放行与库存比例相当的请求进入数据库事务扣减的混合架构。",
+    "tag": "混合架构/事务强一致/Redis前置发牌/令牌桶拦截/数据库事务扣减/防穿透DB/秒杀护城河",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 728,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L822",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 2,
+    "text": "在秒杀活动实际运行中，系统是否存在参与资格限制？是否所有注册用户都能发起秒杀？详细拆解企业级防刷与资格准入体系：用户注册时长/实名认证风控过滤、黑白名单、设备指纹验证、动态秒杀路径隐藏与抢购前独立鉴权 Token 获取，说明各层如何有效阻断羊毛党与脚本黑产。",
+    "tag": "秒杀资格限制/风控拦截/黑白名单/设备指纹/动态URL隐藏/秒杀Token/防脚本刷单",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 729,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L823",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "秒杀抢购阶段，Redis 中执行的核心 Lua 脚本具体需要原子性检查与执行哪些业务内容？详细写出核心逻辑步骤：检查商品库存 Key 是否存在、检查当前用户 ID 是否已存在于已购集合中（一人一单校验）、校验当前剩余库存是否大于 0、原子递减库存（DECRBY）以及将用户 ID 写入已购集合，并说明为什么这几个步骤必须通过 Lua 脚本包裹执行。",
+    "tag": "RedisLua脚本/原子性/一人一单/库存校验/预扣减/已购标记/脚本核心逻辑",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 730,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L824",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "在高并发秒杀防重体系中，系统是如何记录用户“已经成功购买过”的？选用何种 Redis 数据结构最合理？详细对比 String（SET key value EX）、Set（SADD/SISMEMBER）、Bitmap（SETBIT/GETBIT）以及 RoaringBitmap 在写入与查询耗时（O(1)）、内存占用密度、支持多商品活动扩展性上的综合权衡。",
+    "tag": "一人一单数据结构/Set/Bitmap/RoaringBitmap/内存占用对比/防重选型/复杂度分析",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 731,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L825",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "如果某热门秒杀商品有十几万甚至数十万用户抢购成功，所有已购用户 ID 全塞在同一个 Redis Set 中，会形成严重的大 Key（BigKey）问题，引发 Redis 内存倾斜、从节点同步卡顿乃至分片阻塞。在工程上如何彻底治理该问题？详细说明基于用户 ID 取模的分片 Set（Sharded Sets, 如 set_goods_{hash}）与布隆过滤器（Bloom Filter）前置降级的解决方案。",
+    "tag": "BigKey治理/Set大Key/分片Set/哈希取模/Redis内存倾斜/主从同步阻塞/布隆过滤器前置",
+    "status": "ready",
+    "prereq": [
+      "L756"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 732,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L826",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "秒杀活动中 Redis 中的初始库存是从哪里来的？是后台定期从数据库拉取同步，还是独立初始化维护？详细阐述秒杀预热（Pre-warming）的标准工程方案：为什么绝对禁止在活动中定期从 MySQL 查库同步？如何通过运营配置锁定、活动开始前离线校验并原子加载到 Redis、以及设置独立分布式物理 Key 避免被 LRU 驱逐？",
+    "tag": "库存预热/Redis库存初始化/独立维护/禁止定期查库/离线校验/防LRU淘汰/活动生命周期",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 733,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L827",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "真实秒杀往往几秒钟到十几秒钟内就全部抢光结束，既然活动如此短暂，为什么高并发系统还需要在后台部署定时离线对账任务？对账在这里到底起什么作用？深入剖析事后账实核对（Redis 预扣总量、MQ 消费落库总量、MySQL 实际支付订单总量与流水日志四方对账）、排查漏单少扣少退、发现系统暗病并为财务结算提供可信数据的兜底价值。",
+    "tag": "定时对账/四方对账/账实核对/漏单少扣纠偏/财务平衡/系统暗病排查/秒杀兜底保障",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 734,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L828",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 2,
+    "text": "秒杀系统中，Redis 缓存层库存与 MySQL 数据库实际库存分别是在什么精准时序下被扣减的？详细阐述“双层扣减时序”：用户点击抢购触发接入层在 Redis 中即时预扣库存（Decr），用户进入等待队列；消息队列消费成功创建订单、在订单待支付状态下锁定 MySQL 行记录（或支付回调成功后扣减实际库存）的流转逻辑。",
+    "tag": "库存扣减时序/双层扣减/Redis预扣/MySQL实际扣减/下单减库存/付款减库存/并发控制",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 735,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L829",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "当消息队列消费入库由于极端异常（如 MySQL 死锁、行锁超时或连接池耗尽）导致扣减失败时，前端 Redis 中的库存是应该立即通过反向 Lua 脚本原路回滚（IncrBy），还是保持原样、等待事后异步对账任务来平账补偿？深入对比两种策略在实时高并发吞吐量、二次并发穿透风险、以及用户体验一致性上的权衡取舍。",
+    "tag": "扣减失败回滚/即时回滚vs对账补偿/反向Lua补偿/并发穿透风险/平账策略/数据一致性权衡",
+    "status": "ready",
+    "prereq": [
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 736,
     "assigned": true,
     "in_comment": false,
     "comment_label": ""
