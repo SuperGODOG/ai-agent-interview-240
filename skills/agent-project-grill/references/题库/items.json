@@ -18445,7 +18445,14 @@
     ],
     "downstream": [
       "L726",
-      "L728"
+      "L728",
+      "L734",
+      "L735",
+      "L736",
+      "L737",
+      "L738",
+      "L739",
+      "L740"
     ],
     "relations": [
       {
@@ -18471,6 +18478,48 @@
         "type": "progressive",
         "direction": "out",
         "reason": "反向关联: 衔接 L728 (在CSP模型指导下拆解Go语言生产环境最常见的并发编程范式)"
+      },
+      {
+        "target": "L734",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L734"
+      },
+      {
+        "target": "L735",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L735"
+      },
+      {
+        "target": "L736",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L736"
+      },
+      {
+        "target": "L737",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L737"
+      },
+      {
+        "target": "L738",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L738"
+      },
+      {
+        "target": "L739",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L739"
+      },
+      {
+        "target": "L740",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L740"
       }
     ],
     "line": 725,
@@ -18655,7 +18704,25 @@
       "L729"
     ],
     "downstream": [
-      "L731"
+      "L731",
+      "L741",
+      "L742",
+      "L743",
+      "L744",
+      "L745",
+      "L746",
+      "L747",
+      "L748",
+      "L749",
+      "L750",
+      "L751",
+      "L752",
+      "L753",
+      "L754",
+      "L755",
+      "L756",
+      "L757",
+      "L758"
     ],
     "relations": [
       {
@@ -18681,6 +18748,114 @@
         "type": "progressive",
         "direction": "in",
         "reason": "反向关联: 衔接 L729 (从单机操作系统IPC跨越到分布式中间件基于Redis的高速状态共享与通信)"
+      },
+      {
+        "target": "L741",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L741"
+      },
+      {
+        "target": "L742",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L742"
+      },
+      {
+        "target": "L743",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L743"
+      },
+      {
+        "target": "L744",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L744"
+      },
+      {
+        "target": "L745",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L745"
+      },
+      {
+        "target": "L746",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L746"
+      },
+      {
+        "target": "L747",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L747"
+      },
+      {
+        "target": "L748",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L748"
+      },
+      {
+        "target": "L749",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L749"
+      },
+      {
+        "target": "L750",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L750"
+      },
+      {
+        "target": "L751",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L751"
+      },
+      {
+        "target": "L752",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L752"
+      },
+      {
+        "target": "L753",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L753"
+      },
+      {
+        "target": "L754",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L754"
+      },
+      {
+        "target": "L755",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L755"
+      },
+      {
+        "target": "L756",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L756"
+      },
+      {
+        "target": "L757",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L757"
+      },
+      {
+        "target": "L758",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L758"
       }
     ],
     "line": 730,
@@ -18745,7 +18920,8 @@
       "L731"
     ],
     "downstream": [
-      "L733"
+      "L733",
+      "L759"
     ],
     "relations": [
       {
@@ -18765,6 +18941,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从基础链表判圈算法进阶到综合复合数据结构LRU-TTL设计实现"
+      },
+      {
+        "target": "L759",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L759"
       }
     ],
     "line": 732,
@@ -18784,7 +18966,8 @@
     "status": "待复习",
     "prereq": [
       "L378",
-      "L732"
+      "L732",
+      "L759"
     ],
     "downstream": [
       "L445"
@@ -18807,11 +18990,539 @@
         "type": "progressive",
         "direction": "out",
         "reason": "手撕LRU-TTL底层后对标工业级Redis五大数据结构与过期淘汰策略的底层实现"
+      },
+      {
+        "target": "L759",
+        "type": "progressive",
+        "direction": "in",
+        "reason": "由前置问题 L759 引申至当前问题"
       }
     ],
     "line": 733,
     "assigned": true,
     "in_comment": false,
     "comment_label": null
+  },
+  {
+    "id": "L734",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 2,
+    "text": "高并发后端开发中，项目选择的 Java JDK 版本是多少？在 JDK 8、JDK 17 与 JDK 21 之间做技术选型的核心依据是什么？结合微服务与容器化部署，分析新版本在内存占用、启动速度以及底层特性的实际收益。",
+    "tag": "Java/JDK版本/JDK8/JDK17/JDK21/LTS/容器化/CDS/ZGC/虚拟线程",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 641,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L735",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 3,
+    "text": "深入剖析 JVM 运行时数据区与 JMM（Java 内存模型）：程序计数器、虚拟机栈、本地方法栈、堆与方法区（元空间）的职责划分；JMM 抽象出的主内存与工作内存交互协议，以及 volatile 关键字如何通过内存屏障实现可见性与禁止指令重排（Happens-Before 规则）。",
+    "tag": "Java/JVM/JMM/运行时数据区/元空间/volatile/内存屏障/Happens-Before",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 642,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L736",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 3,
+    "text": "生产环境自建服务中，GC 垃圾回收算法是如何选型的？详细对比 CMS、G1 与 ZGC 的回收机制与 STW（Stop-The-World）停顿表现。在微服务多实例部署下，如何结合内存规格配置堆大小、Region 分区与垃圾回收停顿目标（MaxGCPauseMillis）？",
+    "tag": "Java/JVM/GC算法/G1/ZGC/CMS/STW/垃圾回收调优/Region/停顿时间",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 643,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L737",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 2,
+    "text": "Java 并发体系中锁的完整分类与设计哲学：乐观锁 vs 悲观锁、公平锁 vs 非公平锁、可重入锁 vs 不可重入锁、互斥锁 vs 读写锁（ReentrantReadWriteLock/StampedLock）、自旋锁 vs 阻塞锁。说明各类锁在内核态切换与并发吞吐上的权衡。",
+    "tag": "Java/并发锁/乐观锁/悲观锁/公平非公平/可重入/读写锁/StampedLock/自旋锁",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 644,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L738",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 3,
+    "text": "synchronized 与 ReentrantLock 底层实现原理深度对比：JVM 字节码层面（monitorenter/monitorexit）与 ObjectMonitor 锁升级（无锁、偏向锁、轻量级锁 CAS、重量级锁），对比基于 AQS（AbstractQueuedSynchronizer）显式状态机的 Lock 实现机制。",
+    "tag": "Java/并发/synchronized/ReentrantLock/ObjectMonitor/锁升级/AQS/CAS",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 645,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L739",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 3,
+    "text": "从锁的性能角度看 synchronized 与 ReentrantLock 的演进：为什么在 JDK 6 引入锁膨胀优化后二者性能已基本持平？在低竞争、高并发瞬时竞争与极端长时竞争三种典型场景下，锁的吞吐量与 CPU 缓存行（False Sharing）占用表现有何差异？JDK 15+ 废弃偏向锁对架构带来什么影响？",
+    "tag": "Java/并发性能/锁膨胀/自旋/偏向锁废弃/伪共享/吞吐量对比",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 646,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L740",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 3,
+    "text": "在企业级高并发工程中，何时使用 synchronized，何时必须使用 ReentrantLock？结合 Condition 多条件精确唤醒、tryLock 超时防死锁、可响应中断 lockInterruptibly 以及公平锁选型，给出工业界清晰的技术选型原则与踩坑防范。",
+    "tag": "Java/并发选型/synchronized/ReentrantLock/Condition/tryLock/防死锁/最佳实践",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 647,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L741",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "深入分析高并发系统中的缓存穿透、缓存击穿与缓存雪崩：三者的发生机理、危害场景与本质区别是什么？在生产环境中，如何分别采用布隆过滤器（Bloom Filter）、互斥锁/逻辑过期与随机 TTL 打散策略构建纵深防御体系？",
+    "tag": "缓存/缓存穿透/缓存击穿/缓存雪崩/布隆过滤器/互斥锁/随机TTL/高并发防御",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 648,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L742",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "数据库与缓存一致性设计：在数据更新场景下，先更新数据库还是先操作缓存？先更新数据库再删缓存（Cache-Aside）在极端高并发读写时是否存在脏数据漏洞？延迟双删与 Canal 监听 MySQL Binlog 异步失效缓存各自适用于何种业务一致性要求？",
+    "tag": "缓存一致性/Cache-Aside/延迟双删/Canal/Binlog异步监听/读写并发漏洞",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 649,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L743",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "项目架构中本地缓存（如 Caffeine）的清理与逐出机制：你是如何显式清空或淘汰本地缓存的？分析 invalidate()、invalidateAll() 与基于 Window TinyLFU 驱逐策略的底层差异，并说明软引用（softValues）和弱引用（weakValues）在防 JVM OOM 中的实际作用与陷阱。",
+    "tag": "Caffeine/本地缓存/缓存清理/TinyLFU/缓存淘汰/JVM软引用/OOM防范",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 650,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L744",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "在分布式微服务多实例部署下，只清空当前节点本机的本地缓存会导致什么问题？分析由于负载均衡路由到不同实例造成的“数据裂脑”与脏读现象，并阐述在金融、电商高敏感场景下该问题的灾难性后果。",
+    "tag": "多实例架构/本地缓存/数据裂脑/脏读/微服务负载均衡/分布式一致性缺陷",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 651,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L745",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "结合分布式系统 CAP 定理与 BASE 理论，剖析多级缓存架构在一致性（C）、可用性（A）与分区容错性（P）之间的工程取舍：为什么多级缓存系统本质上是 AP 模型？在网络分区或消息中间件延迟时，如何通过软状态（Soft state）与最终一致性保证系统兜底可用？",
+    "tag": "分布式理论/CAP定理/BASE理论/AP架构/最终一致性/网络分区/可用性",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 652,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L746",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "在分布式生产环境中，如何安全、及时地跨多实例主动删除各节点的本地缓存？对比基于 Redis Pub/Sub 广播通知、RocketMQ/Kafka 广播消费模式（Broadcasting）以及 ZooKeeper/Etcd 配置监听三套方案的吞吐量、可靠性与实现复杂度。",
+    "tag": "本地缓存同步/分布式删除/Redis广播/RocketMQ广播消费/ZK监听/多实例联动",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 653,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L747",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "多实例本地缓存失效方案中，消息队列广播（MQ Broadcasting）与原生 TTL 兜底过期各自的优缺点是什么？结合网络分区抖动、MQ 积压与网络风暴，说明为什么生产上必须将“MQ 广播主动失效”与“短 TTL 惰性过期”结合使用形成双保险。",
+    "tag": "缓存架构/MQ广播/TTL过期/网络风暴/双保险机制/容灾降级",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 654,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L748",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "三级缓存体系（Caffeine 本地缓存 -> Redis 分布式缓存 -> MySQL 数据库）中，各层级的数据过期时间是如何梯度设置的？为什么本地缓存通常设为秒级（如 5s~30s），而 Redis 设为分钟级或小时级？如何结合随机扰动因子防止各层缓存出现协同雪崩？",
+    "tag": "三级缓存/过期时间梯度/Caffeine/Redis/缓存雪崩防范/随机扰动因子",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 655,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L749",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "高并发场景下，单机 JVM 本地缓存（Caffeine）的最大容量（maximumSize / maximumWeight）是如何根据机器物理内存、堆大小（-Xmx）及业务数据模型精确计算设置的？如何防范缓存对象无限扩容引发频繁 Full GC 乃至 OOM 崩溃？",
+    "tag": "本地缓存容量/Caffeine/堆内存规划/FullGC防范/OOM预防/容量评估公式",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 656,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L750",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "详细阐述项目中“逻辑过期（Logical Expiration）”的具体设计与落地实现：如何封装携带 expire 时间戳的 RedisData 数据载体？当查询检测到数据已逻辑过期时，如何利用独立线程池（如 ThreadPoolExecutor）异步加载数据库并重构缓存，同时让当前请求直接返回旧数据？",
+    "tag": "逻辑过期/RedisData/异步重建/线程池/兜底返回/缓存高可用",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 657,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L751",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "设计逻辑过期的核心目标是解决什么工程痛点？在面对微博热搜、秒杀大促等超高 QPS 极端热点 Key 时，相比于分布式互斥锁（Mutex Key），逻辑过期在响应延时（RT）、系统吞吐量及数据库连接池压力上展现出哪些决定性优势？其妥协的业务代价是什么？",
+    "tag": "逻辑过期/热点Key/缓存击穿/互斥锁对比/系统RT/吞吐量提升/脏读代价",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 658,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L752",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "在热点数据缓存设计中，既然 Redis 本身支持物理 TTL（PEXPIRE/EXPIRE），为什么不直接给 Redis 设置过期时间，反而要引入复杂的逻辑过期机制？物理 TTL 在高并发场景下有哪些致命缺陷？",
+    "tag": "Redis/物理TTL/逻辑过期/并发穿透/高并发缺陷/缓存选型架构",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 659,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L753",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "项目中基于 Redis 实现用户登录状态管理的完整架构与安全链路：采用 UUID/Token 替代传统 Session 的设计依据是什么？Token 在 Redis 中采用何种数据结构（String vs Hash）存储用户脱敏属性？如何实现登录状态的“滑动续期”（Rolling Expiration）与跨端并发踢出限制？",
+    "tag": "Redis登录管理/无状态Token/Hash结构/滑动续期/单点登录SSO/并发踢出",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 660,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L754",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "在高并发微服务系统架构中，调研过业界哪些通用限流熔断框架？详细对比 Alibaba Sentinel、Resilience4j、Spring Cloud Gateway 内置 RequestRateLimiter 与 Google Guava RateLimiter 的算法底座（令牌桶、漏桶、滑动窗口）、控制粒度（QPS/并发线程数/响应时间）以及集群限流支持能力。",
+    "tag": "限流框架/Sentinel/Resilience4j/Guava/Gateway/令牌桶/漏桶/集群限流",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 661,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L755",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "项目中基于 Redis 实现的分布式滑动窗口限流（Sliding Window Counter）具体是如何设计的？详细说明如何利用有序集合 ZSet 将当前时间戳作为 score 与 member，结合 Lua 脚本原子执行 ZREMRANGEBYSCORE 清除过期窗口、ZCARD 统计当前窗口请求数以及 ZADD 写入新请求。",
+    "tag": "滑动窗口限流/Redis/ZSet/时间戳窗口/Lua脚本/原子性/限流算法实操",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 662,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L756",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "基于 Redis ZSet 实现的滑动窗口限流在超高并发场景下存在哪些工程缺陷与性能瓶颈？分析 ZSet 在高 QPS 下大量时间戳元素堆积引发的内存暴涨和大 Key（BigKey）风险，以及网络 RTT 与 Lua 脚本执行耗时对 Redis 单线程事件循环造成的阻塞隐患。",
+    "tag": "滑动窗口限流/工程缺陷/Redis大Key/内存开销/Lua阻塞/高并发风险",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 663,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L757",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 2,
+    "text": "限流在微服务高可用架构中的本质是什么？限流是用来保护用户体验还是保护系统核心资源（如 MySQL 数据库、线程池、网络带宽）？在系统濒临雪崩时，限流策略如何与熔断降级、快速失败（Fail-Fast）协同工作以保障核心链路可用？",
+    "tag": "限流本质/过载保护/防御雪崩/快速失败/熔断降级/系统可用性边界",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 664,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L758",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "仅在本地单机（如采用本地 Guava RateLimiter 或 JVM 内存计数器）做限流在分布式集群中会有什么致命问题？分析因前端负载均衡（Nginx/SLB）流量倾斜导致的单机过载与提前误杀，以及在微服务水平自动扩缩容（HPA）时全局限流阈值无法动态伸缩的架构缺陷。",
+    "tag": "单机限流局限/分布式微服务/负载均衡倾斜/水平扩缩容/全局限流漂移/架构缺陷",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 665,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L759",
+    "kind": "question",
+    "domain": "S_ALGO_GENERAL",
+    "major": "Leetcode相关",
+    "minor": "1.LeetCode算法",
+    "depth": 2,
+    "text": "算法手撕题：使用两个栈实现一个队列（LeetCode 232）。要求实现 push(x)、pop()、peek() 与 empty() 方法。请手写完整代码，详细分析为什么将元素从 in_stack 倒入 out_stack 能保证先进先出（FIFO），并利用势能分析法或分摊分析法严谨证明 pop() 和 peek() 的均摊时间复杂度为 O(1)。",
+    "tag": "算法手撕/数据结构/两个栈实现队列/LC232/FIFO/均摊分析/分摊复杂度O(1)",
+    "status": "ready",
+    "prereq": [
+      "L732"
+    ],
+    "downstream": [
+      "L733"
+    ],
+    "relations": [],
+    "line": 666,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
   }
 ]
