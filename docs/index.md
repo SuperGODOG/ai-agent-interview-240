@@ -1,16 +1,16 @@
 <div align="center">
 
-# 🎯 AI Agent 面试真题库 · 505 道公共题库
+# 🎯 AI Agent 面试真题库 · 526 道公共题库
 
 **大模型 Agent 岗面试准备 | 大厂真题 + 语言八股 + 当前项目范式 + 模拟面试**
 
 [![GitHub stars](https://img.shields.io/github/stars/SuperGODOG/ai-agent-interview-240?style=flat-square&color=7c3aed)](https://github.com/SuperGODOG/ai-agent-interview-240/stargazers)
-[![Questions](https://img.shields.io/badge/公共题库-505%20道-3b82f6?style=flat-square)](https://github.com/SuperGODOG/interview-mock-skill)
+[![Questions](https://img.shields.io/badge/公共题库-526%20道-3b82f6?style=flat-square)](https://github.com/SuperGODOG/interview-mock-skill)
 [![八股文](https://img.shields.io/badge/语言八股-85%20篇-10b981?style=flat-square)](./02-语言八股/README.md)
 [![Projects](https://img.shields.io/badge/当前主线项目-2%20个-f59e0b?style=flat-square)](https://github.com/SuperGODOG/skillforge)
 [![License](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](./LICENSE)
 
-**505 道公共面试题（涵盖 Agent、高并发后端、AI Infra、算法与全栈等 5 大核心板块、21 个专业流派）· 三层金字塔架构 · 语言八股 · 2 个主线项目 · 模拟面试拷问引擎**
+**526 道公共面试题（涵盖 Agent、高并发后端、AI Infra、算法与全栈等 5 大核心板块、21 个专业流派）· 三层金字塔架构 · 语言八股 · 2 个主线项目 · 模拟面试拷问引擎**
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ## ✨ 项目亮点
 
-- 🏆 **505 道公共真题**：完整题库由 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 统一维护，涵盖 Agent 应用开发 (284 题)、高并发后端 (147 题)、AI Infra 与底层算子 (29 题)、算法与综合 (43 题)、全栈工程 (2 题)；全卷通过三层金字塔架构（L1 板块 $\rightarrow$ L2 专业流派 $\rightarrow$ L3 深度梯度 1~5）重构，支持精确/模糊智能去重与双向知识图谱导引；另有独立 schema 的 [agent-review-audit](https://github.com/SuperGODOG/interview-mock-skill/tree/main/agent-review-audit) 420 张审查题卡
+- 🏆 **526 道公共真题**：完整题库由 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 统一维护，涵盖 Agent 应用开发 (296 题)、高并发后端 (153 题)、AI Infra 与底层算子 (29 题)、算法与综合 (46 题)、全栈工程 (2 题)；全卷通过三层金字塔架构（L1 板块 $\rightarrow$ L2 专业流派 $\rightarrow$ L3 深度梯度 1~5）重构，支持精确/模糊智能去重与双向知识图谱导引；另有独立 schema 的 [agent-review-audit](https://github.com/SuperGODOG/interview-mock-skill/tree/main/agent-review-audit) 420 张审查题卡
 - 📝 **每题带答题框架**：核心考点 + 大厂四步答题框架（概念澄清 → 架构机制 → 工程权衡 → 实战经验）+ 前置/后置学习路径与别名重定向
 - 📚 **85 篇语言八股**：Java 77 篇（含 66 篇体系化课件）、Python 3 篇、Go 5 篇，覆盖 JVM/并发/集合/Spring/MySQL/Redis/网络/OS/GMP/GC/GIL
 - 🛠 **2 个当前主线项目**：[SkillForge](https://github.com/SuperGODOG/skillforge)（Skill 注册、级联路由、评测与受控自进化平台）与 [miaosha](https://github.com/SuperGODOG/miaosha)（限流、Redis Lua 预扣库存、RabbitMQ 异步削峰、条件扣库与订单落库）；旧版项目档案仍保留在 `projects/` 供历史对照
@@ -31,7 +31,7 @@
 
 | 模块 | 内容 | 说明 |
 |------|------|------|
-| [📌 01-面试八股文](./01-面试八股文/00-核心专题索引与学习路线.md) | **505 道全量真题分卷与金字塔索引** | 6 大分卷 + 1 全景索引 · 深度分级 · 答题框架 · 学习路径 |
+| [📌 01-面试八股文](./01-面试八股文/00-核心专题索引与学习路线.md) | **526 道全量真题分卷与金字塔索引** | 6 大分卷 + 1 全景索引 · 深度分级 · 答题框架 · 学习路径 |
 | [📚 02-语言八股](./02-语言八股/README.md) | **Java / Python / Go 面试八股** | 85 篇 · 考点+要点+代码+追问 |
 | [🏢 03-企业招聘分析](./03-企业招聘分析/README.md) | 大厂 AI Agent 岗分析 | 规划中 |
 | [📖 04-开源项目学习笔记](./04-开源项目学习笔记/README.md) | 优秀开源项目剖析 | 规划中 |
@@ -42,16 +42,16 @@
 
 ---
 
-## 🗂 八股文分卷（505 道全量真题）
+## 🗂 八股文分卷（526 道全量真题）
 
 | 卷 | 题数 | 覆盖范围 |
 |----|------|----------|
 | [00-核心专题索引与学习路线](./01-面试八股文/00-核心专题索引与学习路线.md) | **索引** | 5 大核心板块、21 个专业流派全景图谱与学习路线指南 |
-| [01-Agent应用开发](./01-面试八股文/01-Agent应用开发.md) | **284** | 宏观认知、主流框架、工具调用、Prompt、记忆、架构设计、数据库、工程落地、性能评估 |
-| [02-八股基础](./01-面试八股文/02-八股基础.md) | **149** | 操作系统与线程底层、计算机网络、数据库与缓存存储、消息队列、Java与并发核心、高并发秒杀业务流 |
+| [01-Agent应用开发](./01-面试八股文/01-Agent应用开发.md) | **296** | 宏观认知、主流框架、工具调用、Prompt、记忆、架构设计、数据库、工程落地、性能评估 |
+| [02-八股基础](./01-面试八股文/02-八股基础.md) | **155** | 操作系统与线程底层、计算机网络、数据库与缓存存储、消息队列、Java与并发核心、高并发秒杀业务流 |
 | [03-Transformer与大模型](./01-面试八股文/03-Transformer与大模型.md) | **10** | 注意力、长上下文、KV Cache、推理优化、微调对齐 |
-| [04-LeetCode算法](./01-面试八股文/04-LeetCode算法.md) | **25** | 手撕代码高频题、二叉树、动态规划、哈希表、栈与队列 |
-| [05-反问与国企特别版](./01-面试八股文/05-反问与国企特别版.md) | **8** | 反问环节策略、技术选型权衡、国企求职特别篇 |
+| [04-LeetCode算法](./01-面试八股文/04-LeetCode算法.md) | **27** | 手撕代码高频题、二叉树、动态规划、哈希表、栈与队列、SQL 手撕 |
+| [05-反问与国企特别版](./01-面试八股文/05-反问与国企特别版.md) | **9** | 反问环节策略、技术选型权衡、国企求职特别篇、技术学习方法论 |
 | [06-AI_Infra与高性能算子](./01-面试八股文/06-AI_Infra与高性能算子.md) | **29** | CUDA 算子开发、Triton、FlashAttention、算子融合与编译优化 |
 
 ## 📚 语言八股（85 篇）
@@ -73,9 +73,9 @@
 
 ## 🧭 题库口径与更新
 
-- **公共题库**：当前由 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 统一维护，共 505 道题；六件套 Skill 共享同一份题库，全量真题通过金字塔架构与双向图谱紧密相连。
+- **公共题库**：当前由 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 统一维护，共 526 道题；六件套 Skill 共享同一份题库，全量真题通过金字塔架构与双向图谱紧密相连。
 - **独立审查语料**：`agent-review-audit` 维护 420 张独立 schema 的 Agent/RAG 审查题卡，服务代码体检与架构 Gap 分析，不与公共题库合并。
-- **本仓库文档**：`docs/01-面试八股文/` 由脚本从真理源编译，涵盖全量 505 道题的分卷文档与金字塔索引，保持 100% 数据指纹一致。
+- **本仓库文档**：`docs/01-面试八股文/` 由脚本从真理源编译，涵盖全量 526 道题的分卷文档与金字塔索引，保持 100% 数据指纹一致。
 - **项目匹配**：题库扩充后，已有项目的 `match.json` 仍是静态候选快照；重新执行项目的 `match/finalize`，新题才会进入候选列表。
 
 本仓库提供展示百科与文档壳；动态公共题库、六件套 Skill 及更新流程以 [interview-mock-skill](https://github.com/SuperGODOG/interview-mock-skill) 为准。
@@ -109,7 +109,7 @@
 题库数据变更后，重跑生成脚本：
 
 ```bash
-python3 scripts/generate_baike.py   # 从题库真理源编译全量 505 道真题分卷与金字塔索引
+python3 scripts/generate_baike.py   # 从题库真理源编译全量 526 道真题分卷与金字塔索引
 python3 scripts/html2md.py          # HTML 课件转 Markdown
 ```
 
@@ -121,13 +121,13 @@ python3 scripts/html2md.py          # HTML 课件转 Markdown
 ai-agent-interview-240/
 ├── README.md                          # 本文件
 ├── docs/
-│   ├── 01-面试八股文/                 # 全量 505 道真题分卷与索引
+│   ├── 01-面试八股文/                 # 全量 526 道真题分卷与索引
 │   │   ├── 00-核心专题索引与学习路线.md  # 全景金字塔索引 (5 大板块 · 21 个流派)
-│   │   ├── 01-Agent应用开发.md        # 284 题 · 核心战场
-│   │   ├── 02-八股基础.md             # 149 题 · 操作系统/计网/数据库/MQ/并发/秒杀
+│   │   ├── 01-Agent应用开发.md        # 296 题 · 核心战场
+│   │   ├── 02-八股基础.md             # 155 题 · 操作系统/计网/数据库/MQ/并发/秒杀
 │   │   ├── 03-Transformer与大模型.md  # 10 题
-│   │   ├── 04-LeetCode算法.md         # 25 题
-│   │   ├── 05-反问与国企特别版.md     # 8 题
+│   │   ├── 04-LeetCode算法.md         # 27 题
+│   │   ├── 05-反问与国企特别版.md     # 9 题
 │   │   └── 06-AI_Infra与高性能算子.md # 29 题 · CUDA/Triton/算子优化
 │   ├── 02-语言八股/                   # Java/Python/Go 语言面试八股
 │   │   ├── Java/                      # 11 篇手撕 + 66 篇课件 + 学习路线图
@@ -141,7 +141,7 @@ ai-agent-interview-240/
 ├── projects/                          # 早期静态项目档案（当前主线见源仓库链接）
 │   ├── SuperGODOG__skillforge/        # SkillForge 静态档案
 │   └── local__miaosha_fastapi/        # 秒杀系统静态档案
-├── skills/                            # 同步部署的六件套 Skill 包 (共享 505 题库与工具链)
+├── skills/                            # 同步部署的六件套 Skill 包 (共享 526 题库与工具链)
 │   ├── project-mock-interview/        # 项目拷问引擎（公共题库匹配 + 四维点评）
 │   ├── agent-project-grill/           # 核心公共题库真理源与拷打引擎
 │   ├── agent-review-audit/            # 420 张大厂 Agent/RAG 架构审查

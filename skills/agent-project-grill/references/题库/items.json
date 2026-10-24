@@ -426,6 +426,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「在 Agent 架构中，长短期记忆模块（...」建议递进深入至本题"
+   },
+   {
+    "target": "L659",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从长短时记忆基本划分递进至生产环境中读写链路解耦与并发异步架构"
    }
   ],
   "fuzzy": true,
@@ -498,6 +504,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「记忆的写入与读取，是采用大模型自主决策（...」建议递进深入至本题"
+   },
+   {
+    "target": "L659",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从大模型自主路由 vs 规则路由递进至物理读写执行链路的解耦与性能优化"
    }
   ],
   "fuzzy": true,
@@ -821,6 +833,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「在基于 Harness 的自动评估与执行...」建议递进深入至本题"
+   },
+   {
+    "target": "L666",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合 Harness 自动化评测体系定位体验缺陷根因"
    }
   ],
   "fuzzy": true,
@@ -1084,6 +1102,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「在缺乏用户主动反馈（如点击、点赞点踩）的...」建议递进深入至本题"
+   },
+   {
+    "target": "L665",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合内测用户行为数据设计自动化指标抽检"
    }
   ],
   "fuzzy": true,
@@ -1448,6 +1472,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「混合检索（Hybrid Search）的...」建议递进深入至本题"
+   },
+   {
+    "target": "L662",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从密集检索与稀疏检索融合递进至 Agent 记忆筛选场景下的个性化召回"
    }
   ],
   "fuzzy": true,
@@ -2108,6 +2138,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "从「在结构化工作流中，哪些类型的节点/算子更...」建议递进深入至本题"
+   },
+   {
+    "target": "L660",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从确定性流与自主智能体的边界递进至物理微服务层面的 AI 端与业务端分离设计"
    }
   ],
   "domain": "A_AGENT"
@@ -5086,6 +5122,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「在 Agent 与大模型应用中，常用的存...」建议递进深入至本题"
+   },
+   {
+    "target": "L663",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从宏观存储选型矩阵聚焦到 PG + pgvector 与 Milvus/Pinecone 的工程权衡"
    }
   ],
   "domain": "A_AGENT"
@@ -5244,6 +5286,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「开源Agent框架在走向企业级生产落地时...」建议递进深入至本题"
+   },
+   {
+    "target": "L664",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从通用 Agent 企业级生产落地环节递进至具体项目的云主机、容器化与基础设施资源配置"
    }
   ],
   "domain": "A_AGENT"
@@ -7516,6 +7564,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「请详细说明 TCP 三次握手的具体过程及...」建议递进深入至本题"
+   },
+   {
+    "target": "L672",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从事务并发控制底层回溯至 Server 层与引擎层的完整查询调用生命周期"
    }
   ],
   "domain": "B_BACKEND"
@@ -7551,6 +7605,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「什么是聚簇索引和非聚簇索引？它们在底层存...」建议递进深入至本题"
+   },
+   {
+    "target": "L674",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "基于二级索引叶子节点结构理解 (a, b) 匹配后的主键回表与过滤机制"
    }
   ],
   "domain": "B_BACKEND"
@@ -7593,6 +7653,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "慢查询排查中重点分析索引失效场景与Explain执行计划"
+   },
+   {
+    "target": "L673",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从基础认知深入至生产环境 Explain 执行计划分析与 SQL 调优实践"
    }
   ],
   "domain": "B_BACKEND"
@@ -7663,6 +7729,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「在MySQL InnoDB存储引擎中，行...」建议递进深入至本题"
+   },
+   {
+    "target": "L677",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从单机 SQL Join 语法语义递进至分布式架构下的跨库跨分片 Join 规避与解决方案"
    }
   ],
   "domain": "B_BACKEND"
@@ -8992,6 +9064,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「算法题：请手写实现快速排序算法，并分析其...」建议递进深入至本题"
+   },
+   {
+    "target": "L678",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从命令式代码排序算法对比声明式 SQL 内部的排序与窗口计算优化"
    }
   ],
   "domain": "S_ALGO_GENERAL"
@@ -9147,6 +9225,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "从「请详细说明Redis主从复制过程中，全量...」建议递进深入至本题"
+   },
+   {
+    "target": "L670",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "探讨工程师在快速演进的 AI 时代如何建立长效技术壁垒与跨界攻坚能力"
    }
   ],
   "domain": "S_ALGO_GENERAL"
@@ -9632,6 +9716,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "主从异步复制延迟可能导致Failover时分布式锁丢失与脑裂风险"
+   },
+   {
+    "target": "L676",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从单节点 SETNX 锁递进至主从切换锁丢失问题与 Redlock 算法争议探讨"
    }
   ],
   "domain": "B_BACKEND"
@@ -10354,6 +10444,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "理解Redis内存结构与淘汰机制后进一步剖析MySQL前置引入缓存的业务触发点"
+   },
+   {
+    "target": "L675",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合 SDS、跳表、压缩列表等紧凑内存结构论证高吞吐原因"
    }
   ],
   "domain": "B_BACKEND"
@@ -10454,7 +10550,20 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L672",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从联合索引定位进一步展开 SQL 在解析、预处理、优化与执行各阶段的全貌"
+   },
+   {
+    "target": "L674",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合联合索引最左匹配机制，深入分析包含未索引列 c 时的索引命中与回表过程"
+   }
+  ],
   "domain": "B_BACKEND"
  },
  {
@@ -10688,7 +10797,14 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L679",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从标准层序遍历递进至记录节点编号并计算每层最大宽度的进阶算法"
+   }
+  ],
   "domain": "S_ALGO_GENERAL"
  },
  {
@@ -11685,8 +11801,17 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
-  "domain": "B_BACKEND"
+  "relations": [
+   {
+    "target": "L676",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "本题为权威主条目，吸收并细化了 L512 原条目，全面覆盖分布式锁解决的问题与 Redis 落地细节"
+   }
+  ],
+  "domain": "B_BACKEND",
+  "is_duplicate": true,
+  "canonical_id": "L676"
  },
  {
   "id": "L513",
@@ -12097,7 +12222,14 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L673",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从慢查询概念定义递进至造成慢查询的各类底层原因分析（全表扫描、锁竞争等）"
+   }
+  ],
   "domain": "B_BACKEND"
  },
  {
@@ -12988,7 +13120,14 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L661",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从网络层 SSE 基础协议递进至 Agent 复杂推理链路中 Harness 的流式输出与状态生命周期管控"
+   }
+  ],
   "domain": "B_BACKEND"
  },
  {
@@ -13006,7 +13145,14 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L679",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从树形深度递归（直径求解）对比树形宽度层次遍历（宽度求解）"
+   }
+  ],
   "domain": "S_ALGO_GENERAL"
  },
  {
@@ -15006,6 +15152,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从通用对话理解成本权衡递进至垂直场景陪伴宠物的工程成本与商业壁垒"
+   },
+   {
+    "target": "L668",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从单点对话模型成本递进至全系统多模型统一接入、动态路由与降级体系"
    }
   ]
  },
@@ -15033,6 +15185,18 @@
     "direction": "in",
     "type": "progressive",
     "reason": "从关系型数据库底层选型深入探讨PG与MySQL的选型取舍及NestJS服务端架构"
+   },
+   {
+    "target": "L660",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从后端 NestJS 架构选型递进至 AI 服务端（Python/FastAPI）与业务服务端（NestJS/Java）的协同架构"
+   },
+   {
+    "target": "L663",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合业务数据与向量数据的一体化存储优势进一步论证 PG 选型"
    }
   ]
  },
@@ -15067,6 +15231,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "探讨垂直场景陪伴Agent相比通用大模型在长期人设记忆与情感连接上的独特壁垒"
+   },
+   {
+    "target": "L671",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从通用大模型 APP 的同质化竞争深入至 PC 桌面端在长驻常驻、系统级交互与隐私保护上的壁垒"
    }
   ]
  },
@@ -15094,6 +15264,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "从Harness测试基准与循环工程递进至规范驱动开发(SDD)在Coding Agent中的实操关系"
+   },
+   {
+    "target": "L669",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合规范驱动开发（SDD）论证接口与设计模式必须由工程师严格把控"
    }
   ]
  },
@@ -15129,6 +15305,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从AI编程优劣势进一步探讨解决其不可靠性的Harness沙箱与测试驱动工程"
+   },
+   {
+    "target": "L669",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从宏观开发范式对比深入至工程实际落地中的 AI 代码占比、Vibe Coding 边界与人类架构主权"
    }
   ]
  },
@@ -15165,6 +15347,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "明确引入缓存必要性后，进一步探讨数据库与缓存双写更新顺序的核心权衡"
+   },
+   {
+    "target": "L675",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从引入缓存的业务时机深入至底层 Redis 相对 MySQL 的四大核心性能优势"
    }
   ]
  },
@@ -15236,6 +15424,899 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从商品展示页浏览设计递进至下单链路中的库存原子预扣与高并发秒杀"
+   }
+  ]
+ },
+ {
+  "id": "L659",
+  "line": 659,
+  "kind": "question",
+  "text": "记忆系统中的读写链路解耦具体是如何实现的？读取与写入之间是什么关系？这里采用的是并发处理还是异步处理，为什么需要这样的设计？",
+  "major": "二_Agent应用开发相关",
+  "minor": "5.agent记忆设计",
+  "domain": "A_AGENT",
+  "tag": "Agent记忆架构/读写链路解耦/异步写入/并发优化",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L19"
+  ],
+  "downstream": [
+   "L662"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L19",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从长短时记忆基本划分递进至生产环境中读写链路解耦与并发异步架构"
+   },
+   {
+    "target": "L21",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从大模型自主路由 vs 规则路由递进至物理读写执行链路的解耦与性能优化"
+   },
+   {
+    "target": "L662",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从读写链路解耦进一步递进至长期记忆的向量化筛选、语义去噪与相关性召回"
+   }
+  ]
+ },
+ {
+  "id": "L660",
+  "line": 660,
+  "kind": "question",
+  "text": "项目为什么要将 AI 服务端与业务服务端分离？两者分别承担哪些职责？服务拆分的依据是什么？它们如何向客户端提供接口？",
+  "major": "二_Agent应用开发相关",
+  "minor": "8.工程落地",
+  "domain": "A_AGENT",
+  "tag": "系统架构设计/AI服务端与业务服务端解耦/微服务职责拆分/BFF与接口契约",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L80"
+  ],
+  "downstream": [
+   "L661"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L80",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从确定性流与自主智能体的边界递进至物理微服务层面的 AI 端与业务端分离设计"
+   },
+   {
+    "target": "L652",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从后端 NestJS 架构选型递进至 AI 服务端（Python/FastAPI）与业务服务端（NestJS/Java）的协同架构"
+   },
+   {
+    "target": "L661",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从服务分立架构深入至 AI 服务端对客户端的流式输出与 Harness 状态管控"
+   },
+   {
+    "target": "L664",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从微服务拆分递进至各服务在云基础设施与容器集群中的物理部署拓扑"
+   }
+  ]
+ },
+ {
+  "id": "L661",
+  "line": 661,
+  "kind": "question",
+  "text": "AI 服务端是如何实现流式输出的？Agent Harness 的调用和管理机制是如何设计的？",
+  "major": "二_Agent应用开发相关",
+  "minor": "9.业务评估(性能优化与诊断)",
+  "domain": "A_AGENT",
+  "tag": "AI通信机制/SSE流式传输/Agent Harness调用管控/执行链路追踪",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L581"
+  ],
+  "downstream": [
+   "L667"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L581",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从网络层 SSE 基础协议递进至 Agent 复杂推理链路中 Harness 的流式输出与状态生命周期管控"
+   },
+   {
+    "target": "L660",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从 AI 服务端职责划分深入至具体流式通信实现与 Harness 管理机制"
+   },
+   {
+    "target": "L667",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 Harness 流式通信机制递进至首字延迟（TTFT）与端到端吐字速度优化"
+   }
+  ]
+ },
+ {
+  "id": "L662",
+  "line": 662,
+  "kind": "question",
+  "text": "长期记忆系统是否采用自行构建的向量存储与检索方案？是否会保存所有对话信息？如何筛选有价值的记忆并进行相关性召回？",
+  "major": "二_Agent应用开发相关",
+  "minor": "5.agent记忆设计",
+  "domain": "A_AGENT",
+  "tag": "长期记忆设计/自建向量存储/记忆遗忘与蒸馏/语义去噪与相关性召回",
+  "depth": 4,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L659"
+  ],
+  "downstream": [
+   "L663"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L659",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从读写异步链路深入至长期记忆底层自建存储、语义去噪与相关性召回"
+   },
+   {
+    "target": "L55",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从密集检索与稀疏检索融合递进至 Agent 记忆筛选场景下的个性化召回"
+   },
+   {
+    "target": "L663",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从长期记忆向量检索需求递进至数据库底层 pgvector 与专用向量库的对比选型"
+   }
+  ]
+ },
+ {
+  "id": "L663",
+  "line": 663,
+  "kind": "question",
+  "text": "项目中使用的数据库是如何选型的？选择 PostgreSQL 和 pgvector 的主要考虑因素是什么？是否对比过其他向量数据库方案？",
+  "major": "二_Agent应用开发相关",
+  "minor": "7.数据库",
+  "domain": "A_AGENT",
+  "tag": "数据库选型/PostgreSQL/pgvector/ACID与向量一体化/专用向量数据库对比",
+  "depth": 4,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L662"
+  ],
+  "downstream": [
+   "L664"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L662",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从长期记忆存储诉求深入至底层选用 PostgreSQL + pgvector 的架构考量与方案对比"
+   },
+   {
+    "target": "L213",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从宏观存储选型矩阵聚焦到 PG + pgvector 与 Milvus/Pinecone 的工程权衡"
+   },
+   {
+    "target": "L652",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合业务数据与向量数据的一体化存储优势进一步论证 PG 选型"
+   }
+  ]
+ },
+ {
+  "id": "L664",
+  "line": 664,
+  "kind": "question",
+  "text": "项目目前部署在哪种基础设施上？生产环境的容器化与资源配置策略是如何规划的？",
+  "major": "二_Agent应用开发相关",
+  "minor": "8.工程落地",
+  "domain": "A_AGENT",
+  "tag": "生产部署/云原生基础设施/Docker容器化/Kubernetes/资源隔离与弹性伸缩",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L660"
+  ],
+  "downstream": [
+   "L665"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L660",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从微服务拆分递进至各服务在云基础设施与容器集群中的物理部署拓扑"
+   },
+   {
+    "target": "L221",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从通用 Agent 企业级生产落地环节递进至具体项目的云主机、容器化与基础设施资源配置"
+   },
+   {
+    "target": "L665",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从基础设施容量规划递进至内测阶段用户并发负载与承载能力验证"
+   }
+  ]
+ },
+ {
+  "id": "L665",
+  "line": 665,
+  "kind": "question",
+  "text": "项目目前是否已经有真实用户使用？内测用户规模有多大？主要通过哪些渠道获取内测用户？",
+  "major": "二_Agent应用开发相关",
+  "minor": "9.业务评估(性能优化与诊断)",
+  "domain": "A_AGENT",
+  "tag": "项目真实度/冷启动运营/种子用户渠道/内测反馈收集/业务验证",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L664"
+  ],
+  "downstream": [
+   "L666"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L664",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从部署就绪递进至真实内测流量注入与种子用户获取"
+   },
+   {
+    "target": "L43",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合内测用户行为数据设计自动化指标抽检"
+   },
+   {
+    "target": "L666",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从内测用户规模与渠道深入至真实用户暴露的体验痛点与优化规划"
+   }
+  ]
+ },
+ {
+  "id": "L666",
+  "line": 666,
+  "kind": "question",
+  "text": "作为项目负责人，你认为当前内测阶段还存在哪些影响用户体验的问题？后续计划从哪些方面进行优化？",
+  "major": "二_Agent应用开发相关",
+  "minor": "9.业务评估(性能优化与诊断)",
+  "domain": "A_AGENT",
+  "tag": "项目负责人复盘/Badcase归因/首字延迟与幻觉治理/产品体验痛点/迭代规划",
+  "depth": 4,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L665"
+  ],
+  "downstream": [
+   "L667"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L665",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从真实用户反馈中提取体验断点与负向评价"
+   },
+   {
+    "target": "L34",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合 Harness 自动化评测体系定位体验缺陷根因"
+   },
+   {
+    "target": "L667",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "针对内测最核心痛点（模型回复慢）展开专项性能调优"
+   }
+  ]
+ },
+ {
+  "id": "L667",
+  "line": 667,
+  "kind": "question",
+  "text": "针对当前大模型回复速度较慢的问题，你有哪些具体的优化思路？已经采取了哪些优化措施？",
+  "major": "二_Agent应用开发相关",
+  "minor": "9.业务评估(性能优化与诊断)",
+  "domain": "A_AGENT",
+  "tag": "推理性能调优/首字延迟(TTFT)/流式响应/Prompt Cache/投机采样/异步执行",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L661"
+  ],
+  "downstream": [
+   "L668"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L661",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从 SSE 流式基础传输递进至全链路首字时间（TTFT）与吞吐速度综合调优"
+   },
+   {
+    "target": "L666",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "针对内测用户反馈的等待焦虑实施具体的端到端加速方案"
+   },
+   {
+    "target": "L668",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从工程级优化（缓存/流式）递进到底层模型选型（小模型/量化模型）加速"
+   }
+  ]
+ },
+ {
+  "id": "L668",
+  "line": 668,
+  "kind": "question",
+  "text": "项目当前使用什么大模型？是否支持其他模型的接入与切换？模型选型主要考虑哪些因素？",
+  "major": "二_Agent应用开发相关",
+  "minor": "1.agent宏观认知",
+  "domain": "A_AGENT",
+  "tag": "大模型选型/多模型网关/LiteLLM/统一契约/成本延迟质量综合评估",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L651"
+  ],
+  "downstream": [
+   "L669"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L651",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从单点对话模型成本递进至全系统多模型统一接入、动态路由与降级体系"
+   },
+   {
+    "target": "L667",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "在延迟与成本之间通过分级模型路由（如轻量级判别模型 + 复杂生成模型）平衡性能"
+   },
+   {
+    "target": "L669",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从模型技术选型延伸至开发过程中对大模型代码生成能力的认知与管控"
+   }
+  ]
+ },
+ {
+  "id": "L669",
+  "line": 669,
+  "kind": "question",
+  "text": "项目开发过程中 AI 生成代码的占比有多高？你如何定义 AI 辅助编程，它与 Vibe Coding 有什么区别？在使用 AI 编程时，需求分析、架构设计、接口设计和设计模式的选择由谁负责？",
+  "major": "二_Agent应用开发相关",
+  "minor": "1.agent宏观认知",
+  "domain": "A_AGENT",
+  "tag": "AI辅助编程/Vibe Coding/架构设计主权/契约优先开发/代码品控与边界",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L655"
+  ],
+  "downstream": [
+   "L670"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L655",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从宏观开发范式对比深入至工程实际落地中的 AI 代码占比、Vibe Coding 边界与人类架构主权"
+   },
+   {
+    "target": "L654",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合规范驱动开发（SDD）论证接口与设计模式必须由工程师严格把控"
+   },
+   {
+    "target": "L670",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 AI 编程工具的高效使用延伸至面对全新技术领域时的学习与攻坚路径"
+   },
+   {
+    "target": "L668",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从模型技术选型延伸至开发过程中对大模型代码生成能力的认知与管控"
+   }
+  ]
+ },
+ {
+  "id": "L670",
+  "line": 670,
+  "kind": "question",
+  "text": "当接触一个全新的技术领域时，你通常如何规划学习路径？如何在较短时间内掌握核心知识，并将其应用到实际项目中？",
+  "major": "反问与国企特别版",
+  "minor": "2.反问与国企特别版",
+  "domain": "S_ALGO_GENERAL",
+  "tag": "综合素质/学习方法论/第一性原理/技术攻坚/最小闭环验证",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L669"
+  ],
+  "downstream": [
+   "L671"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L669",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从善用 AI 提效递进至面对技术盲区时的第一性原理拆解与自主学习方法论"
+   },
+   {
+    "target": "L389",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "探讨工程师在快速演进的 AI 时代如何建立长效技术壁垒与跨界攻坚能力"
+   },
+   {
+    "target": "L671",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "将技术学习方法论应用于桌面端技术栈选型与差异化产品设计"
+   }
+  ]
+ },
+ {
+  "id": "L671",
+  "line": 671,
+  "kind": "question",
+  "text": "项目为什么选择 PC 桌面端作为主要平台，而不是移动端或小程序？是否考虑过 PC 端潜在用户规模较小的问题？产品定位和差异化竞争优势是什么？",
+  "major": "二_Agent应用开发相关",
+  "minor": "1.agent宏观认知",
+  "domain": "A_AGENT",
+  "tag": "产品定位/平台选型/桌面端优势/Electron与Tauri/本地算力隐私/差异化壁垒",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L653"
+  ],
+  "downstream": [
+   "L672"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L653",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从通用大模型 APP 的同质化竞争深入至 PC 桌面端在长驻常驻、系统级交互与隐私保护上的壁垒"
+   },
+   {
+    "target": "L670",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从技术选型方法论落地到具体客户端形态的商业权衡与用户价值主张"
+   },
+   {
+    "target": "L672",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从前端/客户端场景切回底层后端基础存储与数据库核心执行机制"
+   }
+  ]
+ },
+ {
+  "id": "L672",
+  "line": 672,
+  "kind": "question",
+  "text": "MySQL 执行一条 SQL 查询的完整流程是什么？从 SQL 解析到最终返回结果，主要经历哪些步骤？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "MySQL内核/SQL执行流程/Server层/存储引擎/解析器/优化器/执行器/Buffer Pool",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L320"
+  ],
+  "downstream": [
+   "L673"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L320",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从事务并发控制底层回溯至 Server 层与引擎层的完整查询调用生命周期"
+   },
+   {
+    "target": "L450",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从联合索引定位进一步展开 SQL 在解析、预处理、优化与执行各阶段的全貌"
+   },
+   {
+    "target": "L673",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从正常 SQL 快速执行链路递进至执行耗时异常的慢查询判定机制"
+   },
+   {
+    "target": "L671",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从前端/客户端场景切回底层后端基础存储与数据库核心执行机制"
+   },
+   {
+    "target": "L677",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 SQL 解析与优化器规划递进至多表关联 Join 的匹配语义与驱动表选择"
+   }
+  ]
+ },
+ {
+  "id": "L673",
+  "line": 673,
+  "kind": "question",
+  "text": "什么是 MySQL 慢查询？如何界定慢查询以及慢查询日志的核心作用是什么？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "MySQL基础/慢查询定义/long_query_time/慢查询日志/性能瓶颈初筛",
+  "depth": 1,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L672"
+  ],
+  "downstream": [
+   "L533"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L672",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从 SQL 正常执行流程递进至执行超出阈值时的慢查询捕获与日志记录机制"
+   },
+   {
+    "target": "L533",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从慢查询概念定义递进至造成慢查询的各类底层原因分析（全表扫描、锁竞争等）"
+   },
+   {
+    "target": "L322",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从基础认知深入至生产环境 Explain 执行计划分析与 SQL 调优实践"
+   }
+  ]
+ },
+ {
+  "id": "L674",
+  "line": 674,
+  "kind": "question",
+  "text": "假设表中建立了 (a, b) 联合索引，当 SQL 的 WHERE 条件同时包含 a、b、c 时，能否命中该联合索引？为什么？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "MySQL索引/联合索引/最左匹配原则/索引下推(ICP)/WHERE条件顺序/执行计划",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L450"
+  ],
+  "downstream": [
+   "L675"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L450",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合联合索引最左匹配机制，深入分析包含未索引列 c 时的索引命中与回表过程"
+   },
+   {
+    "target": "L321",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "基于二级索引叶子节点结构理解 (a, b) 匹配后的主键回表与过滤机制"
+   },
+   {
+    "target": "L675",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从关系型数据库 B+ 树索引检索与回表开销递进至内存型缓存存储的查询性能对比"
+   }
+  ]
+ },
+ {
+  "id": "L675",
+  "line": 675,
+  "kind": "question",
+  "text": "Redis 为什么通常比 MySQL 查询速度更快？请从存储介质、线程模型、网络 I/O 与数据结构四个维度进行对比。",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "Redis与MySQL对比/内存存储/epoll多路复用/单线程无锁/专用数据结构/时延对比",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L656"
+  ],
+  "downstream": [
+   "L676"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L656",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从引入缓存的业务时机深入至底层 Redis 相对 MySQL 的四大核心性能优势"
+   },
+   {
+    "target": "L445",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合 SDS、跳表、压缩列表等紧凑内存结构论证高吞吐原因"
+   },
+   {
+    "target": "L676",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 Redis 基础高性能特性递进至利用 Redis 单线程原子性实现分布式锁"
+   },
+   {
+    "target": "L674",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从关系型数据库 B+ 树索引检索与回表开销递进至内存型缓存存储的查询性能对比"
+   }
+  ]
+ },
+ {
+  "id": "L676",
+  "line": 676,
+  "kind": "question",
+  "text": "什么是分布式锁？它主要解决什么问题？如何使用 Redis 实现一个高可用的分布式锁？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "分布式锁/Redis实现/SETNX EX/Lua原子释放/Redisson看门狗/锁超时与重入",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "is_canonical": true,
+  "duplicate_aliases": [
+   "L512"
+  ],
+  "prereq": [
+   "L675"
+  ],
+  "downstream": [
+   "L410"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L512",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "本题为权威主条目，吸收并细化了 L512 原条目，全面覆盖分布式锁解决的问题与 Redis 落地细节"
+   },
+   {
+    "target": "L675",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "利用 Redis 单线程高性能与内存操作实现轻量级互斥锁"
+   },
+   {
+    "target": "L410",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从单节点 SETNX 锁递进至主从切换锁丢失问题与 Redlock 算法争议探讨"
+   }
+  ]
+ },
+ {
+  "id": "L677",
+  "line": 677,
+  "kind": "question",
+  "text": "SQL 中 LEFT JOIN、RIGHT JOIN 和 INNER JOIN 有什么区别？在什么场景下应该选择全连接或子查询替代？",
+  "major": "四_八股相关",
+  "minor": "3.数据库与缓存存储",
+  "domain": "B_BACKEND",
+  "tag": "SQL基础/INNER JOIN/LEFT JOIN/RIGHT JOIN/Nested-Loop/笛卡尔积/表关联语义",
+  "depth": 1,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L672"
+  ],
+  "downstream": [
+   "L678"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L672",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从 SQL 解析与优化器规划递进至多表关联 Join 的匹配语义与驱动表选择"
+   },
+   {
+    "target": "L324",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从单机 SQL Join 语法语义递进至分布式架构下的跨库跨分片 Join 规避与解决方案"
+   },
+   {
+    "target": "L678",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从 Join 基础语法递进至复杂多表统计与分组 Top-N 现场手撕"
+   }
+  ]
+ },
+ {
+  "id": "L678",
+  "line": 678,
+  "kind": "question",
+  "text": "经典 SQL 手撕题：请编写 SQL 查询每个部门薪资前 3 高的员工（分组 Top-N 问题），并说明使用子查询与窗口函数（DENSE_RANK / ROW_NUMBER）的区别。",
+  "major": "Leetcode相关",
+  "minor": "1.LeetCode算法",
+  "domain": "S_ALGO_GENERAL",
+  "tag": "SQL手撕/LeetCode 185/分组Top-N/窗口函数/DENSE_RANK/ROW_NUMBER/子查询",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L677"
+  ],
+  "downstream": [
+   "L679"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L677",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从基础表关联递进至部门表与员工表关联后的分组排名手撕"
+   },
+   {
+    "target": "L377",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从命令式代码排序算法对比声明式 SQL 内部的排序与窗口计算优化"
+   },
+   {
+    "target": "L679",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从数据库领域 SQL 手撕递进至经典数据结构与算法现场手撕"
+   }
+  ]
+ },
+ {
+  "id": "L679",
+  "line": 679,
+  "kind": "question",
+  "text": "算法手撕题：二叉树的最大宽度（LeetCode 662）。请手写实现基于广度优先搜索（BFS 层序遍历）计算每层的最大宽度，并详细说明如何解决大二叉树节点索引溢出问题。",
+  "major": "Leetcode相关",
+  "minor": "1.LeetCode算法",
+  "domain": "S_ALGO_GENERAL",
+  "tag": "算法手撕/LeetCode 662/二叉树最大宽度/BFS层序遍历/完全二叉树索引编号/大数防溢出",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L463"
+  ],
+  "downstream": [],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L463",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从标准层序遍历递进至记录节点编号并计算每层最大宽度的进阶算法"
+   },
+   {
+    "target": "L582",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从树形深度递归（直径求解）对比树形宽度层次遍历（宽度求解）"
+   },
+   {
+    "target": "L678",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "构成大厂综合面试中'1道复杂数据统计 SQL + 1道高频数据结构算法'的双重手撕考核"
    }
   ]
  }
