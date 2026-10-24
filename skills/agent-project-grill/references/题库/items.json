@@ -18150,7 +18150,13 @@
       "L6"
     ],
     "downstream": [
-      "L719"
+      "L719",
+      "L760",
+      "L761",
+      "L762",
+      "L763",
+      "L764",
+      "L765"
     ],
     "relations": [
       {
@@ -18170,6 +18176,42 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从ReAct范式具体落地到无官方Tools API下的纯Prompt消息驱动工具调用"
+      },
+      {
+        "target": "L760",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L760"
+      },
+      {
+        "target": "L761",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L761"
+      },
+      {
+        "target": "L762",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L762"
+      },
+      {
+        "target": "L763",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L763"
+      },
+      {
+        "target": "L764",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L764"
+      },
+      {
+        "target": "L765",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L765"
       }
     ],
     "line": 718,
@@ -18192,7 +18234,8 @@
       "L708"
     ],
     "downstream": [
-      "L720"
+      "L720",
+      "L760"
     ],
     "relations": [
       {
@@ -18212,6 +18255,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从Agent工具执行环境延伸到桌面端Agent容器Electron的多进程架构设计"
+      },
+      {
+        "target": "L760",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L760"
       }
     ],
     "line": 719,
@@ -18878,7 +18927,8 @@
       "L681"
     ],
     "downstream": [
-      "L732"
+      "L732",
+      "L770"
     ],
     "relations": [
       {
@@ -18898,6 +18948,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从复杂后端进程工程设计进入经典数据结构与算法手撕考核"
+      },
+      {
+        "target": "L770",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L770"
       }
     ],
     "line": 731,
@@ -19156,8 +19212,38 @@
     "prereq": [
       "L730"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L766",
+      "L767",
+      "L768",
+      "L769"
+    ],
+    "relations": [
+      {
+        "target": "L766",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L766"
+      },
+      {
+        "target": "L767",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L767"
+      },
+      {
+        "target": "L768",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L768"
+      },
+      {
+        "target": "L769",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L769"
+      }
+    ],
     "line": 648,
     "assigned": true,
     "in_comment": false,
@@ -19521,6 +19607,227 @@
     ],
     "relations": [],
     "line": 666,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L760",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "6.agent处理情景的架构设计",
+    "depth": 3,
+    "text": "详细介绍企业级 AI Agent 平台（如 SkillForge）的整体架构设计与核心工作模块：平台在 Skill 注册管理、级联路由分发、沙箱环境执行、多模型调度与端到端可观测性（Tracing/Metrics）上是如何分层的？在项目中你主导或独立负责的核心工作模块有哪些，解决了什么工程挑战？",
+    "tag": "Agent平台/架构设计/SkillForge/级联路由/沙箱执行/多模型网关/可观测性/职责边界",
+    "status": "ready",
+    "prereq": [
+      "L718",
+      "L719"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 667,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L761",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在企业级 Agent 架构中，审核 Agent（Audit Agent / Guardrail Agent）是在什么环节介入的？主要审核哪些维度的内容？详细说明输入预审（Prompt 注入、敏感词、越狱攻击检测）、执行期审核（敏感 Tool Calling 参数拦截、高危权限阻断）与输出后审（幻觉合规、隐私泄露 PII 过滤）的三层拦截机制。",
+    "tag": "审核Agent/Guardrail/安全风控/输入预审/输出后审/Tool拦截/越狱防护/PII脱敏",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 668,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L762",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "6.agent处理情景的架构设计",
+    "depth": 3,
+    "text": "为什么系统需要将业务 Agent 与审核 Agent 拆分为两个独立的 Agent 实体？单一大模型（主 Agent）自行自我审核存在哪些致命缺陷？结合提示词对抗污染、系统权限隔离、思维链劫持以及专用轻量模型在时延与算力成本上的优势，深入分析双 Agent 架构的必要性。",
+    "tag": "双Agent架构/主从隔离/自我审核缺陷/提示词污染/思维链劫持/权限隔离/成本权衡",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 669,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L763",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "当审核 Agent 判定当前会话或工具调用存在高风险行为时，平台底层会触发哪些降级与熔断机制？结合立即阻断会话、敏感工具调用降级为只读、参数自动脱敏、人机协同（Human-in-the-Loop, HITL）二次确认以及返回预置安全兜底回复，说明整套防御流水线的设计。",
+    "tag": "安全熔断/高风险阻断/人机协同/HITL/权限降级/参数脱敏/兜底机制/防御流水线",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 670,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L764",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 4,
+    "text": "项目中 Skill 的受控自进化（Self-Evolution）机制具体是如何实现的？能否结合一个真实业务场景举例说明？详细阐述系统如何自动捕获失败调用轨迹（Execution Traces）、通过 Reflection Agent 进行反思诊断、自动微调 Prompt 或补齐 Few-shot 负样本，并在沙箱中完成增量迭代。",
+    "tag": "Skill自进化/自我演化/Reflection/轨迹挖掘/Few-shot动态修正/沙箱迭代/实战案例",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 671,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L765",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 4,
+    "text": "如何从工程机制上绝对保证 Skill 自进化后系统质量“只升不降”，防止出现灾难性遗忘或模型退步？详细说明基于 Golden Benchmark 基准测试集的全量自动化回归验证、影子流量测试（Shadow Testing / Canary）、多维质量门禁（成功率、幻觉率、Token开销）以及秒级版本回滚（Rollback）闭环。",
+    "tag": "质量回归保障/GoldenBenchmark/基准测试/影子测试/金丝雀发布/版本回滚/质量门禁",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 672,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L766",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "MySQL 数据库支持哪几种事务隔离级别（Transaction Isolation Levels）？InnoDB 存储引擎的默认隔离级别是哪一种？详细阐述脏读（Dirty Read）、不可重复读（Non-repeatable Read）与幻读（Phantom Read）的定义，以及不同隔离级别对这三种并发异常现象的防范边界。",
+    "tag": "MySQL/事务隔离级别/读未提交/读已提交/可重复读/串行化/脏读/不可重复读/幻读/InnoDB默认",
+    "status": "ready",
+    "prereq": [
+      "L741"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 673,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L767",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "在底层实现上，MySQL 不同的事务隔离级别分别是如何避免上述并发问题的？深入分析读未提交（无并发控制）、读已提交与可重复读（基于 MVCC 多版本并发控制与不同生成时机的 ReadView）、以及串行化（排他锁强制单线程串行执行）的锁机制与版本链机制对比。",
+    "tag": "MySQL/并发机制/MVCC/ReadView生成时机/UndoLog版本链/快照读/当前读/锁机制",
+    "status": "ready",
+    "prereq": [
+      "L741"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 674,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L768",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "什么是 MySQL 中的幻读（Phantom Read）？通过具体的 SQL 事务交错执行时序举例说明其典型现象。在 InnoDB 存储引擎的可重复读（RR）隔离级别下，单纯依靠 MVCC 快照读能否彻底解决所有场景下的幻读？在当前读（如 SELECT ... FOR UPDATE / UPDATE）场景下，Next-Key Lock（记录锁 + 间隙锁 Gap Lock）是如何防止幻行插入的？",
+    "tag": "MySQL/幻读/并发时序/MVCC快照读/当前读/NextKeyLock/间隙锁GapLock/记录锁",
+    "status": "ready",
+    "prereq": [
+      "L741"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 675,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L769",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "MySQL 联合索引的最左前缀原则（Leftmost Prefix Rule）底层原理是什么？基于 B+ 树复合键的物理有序性进行分析。如果表中建立了联合索引 (A, B, C)，在执行 WHERE 条件不包含字段 A、只查询 B 和 C 时，该查询能否利用到索引？在何种情况下会触发覆盖索引扫描（Index Full Scan）或索引下推（ICP, Index Condition Pushdown）优化？",
+    "tag": "MySQL/联合索引/最左前缀原则/B+树复合键/覆盖索引/索引下推ICP/执行计划Explain",
+    "status": "ready",
+    "prereq": [
+      "L741"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 676,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L770",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "4.消息队列与异步流",
+    "depth": 2,
+    "text": "在高可靠消息通信体系中，RabbitMQ 是如何保证消息全链路不丢失的？从生产者端（Publisher Confirm 机制与 ReturnCallback）、Broker 集群端（交换机/队列/消息 deliveryMode=2 三重持久化与镜像队列/Quorum 队列高可用复制）、消费者端（手动 ACK 机制 basicAck/basicNack、关闭 autoAck 与死信队列 DLX 补偿重试）三个阶段详细阐述完整防御方案。",
+    "tag": "RabbitMQ/消息防丢/PublisherConfirm/持久化/镜像队列/Quorum队列/手动ACK/DLX死信补偿",
+    "status": "ready",
+    "prereq": [
+      "L731"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 677,
     "assigned": true,
     "in_comment": false,
     "comment_label": ""
