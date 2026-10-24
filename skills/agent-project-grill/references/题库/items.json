@@ -18156,7 +18156,20 @@
       "L762",
       "L763",
       "L764",
-      "L765"
+      "L765",
+      "L771",
+      "L772",
+      "L773",
+      "L774",
+      "L775",
+      "L776",
+      "L777",
+      "L778",
+      "L779",
+      "L783",
+      "L784",
+      "L785",
+      "L786"
     ],
     "relations": [
       {
@@ -18212,6 +18225,84 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L765"
+      },
+      {
+        "target": "L771",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L771"
+      },
+      {
+        "target": "L772",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L772"
+      },
+      {
+        "target": "L773",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L773"
+      },
+      {
+        "target": "L774",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L774"
+      },
+      {
+        "target": "L775",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L775"
+      },
+      {
+        "target": "L776",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L776"
+      },
+      {
+        "target": "L777",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L777"
+      },
+      {
+        "target": "L778",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L778"
+      },
+      {
+        "target": "L779",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L779"
+      },
+      {
+        "target": "L783",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L783"
+      },
+      {
+        "target": "L784",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L784"
+      },
+      {
+        "target": "L785",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L785"
+      },
+      {
+        "target": "L786",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L786"
       }
     ],
     "line": 718,
@@ -18235,7 +18326,10 @@
     ],
     "downstream": [
       "L720",
-      "L760"
+      "L760",
+      "L780",
+      "L781",
+      "L782"
     ],
     "relations": [
       {
@@ -18261,6 +18355,24 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L760"
+      },
+      {
+        "target": "L780",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L780"
+      },
+      {
+        "target": "L781",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L781"
+      },
+      {
+        "target": "L782",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L782"
       }
     ],
     "line": 719,
@@ -18977,7 +19089,8 @@
     ],
     "downstream": [
       "L733",
-      "L759"
+      "L759",
+      "L787"
     ],
     "relations": [
       {
@@ -19003,6 +19116,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L759"
+      },
+      {
+        "target": "L787",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L787"
       }
     ],
     "line": 732,
@@ -19603,9 +19722,17 @@
       "L732"
     ],
     "downstream": [
-      "L733"
+      "L733",
+      "L787"
     ],
-    "relations": [],
+    "relations": [
+      {
+        "target": "L787",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L787"
+      }
+    ],
     "line": 666,
     "assigned": true,
     "in_comment": false,
@@ -19828,6 +19955,347 @@
     "downstream": [],
     "relations": [],
     "line": 677,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L771",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "1.agent宏观认知",
+    "depth": 2,
+    "text": "深入对比 Agent 运行架构中的 ReAct 模式与 Plan-and-Solve（计划-求解）模式：两者的核心执行链路与思考机制有何本质区别？在动态探索类任务（如交互式代码排错、网页自主浏览）与高确定性长链路任务（如数据分析报表生成、多阶段系统迁移）中，分别如何做架构选型？如何构建动静结合的混合模式（Hierarchical Planning + ReAct Execution）？",
+    "tag": "Agent范式/ReAct模式/Plan-and-Solve/计划求解/混合执行/动态探索/长链路选型",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 678,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L772",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "当 Agent 在多轮复杂任务执行中上下文信息不断膨胀、逼近或超过模型物理上下文窗口限制时，业界通常有哪些标准的工程治理策略？详细对比直接截断（Truncation）、滑动窗口保留最新轮次（Sliding Window）、基于递归摘要的上下文压缩（Recursive Summarization）以及外置知识库/记忆外挂（External Memory Offloading）各自的优缺点与适用场景。",
+    "tag": "上下文溢出/窗口限制/滑动窗口/递归摘要/上下文压缩/外挂知识库/工程治理",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 679,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L773",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "在对 Agent 上下文进行摘要与结构化压缩时，如何科学制定“保留 vs 丢弃”的准则？详细阐述如何通过语义密度评估保留核心用户意图、实体状态变更、关键决策依据与未决待办（TODO），同时安全剔除冗余的工具调用中间轨迹、大体积 raw 输出以及试错失败的无效思维链？",
+    "tag": "上下文压缩准则/信息熵/语义密度/实体状态保留/冗余轨迹剔除/未决待办跟踪",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 680,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L774",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "如何从系统架构设计上彻底避免 Context 压缩之后，模型发生“关键需求遗忘”或偏离用户初始设定的现象？分析 System Prompt 显式锚定（System Prompt Pinning）、关键业务约束持久化置顶、动态便签本（Working Scratchpad）以及双层上下文管道（Global Invariants + Local Rolling Context）的落地实现。",
+    "tag": "遗忘防范/SystemPrompt置顶/工作便签本/双层上下文/全局不变量/约束锁定",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 681,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L775",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "Agent 在自主执行长链路任务时，频繁出现路径反复、重复调用同一工具、或在相同错误中反复尝试（Action Oscillation / Dead Loop）的根本原因是什么？在工程上如何通过循环检测机制（Cycle Detection）、状态转移图约束、反思提示词（Reflection Hook）以及动态温度/惩罚因子调节进行系统性解决？",
+    "tag": "死循环防范/路径反复/Action振荡/循环检测/状态机约束/Reflection反思/工程容错",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 682,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L776",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "一个工业级完整的 AI Agent 记忆系统（Memory System）应该如何进行分层架构设计？详细阐述包含工作记忆（Working Memory）、短期情境记忆（Short-term / Episodic Memory）、长期外显语义记忆（Long-term Semantic Memory）以及程序化技能记忆（Procedural / Tool Memory）的四大核心模块与协同流转。",
+    "tag": "Agent记忆架构/工作记忆/情境记忆/语义记忆/程序化记忆/记忆分层/系统协同",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 683,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L777",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 2,
+    "text": "当前对话中的 Context（上下文窗口）和长期 Memory（记忆存储）在底层原理与工程实现上有何本质区别？两者在生命周期、存储载体（GPU KV Cache vs 外部持久化数据库）、时延敏感度以及解决的核心业务问题上各自承担什么职责？",
+    "tag": "Context与Memory区别/生命周期/KVCache/持久化存储/时延对比/工程职责划分",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 684,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L778",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "在生产环境中，Agent 的 Memory 信息是如何完成全链路生命周期管理的？详细说明从原始对话流中进行关键事实/实体关系提取（Memory Extraction）、结构化与向量化持久存储（PostgreSQL + pgvector / Redis），以及基于语义相似度、时间衰减因子（Recency Decay）与重要性加权（Importance Scoring）的混合检索召回链路。",
+    "tag": "记忆全链路/事实提取/向量化存储/pgvector/时间衰减/重要性评分/混合检索召回",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 685,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L779",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "为什么在企业级落地中，记忆提取、元数据打标与上下文摘要压缩等任务通常推荐分流给轻量级小模型（SLM, Small Language Model，如 Qwen-7B、Llama-3-8B）完成？相比直接调用千亿参数大模型（LLM），在推理时延、TPS 吞吐上限、Token 成本治理以及任务泛化过拟合控制上有哪些决定性优势？",
+    "tag": "小模型分流/SLM/大小模型协同/记忆提取/成本治理/推理时延/吞吐量提升",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 686,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L780",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 3,
+    "text": "Anthropic 提出的 MCP（Model Context Protocol）协议是什么？它解决了传统 Agent 工具调用中哪些跨平台与标准碎片化痛点？详细梳理 Host、Client 与 MCP Server 之间的三层通信拓扑，以及 Agent 通过标准协议发现工具（Tools）、读取资源（Resources）与渲染模板（Prompts）的完整执行流程。",
+    "tag": "MCP/ModelContextProtocol/协议架构/HostClientServer/工具标准化/资源管理/统一协议",
+    "status": "ready",
+    "prereq": [
+      "L719"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 687,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L781",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 3,
+    "text": "当企业级 Agent 系统拥有上百个甚至上千个可用工具（Tools / APIs）时，直接将所有工具的 JSON Schema 全量注入 Prompt 会导致上下文膨胀、调用延迟飙升及模型幻觉失控。工程上如何通过工具动态检索（Tool Retrieval / Embedding 向量过滤）、层级分类路由（Hierarchical Tool Router）与按需延迟加载（Lazy Schema Injection）机制优雅解决该问题？",
+    "tag": "海量工具管理/ToolRetrieval/向量检索/层级路由/延迟注入/Prompt轻量化/防幻觉",
+    "status": "ready",
+    "prereq": [
+      "L719"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 688,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L782",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 3,
+    "text": "如果外部工具（如数据库全表查询、日志搜索或网络爬虫）单次返回的数据量极大（数万甚至数十万 Token），直接回填给大模型会引发上下文溢出或导致严重的注意分散。在架构上如何结合游标分页（Cursor Pagination）、云存储临时文件句柄（Object Store S3/GCS URL）、沙箱内部预聚合以及轻量模型结构化提取完成安全过滤？",
+    "tag": "工具大体积返回/数据截断/对象存储外置/文件句柄/沙箱预处理/结构化压缩/防溢出",
+    "status": "ready",
+    "prereq": [
+      "L719"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 689,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L783",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "大模型服务商（如 Anthropic / OpenAI / Google Gemini）提供的 Prompt Caching（提示词缓存）机制底层原理是什么？为什么它能够将首字延迟（TTFT）降低 80% 并大幅削减 Token 成本？在工程设计中，如何通过“静态前缀在前、动态变量置后”、“统一 Schema 格式”与“固定会话锚点”大幅提升 Prompt Cache 命中率？",
+    "tag": "PromptCache/前缀缓存/KVCache复用/TTFT降低/成本治理/前缀对齐/缓存命中率优化",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 690,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L784",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "6.agent处理情景的架构设计",
+    "depth": 3,
+    "text": "在复杂 Multi-Agent（多智能体）系统架构设计中，应该遵循哪些核心原则来划分不同 Agent 之间的职责边界？详细说明基于专业垂直领域划分（Domain-based）、基于业务生命周期流水线阶段划分（Pipeline/Stage-based）以及基于安全权限与信任等级划分（Trust-level）的三种主流切分模式。",
+    "tag": "Multi-Agent/职责划分/架构分工/领域切分/流水线拆解/权限隔离/协同原则",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 691,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L785",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "6.agent处理情景的架构设计",
+    "depth": 3,
+    "text": "Multi-Agent 系统中多个子 Agent 之间有哪些主流的通信拓扑与任务协作范式？详细对比中心编排器模式（Central Orchestrator / Supervisor）、分布式事件总线模式（Event Bus / Pub-Sub）、点对点消息传递模式（Peer-to-Peer Direct Messaging）以及共享黑板模式（Blackboard Pattern）的吞吐量、容错性与死锁防范机制。",
+    "tag": "Multi-Agent通信/协作范式/中心编排器/事件总线/点对点/黑板模式/防死锁/拓扑对比",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 692,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L786",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 4,
+    "text": "如果让你主导优化一个现有的复杂 Agent 生产系统，从系统工程、性能、成本与安全四个维度出发，你会优先从哪些关键方向入手并制定怎样的落地路线图？结合工具调用成功率提升、动态上下文与 Prompt Cache 治理、Golden Test 自动化评测基准以及全链路 Tracing 可观测性体系展开论述。",
+    "tag": "Agent系统优化/生产演进路线/工具成功率/PromptCache治理/评测基准/全链路可观测性",
+    "status": "ready",
+    "prereq": [
+      "L718"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 693,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L787",
+    "kind": "question",
+    "domain": "S_ALGO_GENERAL",
+    "major": "Leetcode相关",
+    "minor": "1.LeetCode算法",
+    "depth": 2,
+    "text": "算法手撕题：判断一棵给定的二叉树是否是高度平衡的二叉树（LeetCode 110）。详细对比自顶向下的递归解法（多次重复计算深度，时间复杂度 O(N^2)）与自底向上的后序遍历剪枝解法（提前返回 -1，时间复杂度 O(N)、空间复杂度 O(H)），并手写完整的自底向上最优代码实现。",
+    "tag": "算法手撕/二叉树/平衡二叉树/LC110/后序遍历/自底向上剪枝/深度优先搜索DFS",
+    "status": "ready",
+    "prereq": [
+      "L732",
+      "L759"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 694,
     "assigned": true,
     "in_comment": false,
     "comment_label": ""
