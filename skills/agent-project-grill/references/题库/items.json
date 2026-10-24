@@ -18329,7 +18329,9 @@
       "L760",
       "L780",
       "L781",
-      "L782"
+      "L782",
+      "L795",
+      "L796"
     ],
     "relations": [
       {
@@ -18373,6 +18375,18 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L782"
+      },
+      {
+        "target": "L795",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L795"
+      },
+      {
+        "target": "L796",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L796"
       }
     ],
     "line": 719,
@@ -19752,8 +19766,52 @@
       "L718",
       "L719"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L788",
+      "L789",
+      "L790",
+      "L791",
+      "L795",
+      "L796"
+    ],
+    "relations": [
+      {
+        "target": "L788",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L788"
+      },
+      {
+        "target": "L789",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L789"
+      },
+      {
+        "target": "L790",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L790"
+      },
+      {
+        "target": "L791",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L791"
+      },
+      {
+        "target": "L795",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L795"
+      },
+      {
+        "target": "L796",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L796"
+      }
+    ],
     "line": 667,
     "assigned": true,
     "in_comment": false,
@@ -19852,8 +19910,45 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L792",
+      "L793",
+      "L794",
+      "L797",
+      "L798"
+    ],
+    "relations": [
+      {
+        "target": "L792",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L792"
+      },
+      {
+        "target": "L793",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L793"
+      },
+      {
+        "target": "L794",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L794"
+      },
+      {
+        "target": "L797",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L797"
+      },
+      {
+        "target": "L798",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L798"
+      }
+    ],
     "line": 672,
     "assigned": true,
     "in_comment": false,
@@ -20072,8 +20167,52 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L799",
+      "L800",
+      "L801",
+      "L802",
+      "L803",
+      "L804"
+    ],
+    "relations": [
+      {
+        "target": "L799",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L799"
+      },
+      {
+        "target": "L800",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L800"
+      },
+      {
+        "target": "L801",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L801"
+      },
+      {
+        "target": "L802",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L802"
+      },
+      {
+        "target": "L803",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L803"
+      },
+      {
+        "target": "L804",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L804"
+      }
+    ],
     "line": 683,
     "assigned": true,
     "in_comment": false,
@@ -20112,8 +20251,24 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L803",
+      "L804"
+    ],
+    "relations": [
+      {
+        "target": "L803",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L803"
+      },
+      {
+        "target": "L804",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L804"
+      }
+    ],
     "line": 685,
     "assigned": true,
     "in_comment": false,
@@ -20132,8 +20287,17 @@
     "prereq": [
       "L718"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L789"
+    ],
+    "relations": [
+      {
+        "target": "L789",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L789"
+      }
+    ],
     "line": 686,
     "assigned": true,
     "in_comment": false,
@@ -20296,6 +20460,351 @@
     "downstream": [],
     "relations": [],
     "line": 694,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L788",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "1.agent宏观认知",
+    "depth": 2,
+    "text": "相比豆包、Kimi 等通用消费级大模型，你们自建的垂直 Agent 平台的差异化核心优势是什么？从私有领域知识库沉淀、业务系统工具链（APIs/Tools）闭环调用、确定性复杂工作流（SOP）受控编排、多级权限隔离以及企业级可控可观测性等维度深入分析其护城河。",
+    "tag": "平台优势/通用大模型对比/豆包/垂直Agent平台/业务工具链/SOP工作流/权限隔离/护城河",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 695,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L789",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 2,
+    "text": "你们 Agent 平台的底层调用的是什么模型？为什么在生产环境不采用“单一最强模型打天下”，而是采用主从/多模型动态路由分流策略？详细说明主力复杂推理任务、高频低延迟分类摘要任务、以及安全审核任务在不同规格模型（如 GPT-4o、Claude 3.5 Sonnet、DeepSeek、Qwen-7B 等）之间的技术选型权衡与成本治理。",
+    "tag": "模型选型/多模型路由/主从分流/主力模型/辅助小模型/时延权衡/成本治理/动态降级",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L779"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 696,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L790",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "6.agent处理情景的架构设计",
+    "depth": 3,
+    "text": "在整个 Agent 平台中，你独立负责或主导的智能体模块是怎么设计的？涵盖哪些具体功能与核心能力？详细阐述从用户意图识别、动态 Skill 检索与多轮参数补全、到受控执行与结构化结果聚合的全流程架构，并说明在该模块中克服的关键技术难点。",
+    "tag": "智能体架构/模块设计/个人职责/意图识别/Skill编排/参数补全/技术难点/端到端闭环",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 697,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L791",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "7.数据库",
+    "depth": 3,
+    "text": "RAG（检索增强生成）子系统中，海量知识库文档是如何存储与索引的？当用户提问后，系统如何通过全链路检索精准定位到最相关的文档和段落？详细拆解分块策略（Chunking）、多路召回（BM25 关键词检索 + Dense 向量检索）、倒数融合（RRF, Reciprocal Rank Fusion）以及交叉熵重排序（Cross-Encoder Rerank）的完整管道。",
+    "tag": "RAG架构/文档存储/分块策略/多路召回/BM25/向量检索/RRF融合/Rerank重排序/pgvector",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 698,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L792",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "如何科学、系统化地评估 RAG 知识检索模块的准确率和召回率？详细介绍离线评测中的经典信息检索指标（Hit Rate@K、Precision@K、Recall@K、MRR、NDCG），以及在线生成评估中的 RAG 三元组指标（Context Relevance 上下文相关度、Groundedness 忠实度/无幻觉、Answer Relevance 回答相关度）。",
+    "tag": "RAG评测指标/准确率/召回率/HitRate/MRR/NDCG/RAG三元组/ContextRelevance/Groundedness",
+    "status": "ready",
+    "prereq": [
+      "L765"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 699,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L793",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "在项目中你们有没有对 RAG 检索与生成进行过实际量化评测？评测的最终客观结果指标是多少？结合自建的 Benchmark 基准测试集，阐述在引入语义分块优化、多路召回与 BGE-Reranker 之后，Hit Rate@3 和 MRR 取得了多大比例的提升，以及在回答幻觉率上的实际改善幅度。",
+    "tag": "RAG实测结果/量化指标/Benchmark/HitRate@3提升/MRR收益/Rerank实测/幻觉率降低",
+    "status": "ready",
+    "prereq": [
+      "L765"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 700,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L794",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 4,
+    "text": "你们评测 RAG 和 Agent 系统时构建的评测数据集具体是什么样的结构？如何从数据工程层面保证评测集的客观性与泛化能力，使其能够充分覆盖真实用户在现实场景中的各种口语化、错别字、倒装句及模糊表述？详细说明基于线上真实日志脱敏采样、大模型驱动的多样性 Query 改写扩充、负样本注入与专家人工质检校准的黄金测试集（Golden Dataset）构建流水线。",
+    "tag": "评测集构建/GoldenDataset/口语化覆盖/Query泛化/日志脱敏采样/数据多样性/负样本注入/质检校准",
+    "status": "ready",
+    "prereq": [
+      "L765"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 701,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L795",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 3,
+    "text": "在企业知识管理体系中，知识库文档里描述的“遇到某种问题应该怎么做（SOP 规范文档）”，与 Agent 系统的“Skill（技能组件）”在技术本质和执行机制上有何根本区别？对比非结构化自然语言参考指南（Passive RAG Reference）与具备严格输入输出参数规范、调用契约及副作用执行能力的确定性程序代码（Active Action Execution）。",
+    "tag": "SOP文档与Skill区别/知识与代码/被动检索/主动执行/调用契约/确定性动作/状态改变",
+    "status": "ready",
+    "prereq": [
+      "L719",
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 702,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L796",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 3,
+    "text": "在企业级 Agent 架构方案设计中，哪些业务内容适合交给 RAG 处理，哪些业务场景必须沉淀封装为 Skill？系统性给出 RAG 与 Skill 的选型决策树与工程分界线：从静态事实 vs 动态操作、陈述性规范 vs 状态性修改、模糊容忍度 vs 强幂等与事务强一致性等核心维度展开论述。",
+    "tag": "RAG与Skill选型/架构分界线/决策树/静态知识/动态操作/幂等性/强一致性/业务边界",
+    "status": "ready",
+    "prereq": [
+      "L719",
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 703,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L797",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "当平台实际投放给高校学生或垂直业务用户使用后，产品与技术团队如何建立一套科学、立体的指标体系来客观评价这个 Agent“做得好不好”？从业务成果达成（任务完成率 Task Completion Rate、首次解决率 FCR）、交互交互体验（平均交互轮次、用户流失率、等待响应时延 TTFT）、以及长期粘性与正向采纳行为等多维度构建评价雷达图。",
+    "tag": "Agent业务评估/学生场景/任务完成率/首次解决率FCR/交互轮次/流失率/TTFT/评价雷达图",
+    "status": "ready",
+    "prereq": [
+      "L765"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 704,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L798",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "在不能逐个对用户进行问卷调查或深度访谈的前提下，开发者如何在后台无感感知真实用户的体验瓶颈、发现系统隐蔽缺陷并实现数据飞轮式的持续自优化？详细说明基于全链路分布式追踪（Tracing）、异常用户行为模式挖掘（如频繁追问、情绪负面词、复制刷新、未完成即退出会话）、以及基于大模型自动化质检打分的低分会话聚类下钻分析机制。",
+    "tag": "无感体验感知/隐性反馈挖掘/全链路Tracing/异常行为分析/负反馈挖掘/自动质检/低分聚类",
+    "status": "ready",
+    "prereq": [
+      "L765"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 705,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L799",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "深入剖析项目中整体记忆系统的架构设计与工程拓扑：从前端交互输入到后端持久化，整个记忆模块在存储介质（Redis 缓存、PostgreSQL 关系库、pgvector 向量库）、读写链路解耦（异步抽取与近线同步）、以及与推理主 Agent 上下文装配（Context Assembly）之间是如何协同流转的？",
+    "tag": "记忆架构设计/工程拓扑/存储选型/pgvector/Redis/读写解耦/异步抽取/上下文装配",
+    "status": "ready",
+    "prereq": [
+      "L776"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 706,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L800",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "用户画像（User Profile / 个人语义记忆）在系统中是如何被提取、确认与动态更新的？详细阐述通过结构化提取提示词从多轮自然对话中抽取用户静态偏好、长期目标与知识水平标签；如何区分“用户显式断言（主动告知）”与“模型隐式推断”的置信度差异；并在用户表态变更时执行增量覆盖与版本迭代。",
+    "tag": "用户画像/画像提取/显式断言/隐式推断/置信度评分/语义记忆/版本迭代/动态更新",
+    "status": "ready",
+    "prereq": [
+      "L776"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 707,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L801",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 2,
+    "text": "结合认知心理学与现代 Agent 架构，准确区分工作记忆（Working Memory）、情景记忆（Episodic Memory）与个人语义记忆（Personal Semantic Memory）：三者分别对应计算机体系与数据存储中的什么结构？分别记录什么粒度的数据？在一次用户请求的完整生命周期中各自扮演什么角色？",
+    "tag": "记忆分类/工作记忆/情景记忆/个人语义记忆/认知架构/存储映射/角色分工/生命周期",
+    "status": "ready",
+    "prereq": [
+      "L776"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 708,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L802",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "情景记忆（Episodic Memory）具体会持久化记录用户的哪些历史事件与交互上下文（如历史任务完成轨迹、关键挫折失败点、情感偏好交互）？在多轮对话中，系统在什么时机才会触发对情景记忆的主动检索与回填，以避免无关历史信息的过度干扰与 Token 浪费？",
+    "tag": "情景记忆/事件记录/任务轨迹/交互上下文/检索触发时机/上下文路由/防Token浪费",
+    "status": "ready",
+    "prereq": [
+      "L776"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 709,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L803",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 3,
+    "text": "情景记忆体系中是否存在科学的失效与遗忘机制（Forgetting Mechanism）？几年前的一条历史情景记录在当前对话中还会被召回吗？详细阐述基于艾宾浩斯遗忘曲线（Ebbinghaus Decay）的时间衰减函数、重要性加权系数、访问频度热度反馈以及多级冷热分层归档机制，说明低权老旧记忆如何在检索打分中被自然抑制。",
+    "tag": "记忆遗忘机制/时间衰减/遗忘曲线/重要性加权/访问频度/冷热分层归档/老旧记忆抑制",
+    "status": "ready",
+    "prereq": [
+      "L776",
+      "L778"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 710,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L804",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "5.agent记忆设计",
+    "depth": 4,
+    "text": "当检索出来的多条历史记忆之间存在事实冲突或前后矛盾时，系统在工程上如何进行消歧与仲裁？如何准确区分“随时间自然演进的最新状态变更（如用户技术栈从 Java 换到了 Go）”与“用户表达语义上的真正逻辑冲突”？结合时序元数据打标（Temporal Timestamping）、版本溯源链与动态消歧反思机制展开论述。",
+    "tag": "记忆冲突消歧/时序元数据/状态演变/真正冲突/版本溯源链/时间戳打标/仲裁机制/动态反思",
+    "status": "ready",
+    "prereq": [
+      "L776",
+      "L778"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 711,
     "assigned": true,
     "in_comment": false,
     "comment_label": ""
