@@ -839,6 +839,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "结合 Harness 自动化评测体系定位体验缺陷根因"
+   },
+   {
+    "target": "L699",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合自动化评估体系构建基准测试与消融实验"
    }
   ],
   "fuzzy": true,
@@ -1478,6 +1484,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从密集检索与稀疏检索融合递进至 Agent 记忆筛选场景下的个性化召回"
+   },
+   {
+    "target": "L710",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "深入剖析从解析、语义分块、Dense+Sparse 检索到 Rerank 的全流程"
    }
   ],
   "fuzzy": true,
@@ -1947,6 +1959,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「一个标准的 AI Agent 架构应该包...」建议递进深入至本题"
+   },
+   {
+    "target": "L709",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从经典模块划分演化至下一代强基模时代的系统侧重转移"
    }
   ],
   "domain": "A_AGENT"
@@ -2586,6 +2604,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「模型上下文协议（MCP）的标准工作流程和...」建议递进深入至本题"
+   },
+   {
+    "target": "L708",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合 MCP 统一协议规范工具输入输出契约"
    }
   ],
   "domain": "A_AGENT",
@@ -2854,6 +2878,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「针对新增文档或动态知识，系统如何进行增量...」建议递进深入至本题"
+   },
+   {
+    "target": "L697",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从静态知识增量入库递进至引入时间维度的时序知识图谱"
    }
   ],
   "domain": "A_AGENT"
@@ -5652,6 +5682,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从「在调用第三方大模型 API 时，如果遇到...」建议递进深入至本题"
+   },
+   {
+    "target": "L706",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合网络层退避重试机制展开 Agent 认知层面的报错回填与自纠错"
    }
   ],
   "domain": "A_AGENT"
@@ -9243,6 +9279,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "探讨工程师在快速演进的 AI 时代如何建立长效技术壁垒与跨界攻坚能力"
+   },
+   {
+    "target": "L700",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "探讨在工业界实习中收获的技术落地认知与工程师成长"
    }
   ],
   "domain": "S_ALGO_GENERAL"
@@ -10324,6 +10366,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从关系型数据库底层选型深入探讨PG与MySQL的选型取舍及NestJS服务端架构"
+   },
+   {
+    "target": "L705",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从业务场景执行样例抽象为通用的 Agent 一次会话标准生命周期"
    }
   ],
   "domain": "A_AGENT"
@@ -12033,7 +12081,14 @@
   "prereq": [],
   "downstream": [],
   "status": "待复习",
-  "relations": [],
+  "relations": [
+   {
+    "target": "L701",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合 Agent 系统中动态创建 LLM Client 或 Tool Provider 的工厂实践"
+   }
+  ],
   "domain": "A_AGENT"
  },
  {
@@ -15345,6 +15400,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "结合控制循环机制深入分析有界预算在防止模型死循环中的作用"
+   },
+   {
+    "target": "L703",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "强调规范驱动开发（SDD）在 AI 全流程中的控制中枢地位"
    }
   ]
  },
@@ -15974,6 +16035,12 @@
     "direction": "in",
     "type": "progressive",
     "reason": "从模型技术选型延伸至开发过程中对大模型代码生成能力的认知与管控"
+   },
+   {
+    "target": "L702",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合工具使用深度探讨不同 AI 辅助工具的场景适用度"
    }
   ]
  },
@@ -16015,6 +16082,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "将技术学习方法论应用于桌面端技术栈选型与差异化产品设计"
+   },
+   {
+    "target": "L711",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合学习方法论探讨从了解知识到立项、验证与推进落地的完整闭环"
    }
   ]
  },
@@ -16954,6 +17027,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从 Agent 项目受控目标递进至运行过程中的关键防御控制：预算管理"
+   },
+   {
+    "target": "L704",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "结合 SkillForge 受控自进化平台展示原生 AI 系统的独特业务价值"
    }
   ]
  },
@@ -16996,6 +17075,12 @@
     "direction": "out",
     "type": "progressive",
     "reason": "从预算控制策略落地至底层 Token 消耗的计量与上报实现"
+   },
+   {
+    "target": "L707",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "将有界预算作为防止系统陷入死循环和成本击穿的核心防御节点"
    }
   ]
  },
@@ -17121,6 +17206,697 @@
     "direction": "in",
     "type": "progressive",
     "reason": "大厂手撕高频题进阶题组"
+   }
+  ]
+ },
+ {
+  "id": "L697",
+  "line": 697,
+  "kind": "question",
+  "text": "在知识图谱中加入时间维度，主要解决什么问题？",
+  "major": "二_Agent应用开发相关",
+  "minor": "7.数据库",
+  "domain": "A_AGENT",
+  "tag": "时序知识图谱(TKG)/事实有效性窗口/实体动态演化/时序冲突消解/生命周期管理",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L110"
+  ],
+  "downstream": [
+   "L698"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L110",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从静态知识增量入库递进至引入时间维度的时序知识图谱"
+   },
+   {
+    "target": "L698",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从时序知识图谱建模基础深入至利用时间约束与 Slot 的多跳推理"
+   }
+  ]
+ },
+ {
+  "id": "L698",
+  "line": 698,
+  "kind": "question",
+  "text": "你的方案是如何利用时间约束和 Slot 完成多跳时序推理的？",
+  "major": "二_Agent应用开发相关",
+  "minor": "7.数据库",
+  "domain": "A_AGENT",
+  "tag": "时序推理/Slot槽位约束/时间区间交集/多跳路径剪枝/时序拓扑约束",
+  "depth": 4,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L697"
+  ],
+  "downstream": [
+   "L699"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L697",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从时序图谱建模深入至多跳推理过程中的时间约束与槽位绑定"
+   },
+   {
+    "target": "L699",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从多跳时序推理实现递进至与基线模型的效果与准确率对比"
+   }
+  ]
+ },
+ {
+  "id": "L699",
+  "line": 699,
+  "kind": "question",
+  "text": "你的方案与基础方法或基线模型是如何对比的？",
+  "major": "二_Agent应用开发相关",
+  "minor": "9.业务评估(性能优化与诊断)",
+  "domain": "A_AGENT",
+  "tag": "基线对比/时序推理评测/Hits@1/MRR/消融实验/SOTA基准",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L698",
+   "L34"
+  ],
+  "downstream": [
+   "L700"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L698",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从算法设计落地递进至与经典时序基线模型的实验对比与评估指标"
+   },
+   {
+    "target": "L34",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合自动化评估体系构建基准测试与消融实验"
+   },
+   {
+    "target": "L700",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "将学术/科研中的时序图谱成果迁移至工业界实习项目背景表达"
+   }
+  ]
+ },
+ {
+  "id": "L700",
+  "line": 700,
+  "kind": "question",
+  "text": "请介绍一个实习期间收获较大的项目，包括项目背景和核心工作。",
+  "major": "反问与国企特别版",
+  "minor": "2.反问与国企特别版",
+  "domain": "S_ALGO_GENERAL",
+  "tag": "实习经历/STAR法则/项目背景/核心挑战/业务结果与个人成长",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L699",
+   "L389"
+  ],
+  "downstream": [
+   "L701"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L699",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从科研/项目算法成果自然过渡至工业界实习经历的 STAR 表达"
+   },
+   {
+    "target": "L389",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "探讨在工业界实习中收获的技术落地认知与工程师成长"
+   },
+   {
+    "target": "L701",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从实习项目技术实现切入基础面向对象设计模式的工程考察"
+   },
+   {
+    "target": "L713",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "将自主学习渠道与实习实践形成个人持续技术进阶的正向飞轮"
+   }
+  ]
+ },
+ {
+  "id": "L701",
+  "line": 701,
+  "kind": "question",
+  "text": "你提到项目采用了工厂模式，工厂模式包括哪些类型？",
+  "major": "四_八股相关",
+  "minor": "5.Java与并发编程核心",
+  "domain": "B_BACKEND",
+  "tag": "设计模式/简单工厂/工厂方法/抽象工厂/解耦与开闭原则/Agent模型创建工厂",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L700",
+   "L519"
+  ],
+  "downstream": [
+   "L702"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L700",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从项目架构细节展开面向对象工厂模式的三种形态及开闭原则对比"
+   },
+   {
+    "target": "L519",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合 Agent 系统中动态创建 LLM Client 或 Tool Provider 的工厂实践"
+   },
+   {
+    "target": "L702",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从代码设计模式切换至日常高效开发与 AI 工具链协同"
+   }
+  ]
+ },
+ {
+  "id": "L702",
+  "line": 702,
+  "kind": "question",
+  "text": "你在 AI 使用和 AI 开发中一般使用哪些工具？",
+  "major": "二_Agent应用开发相关",
+  "minor": "1.agent宏观认知",
+  "domain": "A_AGENT",
+  "tag": "开发工具链/Cursor/Claude Code/Antigravity/vLLM/Langfuse/AI提效工具",
+  "depth": 1,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L701",
+   "L669"
+  ],
+  "downstream": [
+   "L703"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L701",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从代码实现模式拓展至工程开发中利用 AI 辅助工具提效的全景工具链"
+   },
+   {
+    "target": "L669",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合工具使用深度探讨不同 AI 辅助工具的场景适用度"
+   },
+   {
+    "target": "L703",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从单点工具使用深入至端到端完成项目的系统化工作流"
+   }
+  ]
+ },
+ {
+  "id": "L703",
+  "line": 703,
+  "kind": "question",
+  "text": "使用 AI 完成一个项目时，你通常采用什么工作流程？",
+  "major": "二_Agent应用开发相关",
+  "minor": "1.agent宏观认知",
+  "domain": "A_AGENT",
+  "tag": "AI开发工作流/需求拆解/SDD规范驱动/测试先行/Subagent协作/代码审查防退化",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L702",
+   "L654"
+  ],
+  "downstream": [
+   "L704"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L702",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从工具栈使用上升为成体系的 AI 驱动项目开发标准流水线"
+   },
+   {
+    "target": "L654",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "强调规范驱动开发（SDD）在 AI 全流程中的控制中枢地位"
+   },
+   {
+    "target": "L704",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从利用 AI 辅助编码递进至打造以原生 AI 为核心业务驱动力的系统"
+   }
+  ]
+ },
+ {
+  "id": "L704",
+  "line": 704,
+  "kind": "question",
+  "text": "除了使用 AI 辅助开发以外，你是否有用原生 AI 解决实际业务问题的项目经验？",
+  "major": "二_Agent应用开发相关",
+  "minor": "1.agent宏观认知",
+  "domain": "A_AGENT",
+  "tag": "原生AI项目/AI业务赋能/自进化修复/智能决策中枢/业务价值衡量",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L703",
+   "L692"
+  ],
+  "downstream": [
+   "L705"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L703",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从编写代码的辅助工具跨越至以 LLM 作为推理中枢解决业务难点的实战"
+   },
+   {
+    "target": "L692",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合 SkillForge 受控自进化平台展示原生 AI 系统的独特业务价值"
+   },
+   {
+    "target": "L705",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从原生 AI 业务价值深入至原生 Agent 单次会话的底层微观执行链路"
+   }
+  ]
+ },
+ {
+  "id": "L705",
+  "line": 705,
+  "kind": "question",
+  "text": "你是否清楚 Agent 一次会话的完整执行流程？",
+  "major": "二_Agent应用开发相关",
+  "minor": "6.agent处理情景的架构设计",
+  "domain": "A_AGENT",
+  "tag": "Agent微观执行/会话全生命周期/意图路由/Prompt装配/工具调度/流式回填/记忆沉淀",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L704",
+   "L438"
+  ],
+  "downstream": [
+   "L706"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L704",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从原生 AI 业务抽象深入剖析单次用户交互下 Agent 底层状态机的完整轮转"
+   },
+   {
+    "target": "L438",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从业务场景执行样例抽象为通用的 Agent 一次会话标准生命周期"
+   },
+   {
+    "target": "L706",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "在会话执行主链路基础上展开各环节发生错误时的容错与重试机制"
+   }
+  ]
+ },
+ {
+  "id": "L706",
+  "line": 706,
+  "kind": "question",
+  "text": "Agent 执行过程中出现错误时应该如何处理？",
+  "major": "二_Agent应用开发相关",
+  "minor": "8.工程落地",
+  "domain": "A_AGENT",
+  "tag": "异常治理/工具调用容错/自纠错反馈(Self-Correction)/重试预算/优雅降级",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L705",
+   "L232"
+  ],
+  "downstream": [
+   "L707"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L705",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从会话主流程深入至当工具报错、模型输出不合法时的异常自愈链路"
+   },
+   {
+    "target": "L232",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合网络层退避重试机制展开 Agent 认知层面的报错回填与自纠错"
+   },
+   {
+    "target": "L707",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从局部错误处理上升至系统级保障稳定性的关键架构节点"
+   }
+  ]
+ },
+ {
+  "id": "L707",
+  "line": 707,
+  "kind": "question",
+  "text": "在 Agent 设计和落地过程中，哪些节点或模块决定了 Agent 能否稳定、正确地运行？",
+  "major": "二_Agent应用开发相关",
+  "minor": "6.agent处理情景的架构设计",
+  "domain": "A_AGENT",
+  "tag": "生产级稳定性/Schema强约束/意图门禁/有界预算/状态机沙箱/可观测性",
+  "depth": 4,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L706",
+   "L693"
+  ],
+  "downstream": [
+   "L708"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L706",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从应对异常递进至事前预防系统失控的四大定海神针模块"
+   },
+   {
+    "target": "L693",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "将有界预算作为防止系统陷入死循环和成本击穿的核心防御节点"
+   },
+   {
+    "target": "L708",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从全局稳定模块聚焦到最易失控的单点环节：外部工具调用的精准度提升"
+   }
+  ]
+ },
+ {
+  "id": "L708",
+  "line": 708,
+  "kind": "question",
+  "text": "如果要提升工具调用的准确性，可以从哪些方面入手？",
+  "major": "二_Agent应用开发相关",
+  "minor": "3.工具相关",
+  "domain": "A_AGENT",
+  "tag": "Tool Calling精度/描述工程(Docstring)/动态子集筛选/Few-shot示例/参数前置校验纠错",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L707",
+   "L99"
+  ],
+  "downstream": [
+   "L709"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L707",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从整体架构稳定性下沉到工具调用（Function Calling）精度的四项关键调优"
+   },
+   {
+    "target": "L99",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合 MCP 统一协议规范工具输入输出契约"
+   },
+   {
+    "target": "L709",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从工具精度优化延伸至当基座大模型能力跃升后系统架构的重塑方向"
+   }
+  ]
+ },
+ {
+  "id": "L709",
+  "line": 709,
+  "kind": "question",
+  "text": "在模型能力已经很强的情况下，Agent 系统还应该重点关注哪些方面？",
+  "major": "二_Agent应用开发相关",
+  "minor": "1.agent宏观认知",
+  "domain": "A_AGENT",
+  "tag": "基模跃升后的Agent演进/环境交互协议(MCP)/可信状态与长期记忆/安全沙箱/评测飞轮",
+  "depth": 4,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L708",
+   "L73"
+  ],
+  "downstream": [
+   "L710"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L708",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "探讨当模型自带较强推理与工具调用能力时，Agent 工程框架的真正壁垒与演进方向"
+   },
+   {
+    "target": "L73",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从经典模块划分演化至下一代强基模时代的系统侧重转移"
+   },
+   {
+    "target": "L710",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从架构宏观演进聚焦至 Agent 永远依赖的外部精准知识注入链路"
+   }
+  ]
+ },
+ {
+  "id": "L710",
+  "line": 710,
+  "kind": "question",
+  "text": "你们如何解决知识检索和知识获取方面的问题？",
+  "major": "二_Agent应用开发相关",
+  "minor": "7.数据库",
+  "domain": "A_AGENT",
+  "tag": "知识检索方案/多模态文档解析/语义分块(Chunking)/混合检索(Hybrid Search)/Rerank重排",
+  "depth": 3,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L709",
+   "L55"
+  ],
+  "downstream": [
+   "L711"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L709",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从系统级环境交互深入至精准外挂知识检索与 RAG 链路的工程化实现"
+   },
+   {
+    "target": "L55",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "深入剖析从解析、语义分块、Dense+Sparse 检索到 Rerank 的全流程"
+   },
+   {
+    "target": "L711",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从技术方案实现迁移至工程师面对未知科研课题与新需求的综合攻坚能力"
+   }
+  ]
+ },
+ {
+  "id": "L711",
+  "line": 711,
+  "kind": "question",
+  "text": "拿到一个新需求或新的科研项目时，你通常如何处理？",
+  "major": "反问与国企特别版",
+  "minor": "2.反问与国企特别版",
+  "domain": "S_ALGO_GENERAL",
+  "tag": "综合攻坚/需求拆解/第一性原理/SOTA综述/MVP最小闭环/假设驱动验证",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L710",
+   "L670"
+  ],
+  "downstream": [
+   "L712"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L710",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从具体技术解决方案提炼出面对新科研与业务课题的通用拆解方法论"
+   },
+   {
+    "target": "L670",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "结合学习方法论探讨从了解知识到立项、验证与推进落地的完整闭环"
+   },
+   {
+    "target": "L712",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从项目管理层面的宏观推进深入到个人认知层面的微观知识消化"
+   }
+  ]
+ },
+ {
+  "id": "L712",
+  "line": 712,
+  "kind": "question",
+  "text": "面对自己不了解的知识，你通常如何学习和消化？",
+  "major": "反问与国企特别版",
+  "minor": "2.反问与国企特别版",
+  "domain": "S_ALGO_GENERAL",
+  "tag": "知识内化/深度学习方法/费曼学习法/源码研读/最小Demo复现/知识库沉淀",
+  "depth": 2,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L711"
+  ],
+  "downstream": [
+   "L713"
+  ],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L711",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从项目推进深入至工程师面对底层盲区时的知识研读与代码手撕内化"
+   },
+   {
+    "target": "L713",
+    "direction": "out",
+    "type": "progressive",
+    "reason": "从个人学习方法论具体落地到网络资源与视频平台的使用策略"
+   }
+  ]
+ },
+ {
+  "id": "L713",
+  "line": 713,
+  "kind": "question",
+  "text": "你通常使用哪些视频网站学习技术知识？",
+  "major": "反问与国企特别版",
+  "minor": "2.反问与国企特别版",
+  "domain": "S_ALGO_GENERAL",
+  "tag": "技术资源获取/B站高质量源码精读/YouTube前沿AI峰会/Coursera公开课/信息降噪",
+  "depth": 1,
+  "in_comment": false,
+  "comment_label": null,
+  "assigned": true,
+  "prereq": [
+   "L712",
+   "L700"
+  ],
+  "downstream": [],
+  "status": "待复习",
+  "relations": [
+   {
+    "target": "L712",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "从知识消化内化方法具体延伸到对网络视频平台资源的筛选与批判性汲取"
+   },
+   {
+    "target": "L700",
+    "direction": "in",
+    "type": "progressive",
+    "reason": "将自主学习渠道与实习实践形成个人持续技术进阶的正向飞轮"
    }
   ]
  }
