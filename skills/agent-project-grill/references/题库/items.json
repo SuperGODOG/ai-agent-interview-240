@@ -15747,7 +15747,8 @@
       "L581"
     ],
     "downstream": [
-      "L667"
+      "L667",
+      "L867"
     ],
     "status": "待复习",
     "relations": [
@@ -15768,6 +15769,12 @@
         "direction": "out",
         "type": "progressive",
         "reason": "从 Harness 流式通信机制递进至首字延迟（TTFT）与端到端吐字速度优化"
+      },
+      {
+        "target": "L867",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L867"
       }
     ]
   },
@@ -18599,7 +18606,8 @@
     ],
     "downstream": [
       "L725",
-      "L819"
+      "L819",
+      "L867"
     ],
     "relations": [
       {
@@ -18625,6 +18633,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L819"
+      },
+      {
+        "target": "L867",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L867"
       }
     ],
     "line": 724,
@@ -18656,7 +18670,9 @@
       "L738",
       "L739",
       "L740",
-      "L840"
+      "L840",
+      "L856",
+      "L866"
     ],
     "relations": [
       {
@@ -18730,6 +18746,18 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L840"
+      },
+      {
+        "target": "L856",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L856"
+      },
+      {
+        "target": "L866",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L866"
       }
     ],
     "line": 725,
@@ -18933,7 +18961,18 @@
       "L756",
       "L757",
       "L758",
-      "L826"
+      "L826",
+      "L843",
+      "L844",
+      "L846",
+      "L847",
+      "L848",
+      "L849",
+      "L850",
+      "L851",
+      "L864",
+      "L865",
+      "L868"
     ],
     "relations": [
       {
@@ -19073,6 +19112,72 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L826"
+      },
+      {
+        "target": "L843",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L843"
+      },
+      {
+        "target": "L844",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L844"
+      },
+      {
+        "target": "L846",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L846"
+      },
+      {
+        "target": "L847",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L847"
+      },
+      {
+        "target": "L848",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L848"
+      },
+      {
+        "target": "L849",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L849"
+      },
+      {
+        "target": "L850",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L850"
+      },
+      {
+        "target": "L851",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L851"
+      },
+      {
+        "target": "L864",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L864"
+      },
+      {
+        "target": "L865",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L865"
+      },
+      {
+        "target": "L868",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L868"
       }
     ],
     "line": 730,
@@ -19096,7 +19201,9 @@
     ],
     "downstream": [
       "L732",
-      "L770"
+      "L770",
+      "L850",
+      "L852"
     ],
     "relations": [
       {
@@ -19122,6 +19229,18 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L770"
+      },
+      {
+        "target": "L850",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L850"
+      },
+      {
+        "target": "L852",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L852"
       }
     ],
     "line": 731,
@@ -19247,8 +19366,17 @@
     "prereq": [
       "L725"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L857"
+    ],
+    "relations": [
+      {
+        "target": "L857",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L857"
+      }
+    ],
     "line": 641,
     "assigned": true,
     "in_comment": false,
@@ -19287,8 +19415,17 @@
     "prereq": [
       "L725"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L858"
+    ],
+    "relations": [
+      {
+        "target": "L858",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L858"
+      }
+    ],
     "line": 643,
     "assigned": true,
     "in_comment": false,
@@ -19391,7 +19528,11 @@
       "L766",
       "L767",
       "L768",
-      "L769"
+      "L769",
+      "L843",
+      "L844",
+      "L849",
+      "L851"
     ],
     "relations": [
       {
@@ -19417,6 +19558,30 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L769"
+      },
+      {
+        "target": "L843",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L843"
+      },
+      {
+        "target": "L844",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L844"
+      },
+      {
+        "target": "L849",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L849"
+      },
+      {
+        "target": "L851",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L851"
       }
     ],
     "line": 648,
@@ -19437,8 +19602,24 @@
     "prereq": [
       "L730"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L846",
+      "L847"
+    ],
+    "relations": [
+      {
+        "target": "L846",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L846"
+      },
+      {
+        "target": "L847",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L847"
+      }
+    ],
     "line": 649,
     "assigned": true,
     "in_comment": false,
@@ -19617,8 +19798,17 @@
     "prereq": [
       "L730"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L865"
+    ],
+    "relations": [
+      {
+        "target": "L865",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L865"
+      }
+    ],
     "line": 658,
     "assigned": true,
     "in_comment": false,
@@ -19677,8 +19867,17 @@
     "prereq": [
       "L730"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L845"
+    ],
+    "relations": [
+      {
+        "target": "L845",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L845"
+      }
+    ],
     "line": 661,
     "assigned": true,
     "in_comment": false,
@@ -19709,7 +19908,8 @@
       "L826",
       "L827",
       "L828",
-      "L829"
+      "L829",
+      "L845"
     ],
     "relations": [
       {
@@ -19783,6 +19983,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L829"
+      },
+      {
+        "target": "L845",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L845"
       }
     ],
     "line": 662,
@@ -19916,7 +20122,11 @@
       "L816",
       "L838",
       "L841",
-      "L842"
+      "L842",
+      "L853",
+      "L866",
+      "L868",
+      "L869"
     ],
     "relations": [
       {
@@ -19996,6 +20206,30 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L842"
+      },
+      {
+        "target": "L853",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L853"
+      },
+      {
+        "target": "L866",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L866"
+      },
+      {
+        "target": "L868",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L868"
+      },
+      {
+        "target": "L869",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L869"
       }
     ],
     "line": 667,
@@ -20192,7 +20426,8 @@
       "L794",
       "L797",
       "L798",
-      "L813"
+      "L813",
+      "L854"
     ],
     "relations": [
       {
@@ -20230,6 +20465,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L813"
+      },
+      {
+        "target": "L854",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L854"
       }
     ],
     "line": 672,
@@ -20250,8 +20491,45 @@
     "prereq": [
       "L741"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L859",
+      "L860",
+      "L861",
+      "L862",
+      "L863"
+    ],
+    "relations": [
+      {
+        "target": "L859",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L859"
+      },
+      {
+        "target": "L860",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L860"
+      },
+      {
+        "target": "L861",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L861"
+      },
+      {
+        "target": "L862",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L862"
+      },
+      {
+        "target": "L863",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L863"
+      }
+    ],
     "line": 673,
     "assigned": true,
     "in_comment": false,
@@ -20270,8 +20548,24 @@
     "prereq": [
       "L741"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L859",
+      "L863"
+    ],
+    "relations": [
+      {
+        "target": "L859",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L859"
+      },
+      {
+        "target": "L863",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L863"
+      }
+    ],
     "line": 674,
     "assigned": true,
     "in_comment": false,
@@ -20290,8 +20584,17 @@
     "prereq": [
       "L741"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L861"
+    ],
+    "relations": [
+      {
+        "target": "L861",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L861"
+      }
+    ],
     "line": 675,
     "assigned": true,
     "in_comment": false,
@@ -20917,7 +21220,9 @@
       "L833",
       "L834",
       "L835",
-      "L836"
+      "L836",
+      "L853",
+      "L855"
     ],
     "relations": [
       {
@@ -20943,6 +21248,18 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L836"
+      },
+      {
+        "target": "L853",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L853"
+      },
+      {
+        "target": "L855",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L855"
       }
     ],
     "line": 698,
@@ -20963,8 +21280,17 @@
     "prereq": [
       "L765"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L854"
+    ],
+    "relations": [
+      {
+        "target": "L854",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L854"
+      }
+    ],
     "line": 699,
     "assigned": true,
     "in_comment": false,
@@ -21997,6 +22323,563 @@
     "downstream": [],
     "relations": [],
     "line": 749,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L843",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "在企业级后端高并发架构中，为什么系统通常需要同时引入 MySQL 和 Redis？能不能只选用其中一种数据库？详细对比纯 Redis 架构在内存成本高昂、ACID 强事务保障薄弱、复杂多表关联合并查询困难等致命缺陷，以及纯 MySQL 架构在高并发高 QPS 读写下面临的磁盘 I/O 瓶颈、响应时延拉长与数据库连接池瞬间耗尽问题。",
+    "tag": "数据库选型/MySQL与Redis协同/双存储架构/只用一种局限性/内存成本/ACID保障/磁盘IO瓶颈/吞吐对比",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L741"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 750,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L844",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "在高并发用户注册业务流程中，为什么需要同时构建布隆过滤器（Bloom Filter）、分布式锁（Distributed Lock）与数据库唯一索引（Unique Index）？详细阐述三道防线的纵深防御职责：布隆过滤器前置拦截海量已注册账号防穿透、分布式锁串行化相同账号的瞬时并发注册防锁竞争、唯一索引作为存储层最终不可突破的兜底约束。",
+    "tag": "用户注册防重/三道防线/布隆过滤器/分布式锁/唯一索引/纵深防御/缓存穿透/并发冲突",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L741"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 751,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L845",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "如果有恶意爬虫或攻击者短时间内以极高频次恶意请求用户注册接口，如何构建一套严密的限流与安全防护机制？详细说明从客户端接入层 Nginx IP 限流、网关层基于用户设备指纹与账号特征的滑动窗口限流、图形/行为验证码人机校验前置介入、到基于 Redis 动态黑名单实时封禁的阶梯式防御设计。",
+    "tag": "注册防刷/接口限流/设备指纹/滑动窗口/验证码拦截/动态黑名单/分级熔断/安全风控",
+    "status": "ready",
+    "prereq": [
+      "L754",
+      "L755"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 752,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L846",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "6.高并发业务流与秒杀自愈",
+    "depth": 3,
+    "text": "在分布式网络抖动或前端重复提交场景下，如何基于全局唯一 requestId 实现写接口的绝对幂等性（Idempotency）？详细拆解全链路交互：前端/网关如何生成防重 Token/requestId、基于 Redis SETNX 设置分布式防重锁与过期时间、以及结合数据库业务唯一键或防重表（Idempotency Table）与状态机版本号的落地实现。",
+    "tag": "接口幂等性/requestId/Token防重/Redis SETNX/防重表/状态机跃迁/网络抖动处理/重复提交",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L742"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 753,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L847",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "如何全方位保证关系型数据库（MySQL）与分布式缓存（Redis）之间的数据一致性？详细对比 Cache-Aside 旁路缓存模式（先更新 DB 再删 Cache）、延迟双删方案在读写并发下的极限时序漏洞、以及基于 Canal / Debezium 监听 MySQL Binlog 结合消息队列异步重试保证最终一致性的工业级标准解决方案。",
+    "tag": "缓存一致性/Cache-Aside/延迟双删/Canal/Binlog异步监听/消息队列重试/最终一致性/读写并发漏洞",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L742"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 754,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L848",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "在文档型数据库 MongoDB 中，字段级局部更新（Field-level Patch / $set）和基于 CAS（Compare-And-Swap）的版本控制机制分别解决什么核心并发问题？详细分析全量文档覆写引发的“并发更新丢失（Lost Update）”灾难，以及利用乐观锁版本号（version/revision）如何实现无锁高效的状态原子校验与跃迁。",
+    "tag": "MongoDB/局部更新Patch/$set/CAS/乐观锁版本号/更新丢失/并发状态跃迁/文档型存储",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 755,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L849",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "如果极端灾难情况下 Redis 缓存集群中的数据发生全盘丢失，系统如何能够平稳、可靠地恢复用户的在线面试进度与实时状态？深入阐述以持久化数据库（MySQL/MongoDB）作为单一真理源的事件溯源（Event Sourcing）设计、基于 Checkpoint 快照与增量事件日志的懒加载重构机制、以及避免恢复瞬间引发缓存雪崩打崩数据库的削峰限流措施。",
+    "tag": "缓存全盘丢失/灾难恢复/面试进度状态重构/事件溯源/Checkpoint/缓存懒加载/防雪崩击穿",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L741"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 756,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L850",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "4.消息队列与异步流",
+    "depth": 3,
+    "text": "在使用 Redis Stream 作为轻量消息队列的场景下，如果某个消费者实例（Consumer）从消费组中读取消息并处理到一半时突然发生进程崩溃或网络宕机，系统底层会发生什么？详细说明 PEL（Pending Entries List）未确认消息队列的运行机制、消息未发送 XACK 时的状态留存，以及其他正常消费者如何通过 XPENDING 与 XCLAIM / XAUTOCLAIM 机制接管该僵死消息完成故障恢复。",
+    "tag": "RedisStream/消费者宕机/PEL挂起列表/XACK机制/XPENDING/XCLAIM/XAUTOCLAIM/消息不丢失",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L731"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 757,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L851",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "生产环境中如果 Redis 自身节点发生硬件损坏或进程宕机，架构上如何全方位提高系统的高可用性（HA）与业务韧性？详细剖析 Redis Sentinel 哨兵机制的自动选主与主从故障转移切换时效、Redis Cluster 去中心化哈希槽分片容灾、客户端连接池（如 Redisson）的心跳重连与读写分离路由、以及业务层结合本地 Caffeine 缓存与服务降级断路器（Circuit Breaker）防 DB 打崩的整体设计。",
+    "tag": "Redis高可用/Sentinel哨兵选主/RedisCluster分片/故障转移/连接池重连/熔断降级/本地缓存兜底",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L741"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 758,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L852",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "4.消息队列与异步流",
+    "depth": 3,
+    "text": "在分布式多节点并发处理场景中，如何严格保证“同一会话（Session）或同一用户”内部的各项异步任务按先进先出（FIFO）顺序严格串行执行？详细分析通过消息中间件的顺序消息机制（如 RocketMQ/Kafka 指定 Sharding Key = sessionId 绑定单队列/分区）、基于 Redis 分布式锁与单线程 Stream 队列、以及后端 Worker 单线程会话事件循环三种工业界解决方案的吞吐量与故障转移权衡。",
+    "tag": "顺序执行/FIFO顺序消息/ShardingKey分区绑定/会话串行/分布式锁/单线程EventLoop/顺序消费保障",
+    "status": "ready",
+    "prereq": [
+      "L731"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 759,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L853",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "7.数据库",
+    "depth": 2,
+    "text": "详细拆解 RAG（检索增强生成）系统的端到端完整业务流水线：从非结构化多格式文档上传、文本解析与敏感内容清洗、语义分块切分（Chunking）、向量化嵌入（Embedding）与双路索引入库，到用户在线提问、意图识别与 Query 改写、多路混合检索（Dense + Sparse）、重排模型精排（Rerank）、上下文过滤组装与 Prompt 注入、最终调用 LLM 流式生成并回填溯源引用的全链路技术流转。",
+    "tag": "RAG完整流程/文档解析/Chunking分块/Embedding向量化/多路检索/Rerank精排/上下文组装/LLM流式生成/溯源引用",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L791"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 760,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L854",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "如何全方位、科学地评估一个 RAG 系统以及其中 Rerank（重排）模型的实际表现与效果？详细区分重排模型离线质量评估指标（MRR@K、NDCG@K、MAP、Hit Rate@K），以及端到端生成效果评测体系（基于 Ragas 框架的 Context Relevance、Context Recall、Faithfulness 忠实度与 Answer Relevance 答案相关度），并说明如何设计自动化回归测试流水线。",
+    "tag": "RAG评测/Rerank重排评估/MRR/NDCG/MAP/HitRate/Ragas框架/Faithfulness/ContextRelevance/指标体系",
+    "status": "ready",
+    "prereq": [
+      "L765",
+      "L792"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 761,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L855",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "7.数据库",
+    "depth": 3,
+    "text": "当系统底层接入多个不同业务来源、不同更新频率或不同领域格式的异构知识库时，跨知识库的检索结果应该如何进行科学融合与统一重排序？详细说明为什么各知识库原生的向量距离得分（如 Cosine / L2）不能直接跨库横向比较，并拆解基于 RRF（Reciprocal Rank Fusion）排名倒数融合、得分归一化（Min-Max / Z-Score）加权算法、以及送入统一 Cross-Encoder Reranker 模型进行全局重排的解决方案。",
+    "tag": "多知识库检索/多源召回融合/RRF排名融合/得分归一化/向量分数不可比/Cross-Encoder全局重排/异构知识融合",
+    "status": "ready",
+    "prereq": [
+      "L791"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 762,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L856",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 2,
+    "text": "深入剖析 Java 原生 HashMap 为什么在多线程并发环境下是绝对线程不安全的？详细分析 JDK 1.7 中并发扩容（resize / transfer）时头插法导致的环形单链表形成与死循环（CPU 100% 打满）机理；JDK 1.8 虽改为尾插法消除了死循环，但在并发 put 时仍然存在数据覆盖丢失、以及 size 计数器并发递增导致计数值不准的根本原因，并对比 ConcurrentHashMap 的分段锁与 CAS+synchronized 解决方案。",
+    "tag": "Java/HashMap并发不安全/JDK1.7头插法死循环/JDK1.8尾插法数据覆盖/size竞态/ConcurrentHashMap对比",
+    "status": "ready",
+    "prereq": [
+      "L725"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 763,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L857",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 2,
+    "text": "在基于 Spring 框架的业务开发中，如果同一个类内部的一个普通方法直接调用本类中另一个标注了 `@Transactional` 注解的方法，该事务一定会生效吗？为什么？深入剖析 Spring 声明式事务底层依赖的动态代理（JDK 动态代理 / CGLIB）拦截机制，解释为什么内部 this.method() 自调用绕过了代理对象导致事务切面失效，并给出注入自身、AopContext.currentProxy() 与拆分独立 Service 三种标准解决方案。",
+    "tag": "Spring事务失效/自调用绕过代理/AOP动态代理/JDK与CGLIB/AopContext/声明式事务/踩坑与解决方案",
+    "status": "ready",
+    "prereq": [
+      "L734"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 764,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L858",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "5.Java与并发编程核心",
+    "depth": 2,
+    "text": "Java 虚拟机（JVM）垃圾回收体系中有哪些经典的垃圾收集基本算法？系统性对比标记-清除算法（Mark-Sweep）、标记-复制算法（Mark-Copy）与标记-整理算法（Mark-Compact）的核心工作原理：从内存分配效率、回收停顿时间（STW）、空间碎片率以及内存空间利用率（如两倍内存占用 vs 原地压缩开销）等多维度展开分析，并阐述分代收集理论（Generational Collection）在新生代与老年代中的选型权衡。",
+    "tag": "JVM垃圾回收算法/标记清除/标记复制/标记整理/分代收集理论/新生代老年代/内存碎片/STW开销对比",
+    "status": "ready",
+    "prereq": [
+      "L736"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 765,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L859",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 3,
+    "text": "在关系型数据库 MySQL（InnoDB）的事务提交与持久化过程中，为什么必须引入两阶段提交（2PC, Two-Phase Commit）机制？深入分析 InnoDB 引擎层的物理重做日志（Redo Log）与 Server 层的逻辑归档日志（Binlog）之间的协作流程：如果不用两阶段提交，在写入 Redo Log 或 Binlog 任意单方后突然断电宕机，会导致主库恢复数据与从库通过 Binlog 同步重放产生怎样严重的主从数据不一致（Data Inconsistency）？",
+    "tag": "MySQL两阶段提交/2PC/RedoLog与Binlog/崩溃恢复Crash-Safe/主从复制一致性/Prepare与Commit时序/数据不一致防范",
+    "status": "ready",
+    "prereq": [
+      "L766",
+      "L767"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 766,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L860",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 1,
+    "text": "数据库事务具有哪些基本特性（ACID）？分别详细阐述原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）与持久性（Durability）的精确学术与工业定义，并深入说明 MySQL InnoDB 存储引擎在底层分别是借助哪些具体机制来实现这四大特性的（Undo Log 实现原子性回滚、Redo Log 与双写缓冲保证持久性、锁机制与 MVCC 保证隔离性、上述机制共同支撑业务一致性）。",
+    "tag": "数据库事务/ACID四大特性/原子性/一致性/隔离性/持久性/UndoLog/RedoLog/MVCC/锁机制/底层支撑原理",
+    "status": "ready",
+    "prereq": [
+      "L766"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 767,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L861",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "数据库在并发事务执行过程中发生死锁（Deadlock）的四个必要条件是什么？结合具体业务 SQL（如两个并发事务以相反顺序交叉更新两行记录、或在间隙锁 Gap Lock 上发生并发冲突）还原死锁发生的全时序过程；并详细说明 InnoDB 存储引擎如何利用等待图（Wait-For Graph）死锁检测算法主动回滚代价较小的事务、以及配合 innodb_lock_wait_timeout 超时参数在工程中进行预防与熔断。",
+    "tag": "数据库死锁/四大必要条件/互斥与循环等待/交叉更新/间隙锁死锁/InnoDB死锁检测/Wait-For Graph/小事务回滚",
+    "status": "ready",
+    "prereq": [
+      "L766",
+      "L768"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 768,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L862",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "SQL 标准中定义了哪四种数据库事务隔离级别？各自的含义是什么？详细拆解读未提交（Read Uncommitted）、读已提交（Read Committed）、可重复读（Repeatable Read）与串行化（Serializable）的语义边界，并建立表格清晰说明各隔离级别分别能够避免或无法避免脏读（Dirty Read）、不可重复读（Non-repeatable Read）与幻读（Phantom Read）等并发异常现象。",
+    "tag": "事务隔离级别/读未提交/读已提交/可重复读/串行化/脏读/不可重复读/幻读/SQL标准/语义边界对比",
+    "status": "ready",
+    "prereq": [
+      "L766"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 769,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L863",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "在数据库事务隔离级别中，“读未提交（Read Uncommitted）”可能会导致哪些严重的并发读异常现象？深入分析脏读（Dirty Read）在财务转账、电商库存等高敏业务中的灾难性后果（如读取到被并发事务修改但最终执行 ROLLBACK 回滚的数据导致凭空入账）；为什么该隔离级别不仅无法防范不可重复读与幻读，而且在生产环境中极少使用？其唯一的极端性能测试或只读日志分析适用场景是什么？",
+    "tag": "读未提交/ReadUncommitted/并发读异常/脏读/不可重复读/幻读/回滚数据灾难/生产禁用原因/无锁并发风险",
+    "status": "ready",
+    "prereq": [
+      "L766",
+      "L767"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 770,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L864",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "Redis 内存数据库支持哪些核心数据持久化方式？全面对比 RDB 快照持久化（bgsave 异步非阻塞、Copy-On-Write 写时复制机制）与 AOF 命令追加日志（appendfsync: always/everysec/no 同步刷盘策略）的核心技术差异：从数据安全性（丢数据风险）、恢复与加载速度（冷启动耗时）、文件体积与磁盘 I/O 损耗等多维度展开论述，并详细说明 Redis 4.0+ 引入的 RDB+AOF 混合持久化（Mixed Persistence）底层实现原理。",
+    "tag": "Redis持久化/RDB快照/AOF日志/写时复制COW/appendfsync/混合持久化/冷启动恢复速度/数据安全性权衡",
+    "status": "ready",
+    "prereq": [
+      "L730"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 771,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L865",
+    "kind": "question",
+    "domain": "B_BACKEND",
+    "major": "四_八股相关",
+    "minor": "3.数据库与缓存存储",
+    "depth": 2,
+    "text": "在 Redis 中，当一个带有 TTL 的 Key 到达过期时间后，其所占用的物理内存空间会立即被操作系统或 Redis 进程释放吗？为什么？深入剖析 Redis 的过期删除策略：惰性删除（Lazy Deletion，访问时被动检查）与定期删除（Active Deletion，定时随机采样淘汰）的协同机制；并说明当内存整体触顶（达到 maxmemory 阈值）且过期删除仍无法释放足够空间时，Redis 底层触发的 8 种内存淘汰策略（LRU / LFU / volatile / allkeys / noeviction）的执行流程。",
+    "tag": "RedisKey过期/内存释放时机/惰性删除/定期删除/采样淘汰/内存碎片/maxmemory/8种内存淘汰策略/LRU与LFU",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L751"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 772,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L866",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在后端集成大模型或 Agent 服务时，如果外部 AI 大模型推理调用耗时极长（单次生成耗时数秒至数十秒的慢 I/O 阻塞场景），系统应该如何科学设计专属的后端线程池？详细阐述为什么必须将 AI 任务线程池与 Web 容器接入层线程池（如 Tomcat / Undertow worker）进行物理隔离以防止级联雪崩；如何根据并发 QPS、平均 RT、下游模型速率限制（TPM/RPM）精确配置核心与最大线程数；以及如何选用合理的有界任务队列与自定义拒绝策略（如结合 CompletableFuture 超时优雅降级）。",
+    "tag": "AI调用线程池/慢IO长耗时/线程池物理隔离/防容器雪崩/线程池参数计算/有界队列防OOM/拒绝策略/超时熔断降级",
+    "status": "ready",
+    "prereq": [
+      "L725",
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 773,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L867",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在面向用户的长文本或代码大模型流式输出（Streaming Output, 如 SSE / WebSocket）场景中，如何设计一套鲁棒的“网络断线补发与重连平滑恢复”机制？详细拆解全链路技术方案：服务端如何在消息分片中打上单调递增的序列号（Sequence ID / Chunk Index），客户端在网络闪断重新建连时如何通过 Last-Event-ID 请求头携带最后收到的序列号，以及服务端如何利用 Redis 或内存环形缓冲区暂存最近历史 Chunk 并实现无感断点补发。",
+    "tag": "流式输出/断线重连/断点补发/SSE/WebSocket/SequenceID/Last-Event-ID/内存环形缓冲区/弱网抗抖动/体验平滑",
+    "status": "ready",
+    "prereq": [
+      "L661",
+      "L724"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 774,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L868",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "在大模型对话生成场景中，如果将流式输出的每一个 Token 或每一小段增量内容（Chunk）都实时同步写入关系型数据库，随着并发请求量增大，数据库会遭遇怎样严重的性能灾难？应该如何进行系统性工程架构优化？详细说明高频小 I/O 聚合架构：前端流式消费与后端内存聚合解耦、流式阶段在 Redis / 内存环形队列中暂存完整回复、待整句结束或整个会话轮次完成后单次异步持久化入库、以及结合消息队列削峰批量落库（Batch Insert）的优化落地。",
+    "tag": "流式落库优化/高频小IO聚合/禁止Chunk实时写DB/Redis暂存/整句聚合/异步批量写入BatchInsert/MQ削峰",
+    "status": "ready",
+    "prereq": [
+      "L730",
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 775,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L869",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "当用户在前端主动点击“停止生成（Stop Generation）”，或者由于网络中断/关闭浏览器标签页导致前端连接断开时，后端大模型推理任务是否应该立即被取消？为什么？从大模型商用 API 的 Token 算力成本止血、GPU 显存占用释放与后端长连接资源回收等维度论证必须取消的必要性；并在工程上详细说明基于客户端 AbortController / AbortSignal、后端的连接断开监听（如 Spring WebFlux / Node.js req.on('close') / Go context.WithCancel）、以及向下游大模型接口发起 Cancel 信号联动的完整取消流水线。",
+    "tag": "主动停止生成/前端断线取消/AbortSignal/Context取消/Token成本止血/算力资源释放/连接中断监听/端到端联动取消",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 776,
     "assigned": true,
     "in_comment": false,
     "comment_label": ""
