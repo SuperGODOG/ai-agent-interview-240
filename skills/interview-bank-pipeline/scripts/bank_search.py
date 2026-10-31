@@ -4,12 +4,15 @@
 bank_search.py - 题库轻量级分层检索与图谱级联引擎
 
 设计哲学（遵循《Memory Tax》与 Raw-Evidence 原则）：
-1. 零外部依赖：纯 Python 标准库（json, re, math, sys, os），执行耗时 < 15ms。
+1. 零外部依赖：纯 Python 标准库（json, re, math, sys, os, argparse），执行耗时 < 15ms。
 2. 零数据污染：不改动现有 items.json 结构与 16 项回归测试。
-3. 两阶段召回：
-   - Phase 1 (Raw-Evidence Match): 直接使用 Query 关键词与题库的 tag、text、minor 进行多加权文本打分，定位核心主干题。
-   - Phase 2 (Graph Hop Expansion): 沿题库原生双向图谱边 (downstream, prereq, relations) 自动展开深度为 3~4 的衍生追问题，
-     解决“代码里没有追问词导致追问沉没”的根本难题。
+3. 双输入源支持：
+   - 输入源 A（简历模式）：直接输入项目描述或简历核心卖点（--query "..."）。
+   - 输入源 B（工程模式）：直接输入项目 README 或画像文档路径（--file README.md），自动清洗 Markdown 杂音提取核心技术特征。
+4. 三层面试题结构化分组：
+   - Tier 1: 🎯 核心主干题（Core Anchors）—— 开场必问架构大题
+   - Tier 2: 🔍 核心追问题（Direct Follow-ups）—— 顺着图谱级联挂载在各自主干下的连环考点
+   - Tier 3: 💡 边界防御题（Boundary & Edge Cases）—— 真实生产中的高危陷阱、环境污染、自评偏差
 """
 
 import os
@@ -35,7 +38,30 @@ SYNONYMS_MAP = {
     "一致性": ["延时双删", "canal", "binlog", "cache-aside", "双写"],
     "rag": ["切片", "chunking", "rerank", "重排", "混合检索", "rrf", "ragas"],
     "自进化": ["skillforge", "动态生成", "代码评测", "回归验证"],
+    "渐进式披露": ["progressive disclosure", "use_skill", "按需加载", "token优化"],
+    "评测": ["llm-as-a-judge", "pairwise", "配对比较", "打分漂移", "棘轮", "ratchet"],
 }
+
+
+def clean_markdown_content(raw_text: str) -> str:
+    """提取 Markdown 文档中的核心技术事实，剔除链接、徽章、安装命令等杂音"""
+    clean_lines = []
+    for line in raw_text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        # 过滤 Markdown 引用/表格语法/纯链接/命令
+        if line.startswith(">") or line.startswith("|") or line.startswith("```"):
+            continue
+        if "github.com" in line or line.startswith("http://") or line.startswith("https://"):
+            continue
+        if line.startswith("pip install") or line.startswith("npm install"):
+            continue
+        # 移除 markdown 图片和超链接标签，保留文字
+        line = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', line)
+        line = re.sub(r'!\[[^\]]*\]\([^\)]+\)', '', line)
+        clean_lines.append(line)
+    return " ".join(clean_lines)
 
 
 def tokenize(text: str) -> List[str]:
@@ -51,7 +77,6 @@ def tokenize(text: str) -> List[str]:
         if len(chunk) <= 4:
             tokens.append(chunk)
         else:
-            # 较长中文串按 2-gram 和 3-gram 切分
             tokens.append(chunk)
             for i in range(len(chunk) - 1):
                 tokens.append(chunk[i:i+2])
@@ -87,7 +112,7 @@ def score_item(item: Dict[str, Any], query_raw: str, query_tokens: Set[str], dom
     score = 0.0
 
     # 1. 完整短语匹配奖励 (Phrase Match Boost)
-    if len(raw_lower) >= 2:
+    if len(raw_lower) >= 2 and len(raw_lower) <= 50:
         if raw_lower in tag:
             score += 15.0
         elif raw_lower in text:
@@ -113,7 +138,7 @@ def score_item(item: Dict[str, Any], query_raw: str, query_tokens: Set[str], dom
         coverage = matched_tokens / len(query_tokens)
         score *= (1.0 + coverage)
 
-        # 4. 深度偏好：仅在有命中时，深度 2~4 的核心高频题给予合理微调权重
+        # 4. 深度偏好：仅在有匹配命中时，深度 2~4 的核心大题给予微调权重
         depth = item.get("depth", 1)
         if depth in [2, 3]:
             score += 0.5
@@ -126,14 +151,15 @@ def search_bank(
     domain: Optional[str] = None,
     minor: Optional[str] = None,
     depth: Optional[int] = None,
-    top_k: int = 5,
+    top_k: int = 10,
     expand_hops: int = 1,
     items_path: str = DEFAULT_ITEMS_PATH,
 ) -> Dict[str, Any]:
     """
     题库检索核心函数：
-    1. 粗排加权打分获取 Top-K 主干题
+    1. 粗排加权打分获取 Top-K 候选池
     2. 沿着图谱边（downstream / prereq / relations）展开高价值追问题
+    3. 自动结构化分组：Tier 1 (主干题), Tier 2 (连带追问题), Tier 3 (边界防御题)
     """
     if not os.path.exists(items_path):
         raise FileNotFoundError(f"题库主文件未找到: {items_path}")
@@ -164,7 +190,8 @@ def search_bank(
     anchor_ids = set(q["id"] for _, q in anchors)
 
     # 第二阶段：图谱拓扑扩散 (Graph Hop Expansion)
-    cascaded_questions: List[Dict[str, Any]] = []
+    direct_followups: List[Dict[str, Any]] = []
+    boundary_cases: List[Dict[str, Any]] = []
     visited_ids = set(anchor_ids)
 
     if expand_hops > 0:
@@ -174,7 +201,7 @@ def search_bank(
                 if isinstance(down_id, str) and down_id in by_id and down_id not in visited_ids:
                     visited_ids.add(down_id)
                     target_item = by_id[down_id]
-                    cascaded_questions.append({
+                    info = {
                         "id": down_id,
                         "source_id": anchor["id"],
                         "relation_type": "downstream (递进后置)",
@@ -183,7 +210,11 @@ def search_bank(
                         "minor": target_item.get("minor", ""),
                         "text": target_item.get("text", ""),
                         "tag": target_item.get("tag", ""),
-                    })
+                    }
+                    if target_item.get("depth", 1) >= 3 and any(w in (target_item.get("tag") or "") for w in ["边界", "误改", "熔断", "反思", "失败", "安全"]):
+                        boundary_cases.append(info)
+                    else:
+                        direct_followups.append(info)
 
             # 2. 查找双向关联题 (relations)
             for rel in (anchor.get("relations") or []):
@@ -192,7 +223,7 @@ def search_bank(
                 if rel_id and rel_id in by_id and rel_id not in visited_ids:
                     visited_ids.add(rel_id)
                     target_item = by_id[rel_id]
-                    cascaded_questions.append({
+                    info = {
                         "id": rel_id,
                         "source_id": anchor["id"],
                         "relation_type": "relation (关联延伸)",
@@ -201,14 +232,15 @@ def search_bank(
                         "minor": target_item.get("minor", ""),
                         "text": target_item.get("text", ""),
                         "tag": target_item.get("tag", ""),
-                    })
+                    }
+                    direct_followups.append(info)
 
-            # 3. 如果需要前置基础支撑题 (prereq)
+            # 3. 前置基础支撑题 (prereq)
             for prereq_id in (anchor.get("prereq") or []):
                 if isinstance(prereq_id, str) and prereq_id in by_id and prereq_id not in visited_ids:
                     visited_ids.add(prereq_id)
                     target_item = by_id[prereq_id]
-                    cascaded_questions.append({
+                    info = {
                         "id": prereq_id,
                         "source_id": anchor["id"],
                         "relation_type": "prereq (前置基础)",
@@ -217,7 +249,8 @@ def search_bank(
                         "minor": target_item.get("minor", ""),
                         "text": target_item.get("text", ""),
                         "tag": target_item.get("tag", ""),
-                    })
+                    }
+                    direct_followups.append(info)
 
     # 包装主干结果
     anchor_results = []
@@ -233,64 +266,86 @@ def search_bank(
         })
 
     return {
-        "query": query,
-        "tokens": list(tokens),
-        "expanded_tokens": list(expanded_tokens),
+        "query_preview": query[:80] + ("..." if len(query) > 80 else ""),
         "total_anchors": len(anchor_results),
-        "total_cascaded": len(cascaded_questions),
-        "anchors": anchor_results,
-        "cascaded": cascaded_questions,
+        "total_followups": len(direct_followups),
+        "total_boundary": len(boundary_cases),
+        "total_recalled": len(anchor_results) + len(direct_followups) + len(boundary_cases),
+        "tier1_anchors": anchor_results,
+        "tier2_followups": direct_followups,
+        "tier3_boundary": boundary_cases,
     }
 
 
 def format_cli_output(result: Dict[str, Any]) -> str:
-    """格式化为易于人类与 Agent 阅读的 Markdown 报告"""
+    """格式化为结构化三层面试题单报告"""
     lines = []
-    lines.append("=" * 68)
-    lines.append(f"【题库轻量检索与图谱级联报告】 查询词: '{result['query']}'")
-    lines.append(f"分词覆盖: {result['tokens']} | 派生词扩展: {result['expanded_tokens']}")
-    lines.append("=" * 68)
+    lines.append("=" * 72)
+    lines.append(f"【题库轻量分层检索与拓扑图谱报告】")
+    lines.append(f"检索输入摘要: {result['query_preview']}")
+    lines.append("=" * 72)
 
-    lines.append("\n🎯 一、 核心主干题（Direct Anchors）:")
-    if not result["anchors"]:
-        lines.append("  (未找到匹配的主干题，请尝试调整查询词或放宽分类条件)")
+    lines.append("\n🎯 【第一层：核心主干题（Core Anchors）】（开场必问核心架构与业务系统）:")
+    if not result["tier1_anchors"]:
+        lines.append("  (未找到匹配的主干题，请检查查询词或放宽分类条件)")
     else:
-        for i, a in enumerate(result["anchors"], 1):
+        for i, a in enumerate(result["tier1_anchors"], 1):
             lines.append(f"  {i}. [{a['id']}] 得分: {a['score']} | 深度: {a['depth']}/5 | 流派: {a['minor']}")
             lines.append(f"     题干: {a['text']}")
             if a.get("tag"):
                 lines.append(f"     标签: {a['tag']}")
 
-    lines.append("\n🔍 二、 拓扑级联追问题（Graph-Cascaded Follow-ups）:")
-    if not result["cascaded"]:
+    lines.append("\n🔍 【第二层：直接追问题（Direct Follow-ups）】（顺着图谱深入考察原理机制）:")
+    if not result["tier2_followups"]:
         lines.append("  (无图谱级联追问)")
     else:
-        for i, c in enumerate(result["cascaded"], 1):
+        for i, c in enumerate(result["tier2_followups"], 1):
             lines.append(f"  {i}. [{c['id']}] 来源: {c['source_id']} ({c['relation_type']}) | 深度: {c['depth']}/5 | 流派: {c['minor']}")
-            lines.append(f"     关联依据: {c['reason']}")
-            lines.append(f"     追问题干: {c['text']}")
+            lines.append(f"     依据: {c['reason']}")
+            lines.append(f"     追问: {c['text']}")
 
-    lines.append("\n" + "=" * 68)
-    lines.append(f"📊 汇总: 主干题 {result['total_anchors']} 道 + 级联追问题 {result['total_cascaded']} 道 = 共 {result['total_anchors'] + result['total_cascaded']} 道定制考题")
-    lines.append("=" * 68)
+    if result["tier3_boundary"]:
+        lines.append("\n💡 【第三层：边界与防御延伸题（Boundary & Edge Cases）】（考察高危陷阱与故障防御）:")
+        for i, b in enumerate(result["tier3_boundary"], 1):
+            lines.append(f"  {i}. [{b['id']}] 来源: {b['source_id']} | 深度: {b['depth']}/5 | 流派: {b['minor']}")
+            lines.append(f"     高危维度: {b['reason']}")
+            lines.append(f"     题干: {b['text']}")
+
+    lines.append("\n" + "=" * 72)
+    lines.append(f"📊 汇总结构: 核心主干 {result['total_anchors']} 题 + 级联追问 {result['total_followups']} 题 + 边界防御 {result['total_boundary']} 题 = 共 {result['total_recalled']} 道结构化定制题")
+    lines.append("=" * 72)
     return "\n".join(lines)
 
 
 def main():
     parser = argparse.ArgumentParser(description="题库轻量级分层检索与图谱级联引擎")
-    parser.add_argument("--query", "-q", required=True, help="检索查询语句或技术关键词")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--query", "-q", help="检索查询语句或技术关键词（面向简历/对话模式）")
+    group.add_argument("--file", "-f", help="项目文档路径（如 README.md 或 项目画像.md，面向代码全貌模式）")
+
     parser.add_argument("--domain", "-d", choices=["A_AGENT", "B_BACKEND", "S_ALGO_GENERAL", "I_INFRA", "F_FRONTEND"], help="限制板块")
     parser.add_argument("--minor", "-m", help="过滤细分流派（如 '8.工程落地'）")
     parser.add_argument("--depth", type=int, choices=[1, 2, 3, 4, 5], help="指定题目深度")
-    parser.add_argument("--top", "-k", type=int, default=5, help="主干题目召回数量 (默认 5)")
+    parser.add_argument("--top", "-k", type=int, default=10, help="主干题目初筛池上限 (默认 10)")
     parser.add_argument("--expand", "-e", type=int, default=1, choices=[0, 1], help="是否进行图谱拓扑扩散追问 (0=关闭, 1=开启)")
     parser.add_argument("--json", action="store_true", help="以 JSON 格式输出供 Agent 程序化调用")
     parser.add_argument("--path", default=DEFAULT_ITEMS_PATH, help="指定 items.json 路径")
 
     args = parser.parse_args()
 
+    # 处理输入源
+    if args.file:
+        if not os.path.exists(args.file):
+            print(f"[ERROR] 指定的文件不存在: {args.file}", file=sys.stderr)
+            sys.exit(1)
+        with open(args.file, "r", encoding="utf-8", errors="ignore") as f:
+            raw_content = f.read()
+        search_query = clean_markdown_content(raw_content)
+    else:
+        search_query = args.query
+
     result = search_bank(
-        query=args.query,
+        query=search_query,
         domain=args.domain,
         minor=args.minor,
         depth=args.depth,

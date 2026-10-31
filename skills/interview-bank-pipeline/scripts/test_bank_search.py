@@ -13,7 +13,15 @@ import unittest
 # 将当前目录加入 sys.path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from bank_search import search_bank, tokenize, expand_query_tokens, DEFAULT_ITEMS_PATH
+from bank_search import (
+    search_bank,
+    tokenize,
+    expand_query_tokens,
+    clean_markdown_content,
+    DEFAULT_ITEMS_PATH,
+)
+
+REAL_README_PATH = "/Users/caoruixin/Desktop/project/ai-agent-interview-240/projects/SuperGODOG__skillforge/README.md"
 
 
 class TestBankSearch(unittest.TestCase):
@@ -41,10 +49,10 @@ class TestBankSearch(unittest.TestCase):
         latency_ms = (time.time() - t0) * 1000
 
         self.assertGreater(res["total_anchors"], 0, "主干题召回数应 > 0")
-        self.assertGreater(res["total_cascaded"], 0, "图谱级联追问数应 > 0")
+        self.assertGreater(res["total_followups"] + res["total_boundary"], 0, "图谱级联追问数应 > 0")
 
-        anchor_ids = [a["id"] for a in res["anchors"]]
-        cascaded_ids = [c["id"] for c in res["cascaded"]]
+        anchor_ids = [a["id"] for a in res["tier1_anchors"]]
+        cascaded_ids = [c["id"] for c in res["tier2_followups"] + res["tier3_boundary"]]
         all_ids = set(anchor_ids + cascaded_ids)
 
         print(f"\n[Test 03] Harness 查询耗时: {latency_ms:.2f}ms")
@@ -53,7 +61,7 @@ class TestBankSearch(unittest.TestCase):
 
         # 验证核心主干 L805 或 L830 是否被捕获
         self.assertTrue("L805" in all_ids or "L830" in all_ids or "L761" in all_ids, "应当捕获 Harness/审核核心题")
-        # 验证追问题是否被级联带出 (例如 L760, L761, L762, L870 等)
+        # 验证追问题是否被级联带出
         has_followup = any(id_ in all_ids for id_ in ["L760", "L761", "L762", "L763", "L811", "L870", "L874"])
         self.assertTrue(has_followup, "应当通过拓扑级联召回深度追问题")
         self.assertLess(latency_ms, 50, "执行耗时应严格小于 50ms")
@@ -62,30 +70,55 @@ class TestBankSearch(unittest.TestCase):
         """测试高并发后端秒杀场景的主干与追问检索"""
         res = search_bank("秒杀 Lua 预扣库存 延时双删", domain="B_BACKEND", top_k=3, expand_hops=1)
         self.assertGreater(res["total_anchors"], 0)
-        self.assertGreater(res["total_cascaded"], 0)
-        all_ids = set([a["id"] for a in res["anchors"]] + [c["id"] for c in res["cascaded"]])
-        # 检查是否关联出秒杀、缓存一致性等经典题
+        self.assertGreater(res["total_followups"] + res["total_boundary"], 0)
+        all_ids = set([a["id"] for a in res["tier1_anchors"]] + [c["id"] for c in res["tier2_followups"]])
         print(f"\n[Test 04] 后端秒杀场景捕获题号: {list(all_ids)[:6]}")
 
     def test_05_algo_search(self):
         """测试算法题精确检索（如大数加法）"""
         res = search_bank("大数加法 字符串相加", top_k=3, expand_hops=0)
         self.assertGreater(res["total_anchors"], 0)
-        anchor_texts = [a["text"] for a in res["anchors"]]
+        anchor_texts = [a["text"] for a in res["tier1_anchors"]]
         self.assertTrue(any("大数加法" in t for t in anchor_texts))
-        self.assertEqual(res["anchors"][0]["id"], "L882")
+        self.assertEqual(res["tier1_anchors"][0]["id"], "L882")
 
     def test_06_domain_filtering_strictness(self):
         """测试板块隔离的严谨性"""
         res_backend = search_bank("MySQL 事务 隔离级别", domain="B_BACKEND", top_k=5)
-        for a in res_backend["anchors"]:
+        for a in res_backend["tier1_anchors"]:
             self.assertEqual(a["domain"], "B_BACKEND")
 
     def test_07_empty_query_robustness(self):
         """测试空查询或无匹配词的边界容错"""
         res = search_bank("xyzabcdefg_non_existent_token_9999", top_k=5)
         self.assertEqual(res["total_anchors"], 0)
-        self.assertEqual(res["total_cascaded"], 0)
+        self.assertEqual(res["total_recalled"], 0)
+
+    def test_08_real_readme_ingest(self):
+        """真实测试：读取真实项目 README.md 提取文本并进行三层分层检索"""
+        self.assertTrue(os.path.exists(REAL_README_PATH), f"真实测试文件不存在: {REAL_README_PATH}")
+        with open(REAL_README_PATH, "r", encoding="utf-8") as f:
+            raw_readme = f.read()
+
+        clean_text = clean_markdown_content(raw_readme)
+        self.assertNotIn("github.com", clean_text)
+        self.assertIn("SkillForge", clean_text)
+
+        t0 = time.time()
+        res = search_bank(clean_text, domain="A_AGENT", top_k=10, expand_hops=1)
+        latency_ms = (time.time() - t0) * 1000
+
+        print(f"\n[Test 08] 真实 README 检索耗时: {latency_ms:.2f}ms")
+        print(f"  Tier 1 主干题数: {res['total_anchors']}")
+        print(f"  Tier 2 追问题数: {res['total_followups']}")
+        print(f"  Tier 3 边界防御题数: {res['total_boundary']}")
+
+        top_ids = [a["id"] for a in res["tier1_anchors"]]
+        print(f"  Top 5 主干题: {top_ids[:5]}")
+
+        # 核心主干应包含 L760 (SkillForge平台架构) 或 L147 (渐进式披露)
+        self.assertTrue("L760" in top_ids or "L147" in top_ids)
+        self.assertGreater(res["total_recalled"], 15, "总召回题单应 >= 15 道题")
 
 
 if __name__ == "__main__":
