@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "slug": "local__miaosha_fastapi",
+    "url": "/Users/caoruixin/Desktop/project/miaosha_fastapi",
+    "is_local_dir": true,
+    "is_git": false,
+    "commit_hash": null,
+    "commit_short": null,
+    "branch": null,
+    "commit_date": null,
+    "commit_message": "Local non-git workspace (SHA-256 file manifest verification)",
+    "is_dirty": false,
+    "worktree_hash": "c39714efc24edcfad56472fa775a2125457f7db98a25229f1d0f038f332bdece",
+    "bank_fingerprint": {
+      "hash": "17732fea6af7e609ebea30e13f56876d9048e3b00293aba63ba747c410e27e88",
+      "total_items": 557,
+      "total_questions": 497,
+      "files": [
+        "items.json",
+        "concepts.yaml",
+        "schema.json"
+      ]
+    },
+    "synced_at": "2026-10-09T20:31:43.188270",
+    "file_count": 80,
+    "pipeline_version": "1.2.0"
+  },
+  "slug": "local__miaosha_fastapi",
+  "url": "/Users/caoruixin/Desktop/project/miaosha_fastapi",
+  "frameworks": [
+    "FastAPI",
+    "SQLAlchemy 2.0",
+    "Redis",
+    "RabbitMQ",
+    "PydanticAI"
+  ],
+  "file_count": 80,
+  "concept_hits": {
+    "秒杀库存与高并发扣减": [
+      "app/services/redis_service.py",
+      "app/api/v1/order.py",
+      "tests/test_redis_lua.py",
+      "app/services/order_service.py",
+      "app/services/reconciliation_service.py"
+    ],
+    "对账补偿链路": [
+      "app/services/reconciliation_service.py",
+      "app/services/order_service.py"
+    ],
+    "Redis Lua 原子预扣": [
+      "app/api/v1/order.py",
+      "app/services/redis_service.py",
+      "tests/test_redis_lua.py"
+    ],
+    "容错限流与高可用": [
+      "app/services/redis_service.py",
+      "app/api/deps.py"
+    ],
+    "令牌桶限流": [
+      "app/services/redis_service.py",
+      "app/api/deps.py"
+    ],
+    "Redis 与缓存": [
+      "app/services/redis_service.py",
+      "app/api/v1/goods.py",
+      "README.md",
+      "app/models/goods.py"
+    ],
+    "数据结构选型": [
+      "app/services/redis_service.py",
+      "app/models/goods.py"
+    ],
+    "Lua 原子执行权衡": [
+      "app/services/redis_service.py",
+      "README.md"
+    ],
+    "缓存穿透与击穿防护": [
+      "app/services/redis_service.py",
+      "app/api/v1/goods.py"
+    ],
+    "RabbitMQ与可靠消息": [
+      "app/services/redis_service.py",
+      "app/services/mq_consumer.py",
+      "tests/test_mq_async.py",
+      "app/services/mq_producer.py"
+    ],
+    "削峰解耦选型": [
+      "app/services/mq_consumer.py",
+      "app/services/mq_producer.py"
+    ],
+    "发送失败补偿回滚": [
+      "app/services/redis_service.py",
+      "app/services/mq_producer.py"
+    ],
+    "Confirm与持久化机制": [
+      "tests/test_mq_async.py",
+      "app/services/mq_producer.py"
+    ],
+    "接口幂等性设计": [
+      "app/services/redis_service.py",
+      "app/services/mq_consumer.py"
+    ],
+    "防重防刷": [
+      "app/services/redis_service.py",
+      "app/services/mq_consumer.py"
+    ],
+    "分布式事务与一致性": [
+      "app/services/mq_consumer.py",
+      "app/services/order_service.py"
+    ],
+    "状态闭环": [
+      "app/services/mq_consumer.py",
+      "app/services/order_service.py"
+    ],
+    "分布式秒杀一致性": [
+      "app/services/redis_service.py",
+      "app/services/order_service.py"
+    ],
+    "防超卖约束": [
+      "app/services/redis_service.py",
+      "app/services/order_service.py"
+    ],
+    "库存同步策略": [
+      "app/services/mq_consumer.py",
+      "app/services/order_service.py"
+    ],
+    "异步落库与合并": [
+      "app/services/mq_consumer.py",
+      "app/services/order_service.py"
+    ],
+    "对账证据与不一致排查": [
+      "app/services/reconciliation_service.py",
+      "scripts/reconcile.py"
+    ],
+    "双层对账闭环": [
+      "app/services/reconciliation_service.py",
+      "scripts/reconcile.py"
+    ],
+    "单实例到分布式改造": [
+      "app/services/reconciliation_service.py",
+      "app/services/order_service.py"
+    ],
+    "状态机与存储划分": [
+      "app/services/reconciliation_service.py",
+      "app/services/order_service.py"
+    ],
+    "JWT 鉴权认证": [
+      "app/api/v1/auth.py",
+      "app/api/deps.py"
+    ],
+    "无状态验签": [
+      "app/api/v1/auth.py",
+      "app/api/deps.py"
+    ],
+    "电商与 Shopping Agent": [
+      "app/guide/agent.py",
+      "GUIDE_PLUGIN_PLAN.md"
+    ],
+    "业务目标与任务流定义": [
+      "app/guide/agent.py",
+      "GUIDE_PLUGIN_PLAN.md"
+    ],
+    "技能体系": [
+      "app/guide/router.py",
+      "app/main.py"
+    ],
+    "插件化动态集成": [
+      "app/guide/router.py",
+      "app/main.py"
+    ],
+    "工具调用": [
+      "app/guide/tools.py",
+      "app/guide/knowledge.py"
+    ],
+    "离线文档检索 vs 实时查验工具": [
+      "app/guide/tools.py",
+      "app/guide/knowledge.py"
+    ],
+    "Agent 记忆机制": [
+      "app/guide/router.py",
+      "app/guide/memory.py"
+    ],
+    "会话隔离与单飞租约": [
+      "app/guide/router.py",
+      "app/guide/memory.py"
+    ],
+    "Guardrails 护栏": [
+      "app/guide/router.py",
+      "docs/guide_acceptance.md"
+    ],
+    "生成后卡片校验防幻觉": [
+      "app/guide/router.py",
+      "docs/guide_acceptance.md"
+    ]
+  }
+}

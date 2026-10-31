@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "slug": "SuperGODOG__skillforge",
+    "url": "https://github.com/SuperGODOG/skillforge",
+    "commit_hash": "2426d7b0974a4ab306ee9af17b691bee8787c3bf",
+    "commit_short": "2426d7b",
+    "branch": "linux",
+    "commit_date": "Sun Oct 4 14:07:03 2026 +0800",
+    "commit_message": "feat(evaluator): add evidence-based judge criteria scoring and calibration report",
+    "is_dirty": true,
+    "worktree_hash": "f081ae08b3e16e1c5b882898502a2b22955134fb34cf913e5b79233b9e499cef",
+    "bank_fingerprint": {
+      "hash": "17732fea6af7e609ebea30e13f56876d9048e3b00293aba63ba747c410e27e88",
+      "total_items": 557,
+      "total_questions": 497,
+      "files": [
+        "items.json",
+        "concepts.yaml",
+        "schema.json"
+      ]
+    },
+    "synced_at": "2026-10-09T20:18:12.939467",
+    "file_count": 136,
+    "pipeline_version": "1.2.0"
+  },
+  "slug": "SuperGODOG__skillforge",
+  "url": "https://github.com/SuperGODOG/skillforge",
+  "frameworks": [
+    "LangGraph",
+    "Pydantic",
+    "HuggingFace Transformers",
+    "SQLite"
+  ],
+  "file_count": 136,
+  "concept_hits": {
+    "技能体系": [
+      "src/skillforge/router/embed.py",
+      "src/skillforge/router/llm.py",
+      "src/skillforge/models.py",
+      "src/skillforge/registry.py",
+      "src/skillforge/router/cascade.py",
+      "docs/SKILLFORGE_INTERVIEW_AND_ARCHITECTURE_MASTER.md"
+    ],
+    "渐进式披露": [
+      "src/skillforge/router/cascade.py",
+      "src/skillforge/registry.py"
+    ],
+    "工具路由": [
+      "src/skillforge/registry.py",
+      "src/skillforge/models.py"
+    ],
+    "意图识别与分发": [
+      "src/skillforge/router/evaluation.py",
+      "src/skillforge/router/cascade.py",
+      "src/skillforge/evaluator/p0_gate.py",
+      "src/skillforge/router/rule.py"
+    ],
+    "Guardrails 护栏": [
+      "src/skillforge/router/cascade.py",
+      "src/skillforge/evaluator/p0_gate.py"
+    ],
+    "路由机制": [
+      "src/skillforge/memory.py",
+      "src/skillforge/router/rule.py",
+      "src/skillforge/router/embed.py",
+      "src/skillforge/router/llm.py",
+      "src/skillforge/router/cascade.py"
+    ],
+    "Agent 记忆机制": [
+      "src/skillforge/memory.py",
+      "src/skillforge/state_machine.py",
+      "src/skillforge/models.py",
+      "src/skillforge/episode.py",
+      "src/skillforge/router/cascade.py",
+      "src/skillforge/storage/db.py"
+    ],
+    "评测体系与 Benchmark": [
+      "src/skillforge/evaluator/judge.py",
+      "src/skillforge/router/evaluation.py",
+      "src/skillforge/evaluator/criteria.py",
+      "src/skillforge/router/cascade.py",
+      "src/skillforge/evaluator/ratchet.py"
+    ],
+    "AI Coding Agent": [
+      "src/skillforge/sandbox.py",
+      "src/skillforge/evolution_loop.py"
+    ],
+    "Agent Loop 与控制流工程": [
+      "src/skillforge/evaluator/root_cause_prompts.py",
+      "src/skillforge/sandbox.py",
+      "src/skillforge/evolution_loop.py",
+      "src/skillforge/evolver.py"
+    ],
+    "自我反思机制": [
+      "src/skillforge/evaluator/root_cause_prompts.py",
+      "src/skillforge/evolver.py"
+    ],
+    "LLM-as-a-Judge": [
+      "src/skillforge/evaluator/judge.py",
+      "src/skillforge/evaluator/criteria.py",
+      "src/skillforge/evaluator/ratchet.py"
+    ],
+    "Badcase 闭环与数据飞轮": [
+      "src/skillforge/evaluator/p0_gate.py",
+      "src/skillforge/eval_tracer.py",
+      "src/skillforge/evaluator/ratchet.py",
+      "src/skillforge/repair.py"
+    ],
+    "棘轮防倒退机制": [
+      "src/skillforge/evaluator/p0_gate.py",
+      "src/skillforge/evaluator/ratchet.py"
+    ],
+    "Trace事实与归因": [
+      "src/skillforge/eval_tracer.py",
+      "src/skillforge/repair.py"
+    ],
+    "容错限流与高可用": [
+      "src/skillforge/bounded_recovery.py",
+      "src/skillforge/repair.py"
+    ],
+    "受控修复": [
+      "src/skillforge/bounded_recovery.py",
+      "src/skillforge/repair.py"
+    ],
+    "工具容错": [
+      "src/skillforge/receipt.py",
+      "src/skillforge/repair.py"
+    ],
+    "参数校验与受控修复": [
+      "src/skillforge/receipt.py",
+      "src/skillforge/repair.py"
+    ],
+    "受控重试": [
+      "src/skillforge/evolver.py",
+      "src/skillforge/repair.py"
+    ],
+    "上下文隔离与预算管理": [
+      "src/skillforge/evolver.py",
+      "src/skillforge/repair.py"
+    ],
+    "存储选型与状态持久化": [
+      "src/skillforge/memory.py",
+      "src/skillforge/evolution_loop.py",
+      "src/skillforge/state_machine.py",
+      "src/skillforge/storage/db.py"
+    ],
+    "情景记忆": [
+      "src/skillforge/memory.py",
+      "src/skillforge/episode.py"
+    ],
+    "Workflow 与自主 Agent 权衡": [
+      "src/skillforge/evolution_loop.py",
+      "src/skillforge/state_machine.py"
+    ],
+    "Agent会话与状态恢复": [
+      "src/skillforge/state_machine.py",
+      "src/skillforge/storage/db.py"
+    ],
+    "LangGraph 与图编排": [
+      "src/skillforge/langgraph_loop.py"
+    ],
+    "Multi-Agent 多智能体协作": [
+      "src/skillforge/langgraph_loop.py"
+    ]
+  }
+}

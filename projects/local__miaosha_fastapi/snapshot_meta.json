@@ -1,0 +1,26 @@
+{
+  "slug": "local__miaosha_fastapi",
+  "url": "/Users/caoruixin/Desktop/project/miaosha_fastapi",
+  "is_local_dir": true,
+  "is_git": false,
+  "commit_hash": null,
+  "commit_short": null,
+  "branch": null,
+  "commit_date": null,
+  "commit_message": "Local non-git workspace (SHA-256 file manifest verification)",
+  "is_dirty": false,
+  "worktree_hash": "5c3dbd76f21b9378374f72f81842bf64bf717a0695e831f2aea0cc7f262079f1",
+  "synced_at": "2026-10-27T23:03:12.594309",
+  "file_count": 73,
+  "pipeline_version": "1.2.0",
+  "bank_fingerprint": {
+    "hash": "0ccd0a8b7c7977f50747b7b1cfab3f86ed3f31ba0d04ee51a8118751a458a2fa",
+    "total_items": 749,
+    "total_questions": 689,
+    "files": [
+      "items.json",
+      "concepts.yaml",
+      "schema.json"
+    ]
+  }
+}
