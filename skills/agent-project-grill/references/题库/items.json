@@ -8985,7 +8985,8 @@
       "L369"
     ],
     "downstream": [
-      "L374"
+      "L374",
+      "L882"
     ],
     "status": "待复习",
     "relations": [
@@ -9000,6 +9001,12 @@
         "direction": "out",
         "type": "progressive",
         "reason": "从「经典算法题“双蛋问题”（两个玻璃球在10...」建议递进深入至本题"
+      },
+      {
+        "target": "L882",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L882"
       }
     ],
     "domain": "S_ALGO_GENERAL"
@@ -11044,9 +11051,25 @@
     "assigned": true,
     "depth": 3,
     "prereq": [],
-    "downstream": [],
+    "downstream": [
+      "L875",
+      "L876"
+    ],
     "status": "待复习",
-    "relations": [],
+    "relations": [
+      {
+        "target": "L875",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L875"
+      },
+      {
+        "target": "L876",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L876"
+      }
+    ],
     "domain": "S_ALGO_GENERAL"
   },
   {
@@ -17434,7 +17457,8 @@
       "L389"
     ],
     "downstream": [
-      "L701"
+      "L701",
+      "L875"
     ],
     "status": "待复习",
     "relations": [
@@ -17461,6 +17485,12 @@
         "direction": "out",
         "type": "progressive",
         "reason": "将自主学习渠道与实习实践形成个人持续技术进阶的正向飞轮"
+      },
+      {
+        "target": "L875",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L875"
       }
     ]
   },
@@ -18178,7 +18208,8 @@
       "L785",
       "L786",
       "L830",
-      "L831"
+      "L831",
+      "L870"
     ],
     "relations": [
       {
@@ -18324,6 +18355,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L831"
+      },
+      {
+        "target": "L870",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L870"
       }
     ],
     "line": 718,
@@ -18353,7 +18390,10 @@
       "L782",
       "L795",
       "L796",
-      "L838"
+      "L838",
+      "L871",
+      "L872",
+      "L873"
     ],
     "relations": [
       {
@@ -18415,6 +18455,24 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L838"
+      },
+      {
+        "target": "L871",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L871"
+      },
+      {
+        "target": "L872",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L872"
+      },
+      {
+        "target": "L873",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L873"
       }
     ],
     "line": 719,
@@ -20126,7 +20184,15 @@
       "L853",
       "L866",
       "L868",
-      "L869"
+      "L869",
+      "L871",
+      "L873",
+      "L874",
+      "L877",
+      "L878",
+      "L879",
+      "L880",
+      "L881"
     ],
     "relations": [
       {
@@ -20230,6 +20296,54 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L869"
+      },
+      {
+        "target": "L871",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L871"
+      },
+      {
+        "target": "L873",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L873"
+      },
+      {
+        "target": "L874",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L874"
+      },
+      {
+        "target": "L877",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L877"
+      },
+      {
+        "target": "L878",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L878"
+      },
+      {
+        "target": "L879",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L879"
+      },
+      {
+        "target": "L880",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L880"
+      },
+      {
+        "target": "L881",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L881"
       }
     ],
     "line": 667,
@@ -20655,7 +20769,8 @@
     ],
     "downstream": [
       "L830",
-      "L831"
+      "L831",
+      "L870"
     ],
     "relations": [
       {
@@ -20669,6 +20784,12 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L831"
+      },
+      {
+        "target": "L870",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L870"
       }
     ],
     "line": 678,
@@ -20755,7 +20876,10 @@
       "L834",
       "L835",
       "L836",
-      "L837"
+      "L837",
+      "L879",
+      "L880",
+      "L881"
     ],
     "relations": [
       {
@@ -20793,6 +20917,24 @@
         "type": "progressive",
         "direction": "out",
         "reason": "从前置问题进阶拓展至 L837"
+      },
+      {
+        "target": "L879",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L879"
+      },
+      {
+        "target": "L880",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L880"
+      },
+      {
+        "target": "L881",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L881"
       }
     ],
     "line": 682,
@@ -22073,8 +22215,24 @@
       "L718",
       "L771"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L870",
+      "L874"
+    ],
+    "relations": [
+      {
+        "target": "L870",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L870"
+      },
+      {
+        "target": "L874",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L874"
+      }
+    ],
     "line": 737,
     "assigned": true,
     "in_comment": false,
@@ -22114,8 +22272,24 @@
     "prereq": [
       "L775"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L872",
+      "L881"
+    ],
+    "relations": [
+      {
+        "target": "L872",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L872"
+      },
+      {
+        "target": "L881",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L881"
+      }
+    ],
     "line": 739,
     "assigned": true,
     "in_comment": false,
@@ -22156,8 +22330,17 @@
       "L775",
       "L791"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L873"
+    ],
+    "relations": [
+      {
+        "target": "L873",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L873"
+      }
+    ],
     "line": 741,
     "assigned": true,
     "in_comment": false,
@@ -22218,8 +22401,24 @@
     "prereq": [
       "L775"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L872",
+      "L881"
+    ],
+    "relations": [
+      {
+        "target": "L872",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L872"
+      },
+      {
+        "target": "L881",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L881"
+      }
+    ],
     "line": 744,
     "assigned": true,
     "in_comment": false,
@@ -22300,8 +22499,17 @@
     "prereq": [
       "L760"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L874"
+    ],
+    "relations": [
+      {
+        "target": "L874",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L874"
+      }
+    ],
     "line": 748,
     "assigned": true,
     "in_comment": false,
@@ -22570,8 +22778,17 @@
       "L765",
       "L792"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L879"
+    ],
+    "relations": [
+      {
+        "target": "L879",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L879"
+      }
+    ],
     "line": 761,
     "assigned": true,
     "in_comment": false,
@@ -22815,8 +23032,17 @@
       "L725",
       "L760"
     ],
-    "downstream": [],
-    "relations": [],
+    "downstream": [
+      "L878"
+    ],
+    "relations": [
+      {
+        "target": "L878",
+        "type": "progressive",
+        "direction": "out",
+        "reason": "从前置问题进阶拓展至 L878"
+      }
+    ],
     "line": 773,
     "assigned": true,
     "in_comment": false,
@@ -22880,6 +23106,283 @@
     "downstream": [],
     "relations": [],
     "line": 776,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L870",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "2.agent主流框架",
+    "depth": 2,
+    "text": "详细剖析 ReAct（Reasoning + Acting）范式的执行流程与核心循环机制（Thought → Action → Action Input → Observation），为什么交替推理与行动能有效克服纯 LLM 推理的幻觉与静态知识缺陷？在此基础上，结合生产环境工程实践，展开阐述你所理解的完整 AI Agent 端到端工作流程：从用户意图识别与语义路由、上下文组装与 Prompt 增强、规划编排与 Agent Loop 决策、工具注册与执行观察、递归状态流转与边界熔断判定，到最终答案格式化清洗、安全合规审查以及工作/情景记忆持久化更新。",
+    "tag": "ReAct执行流程/Thought-Action-Observation/完整Agent工作流程/意图路由/上下文装配/AgentLoop/工具调用观察/状态流转/安全审核/记忆更新",
+    "status": "ready",
+    "prereq": [
+      "L718",
+      "L771",
+      "L830"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 777,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L871",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 3,
+    "text": "在工业级 Agent 平台中，如果业务方或开发者需要为智能体新增一个工具（Tool / Function），从规范设计到生产上线你会做哪些全流程工作？请从以下维度展开：1) 工具 Schema 契约设计（Pydantic 模型 / JSON Schema，字段强类型校验，具有高区分度的语义命名与详尽的 parameter description 以防模型调用幻觉）；2) 权限鉴权与安全隔离（API Key/OAuth 管理，只读与具副作用写操作的权限分级，沙箱隔离运行与网络出站白名单）；3) 容错与执行保障（超时熔断机制、并发速率限制 Rate Limiting、敏感参数脱敏与审计日志）；4) 评估与自动化回归（单测、Prompt 工具召回准确率评测、异常入参鲁棒性测试与动态文档生成）。",
+    "tag": "新增工具全流程/工具Schema设计/Pydantic契约/工具语义描述/权限鉴权/沙箱隔离/超时控制/限流熔断/工具召回评测/审计日志",
+    "status": "ready",
+    "prereq": [
+      "L719",
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 778,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L872",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 3,
+    "text": "当 Agent 在执行外部工具（Tool Call）发生失败或抛出异常时，生产级系统应该如何设计分层容错与自愈闭环？深入说明：1) 错误分类治理：区分临时性网络抖动/HTTP 5xx/429 限流等可重试错误，与入参 Schema 校验失败/业务逻辑异常/404/403 等不可重试错误；2) 自主反思与自我纠错（Self-Correction）：如何将结构化的错误信息（脱敏后的错误摘要与修正建议）回填至 Observation 上下文中，引导大模型重新审视 Thought 并自适应修正入参或改道调用备用工具；3) 保护机制：指数退避重试（Exponential Backoff with Jitter）、回退降级（Fallback / Graceful Degradation）策略；4) 循环预算与熔断：单工具失败重试上限控制，防止 Agent 陷入死循环浪费算力。",
+    "tag": "工具执行失败处理/错误分类治理/自主纠错/Self-Correction/Observation回填/指数退避重试/优雅降级/死循环熔断/预算控制",
+    "status": "ready",
+    "prereq": [
+      "L719",
+      "L832",
+      "L837"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 779,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L873",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "3.工具相关",
+    "depth": 3,
+    "text": "随着业务复杂度提升，当 Agent 挂载的工具集从十几个膨胀到数百甚至数千个时，会导致 Prompt 上下文急剧膨胀、调用开销飙升以及模型注意力稀释（选错工具/幻觉调用）。针对此问题，你会如何进行系统性工程与架构优化？详细阐述：1) 动态工具检索（Tool RAG）：基于用户 Query/Intent 意图，利用向量检索结合元数据/分类标签多路召回 Top-K 最相关工具动态注入 Prompt；2) 分层路由与多 Agent 协作（Multi-Agent Router / Supervisor）：根据业务领域拆分子 Agent（如数据分析、运维巡检、用户通知），由顶级路由器分流；3) 协议规范与按需懒加载：基于 MCP（Model Context Protocol）或类似协议的工具动态发现与上下文按需挂载；4) Schema 瘦身与精简描述：压缩工具描述文档，剪裁非必要字段与冗余类型定义。",
+    "tag": "工具数量膨胀优化/工具检索ToolRAG/动态注入Top-K/Multi-Agent路由分治/MCP按需挂载/注意力稀释防范/Prompt瘦身/分层工具集",
+    "status": "ready",
+    "prereq": [
+      "L719",
+      "L760",
+      "L834"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 780,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L874",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "请现场展示或使用 AI 编程助手实现一个最小可行（Minimal Viable）的生产级 Agent Loop 原型，重点是清晰完整地串联核心执行生命周期。实现要求包含：1) 工具注册与分发体系（定义至少 1~2 个真实工具，如带参数校验的数学计算器或数据查询函数，并生成标准 JSON Schema）；2) 消息历史与上下文累积管理（System / User / Assistant / Tool 角色流转）；3) 核心迭代 While Loop：调用模型、解析 tool_calls、动态派发本地函数执行、捕获异常、将结果作为 Tool Message 回填至消息历史；4) 终止边界防线：检测到最终模型文本输出时退出、或达到最大迭代步数（max_turns / recursion_limit）时安全熔断退出；5) 简述借助 AI 编程工具（如 Cursor/Copilot）进行需求拆解、提示词引导与 TDD 验证的高效开发工作流。",
+    "tag": "手撕AgentLoop/最小可行原型/工具调用分发/WhileLoop状态机/tool_calls解析/上下文回填/最大步数熔断/AI编程工作流",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L830",
+      "L841"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 781,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L875",
+    "kind": "question",
+    "domain": "S_ALGO_GENERAL",
+    "major": "反问与国企特别版",
+    "minor": "2.反问与国企特别版",
+    "depth": 2,
+    "text": "在日常开发与项目工程中，你平时主要使用什么开发语言？请结合大模型 AI Agent 与高并发后端工程的实际技术栈，阐述你的多语言技术选型策略与认知边界：为什么在 Agent 编排、算法研发与原型验证中深度倚重 Python（动态灵活、生态繁荣、LangChain/LangGraph/Pydantic/PyTorch 一流支持），而在企业级高并发系统与分布式中台建设中倚重 Java/Go（强类型契约、JVM 性能调优、高并发协程与工业级中间件生态）；在实际业务落地中，如何权衡这两种语言体系的优劣势并实现异构系统的高效协作？",
+    "tag": "常用开发语言/主选语言权衡/PythonAI生态/Java高并发后端/技术栈边界/多语言选型策略/异构协作",
+    "status": "ready",
+    "prereq": [
+      "L469",
+      "L700"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 782,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L876",
+    "kind": "question",
+    "domain": "S_ALGO_GENERAL",
+    "major": "反问与国企特别版",
+    "minor": "2.反问与国企特别版",
+    "depth": 2,
+    "text": "在大模型工程与全栈落地的多元技术场景下，你会使用 C++ 吗？对 TypeScript 的掌握情况如何？请结合实际应用场景分别阐述这两门语言在 AI 与现代软件工程中的不可替代价值：1) C++：在 AI Infra 与底层高性能计算中的角色（CUDA 算子扩展、PyTorch C++ 扩展、TensorRT 推理加速引擎、llama.cpp / vLLM 的底层显存管理与系统级优化）；2) TypeScript：在前端沉浸式交互、Node.js 后端与 Agent 协议生态中的角色（强类型系统保障复杂 Payload 契约、Model Context Protocol (MCP) 官方 TS SDK、LangChain.js 以及全栈 Web 界面构建）；说明你如何在不同性能与交付场景中合理调用这些多语言能力。",
+    "tag": "C++与TypeScript技能栈/C++高性能计算/CUDA与算子优化/llama.cpp/TypeScript全栈/Node.js/前端Agent交互/类型安全/MCP协议",
+    "status": "ready",
+    "prereq": [
+      "L469"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 783,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L877",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 2,
+    "text": "在项目研发与科研实践中，你是否自己申请并管理过大模型算力与 API 资源？请详细说明商用大模型 API 与私有化算力资源申请的规范化流程与实操经验：1) 主流商业 API 平台（OpenAI、Anthropic Claude、DeepSeek、阿里云百炼、火山引擎等）的账号开通、API Key 密钥生命周期管理与安全防泄露规范；2) 企业级/高校级私有化 GPU 算力集群（如 Slurm 调度系统、K8s Volcano 算力切片配额）的资源申请与申请理由撰写；3) 成本预估与预算控制机制（TPM/RPM 速率限制配额、Token 消耗预算监控、账单预警门禁与合规审计要求）。",
+    "tag": "模型资源申请/商用API获取/OpenAI_Anthropic_DeepSeek/云厂商MaaS平台/私有化算力申请/GPU集群配额/申请流程与合规/Token预算监控",
+    "status": "ready",
+    "prereq": [
+      "L760"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 784,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L878",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "8.工程落地",
+    "depth": 3,
+    "text": "如果需要在企业级微服务或 Agent 系统中规范化接入大模型资源，从架构设计到工程落地你会怎么做？请详细阐述生产级大模型接入网关（Model Gateway）的完整方案：1) 协议抽象与统一接入（封装统一的 OpenAI-compatible 契约，屏蔽下游不同厂商如 OpenAI/Claude/DeepSeek/Qwen/Ollama 的请求体与鉴权差异，支持 LiteLLM / OneAPI 网关架构）；2) 高可用容灾与负载均衡（多厂商多 Key 轮询负载、健康检查心跳、自动降级与 Fallback 模型链式路由）；3) 速率与成本治理（分租户 Rate Limiting、Token 预算配额管理、流式长连接背压控制）；4) 安全合规与可观测性（密钥动态加解密托管、Prompt 注入阻断、调用耗时/TTFT/Token 计费全链路 Trace 监控）。",
+    "tag": "模型资源接入方案/统一模型网关/OneAPI_LiteLLM/SDK封装/多模型容灾回退/负载均衡/Token预算与限流/密钥安全轮转/全链路Trace",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L866"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 785,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L879",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "在生产环境与前沿评测中，你如何科学、全面且定量地评价一个 AI Agent 系统的优劣？请构建一套多维度的 Agent 综合评估指标体系：1) 终态效果维度：任务完成率（Task Success Rate / Pass@1）、结果准确性与指令遵循度（Instruction Following）；2) 轨迹效率维度：平均工具调用步数、冗余尝试率、单任务平均 Token 消耗与首字响应时间（TTFT）及端到端延迟；3) 鲁棒性与自愈维度：工具执行异常恢复率（Self-Correction Rate）、死循环脱困能力与边界熔断安全性；4) 约束与安全对齐：权限越权拦截率、有害意图拒答率与环境状态一致性维护；5) 常用基准与评测框架（如 SWE-bench, GAIA, AgentBench, WebArena）的工业化落地经验。",
+    "tag": "Agent评估评测体系/任务完成率Pass@1/轨迹效率与步数/Token成本与延迟/鲁棒性与纠错能力/安全性与边界对齐/用户满意度/SWE-bench基准",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L775",
+      "L854"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 786,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L880",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "在自动化 Agent 执行复杂任务时，如果最终的产出结果表面上完全正确，但在执行轨迹中误改动了本地环境配置（如覆写了系统环境变量、意外更改了全局依赖版本或修改了宿主机防火墙规则），这个任务在工程和安全标准下算成功吗？为什么？深入剖析：1) 判定标准：必须严格判定为“任务失败（Failed）”或“高危非安全执行”，因其违反了幂等性、环境封闭性与无副作用契约，带来了严重的配置漂移（Configuration Drift）与生产安全隐患；2) 为什么 SWE-bench / OSWorld 等基准测试设置了严格的环境一致性校验；3) 防御与隔离方案：容器化沙箱（Docker / Firecracker / gVisor）、非特权用户降权运行、只读挂载核心路径、执行前后的文件快照 Diff 比对与自动化回滚机制。",
+    "tag": "副作用控制/环境误改判定/非安全成功/状态污染与配置漂移/沙箱隔离必要性/执行审计/SWE-bench评测标准/权限最小化/快照回滚",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L775"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 787,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L881",
+    "kind": "question",
+    "domain": "A_AGENT",
+    "major": "二_Agent应用开发相关",
+    "minor": "9.业务评估(性能优化与诊断)",
+    "depth": 3,
+    "text": "当一个复杂 Agent 任务在生产中频繁重试、陷入死循环或反复执行失败时，你会如何建立一套严密、系统的根因排查与定位诊断方法论？详细阐述定位五步法：1) 全链路轨迹取证（Trajectory Inspection）：通过 LangSmith / Phoenix / 自研 Trace 抓取完整的 Thought、Prompt、Tool Calls 入参及原始 Observation 报错回执；2) 五层归因模型：是意图理解偏差、Prompt 指令歧义、工具 Schema 声明缺失、外部环境调用超时/403，还是由于上下文压缩导致前置关键约束丢失？3) 最小可复现用例提纯与单步隔离测试：固定随机种子（Temperature=0），Mock 外部环境，逐节点断点重放；4) 常见故障模式识别（如工具参数格式幻觉、陷入局部最优死锁、过度反思导致逻辑漂移）；5) 落地针对性加固策略（优化工具 Docstring、增强 Observation 纠错回填提示、动态缩短搜索分支）。",
+    "tag": "Agent任务反复失败排查/执行轨迹日志回溯/五层归因分析/意图理解/工具调用/环境异常/上下文截断/死循环陷阱/单步复现调试/Trace取证",
+    "status": "ready",
+    "prereq": [
+      "L760",
+      "L775",
+      "L832",
+      "L837"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 788,
+    "assigned": true,
+    "in_comment": false,
+    "comment_label": ""
+  },
+  {
+    "id": "L882",
+    "kind": "question",
+    "domain": "S_ALGO_GENERAL",
+    "major": "Leetcode相关",
+    "minor": "1.LeetCode算法",
+    "depth": 2,
+    "text": "算法手撕题：实现大数加法（LeetCode 415 字符串相加）。给定两个以字符串形式表示的非负整数 num1 和 num2，计算它们的和并同样以字符串形式返回。要求：不能使用任何内置的 BigInteger 库，也不能直接将输入的字符串转换为整型。请详细阐述：1) 核心算法思路：使用双指针分别从两个字符串的尾部向头部逆序扫描，维护一个表示进位的变量 carry；在指针有效或 carry > 0 的循环条件下逐位相加，取模得到当前位数值，整除得到新的进位；2) 边界条件处理：两数位数不相等时的补零对齐逻辑、最高位进位额外增加一位的特殊情形；3) 复杂度分析：时间复杂度 O(max(N, M))，空间复杂度 O(1)（除存储结果字符串外）；4) 拓展思考：大数减法、大数乘法以及带负号/浮点小数的大数运算在工业级高精度计算库中的实现异同。",
+    "tag": "大数加法/高精度整数加法/字符串模拟/双指针倒序相加/进位carry处理/空间复杂度优化/LeetCode415/大数运算拓展",
+    "status": "ready",
+    "prereq": [
+      "L373"
+    ],
+    "downstream": [],
+    "relations": [],
+    "line": 789,
     "assigned": true,
     "in_comment": false,
     "comment_label": ""

@@ -70,8 +70,8 @@ nav.append({"模拟面试 Skill": [
 
 # ---------- mkdocs.yml ----------
 cfg = {
-    "site_name": "AI Agent 面试真题库 · 716 道大厂真实面试题",
-    "site_description": "716 道真实大厂 AI Agent 面试题（附答题框架）+ Java/Python/Go 语言八股文 + 模拟面试引擎。AI Agent 面试准备、大模型应用开发面试、后端高并发、AI Infra 高性能算子。",
+    "site_name": "AI Agent 面试真题库 · 729 道大厂真实面试题",
+    "site_description": "729 道真实大厂 AI Agent 面试题（附答题框架）+ Java/Python/Go 语言八股文 + 模拟面试引擎。AI Agent 面试准备、大模型应用开发面试、后端高并发、AI Infra 高性能算子。",
     "site_url": "https://supergodog.github.io/ai-agent-interview-240/",
     "repo_url": "https://github.com/SuperGODOG/ai-agent-interview-240",
     "repo_name": "ai-agent-interview-240",
