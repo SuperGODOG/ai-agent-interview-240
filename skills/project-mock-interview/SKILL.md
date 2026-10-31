@@ -35,6 +35,9 @@ version: 2.1.0
    - **严格区分 L 题与 Q 卡空间**：项目 match.json 与匹配表只关联公共真题 L 编号（来自 items.json 的有效 question 条目），严禁混用 03_Cards 中的 Qxxx 题卡编号，两者属于独立空间。
 1. 选项目：用户指定，或默认上次复盘的项目（读 vault 复盘文件），否则列出 `references/项目/` 目录让用户挑
 2. 读 `references/项目/<slug>/match.json` → 候选题目列表（id/概念/深度齐全）
+   - **动态精准检索与图谱级联（推荐）**：对于 Harness、SkillForge、秒杀等具备复杂演进或特定技术线索的项目，推荐优先调用轻量检索工具：
+     `python3 ../interview-bank-pipeline/scripts/bank_search.py --query "<技术栈或架构关键词>" --top 3 --expand 1 --json`
+     直接获取精准主干题与图谱自动级联的追问题清单，彻底避免静态标签过度抽象（Memory Tax）导致的追问漏召回。
 3. 出题策略（按需组合）：
    - **深度递进**：按 depth 1→5 排序（概念定义→原理机制→设计实现→落地与权衡→前沿延伸）
    - **概念串问**：锁定一个 hit_concepts（如 MCP），连问命中该概念的多道题，考横向一致性
