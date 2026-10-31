@@ -4,12 +4,17 @@
 bank_search.py - 题库轻量级分层检索与图谱级联引擎
 
 设计哲学（遵循《Memory Tax》与 Raw-Evidence 原则）：
-1. 零外部依赖：纯 Python 标准库（json, re, math, sys, os, argparse），执行耗时 < 15ms。
+1. 零外部依赖：纯 Python 标准库（json, re, math, sys, os, argparse），执行耗时 < 20ms。
 2. 零数据污染：不改动现有 items.json 结构与 16 项回归测试。
 3. 双输入源支持：
    - 输入源 A（简历模式）：直接输入项目描述或简历核心卖点（--query "..."）。
    - 输入源 B（工程模式）：直接输入项目 README 或画像文档路径（--file README.md），自动清洗 Markdown 杂音提取核心技术特征。
-4. 三层面试题结构化分组：
+4. 板块分桶与自适应动态配额（Adaptive Domain-Partitioned Recall）：
+   - 主业务战场（如 Agent，得分优势明显）：自动配额 Primary K=20；
+   - 次级系统支撑（如后端高并发/缓存/存储）：自动配额 Secondary K=10；
+   - 辅助选型与综合考点：自动配额 Tertiary K=3~5；
+   - 无关弱相关板块自动归零拦截。
+5. 三层面试题结构化分组：
    - Tier 1: 🎯 核心主干题（Core Anchors）—— 开场必问架构大题
    - Tier 2: 🔍 核心追问题（Direct Follow-ups）—— 顺着图谱级联挂载在各自主干下的连环考点
    - Tier 3: 💡 边界防御题（Boundary & Edge Cases）—— 真实生产中的高危陷阱、环境污染、自评偏差
@@ -26,6 +31,15 @@ from typing import List, Dict, Any, Set, Tuple, Optional
 DEFAULT_ITEMS_PATH = os.path.normpath(
     os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../agent-project-grill/references/题库/items.json")
 )
+
+# 板块中文名称映射
+DOMAIN_NAMES = {
+    "A_AGENT": "A_AGENT (大模型应用开发)",
+    "B_BACKEND": "B_BACKEND (高并发后端与存储)",
+    "S_ALGO_GENERAL": "S_ALGO_GENERAL (算法与综合选型)",
+    "I_INFRA": "I_INFRA (底层算子与高性能计算)",
+    "F_FRONTEND": "F_FRONTEND (全栈与前端工程交互)",
+}
 
 # 常见同义词/派生词映射表（轻量规则字典，辅助查询扩展）
 SYNONYMS_MAP = {
@@ -50,14 +64,12 @@ def clean_markdown_content(raw_text: str) -> str:
         line = line.strip()
         if not line:
             continue
-        # 过滤 Markdown 引用/表格语法/纯链接/命令
         if line.startswith(">") or line.startswith("|") or line.startswith("```"):
             continue
         if "github.com" in line or line.startswith("http://") or line.startswith("https://"):
             continue
         if line.startswith("pip install") or line.startswith("npm install"):
             continue
-        # 移除 markdown 图片和超链接标签，保留文字
         line = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', line)
         line = re.sub(r'!\[[^\]]*\]\([^\)]+\)', '', line)
         clean_lines.append(line)
@@ -67,9 +79,7 @@ def clean_markdown_content(raw_text: str) -> str:
 def tokenize(text: str) -> List[str]:
     """轻量分词：支持中英文混排、专业术语保留"""
     text = text.lower().strip()
-    # 提取英文单词/标识符
     en_words = re.findall(r'[a-zA-Z0-9_\-\.\@]+', text)
-    # 提取中文字符块
     cn_chunks = re.findall(r'[\u4e00-\u9fa5]+', text)
     
     tokens = list(en_words)
@@ -156,7 +166,7 @@ def search_bank(
     items_path: str = DEFAULT_ITEMS_PATH,
 ) -> Dict[str, Any]:
     """
-    题库检索核心函数：
+    单板块题库检索核心函数：
     1. 粗排加权打分获取 Top-K 候选池
     2. 沿着图谱边（downstream / prereq / relations）展开高价值追问题
     3. 自动结构化分组：Tier 1 (主干题), Tier 2 (连带追问题), Tier 3 (边界防御题)
@@ -267,6 +277,7 @@ def search_bank(
 
     return {
         "query_preview": query[:80] + ("..." if len(query) > 80 else ""),
+        "domain": domain or "ALL",
         "total_anchors": len(anchor_results),
         "total_followups": len(direct_followups),
         "total_boundary": len(boundary_cases),
@@ -277,43 +288,154 @@ def search_bank(
     }
 
 
+def search_bank_partitioned(
+    query: str,
+    domain_quotas: Optional[Dict[str, int]] = None,
+    adaptive: bool = True,
+    primary_k: int = 20,
+    secondary_k: int = 10,
+    tertiary_k: int = 5,
+    expand_hops: int = 1,
+    items_path: str = DEFAULT_ITEMS_PATH,
+) -> Dict[str, Any]:
+    """
+    多板块自适应分桶召回：
+    1. 计算每个板块的综合契合度得分
+    2. 自适应分配 K 额度（主战场 K=20，次要支撑 K=10，辅助 K=3~5）
+    3. 各板块独立召回并保持独立三层结构，避免多技术栈相互稀释
+    """
+    if not os.path.exists(items_path):
+        raise FileNotFoundError(f"题库主文件未找到: {items_path}")
+
+    with open(items_path, "r", encoding="utf-8") as f:
+        bank = json.load(f)
+
+    tokens = tokenize(query)
+    expanded_tokens = expand_query_tokens(tokens)
+
+    # 计算各板块聚合得分
+    domain_scores: Dict[str, float] = {}
+    for item in bank:
+        d = item.get("domain")
+        if not d:
+            continue
+        sc = score_item(item, query, expanded_tokens)
+        if sc > 0:
+            domain_scores[d] = domain_scores.get(d, 0.0) + sc
+
+    # 确定各板块配额
+    effective_quotas: Dict[str, int] = {}
+    if domain_quotas:
+        effective_quotas = domain_quotas
+    elif adaptive and domain_scores:
+        sorted_domains = sorted(domain_scores.items(), key=lambda x: -x[1])
+        top_score = sorted_domains[0][1]
+        for i, (d, sc) in enumerate(sorted_domains):
+            if i == 0 and sc > 30:
+                effective_quotas[d] = primary_k
+            elif i == 1 and sc > 0.10 * top_score:
+                effective_quotas[d] = secondary_k
+            elif i == 2 and sc > 0.04 * top_score:
+                effective_quotas[d] = tertiary_k
+    else:
+        effective_quotas = {"A_AGENT": primary_k}
+
+    # 各板块独立召回
+    buckets: Dict[str, Dict[str, Any]] = {}
+    total_recalled_all = 0
+    for d, k in effective_quotas.items():
+        if k <= 0:
+            continue
+        res = search_bank(
+            query=query,
+            domain=d,
+            top_k=k,
+            expand_hops=expand_hops,
+            items_path=items_path,
+        )
+        buckets[d] = res
+        total_recalled_all += res["total_recalled"]
+
+    return {
+        "query_preview": query[:80] + ("..." if len(query) > 80 else ""),
+        "domain_scores": {d: round(s, 1) for d, s in domain_scores.items()},
+        "effective_quotas": effective_quotas,
+        "total_recalled_all_domains": total_recalled_all,
+        "buckets": buckets,
+    }
+
+
 def format_cli_output(result: Dict[str, Any]) -> str:
-    """格式化为结构化三层面试题单报告"""
+    """格式化报告：支持单板块或多板块分桶呈现"""
     lines = []
-    lines.append("=" * 72)
+    lines.append("=" * 76)
     lines.append(f"【题库轻量分层检索与拓扑图谱报告】")
     lines.append(f"检索输入摘要: {result['query_preview']}")
-    lines.append("=" * 72)
+    lines.append("=" * 76)
 
-    lines.append("\n🎯 【第一层：核心主干题（Core Anchors）】（开场必问核心架构与业务系统）:")
+    # 如果是多板块分桶结果
+    if "buckets" in result:
+        lines.append("\n📈 板块综合契合度与自适应配额:")
+        for d, k in result["effective_quotas"].items():
+            name = DOMAIN_NAMES.get(d, d)
+            score = result["domain_scores"].get(d, 0.0)
+            tag_name = "主业务战场" if k >= 15 else ("核心支撑战场" if k >= 8 else "辅助选型战场")
+            lines.append(f"  • {name:32} [契合度 {score:6.1f}] -> 配额 K={k:2d} ({tag_name})")
+
+        for d, res in result["buckets"].items():
+            name = DOMAIN_NAMES.get(d, d)
+            lines.append("\n" + "#" * 76)
+            lines.append(f"### 【板块分桶】: {name} (主干初筛 K={len(res['tier1_anchors'])})")
+            lines.append("#" * 76)
+
+            lines.append("\n🎯 一、 核心主干题（Core Anchors）:")
+            for i, a in enumerate(res["tier1_anchors"], 1):
+                lines.append(f"  {i}. [{a['id']}] 得分: {a['score']} | 深度: {a['depth']}/5 | 流派: {a['minor']}")
+                lines.append(f"     题干: {a['text']}")
+
+            if res["tier2_followups"]:
+                lines.append(f"\n🔍 二、 直接追问题（Direct Follow-ups，共 {len(res['tier2_followups'])} 题）:")
+                for i, c in enumerate(res["tier2_followups"][:8], 1):
+                    lines.append(f"  {i}. [{c['id']}] 来源: {c['source_id']} ({c['relation_type']}) | 深度: {c['depth']}/5")
+                    lines.append(f"     追问: {c['text']}")
+                if len(res["tier2_followups"]) > 8:
+                    lines.append(f"     ... 其余 {len(res['tier2_followups']) - 8} 道追问题已在图谱池中就绪")
+
+            if res["tier3_boundary"]:
+                lines.append(f"\n💡 三、 边界与防御延伸题（Boundary & Edge Cases，共 {len(res['tier3_boundary'])} 题）:")
+                for i, b in enumerate(res["tier3_boundary"][:4], 1):
+                    lines.append(f"  {i}. [{b['id']}] 来源: {b['source_id']} | 深度: {b['depth']}/5")
+                    lines.append(f"     题干: {b['text']}")
+
+        lines.append("\n" + "=" * 76)
+        lines.append(f"📊 全板块汇总: 跨 {len(result['buckets'])} 个板块共召回 {result['total_recalled_all_domains']} 道立体定制题（主干完备 + 追问级联 + 边界防线）")
+        lines.append("=" * 76)
+        return "\n".join(lines)
+
+    # 单板块结果呈现
+    lines.append(f"\n🎯 【第一层：核心主干题（Core Anchors）】（板块: {result.get('domain', 'ALL')}）:")
     if not result["tier1_anchors"]:
         lines.append("  (未找到匹配的主干题，请检查查询词或放宽分类条件)")
     else:
         for i, a in enumerate(result["tier1_anchors"], 1):
             lines.append(f"  {i}. [{a['id']}] 得分: {a['score']} | 深度: {a['depth']}/5 | 流派: {a['minor']}")
             lines.append(f"     题干: {a['text']}")
-            if a.get("tag"):
-                lines.append(f"     标签: {a['tag']}")
 
-    lines.append("\n🔍 【第二层：直接追问题（Direct Follow-ups）】（顺着图谱深入考察原理机制）:")
-    if not result["tier2_followups"]:
-        lines.append("  (无图谱级联追问)")
-    else:
+    if result["tier2_followups"]:
+        lines.append(f"\n🔍 【第二层：直接追问题（Direct Follow-ups）】:")
         for i, c in enumerate(result["tier2_followups"], 1):
             lines.append(f"  {i}. [{c['id']}] 来源: {c['source_id']} ({c['relation_type']}) | 深度: {c['depth']}/5 | 流派: {c['minor']}")
-            lines.append(f"     依据: {c['reason']}")
             lines.append(f"     追问: {c['text']}")
 
     if result["tier3_boundary"]:
-        lines.append("\n💡 【第三层：边界与防御延伸题（Boundary & Edge Cases）】（考察高危陷阱与故障防御）:")
+        lines.append(f"\n💡 【第三层：边界与防御延伸题（Boundary & Edge Cases）】:")
         for i, b in enumerate(result["tier3_boundary"], 1):
             lines.append(f"  {i}. [{b['id']}] 来源: {b['source_id']} | 深度: {b['depth']}/5 | 流派: {b['minor']}")
-            lines.append(f"     高危维度: {b['reason']}")
             lines.append(f"     题干: {b['text']}")
 
-    lines.append("\n" + "=" * 72)
+    lines.append("\n" + "=" * 76)
     lines.append(f"📊 汇总结构: 核心主干 {result['total_anchors']} 题 + 级联追问 {result['total_followups']} 题 + 边界防御 {result['total_boundary']} 题 = 共 {result['total_recalled']} 道结构化定制题")
-    lines.append("=" * 72)
+    lines.append("=" * 76)
     return "\n".join(lines)
 
 
@@ -323,7 +445,9 @@ def main():
     group.add_argument("--query", "-q", help="检索查询语句或技术关键词（面向简历/对话模式）")
     group.add_argument("--file", "-f", help="项目文档路径（如 README.md 或 项目画像.md，面向代码全貌模式）")
 
-    parser.add_argument("--domain", "-d", choices=["A_AGENT", "B_BACKEND", "S_ALGO_GENERAL", "I_INFRA", "F_FRONTEND"], help="限制板块")
+    parser.add_argument("--domain", "-d", choices=["A_AGENT", "B_BACKEND", "S_ALGO_GENERAL", "I_INFRA", "F_FRONTEND"], help="限制单个板块")
+    parser.add_argument("--buckets", "-b", help="指定多板块配额（格式如 'A_AGENT:20,B_BACKEND:10'）")
+    parser.add_argument("--adaptive", "-a", action="store_true", help="启用全自动板块自适应配额分桶召回 (推荐)")
     parser.add_argument("--minor", "-m", help="过滤细分流派（如 '8.工程落地'）")
     parser.add_argument("--depth", type=int, choices=[1, 2, 3, 4, 5], help="指定题目深度")
     parser.add_argument("--top", "-k", type=int, default=10, help="主干题目初筛池上限 (默认 10)")
@@ -344,15 +468,37 @@ def main():
     else:
         search_query = args.query
 
-    result = search_bank(
-        query=search_query,
-        domain=args.domain,
-        minor=args.minor,
-        depth=args.depth,
-        top_k=args.top,
-        expand_hops=args.expand,
-        items_path=args.path,
-    )
+    # 解析多板块配额参数
+    domain_quotas = None
+    if args.buckets:
+        domain_quotas = {}
+        for pair in args.buckets.split(","):
+            if ":" in pair:
+                d, k = pair.split(":")
+                domain_quotas[d.strip()] = int(k.strip())
+
+    # 路由单板块还是多板块分桶
+    if args.adaptive or domain_quotas or (not args.domain and not args.minor):
+        result = search_bank_partitioned(
+            query=search_query,
+            domain_quotas=domain_quotas,
+            adaptive=True,
+            primary_k=args.top if args.top != 10 else 20,
+            secondary_k=10,
+            tertiary_k=5,
+            expand_hops=args.expand,
+            items_path=args.path,
+        )
+    else:
+        result = search_bank(
+            query=search_query,
+            domain=args.domain,
+            minor=args.minor,
+            depth=args.depth,
+            top_k=args.top,
+            expand_hops=args.expand,
+            items_path=args.path,
+        )
 
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))

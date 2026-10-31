@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from bank_search import (
     search_bank,
+    search_bank_partitioned,
     tokenize,
     expand_query_tokens,
     clean_markdown_content,
@@ -119,6 +120,26 @@ class TestBankSearch(unittest.TestCase):
         # 核心主干应包含 L760 (SkillForge平台架构) 或 L147 (渐进式披露)
         self.assertTrue("L760" in top_ids or "L147" in top_ids)
         self.assertGreater(res["total_recalled"], 15, "总召回题单应 >= 15 道题")
+
+    def test_09_partitioned_adaptive_recall(self):
+        """测试多板块自适应动态分桶配额 (A_AGENT K=20, B_BACKEND K=10, S_ALGO K=5)"""
+        with open(REAL_README_PATH, "r", encoding="utf-8") as f:
+            clean_text = clean_markdown_content(f.read())
+
+        t0 = time.time()
+        res = search_bank_partitioned(clean_text, adaptive=True, primary_k=20, secondary_k=10, tertiary_k=5)
+        latency_ms = (time.time() - t0) * 1000
+
+        print(f"\n[Test 09] 自适应多板块分桶召回耗时: {latency_ms:.2f}ms")
+        print(f"  自适应配额分桶: {res['effective_quotas']}")
+        print(f"  全板块总召回题量: {res['total_recalled_all_domains']}")
+
+        self.assertIn("A_AGENT", res["effective_quotas"])
+        self.assertIn("B_BACKEND", res["effective_quotas"])
+        self.assertEqual(res["effective_quotas"]["A_AGENT"], 20)
+        self.assertEqual(res["effective_quotas"]["B_BACKEND"], 10)
+        self.assertGreater(res["total_recalled_all_domains"], 30)
+        self.assertLess(latency_ms, 80, "多板块分桶耗时应 < 80ms")
 
 
 if __name__ == "__main__":
