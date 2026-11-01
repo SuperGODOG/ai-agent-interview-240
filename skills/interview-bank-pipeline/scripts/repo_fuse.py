@@ -253,6 +253,9 @@ def fetch(url: str):
         "file_count": len(tree),
         "pipeline_version": "1.2.0"
     }
+    bank_fp = check_snapshot.compute_bank_fingerprint(ROOT)
+    if bank_fp and bank_fp.get("hash"):
+        meta["bank_fingerprint"] = bank_fp
     with open(os.path.join(rdir, "snapshot_meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
 

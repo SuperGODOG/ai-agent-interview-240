@@ -1,669 +1,547 @@
 {
- "candidates": [
-  {
-   "id": "L6",
-   "text": "请介绍一下常见的 Agent 工作流范式（如 ReAct、Plan-and-Execute 等）的区别与适用场景。",
-   "major": "二_Agent应用开发相关",
-   "minor": "1.agent宏观认知",
-   "depth": 1,
-   "concepts": [
-    "ReAct 与 Agent 工作流范式",
-    "Workflow 与自主 Agent 权衡"
-   ],
-   "hit_concepts": [
-    "ReAct 与 Agent 工作流范式"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
+  "meta": {
+    "slug": "SuperGODOG__skillforge",
+    "url": "https://github.com/SuperGODOG/skillforge",
+    "commit_hash": "2426d7b0974a4ab306ee9af17b691bee8787c3bf",
+    "commit_short": "2426d7b",
+    "branch": "linux",
+    "commit_date": "Sun Oct 4 14:07:03 2026 +0800",
+    "commit_message": "feat(evaluator): add evidence-based judge criteria scoring and calibration report",
+    "is_dirty": true,
+    "worktree_hash": "f081ae08b3e16e1c5b882898502a2b22955134fb34cf913e5b79233b9e499cef",
+    "bank_fingerprint": {
+      "hash": "17732fea6af7e609ebea30e13f56876d9048e3b00293aba63ba747c410e27e88",
+      "total_items": 557,
+      "total_questions": 497,
+      "files": [
+        "items.json",
+        "concepts.yaml",
+        "schema.json"
+      ]
+    },
+    "synced_at": "2026-10-09T20:18:12.939467",
+    "file_count": 136,
+    "pipeline_version": "1.2.0"
   },
-  {
-   "id": "L74",
-   "text": "在AI应用架构中，旨在统一大模型与外部数据源或工具集成接口的连接协议（如Model Context Protocol / MCP），其本质和核心设计思想是什么？",
-   "major": "二_Agent应用开发相关",
-   "minor": "1.agent宏观认知",
-   "depth": 1,
-   "concepts": [
-    "MCP",
-    "上下文管理与压缩"
-   ],
-   "hit_concepts": [
-    "MCP",
-    "上下文管理与压缩"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L80",
-   "text": "在大模型应用落地中，确定性工作流（Workflow）与自主智能体（Agent）在业务场景选择、决策机制及容错成本上有何本质区别？如何理解自主智能体（Agent）与工作流（Workflow）的区别、联系及适用场景？",
-   "major": "二_Agent应用开发相关",
-   "minor": "1.agent宏观认知",
-   "depth": 1,
-   "concepts": [
-    "Workflow 与自主 Agent 权衡",
-    "容错限流与高可用"
-   ],
-   "hit_concepts": [
-    "容错限流与高可用"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L93",
-   "text": "在复杂的、多步骤的任务场景中，Agent应如何进行任务拆解、步骤规划和动态决策？你是否实践过ReAct、ToT（Tree of Thoughts）等框架或相关思路？",
-   "major": "二_Agent应用开发相关",
-   "minor": "2.agent主流框架",
-   "depth": 3,
-   "concepts": [
-    "ReAct 与 Agent 工作流范式",
-    "思维链与推理提示"
-   ],
-   "hit_concepts": [
-    "ReAct 与 Agent 工作流范式",
-    "思维链与推理提示"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L9",
-   "text": "多Agent系统（Multi-Agent System）的编排模式有哪些？在框架选型（如LangChain、LangGraph、AutoGen等）时有哪些核心考量因素？",
-   "major": "二_Agent应用开发相关",
-   "minor": "2.agent主流框架",
-   "depth": 4,
-   "concepts": [
-    "LangGraph 与图编排",
-    "Multi-Agent 多智能体协作",
-    "JVM 与 Java 并发"
-   ],
-   "hit_concepts": [
-    "LangGraph 与图编排"
-   ],
-   "evidence": [
-    "tests/test_state_machine.py",
-    "src/skillforge/state_machine.py"
-   ]
-  },
-  {
-   "id": "L150",
-   "text": "提示词注入（Prompt Injection）与大模型越狱（Jailbreak）的区别与联系是什么？如何优化Prompt的鲁棒性，并有效防范提示词注入与越狱等安全风险？",
-   "major": "二_Agent应用开发相关",
-   "minor": "4.Prompt_engineering",
-   "depth": 1,
-   "concepts": [
-    "Prompt Engineering",
-    "Prompt Injection 与安全"
-   ],
-   "hit_concepts": [
-    "Prompt Engineering",
-    "Prompt Injection 与安全"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L34",
-   "text": "在基于 Harness 的自动评估与执行框架下，如何通过 Prompt Engineering 或 RAG 策略降低 Human-in-the-loop（人工介入）的成本？",
-   "major": "二_Agent应用开发相关",
-   "minor": "4.Prompt_engineering",
-   "depth": 3,
-   "concepts": [
-    "RAG 与知识库",
-    "Prompt Engineering",
-    "Badcase 闭环与数据飞轮"
-   ],
-   "hit_concepts": [
-    "RAG 与知识库",
-    "Prompt Engineering",
-    "Badcase 闭环与数据飞轮"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L137",
-   "text": "在Agent或插件化系统中，系统的技能（Skills/Plugins）动态加载与初始化流程是如何设计的？",
-   "major": "二_Agent应用开发相关",
-   "minor": "4.Prompt_engineering",
-   "depth": 3,
-   "concepts": [
-    "技能体系"
-   ],
-   "hit_concepts": [
-    "技能体系"
-   ],
-   "evidence": [
-    "SkillForge-项目方案书-v3.docx",
-    "src/skillforge/state_machine.py",
-    "src/skillforge/models.py",
-    "src/skillforge/evolver.py",
-    "src/skillforge/__init__.py"
-   ]
-  },
-  {
-   "id": "L49",
-   "text": "当Prompt优化达到瓶颈后，后续的性能提升路径如何规划？是进行模型选型替换、调整超参数，还是转向SFT/DPO？",
-   "major": "二_Agent应用开发相关",
-   "minor": "4.Prompt_engineering",
-   "depth": 5,
-   "concepts": [
-    "Prompt Engineering",
-    "模型微调与对齐"
-   ],
-   "hit_concepts": [
-    "Prompt Engineering",
-    "模型微调与对齐"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L17",
-   "text": "在意图识别与前置拦截（Guards/Gatekeeping）环节，如何设计并引入上下文记忆机制（Memory Mechanism）？",
-   "major": "二_Agent应用开发相关",
-   "minor": "5.agent记忆设计",
-   "depth": 3,
-   "concepts": [
-    "Agent 记忆机制",
-    "意图识别与分发",
-    "上下文管理与压缩",
-    "Guardrails 护栏"
-   ],
-   "hit_concepts": [
-    "Agent 记忆机制",
-    "意图识别与分发",
-    "上下文管理与压缩"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L19",
-   "text": "在 Agent 架构中，长短期记忆模块（Short/Long-term Memory）的具体实现方案与状态持久化策略是什么？",
-   "major": "二_Agent应用开发相关",
-   "minor": "5.agent记忆设计",
-   "depth": 3,
-   "concepts": [
-    "Agent 记忆机制",
-    "存储选型与状态持久化"
-   ],
-   "hit_concepts": [
-    "Agent 记忆机制",
-    "存储选型与状态持久化"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L21",
-   "text": "记忆的写入与读取，是采用大模型自主决策（LLM-routed）还是基于规则路由（Rule-based Router）更合理？",
-   "major": "二_Agent应用开发相关",
-   "minor": "5.agent记忆设计",
-   "depth": 4,
-   "concepts": [
-    "Agent 记忆机制",
-    "Workflow 与自主 Agent 权衡",
-    "路由机制"
-   ],
-   "hit_concepts": [
-    "Agent 记忆机制",
-    "路由机制"
-   ],
-   "evidence": [
-    "__log/2026-07-26-router-hardnegative-fix/README.md",
-    "tests/test_router.py",
-    "evaluation_sets/router_negatives.json",
-    "scripts/eval_router.py",
-    "src/skillforge/router/cascade.py"
-   ]
-  },
-  {
-   "id": "L16",
-   "text": "针对类似 Claude Code / GitHub Copilot Workspace 的 AI Coding 工具，其底层的 Agentic Workflow 与系统架构是怎样的？",
-   "major": "二_Agent应用开发相关",
-   "minor": "6.agent处理情景的架构设计",
-   "depth": 3,
-   "concepts": [
-    "Workflow 与自主 Agent 权衡",
-    "AI Coding Agent"
-   ],
-   "hit_concepts": [
-    "AI Coding Agent"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L27",
-   "text": "在多轮对话（Multi-turn Dialogue）中，如何解决指代消解（Coreference Resolution）和上下文省略的问题？",
-   "major": "二_Agent应用开发相关",
-   "minor": "6.agent处理情景的架构设计",
-   "depth": 3,
-   "concepts": [
-    "上下文管理与压缩"
-   ],
-   "hit_concepts": [
-    "上下文管理与压缩"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L30",
-   "text": "在Agent/RAG pipeline中，Query改写（Query Rewriting）模块最适合放在哪个阶段？",
-   "major": "二_Agent应用开发相关",
-   "minor": "6.agent处理情景的架构设计",
-   "depth": 3,
-   "concepts": [
-    "RAG 与知识库",
-    "Query 改写"
-   ],
-   "hit_concepts": [
-    "RAG 与知识库"
-   ],
-   "evidence": [
-    "src/skillforge/storage/git_ops.py",
-    "src/skillforge/storage/jsonl.py",
-    "src/skillforge/storage/db.py",
-    "src/skillforge/storage/__init__.py"
-   ]
-  },
-  {
-   "id": "L57",
-   "text": "在知识检索和问答场景中，什么情况下基于规则/意图识别的确定性链路比大模型生成链路更具优势？",
-   "major": "二_Agent应用开发相关",
-   "minor": "6.agent处理情景的架构设计",
-   "depth": 4,
-   "concepts": [
-    "Workflow 与自主 Agent 权衡",
-    "意图识别与分发"
-   ],
-   "hit_concepts": [
-    "意图识别与分发"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L55",
-   "text": "混合检索（Hybrid Search）的必要性是什么？向量检索（Dense Retrieval）与关键词检索（Sparse Retrieval/BM25）各自的优势与互补场景是什么？",
-   "major": "二_Agent应用开发相关",
-   "minor": "7.数据库",
-   "depth": 1,
-   "concepts": [
-    "向量数据库与 HNSW",
-    "混合检索与重排"
-   ],
-   "hit_concepts": [
-    "向量数据库与 HNSW"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L213",
-   "text": "在 Agent 与大模型应用中，常用的存储数据库（如关系型、NoSQL、向量数据库）的选型标准是什么？",
-   "major": "二_Agent应用开发相关",
-   "minor": "7.数据库",
-   "depth": 4,
-   "concepts": [
-    "向量数据库与 HNSW",
-    "存储选型与状态持久化",
-    "数据库索引与事务"
-   ],
-   "hit_concepts": [
-    "向量数据库与 HNSW",
-    "存储选型与状态持久化",
-    "数据库索引与事务"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L43",
-   "text": "在缺乏用户主动反馈（如点击、点赞点踩）的数据场景下，如何设计自动化的抽检与评估机制？",
-   "major": "二_Agent应用开发相关",
-   "minor": "9.业务评估(性能优化与诊断)",
-   "depth": 3,
-   "concepts": [
-    "Badcase 闭环与数据飞轮"
-   ],
-   "hit_concepts": [
-    "Badcase 闭环与数据飞轮"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
-  },
-  {
-   "id": "L39",
-   "text": "如何构建 Agent 的效果评估体系（Evaluation Framework）？有哪些主流的 Benchmark 维度？是依赖人工标注、LLM-as-a-judge还是线上业务指标？",
-   "major": "二_Agent应用开发相关",
-   "minor": "9.业务评估(性能优化与诊断)",
-   "depth": 3,
-   "concepts": [
-    "评测体系与 Benchmark"
-   ],
-   "hit_concepts": [
-    "评测体系与 Benchmark"
-   ],
-   "evidence": [
-    "evaluation_sets/router_negatives.json",
-    "evaluation_sets/baseline_dev.json",
-    "evaluation_sets/baseline_hidden.json",
-    "evaluation_sets/p0_cases.json"
-   ]
-  },
-  {
-   "id": "L319",
-   "text": "请介绍 HTTP 状态码 503 和 504 的具体含义、区别及常见产生原因。",
-   "major": "四_八股相关",
-   "minor": "四_八股相关",
-   "depth": 1,
-   "concepts": [
-    "存储选型与状态持久化",
-    "网络与操作系统基础"
-   ],
-   "hit_concepts": [
-    "存储选型与状态持久化",
-    "网络与操作系统基础"
-   ],
-   "evidence": [
-    "<内容命中>"
-   ]
+  "candidates": [
+    {
+      "id": "L137",
+      "text": "在Agent或插件化系统中，系统的技能（Skills/Plugins）动态加载与初始化流程是如何设计的？",
+      "major": "二_Agent应用开发相关",
+      "minor": "4.Prompt_engineering",
+      "depth": 3,
+      "hit_concepts": [
+        "技能体系"
+      ],
+      "evidence": [
+        "src/skillforge/registry.py",
+        "src/skillforge/models.py"
+      ]
+    },
+    {
+      "id": "L139",
+      "text": "在Agent工程中，如何定义“技能（Skill）”？它与传统大模型的“工具调用（Function Calling）”有何本质区别？",
+      "major": "二_Agent应用开发相关",
+      "minor": "4.Prompt_engineering",
+      "depth": 1,
+      "hit_concepts": [
+        "技能体系"
+      ],
+      "evidence": [
+        "src/skillforge/registry.py",
+        "docs/SKILLFORGE_INTERVIEW_AND_ARCHITECTURE_MASTER.md"
+      ]
+    },
+    {
+      "id": "L147",
+      "text": "什么是技能的“渐进式披露（Progressive Disclosure）”机制？它如何提升Agent在复杂任务流中的执行稳定性？",
+      "major": "二_Agent应用开发相关",
+      "minor": "4.Prompt_engineering",
+      "depth": 1,
+      "hit_concepts": [
+        "技能体系",
+        "渐进式披露"
+      ],
+      "evidence": [
+        "src/skillforge/registry.py",
+        "src/skillforge/router/cascade.py"
+      ]
+    },
+    {
+      "id": "L623",
+      "text": "手撕追问：多工具统一注册接口与依赖注入设计。如果在 Agent Loop 中需要支持数十个异构工具，应该如何设计统一的工具注册器（Tool Registry）或注入机制？如何在代码层面实现工具函数的元数据提取（Name、Description、JSON Schema）与运行时路由分发？",
+      "major": "二_Agent应用开发相关",
+      "minor": "3.工具相关",
+      "depth": 3,
+      "hit_concepts": [
+        "技能体系",
+        "工具路由"
+      ],
+      "evidence": [
+        "src/skillforge/registry.py",
+        "src/skillforge/models.py"
+      ]
+    },
+    {
+      "id": "L17",
+      "text": "在意图识别与前置拦截（Guards/Gatekeeping）环节，如何设计并引入上下文记忆机制（Memory Mechanism）？",
+      "major": "二_Agent应用开发相关",
+      "minor": "5.agent记忆设计",
+      "depth": 3,
+      "hit_concepts": [
+        "意图识别与分发",
+        "Guardrails 护栏"
+      ],
+      "evidence": [
+        "src/skillforge/router/cascade.py",
+        "src/skillforge/evaluator/p0_gate.py"
+      ]
+    },
+    {
+      "id": "L21",
+      "text": "记忆的写入与读取，是采用大模型自主决策（LLM-routed）还是基于规则路由（Rule-based Router）更合理？",
+      "major": "二_Agent应用开发相关",
+      "minor": "5.agent记忆设计",
+      "depth": 4,
+      "hit_concepts": [
+        "路由机制",
+        "Agent 记忆机制"
+      ],
+      "evidence": [
+        "src/skillforge/router/cascade.py",
+        "src/skillforge/memory.py"
+      ]
+    },
+    {
+      "id": "L32",
+      "text": "在处理首次Query生成与多轮上下文补充时，链路路由机制（Router）是如何设计的？",
+      "major": "二_Agent应用开发相关",
+      "minor": "6.agent处理情景的架构设计",
+      "depth": 3,
+      "hit_concepts": [
+        "路由机制",
+        "意图识别与分发"
+      ],
+      "evidence": [
+        "src/skillforge/router/cascade.py",
+        "src/skillforge/router/rule.py"
+      ]
+    },
+    {
+      "id": "L143",
+      "text": "当Agent面对规模化技能库（Skill Bank）时，应如何设计路由选择机制？为什么仅靠向量检索（Embedding）难以满足要求？",
+      "major": "二_Agent应用开发相关",
+      "minor": "4.Prompt_engineering",
+      "depth": 3,
+      "hit_concepts": [
+        "路由机制",
+        "技能体系"
+      ],
+      "evidence": [
+        "src/skillforge/router/cascade.py",
+        "src/skillforge/router/embed.py",
+        "src/skillforge/router/llm.py"
+      ]
+    },
+    {
+      "id": "L201",
+      "text": "在评估意图识别模块时，为什么选择 Hit@3 作为评估指标，而不是 Hit@1？",
+      "major": "二_Agent应用开发相关",
+      "minor": "6.agent处理情景的架构设计",
+      "depth": 2,
+      "hit_concepts": [
+        "意图识别与分发",
+        "评测体系与 Benchmark"
+      ],
+      "evidence": [
+        "src/skillforge/router/evaluation.py",
+        "src/skillforge/router/cascade.py"
+      ]
+    },
+    {
+      "id": "L38",
+      "text": "是否了解 AI Coding 领域的专业概念，如 Harness（测试基准/沙箱）、Loop Engineering（循环迭代工程）？",
+      "major": "二_Agent应用开发相关",
+      "minor": "1.agent宏观认知",
+      "depth": 1,
+      "hit_concepts": [
+        "AI Coding Agent",
+        "Agent Loop 与控制流工程"
+      ],
+      "evidence": [
+        "src/skillforge/evolution_loop.py",
+        "src/skillforge/sandbox.py"
+      ]
+    },
+    {
+      "id": "L622",
+      "text": "手撕代码考核：现场设计并实现一个基础 Agent Loop 控制循环。请编写代码实现“接收用户输入 -> 组装上下文 -> 调用 LLM -> 解析 Tool Calls -> 执行工具 -> 将观察结果回填并继续循环”的核心流程，并说明如何设置最大步数终止与异常捕获。",
+      "major": "Leetcode相关",
+      "minor": "Leetcode相关",
+      "depth": 3,
+      "hit_concepts": [
+        "Agent Loop 与控制流工程"
+      ],
+      "evidence": [
+        "src/skillforge/evolution_loop.py",
+        "src/skillforge/evolver.py"
+      ]
+    },
+    {
+      "id": "L626",
+      "text": "手撕追问：模型提前退出（Premature Exit）检测与自我反思反馈机制。如果模型在未调用关键工具或未达成最终目标的情况下直接输出自然语言并尝试退出循环，如何在 Agent Loop 中检测此类未完成状态？如何构造针对性的反思提示词（Reflection Prompt）迫使模型继续推进任务？",
+      "major": "二_Agent应用开发相关",
+      "minor": "1.agent宏观认知",
+      "depth": 3,
+      "hit_concepts": [
+        "Agent Loop 与控制流工程",
+        "自我反思机制"
+      ],
+      "evidence": [
+        "src/skillforge/evolver.py",
+        "src/skillforge/evaluator/root_cause_prompts.py"
+      ]
+    },
+    {
+      "id": "L39",
+      "text": "如何构建 Agent 的效果评估体系（Evaluation Framework）？有哪些主流的 Benchmark 维度？是依赖人工标注、LLM-as-a-judge还是线上业务指标？",
+      "major": "二_Agent应用开发相关",
+      "minor": "9.业务评估(性能优化与诊断)",
+      "depth": 3,
+      "hit_concepts": [
+        "评测体系与 Benchmark",
+        "LLM-as-a-Judge"
+      ],
+      "evidence": [
+        "src/skillforge/evaluator/judge.py",
+        "src/skillforge/evaluator/criteria.py"
+      ]
+    },
+    {
+      "id": "L47",
+      "text": "在进行Prompt工程迭代时，如何解决“跷跷板效应”（即修复A类Badcase导致B类Case效果回退/recall@K下降）？",
+      "major": "二_Agent应用开发相关",
+      "minor": "4.Prompt_engineering",
+      "depth": 4,
+      "hit_concepts": [
+        "Badcase 闭环与数据飞轮",
+        "棘轮防倒退机制"
+      ],
+      "evidence": [
+        "src/skillforge/evaluator/ratchet.py",
+        "src/skillforge/evaluator/p0_gate.py"
+      ]
+    },
+    {
+      "id": "L628",
+      "text": "手撕追问：引入独立 Judge 模型校验任务完成度与防自满偏置。能否在 Agent Loop 终止前引入另一个独立的评估模型（LLM-as-a-Judge）对当前执行结果与原始需求进行端到端验证？如何设计独立 Judge 的输入 Prompt、证据核对规则，以及应对 Judge 自身误判的机制？",
+      "major": "二_Agent应用开发相关",
+      "minor": "9.业务评估(性能优化与诊断)",
+      "depth": 4,
+      "hit_concepts": [
+        "LLM-as-a-Judge",
+        "评测体系与 Benchmark"
+      ],
+      "evidence": [
+        "src/skillforge/evaluator/judge.py",
+        "src/skillforge/evaluator/ratchet.py"
+      ]
+    },
+    {
+      "id": "L45",
+      "text": "当系统出现Badcase时，如何进行全链路Trace与归因，定位具体是哪个Agent或节点的问题？",
+      "major": "二_Agent应用开发相关",
+      "minor": "9.业务评估(性能优化与诊断)",
+      "depth": 3,
+      "hit_concepts": [
+        "Badcase 闭环与数据飞轮",
+        "Trace事实与归因"
+      ],
+      "evidence": [
+        "src/skillforge/repair.py",
+        "src/skillforge/eval_tracer.py"
+      ]
+    },
+    {
+      "id": "L430",
+      "text": "工具执行器如何处理参数错误、超时、重试、Confirmation、回滚，以及“下游已成功但请求超时”的不确定结果？",
+      "major": "二_Agent应用开发相关",
+      "minor": "3.工具相关",
+      "depth": 3,
+      "hit_concepts": [
+        "容错限流与高可用",
+        "受控修复"
+      ],
+      "evidence": [
+        "src/skillforge/repair.py",
+        "src/skillforge/bounded_recovery.py"
+      ]
+    },
+    {
+      "id": "L624",
+      "text": "手撕追问：工具非法调用与参数校验错误容错逻辑。在 Agent Loop 执行过程中，如果模型幻觉调用了不存在的工具名、传入了不符合 Schema 的参数（如类型错误、缺少必填字段），或工具底层抛出异常，应如何设计容错机制？请写出校验参数并向模型回传错误提示的代码逻辑。",
+      "major": "二_Agent应用开发相关",
+      "minor": "3.工具相关",
+      "depth": 3,
+      "hit_concepts": [
+        "工具容错",
+        "参数校验与受控修复"
+      ],
+      "evidence": [
+        "src/skillforge/receipt.py",
+        "src/skillforge/repair.py"
+      ]
+    },
+    {
+      "id": "L627",
+      "text": "手撕追问：单次重试机会控制流改造与上下文管理。在既有 Agent Loop 中，若业务要求在模型首次执行失败或判定不合格时给予且仅给予一次重试机会，当前循环流程应如何改造？重试时应如何保留历史失败证据同时避免错误上下文污染新一轮尝试？",
+      "major": "二_Agent应用开发相关",
+      "minor": "8.工程落地",
+      "depth": 3,
+      "hit_concepts": [
+        "受控重试",
+        "上下文隔离与预算管理"
+      ],
+      "evidence": [
+        "src/skillforge/repair.py",
+        "src/skillforge/evolver.py"
+      ]
+    },
+    {
+      "id": "L18",
+      "text": "Agent记忆机制中，短期记忆（Short-term Memory）、长期记忆（Long-term Memory）与摘要记忆（Summary Memory）各自扮演什么角色？",
+      "major": "二_Agent应用开发相关",
+      "minor": "5.agent记忆设计",
+      "depth": 1,
+      "hit_concepts": [
+        "Agent 记忆机制"
+      ],
+      "evidence": [
+        "src/skillforge/memory.py",
+        "src/skillforge/episode.py"
+      ]
+    },
+    {
+      "id": "L19",
+      "text": "在 Agent 架构中，长短期记忆模块（Short/Long-term Memory）的具体实现方案与状态持久化策略是什么？",
+      "major": "二_Agent应用开发相关",
+      "minor": "5.agent记忆设计",
+      "depth": 3,
+      "hit_concepts": [
+        "Agent 记忆机制",
+        "存储选型与状态持久化"
+      ],
+      "evidence": [
+        "src/skillforge/memory.py",
+        "src/skillforge/storage/db.py"
+      ]
+    },
+    {
+      "id": "L20",
+      "text": "长期记忆的Schema与存储介质如何设计？其检索与加载（Recall & Load）时机如何确定？",
+      "major": "二_Agent应用开发相关",
+      "minor": "5.agent记忆设计",
+      "depth": 3,
+      "hit_concepts": [
+        "Agent 记忆机制",
+        "存储选型与状态持久化"
+      ],
+      "evidence": [
+        "src/skillforge/memory.py",
+        "src/skillforge/state_machine.py"
+      ]
+    },
+    {
+      "id": "L155",
+      "text": "大模型 Agent 的记忆（Memory）模块整体架构应该如何设计？",
+      "major": "二_Agent应用开发相关",
+      "minor": "5.agent记忆设计",
+      "depth": 3,
+      "hit_concepts": [
+        "Agent 记忆机制"
+      ],
+      "evidence": [
+        "src/skillforge/memory.py",
+        "src/skillforge/models.py"
+      ]
+    },
+    {
+      "id": "L164",
+      "text": "大模型智能体中的短期记忆、长期记忆和情景记忆（Episodic Memory）是如何定义和划分的？",
+      "major": "二_Agent应用开发相关",
+      "minor": "5.agent记忆设计",
+      "depth": 1,
+      "hit_concepts": [
+        "Agent 记忆机制",
+        "情景记忆"
+      ],
+      "evidence": [
+        "src/skillforge/memory.py",
+        "src/skillforge/episode.py"
+      ]
+    },
+    {
+      "id": "L80",
+      "text": "在大模型应用落地中，确定性工作流（Workflow）与自主智能体（Agent）在业务场景选择、决策机制及容错成本上有何本质区别？如何理解自主智能体（Agent）与工作流（Workflow）的区别、联系及适用场景？",
+      "major": "二_Agent应用开发相关",
+      "minor": "1.agent宏观认知",
+      "depth": 1,
+      "hit_concepts": [
+        "Workflow 与自主 Agent 权衡",
+        "存储选型与状态持久化"
+      ],
+      "evidence": [
+        "src/skillforge/state_machine.py",
+        "src/skillforge/evolution_loop.py"
+      ]
+    },
+    {
+      "id": "L188",
+      "text": "在多模态与异步事件输入（包含语音、文本及外部工具回调）的场景下，如何设计Agent的复杂状态机以保证状态的一致性与稳定性？",
+      "major": "二_Agent应用开发相关",
+      "minor": "6.agent处理情景的架构设计",
+      "depth": 3,
+      "hit_concepts": [
+        "Agent会话与状态恢复",
+        "存储选型与状态持久化"
+      ],
+      "evidence": [
+        "src/skillforge/state_machine.py",
+        "src/skillforge/storage/db.py"
+      ]
+    },
+    {
+      "id": "L9",
+      "text": "多Agent系统（Multi-Agent System）的编排模式有哪些？在框架选型（如LangChain、LangGraph、AutoGen等）时有哪些核心考量因素？",
+      "major": "二_Agent应用开发相关",
+      "minor": "2.agent主流框架",
+      "depth": 4,
+      "hit_concepts": [
+        "LangGraph 与图编排",
+        "Multi-Agent 多智能体协作"
+      ],
+      "evidence": [
+        "src/skillforge/langgraph_loop.py"
+      ]
+    },
+    {
+      "id": "L12",
+      "text": "在编排框架的选择上（如LangGraph、AutoGen等），您的架构选型和拓扑结构是怎样的？",
+      "major": "二_Agent应用开发相关",
+      "minor": "2.agent主流框架",
+      "depth": 3,
+      "hit_concepts": [
+        "LangGraph 与图编排"
+      ],
+      "evidence": [
+        "src/skillforge/langgraph_loop.py"
+      ]
+    }
+  ],
+  "per_concept": {
+    "技能体系": [
+      "L137",
+      "L139",
+      "L147",
+      "L623",
+      "L143"
+    ],
+    "渐进式披露": [
+      "L147"
+    ],
+    "工具路由": [
+      "L623"
+    ],
+    "意图识别与分发": [
+      "L17",
+      "L32",
+      "L201"
+    ],
+    "Guardrails 护栏": [
+      "L17"
+    ],
+    "路由机制": [
+      "L21",
+      "L32",
+      "L143"
+    ],
+    "Agent 记忆机制": [
+      "L21",
+      "L18",
+      "L19",
+      "L20",
+      "L155",
+      "L164"
+    ],
+    "评测体系与 Benchmark": [
+      "L201",
+      "L39",
+      "L628"
+    ],
+    "AI Coding Agent": [
+      "L38"
+    ],
+    "Agent Loop 与控制流工程": [
+      "L38",
+      "L622",
+      "L626"
+    ],
+    "自我反思机制": [
+      "L626"
+    ],
+    "LLM-as-a-Judge": [
+      "L39",
+      "L628"
+    ],
+    "Badcase 闭环与数据飞轮": [
+      "L47",
+      "L45"
+    ],
+    "棘轮防倒退机制": [
+      "L47"
+    ],
+    "Trace事实与归因": [
+      "L45"
+    ],
+    "容错限流与高可用": [
+      "L430"
+    ],
+    "受控修复": [
+      "L430"
+    ],
+    "工具容错": [
+      "L624"
+    ],
+    "参数校验与受控修复": [
+      "L624"
+    ],
+    "受控重试": [
+      "L627"
+    ],
+    "上下文隔离与预算管理": [
+      "L627"
+    ],
+    "存储选型与状态持久化": [
+      "L19",
+      "L20",
+      "L80",
+      "L188"
+    ],
+    "情景记忆": [
+      "L164"
+    ],
+    "Workflow 与自主 Agent 权衡": [
+      "L80"
+    ],
+    "Agent会话与状态恢复": [
+      "L188"
+    ],
+    "LangGraph 与图编排": [
+      "L9",
+      "L12"
+    ],
+    "Multi-Agent 多智能体协作": [
+      "L9"
+    ]
   }
- ],
- "per_concept": {
-  "ReAct 与 Agent 工作流范式": [
-   "L6",
-   "L7",
-   "L8",
-   "L93",
-   "L94"
-  ],
-  "LangGraph 与图编排": [
-   "L9",
-   "L12",
-   "L188",
-   "L206",
-   "L207",
-   "L237"
-  ],
-  "AI Coding Agent": [
-   "L16",
-   "L35",
-   "L38"
-  ],
-  "Agent 记忆机制": [
-   "L17",
-   "L18",
-   "L19",
-   "L20",
-   "L21",
-   "L155",
-   "L156",
-   "L159",
-   "L163",
-   "L164",
-   "L165",
-   "L166",
-   "L168",
-   "L172",
-   "L176",
-   "L177",
-   "L205",
-   "L347"
-  ],
-  "意图识别与分发": [
-   "L17",
-   "L57",
-   "L197",
-   "L198",
-   "L199",
-   "L200",
-   "L201"
-  ],
-  "上下文管理与压缩": [
-   "L17",
-   "L27",
-   "L32",
-   "L56",
-   "L74",
-   "L75",
-   "L99",
-   "L100",
-   "L101",
-   "L111",
-   "L131",
-   "L132",
-   "L133",
-   "L134",
-   "L138",
-   "L156",
-   "L163",
-   "L172",
-   "L177",
-   "L180",
-   "L182",
-   "L200",
-   "L205",
-   "L238",
-   "L246",
-   "L337"
-  ],
-  "存储选型与状态持久化": [
-   "L19",
-   "L20",
-   "L177",
-   "L188",
-   "L207",
-   "L213",
-   "L222",
-   "L229",
-   "L237",
-   "L259",
-   "L262",
-   "L276",
-   "L280",
-   "L319",
-   "L321",
-   "L324",
-   "L330",
-   "L332",
-   "L334",
-   "L378"
-  ],
-  "路由机制": [
-   "L21",
-   "L32",
-   "L143",
-   "L144",
-   "L198",
-   "L205",
-   "L365"
-  ],
-  "RAG 与知识库": [
-   "L30",
-   "L34",
-   "L54",
-   "L56",
-   "L58",
-   "L59",
-   "L60",
-   "L61",
-   "L63",
-   "L64",
-   "L65",
-   "L72",
-   "L107",
-   "L108",
-   "L109",
-   "L110",
-   "L111",
-   "L114",
-   "L115",
-   "L116",
-   "L117",
-   "L119",
-   "L120",
-   "L151",
-   "L172",
-   "L244",
-   "L250",
-   "L264",
-   "L280",
-   "L295"
-  ],
-  "Prompt Engineering": [
-   "L34",
-   "L46",
-   "L47",
-   "L49",
-   "L51",
-   "L64",
-   "L104",
-   "L127",
-   "L128",
-   "L150",
-   "L151",
-   "L244",
-   "L246",
-   "L257",
-   "L259",
-   "L286",
-   "L289",
-   "L293"
-  ],
-  "Badcase 闭环与数据飞轮": [
-   "L34",
-   "L43",
-   "L45",
-   "L46",
-   "L47",
-   "L244",
-   "L246",
-   "L257",
-   "L262",
-   "L286",
-   "L293"
-  ],
-  "评测体系与 Benchmark": [
-   "L39",
-   "L40",
-   "L41",
-   "L46",
-   "L119",
-   "L120",
-   "L192",
-   "L201",
-   "L244",
-   "L248",
-   "L270",
-   "L273",
-   "L274",
-   "L275",
-   "L277",
-   "L278",
-   "L289"
-  ],
-  "模型微调与对齐": [
-   "L49",
-   "L50",
-   "L64",
-   "L65",
-   "L157",
-   "L246",
-   "L250",
-   "L286",
-   "L293",
-   "L305",
-   "L306",
-   "L307",
-   "L310",
-   "L311"
-  ],
-  "向量数据库与 HNSW": [
-   "L55",
-   "L108",
-   "L111",
-   "L143",
-   "L156",
-   "L168",
-   "L177",
-   "L198",
-   "L213",
-   "L214",
-   "L215",
-   "L216",
-   "L321",
-   "L323"
-  ],
-  "MCP": [
-   "L74",
-   "L75",
-   "L99",
-   "L100",
-   "L101"
-  ],
-  "容错限流与高可用": [
-   "L80",
-   "L87",
-   "L88",
-   "L207",
-   "L232",
-   "L233",
-   "L237",
-   "L239",
-   "L255"
-  ],
-  "思维链与推理提示": [
-   "L93",
-   "L127",
-   "L128",
-   "L301",
-   "L302"
-  ],
-  "技能体系": [
-   "L137",
-   "L139",
-   "L143",
-   "L147",
-   "L246"
-  ],
-  "Prompt Injection 与安全": [
-   "L150",
-   "L151"
-  ],
-  "数据库索引与事务": [
-   "L213",
-   "L215",
-   "L321",
-   "L322",
-   "L323",
-   "L324",
-   "L342",
-   "L343"
-  ],
-  "网络与操作系统基础": [
-   "L319",
-   "L320",
-   "L326",
-   "L327"
-  ]
- }
 }

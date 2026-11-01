@@ -51,6 +51,7 @@ description: Agent 项目面试拷打引擎。默认用 project-mock-interview �
 - 一次一题，用户答完做四维点评（概念理解 / 原理深度 / 落地证据 / 结构完整度），默认 3 题/场
 - **每题当场记录**（供阶段 3 落档）：题 id、用户作答摘要、四维得分、点评要点
 - 点评只引用作答档已有的证据锚点；证据不足就诚实说明，禁止编造
+- **面试靶场模式（推荐长上下文练习）**：长对话演练易冲淡考题记忆，推荐使用 `python3 ../project-mock-interview/scripts/setup_arena.py --repo <path>` 一键初始化独立洁净靶场沙盒（`arenas/<name>/`），通过全局提示词三件套（`CLAUDE.md` / `GEMINI.md` / `AGENTS.md`）常驻锁定考题大纲与打分纪律，彻底防失忆与目标漂移。
 
 ## 2. grilling 深挖
 

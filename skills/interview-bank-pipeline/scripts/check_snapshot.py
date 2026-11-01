@@ -68,8 +68,20 @@ def get_worktree_info(repo_dir: str) -> dict:
         return info
 
     if not os.path.isdir(os.path.join(repo_dir, ".git")):
-        # 非 Git 目录：计算源码/配置文件的确定性组合哈希
-        exclude_dirs = {'.git', '.venv', 'venv', '__pycache__', '.pytest_cache', '.idea', '.vscode'}
+        # 非 Git 目录：计算源码/配置文件的确定性组合哈希（排除衍生文档、中间产物与嵌入式工作区）
+        exclude_dirs = {
+            '.git', '.venv', 'venv', '__pycache__', '.pytest_cache', '.idea', '.vscode',
+            'node_modules', 'dist', 'build', 'target', 'docs', '.github', 'assets', 'images'
+        }
+        ws = os.environ.get("INTERVIEW_WORKSPACE")
+        if ws:
+            ws_abs = os.path.abspath(ws)
+            try:
+                rel_ws = os.path.relpath(ws_abs, repo_dir)
+                if not rel_ws.startswith("..") and rel_ws != ".":
+                    exclude_dirs.add(rel_ws.split(os.sep)[0])
+            except Exception:
+                pass
         exclude_exts = {'.pyc', '.png', '.jpg', '.jpeg', '.db', '.sqlite', '.log'}
         exclude_files = {'.DS_Store', '.env', '.env.local', '.env.production'}
         hasher = hashlib.sha256()

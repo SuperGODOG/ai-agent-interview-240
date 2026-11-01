@@ -73,6 +73,21 @@ version: 1.1.0
 6. `python3 <本skill>/scripts/pipeline.py export` 刷新总览（项目档案区）
 7. 推送（可选）：自己的仓库 push_files 到 master；第三方仓库先 fork → create_branch → push_files → 验证 get_file_contents
 
+## 阶段四：轻量内存检索与自适应拓扑召回（bank_search.py）
+
+基于**三层内存组合索引（实体分桶 + 词法倒排 + 图拓扑双向无损补齐）**，提供亚毫秒级（0.64ms）的精准题库召回与自适应多板块配额重组，纯 Python 标准库实现：
+
+1. **关键词直接检索与追问拓扑展开**：
+   ```bash
+   python3 <本skill>/scripts/bank_search.py --query "ReAct 记忆机制" --top 3 --expand 1
+   ```
+2. **根据项目 README 自适应分桶与拓扑递进树重组**：
+   ```bash
+   python3 <本skill>/scripts/bank_search.py --file /path/to/README.md --adaptive --expand 2
+   ```
+   - 自动决议主业务战场（K=20）、核心支撑战场（K=10）、辅助选型战场（K=5），自动排除弱相关板块；
+   - 自动输出 `破冰前置题 (prereqs) → 核心主干题 (anchor) → 深入追问题 (followups) → 极端防线题 (boundaries)` 体系化题树。
+
 ## 关键坑（都踩过）
 
 - subagent 批量分类最多 3 个并发（delegate_task 限制），分波派发

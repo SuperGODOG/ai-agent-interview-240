@@ -1,12 +1,22 @@
 {
   "slug": "SuperGODOG__skillforge",
   "url": ".",
-  "commit_hash": "249e848978b8dc23ad3ab7ae2364918afb4fcf60",
-  "commit_short": "249e848",
-  "branch": "linux",
-  "commit_date": "Sat Sep 26 14:28:20 2026 +0800",
-  "commit_message": "feat(v2): complete Architecture V2 Evolution Loop, Three-Tier Memory & Narrow Local Repair",
-  "synced_at": "2026-09-28T19:11:11.799520",
+  "commit_hash": "f7002db516f84cc8e8260ea1e121b60b0e2b020a",
+  "commit_short": "f7002db",
+  "branch": "preview",
+  "commit_date": "Sun Oct 25 00:04:40 2026 +0800",
+  "commit_message": "feat(harness): integrate execution harness, context engine, supervisor, and governed evolution",
+  "synced_at": "2026-10-25T14:50:00",
   "file_count": 120,
-  "pipeline_version": "1.2.0"
+  "pipeline_version": "1.2.0",
+  "bank_fingerprint": {
+    "hash": "0ccd0a8b7c7977f50747b7b1cfab3f86ed3f31ba0d04ee51a8118751a458a2fa",
+    "total_items": 749,
+    "total_questions": 689,
+    "files": [
+      "items.json",
+      "concepts.yaml",
+      "schema.json"
+    ]
+  }
 }

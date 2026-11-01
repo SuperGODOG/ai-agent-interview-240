@@ -267,6 +267,17 @@ def run_tests():
                 assert res15["status"] == "FRESH" and res15["code_status"] == "FRESH", f"S15 failed: {res15}"
                 print("  [PASS] S15: 本地非 Git 项目：忽略缓存与临时文件不改变 worktree_hash => 保持 FRESH")
 
+                # S17: 本地非 Git 项目：嵌入式 docs/工作区产物写入不污染源码指纹 => 保持 FRESH
+                embedded_docs = os.path.join(mock_local_dir, "docs")
+                os.makedirs(os.path.join(embedded_docs, "obsidian_vault"), exist_ok=True)
+                with open(os.path.join(embedded_docs, "items.json"), "w") as f:
+                    f.write('{"artifact": 1}')
+                with open(os.path.join(embedded_docs, "obsidian_vault", "note.md"), "w") as f:
+                    f.write('# note')
+                res17 = check_snapshot.check_snapshot(mock_local_dir, bank_root=mock_bank)
+                assert res17["status"] == "FRESH" and res17["code_status"] == "FRESH", f"S17 failed: {res17}"
+                print("  [PASS] S17: 本地非 Git 项目：嵌入式 docs/工作区产物写入不污染源码指纹 => 保持 FRESH")
+
                 # S16: 防误认祖先 Git：子目录置于外部 Git 仓库内部时，不被祖先 Git 穿透
                 nested_ancestor = os.path.join(test_root, "ancestor_git_repo")
                 os.makedirs(nested_ancestor)
