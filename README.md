@@ -22,7 +22,7 @@
 - 📝 **每题带答题框架**：核心考点 + 大厂四步答题框架（概念澄清 → 架构机制 → 工程权衡 → 实战经验）+ 前置/后置学习路径与别名重定向
 - 📚 **85 篇语言八股**：Java 77 篇（含 66 篇体系化课件）、Python 3 篇、Go 5 篇，覆盖 JVM/并发/集合/Spring/MySQL/Redis/网络/OS/GMP/GC/GIL
 - 🛠 **2 个当前主线项目**：[SkillForge](https://github.com/SuperGODOG/skillforge)（Skill 注册、级联路由、评测与受控自进化平台）与 [miaosha](https://github.com/SuperGODOG/miaosha)（限流、Redis Lua 预扣库存、RabbitMQ 异步削峰、条件扣库与订单落库）；旧版项目档案仍保留在 `projects/` 供历史对照
-- 🎤 **模拟面试与拷问引擎**：完整六件套 Skill 集成（`project-mock-interview`, `agent-project-grill`, `agent-review-audit`, `grilling`, `interview-bank-pipeline`, `interview-resume-pack`），支持逐题提问、四维点评、高频错题自愈与断点恢复
+- 🎤 **模拟面试与拷问引擎**：完整六件套 Skill 集成（`project-mock-interview`, `agent-project-grill`, `agent-review-audit`, `grilling`, `interview-bank-pipeline`, `interview-resume-pack`），原生内置三层内存组合索引（0.005ms 剪枝、0.64ms 检索、拓扑断链无损补齐）与「面试靶场（Interview Arena）」系统，通过零拷贝软链穿透源码 grep 查验行号事实，自动分发 `CLAUDE.md` / `GEMINI.md` / `AGENTS.md` 提示词三件套锁定考题大纲与打分纪律，彻底杜绝长上下文失忆与考题漂移
 - 🗂 **三层金字塔体系**：全景金字塔导航 + 1~5 级深度分级（概念定义 → 原理机制 → 设计与方案 → 落地与权衡 → 前沿与延伸），支持按梯度与流派刷题
 
 ---
