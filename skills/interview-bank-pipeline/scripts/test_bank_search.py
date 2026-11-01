@@ -19,6 +19,7 @@ from bank_search import (
     tokenize,
     expand_query_tokens,
     clean_markdown_content,
+    assemble_progressive_trees,
     DEFAULT_ITEMS_PATH,
 )
 
@@ -140,6 +141,53 @@ class TestBankSearch(unittest.TestCase):
         self.assertEqual(res["effective_quotas"]["B_BACKEND"], 10)
         self.assertGreater(res["total_recalled_all_domains"], 30)
         self.assertLess(latency_ms, 80, "多板块分桶耗时应 < 80ms")
+
+    def test_10_progressive_trees_assembly(self):
+        """测试拓扑递进树重组引擎 (Progressive Question Trees Assembly)"""
+        res = search_bank("Harness 审核智能体 有界循环 语言", domain="A_AGENT", top_k=10, expand_hops=2)
+        trees = res.get("progressive_trees", [])
+        self.assertGreater(len(trees), 0, "应当成功重组出至少 1 棵递进专题树")
+
+        first_tree = trees[0]
+        self.assertIn("tree_id", first_tree)
+        self.assertIn("theme", first_tree)
+        self.assertIn("anchor", first_tree)
+        self.assertIn("prereqs", first_tree)
+        self.assertIn("followups", first_tree)
+        self.assertIn("boundaries", first_tree)
+        self.assertGreater(first_tree["tree_score"], 0)
+
+        print(f"\n[Test 10] 拓扑递进树重组成果:")
+        print(f"  聚合题树数量: {len(trees)}")
+        print(f"  第一棵树主题: {first_tree['theme']} | 核心主干: [{first_tree['anchor']['id']}] {first_tree['anchor']['text'][:30]}...")
+        print(f"  破冰前置题数: {len(first_tree['prereqs'])} | 深入追问题数: {len(first_tree['followups'])} | 极端防线题数: {len(first_tree['boundaries'])}")
+
+    def test_11_wide_recall_and_deduplication(self):
+        """测试宽门召回与跨树防死锁/去重机制"""
+        with open(REAL_README_PATH, "r", encoding="utf-8") as f:
+            clean_text = clean_markdown_content(f.read())
+
+        res = search_bank_partitioned(clean_text, adaptive=True, primary_k=20, secondary_k=10, tertiary_k=5)
+        all_trees = res.get("all_progressive_trees", [])
+        self.assertGreater(len(all_trees), 3, "全板块应当聚合出至少 3 棵专题递进树")
+
+        # 验证各树主干 ID 无重复
+        anchor_ids = [t["anchor"]["id"] for t in all_trees]
+        self.assertEqual(len(anchor_ids), len(set(anchor_ids)), "不同专题树的主干题不应互相重复撞车")
+        print(f"\n[Test 11] 全板块聚合题树数量: {len(all_trees)} 棵 | 主干去重校验: PASS")
+
+    def test_12_json_output_compatibility(self):
+        """测试结构化 JSON 向后兼容性 (旧三层字段与新树结构平滑共存)"""
+        res = search_bank("双智能体 架构 评测", domain="A_AGENT", top_k=5)
+        # 兼容旧消费端
+        self.assertIn("tier1_anchors", res)
+        self.assertIn("tier2_followups", res)
+        self.assertIn("tier3_boundary", res)
+        self.assertIn("total_recalled", res)
+        # 扩展新消费端
+        self.assertIn("progressive_trees", res)
+        self.assertIn("total_trees", res)
+        self.assertEqual(res["total_trees"], len(res["progressive_trees"]))
 
 
 if __name__ == "__main__":

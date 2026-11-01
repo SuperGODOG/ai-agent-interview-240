@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-bank_search.py - 题库轻量级分层检索与图谱级联引擎
+bank_search.py - 题库轻量级分层检索与拓扑递进树重组引擎
 
 设计哲学（遵循《Memory Tax》与 Raw-Evidence 原则）：
 1. 零外部依赖：纯 Python 标准库（json, re, math, sys, os, argparse），执行耗时 < 20ms。
@@ -14,10 +14,13 @@ bank_search.py - 题库轻量级分层检索与图谱级联引擎
    - 次级系统支撑（如后端高并发/缓存/存储）：自动配额 Secondary K=10；
    - 辅助选型与综合考点：自动配额 Tertiary K=3~5；
    - 无关弱相关板块自动归零拦截。
-5. 三层面试题结构化分组：
-   - Tier 1: 🎯 核心主干题（Core Anchors）—— 开场必问架构大题
-   - Tier 2: 🔍 核心追问题（Direct Follow-ups）—— 顺着图谱级联挂载在各自主干下的连环考点
-   - Tier 3: 💡 边界防御题（Boundary & Edge Cases）—— 真实生产中的高危陷阱、环境污染、自评偏差
+5. 宽门高召回 + 拓扑递进树重组（Progressive Question Tree Assembly）：
+   - 破除文本字面限制，将低文本相关率但处于关键考点链路上的题目合法装配；
+   - 每一棵专题题树包含：
+     * ├── 破冰前置（Prerequisites / d1~d2）
+     * 🎯 核心主干（Core Anchor / d2~d3）
+     * ├── 递进深挖（Progressive Follow-ups / d3~d4）
+     * └── 极限防线（Boundary & Extreme Defense / d4~d5）
 """
 
 import os
@@ -40,6 +43,13 @@ DOMAIN_NAMES = {
     "I_INFRA": "I_INFRA (底层算子与高性能计算)",
     "F_FRONTEND": "F_FRONTEND (全栈与前端工程交互)",
 }
+
+# 边界、容错、极端防线关键词
+BOUNDARY_KEYWORDS = [
+    "边界", "误改", "熔断", "反思", "失败", "安全", "死锁", "降级",
+    "自愈", "自满", "对账", "oom", "防爆", "超时", "重试", "越权",
+    "漂移", "回滚", "幂等"
+]
 
 # 常见同义词/派生词映射表（轻量规则字典，辅助查询扩展）
 SYNONYMS_MAP = {
@@ -81,7 +91,7 @@ def tokenize(text: str) -> List[str]:
     text = text.lower().strip()
     en_words = re.findall(r'[a-zA-Z0-9_\-\.\@]+', text)
     cn_chunks = re.findall(r'[\u4e00-\u9fa5]+', text)
-    
+
     tokens = list(en_words)
     for chunk in cn_chunks:
         if len(chunk) <= 4:
@@ -156,6 +166,151 @@ def score_item(item: Dict[str, Any], query_raw: str, query_tokens: Set[str], dom
     return score
 
 
+def assemble_progressive_trees(
+    scored_candidates: List[Tuple[float, Dict[str, Any]]],
+    by_id: Dict[str, Dict[str, Any]],
+    score_map: Dict[str, float],
+    max_trees: int = 5,
+    max_prereqs: int = 3,
+    max_followups: int = 5,
+    max_boundaries: int = 3,
+    expand_hops: int = 2,
+    domain_filter: Optional[str] = None,
+) -> List[Dict[str, Any]]:
+    """
+    拓扑递进树重组引擎（Assembler）：
+    将高召回候选池中的离散题目，按照真实递进依赖重组成连环专题树。
+    """
+    global_visited: Set[str] = set()
+    trees: List[Dict[str, Any]] = []
+
+    for sc, anc in scored_candidates:
+        anc_id = anc["id"]
+        if anc_id in global_visited:
+            continue
+        if domain_filter and anc.get("domain") != domain_filter:
+            continue
+
+        tree_members: Set[str] = {anc_id}
+
+        # 1. 向上回溯破冰前置 (Prerequisites)
+        prereqs = []
+        for pid in anc.get("prereq", []):
+            if pid in by_id and pid not in global_visited and pid not in tree_members:
+                prereqs.append(by_id[pid])
+                tree_members.add(pid)
+
+        for rel in anc.get("relations", []):
+            if isinstance(rel, dict) and rel.get("direction") == "in" and rel.get("type") in ["prereq", "hard_prereq"]:
+                pid = rel.get("target")
+                if pid and pid in by_id and pid not in global_visited and pid not in tree_members:
+                    prereqs.append(by_id[pid])
+                    tree_members.add(pid)
+
+        prereqs.sort(key=lambda x: x.get("depth", 1))
+        prereqs = prereqs[:max_prereqs]
+
+        # 2. 向下深挖递进追问 (Downstream) 与 2-hop 扩展
+        followups = []
+        boundaries = []
+
+        down_pool: List[str] = list(anc.get("downstream", []))
+        for rel in anc.get("relations", []):
+            if isinstance(rel, dict) and rel.get("type") == "progressive":
+                rid = rel.get("target")
+                if rid and rid not in down_pool:
+                    down_pool.append(rid)
+
+        # 如果开启 2-hop，扩展下一层递进
+        extended_down: List[str] = list(down_pool)
+        if expand_hops >= 2:
+            for did in down_pool:
+                if did in by_id:
+                    for d2 in by_id[did].get("downstream", []):
+                        if d2 not in extended_down:
+                            extended_down.append(d2)
+
+        for did in extended_down:
+            if did in by_id and did not in global_visited and did not in tree_members:
+                item = by_id[did]
+                tag = (item.get("tag", "") or "").lower()
+                txt = (item.get("text", "") or "").lower()
+                is_boundary = any(w in tag or w in txt for w in BOUNDARY_KEYWORDS)
+
+                if is_boundary and item.get("depth", 1) >= 3:
+                    boundaries.append(item)
+                else:
+                    followups.append(item)
+                tree_members.add(did)
+
+        # 排序：优先排在 query 中有分数的题，次之按深度排序
+        followups.sort(key=lambda x: (-score_map.get(x["id"], 0), x.get("depth", 1)))
+        boundaries.sort(key=lambda x: (-score_map.get(x["id"], 0), x.get("depth", 1)))
+
+        followups = followups[:max_followups]
+        boundaries = boundaries[:max_boundaries]
+
+        global_visited.update(tree_members)
+
+        # 综合树热度：主干得分 + 0.3 * 各子题在项目中的命中分
+        child_score_sum = sum(score_map.get(m["id"], 0) for m in prereqs + followups + boundaries)
+        tree_score = sc + 0.3 * child_score_sum
+
+        theme_name = anc.get("minor", "核心架构")
+        if theme_name and "." in theme_name:
+            theme_name = theme_name.split(".", 1)[-1]
+
+        trees.append({
+            "tree_id": len(trees) + 1,
+            "theme": theme_name,
+            "domain": anc.get("domain", "A_AGENT"),
+            "anchor": {
+                "id": anc["id"],
+                "score": round(sc, 2),
+                "depth": anc.get("depth", 1),
+                "domain": anc.get("domain", ""),
+                "minor": anc.get("minor", ""),
+                "text": anc.get("text", ""),
+                "tag": anc.get("tag", ""),
+            },
+            "anchor_score": round(sc, 2),
+            "tree_score": round(tree_score, 2),
+            "prereqs": [{
+                "id": p["id"],
+                "depth": p.get("depth", 1),
+                "minor": p.get("minor", ""),
+                "text": p.get("text", ""),
+                "tag": p.get("tag", ""),
+                "score": round(score_map.get(p["id"], 0), 2)
+            } for p in prereqs],
+            "followups": [{
+                "id": f["id"],
+                "depth": f.get("depth", 1),
+                "minor": f.get("minor", ""),
+                "text": f.get("text", ""),
+                "tag": f.get("tag", ""),
+                "score": round(score_map.get(f["id"], 0), 2)
+            } for f in followups],
+            "boundaries": [{
+                "id": b["id"],
+                "depth": b.get("depth", 1),
+                "minor": b.get("minor", ""),
+                "text": b.get("text", ""),
+                "tag": b.get("tag", ""),
+                "score": round(score_map.get(b["id"], 0), 2)
+            } for b in boundaries],
+            "total_questions": 1 + len(prereqs) + len(followups) + len(boundaries)
+        })
+
+        if len(trees) >= max_trees:
+            break
+
+    trees.sort(key=lambda t: -t["tree_score"])
+    for idx, t in enumerate(trees, 1):
+        t["tree_id"] = idx
+    return trees
+
+
 def search_bank(
     query: str,
     domain: Optional[str] = None,
@@ -167,9 +322,10 @@ def search_bank(
 ) -> Dict[str, Any]:
     """
     单板块题库检索核心函数：
-    1. 粗排加权打分获取 Top-K 候选池
+    1. 粗排加权打分获取候选池
     2. 沿着图谱边（downstream / prereq / relations）展开高价值追问题
     3. 自动结构化分组：Tier 1 (主干题), Tier 2 (连带追问题), Tier 3 (边界防御题)
+    4. 拓扑递进重组：输出连贯的专题递进树 (Progressive Trees)
     """
     if not os.path.exists(items_path):
         raise FileNotFoundError(f"题库主文件未找到: {items_path}")
@@ -184,6 +340,7 @@ def search_bank(
 
     # 第一阶段：文本加权打分
     scored_items: List[Tuple[float, Dict[str, Any]]] = []
+    score_map: Dict[str, float] = {}
     for item in bank:
         if depth is not None and item.get("depth") != depth:
             continue
@@ -193,20 +350,19 @@ def search_bank(
         s = score_item(item, query, expanded_tokens, domain_filter=domain)
         if s > 0:
             scored_items.append((s, item))
+            score_map[item["id"]] = s
 
     scored_items.sort(key=lambda x: -x[0])
     anchors = scored_items[:top_k]
-
     anchor_ids = set(q["id"] for _, q in anchors)
 
-    # 第二阶段：图谱拓扑扩散 (Graph Hop Expansion)
+    # 第二阶段：图谱拓扑扩散 (Graph Hop Expansion - 兼容扁平模式)
     direct_followups: List[Dict[str, Any]] = []
     boundary_cases: List[Dict[str, Any]] = []
     visited_ids = set(anchor_ids)
 
     if expand_hops > 0:
         for score, anchor in anchors:
-            # 1. 递归向下找后置递进题 (downstream)
             for down_id in (anchor.get("downstream") or []):
                 if isinstance(down_id, str) and down_id in by_id and down_id not in visited_ids:
                     visited_ids.add(down_id)
@@ -221,12 +377,11 @@ def search_bank(
                         "text": target_item.get("text", ""),
                         "tag": target_item.get("tag", ""),
                     }
-                    if target_item.get("depth", 1) >= 3 and any(w in (target_item.get("tag") or "") for w in ["边界", "误改", "熔断", "反思", "失败", "安全"]):
+                    if target_item.get("depth", 1) >= 3 and any(w in (target_item.get("tag") or "") for w in BOUNDARY_KEYWORDS):
                         boundary_cases.append(info)
                     else:
                         direct_followups.append(info)
 
-            # 2. 查找双向关联题 (relations)
             for rel in (anchor.get("relations") or []):
                 rel_id = rel.get("target") if isinstance(rel, dict) else rel
                 rel_reason = rel.get("reason") if isinstance(rel, dict) else "知识图谱关联延伸"
@@ -245,7 +400,6 @@ def search_bank(
                     }
                     direct_followups.append(info)
 
-            # 3. 前置基础支撑题 (prereq)
             for prereq_id in (anchor.get("prereq") or []):
                 if isinstance(prereq_id, str) and prereq_id in by_id and prereq_id not in visited_ids:
                     visited_ids.add(prereq_id)
@@ -262,7 +416,7 @@ def search_bank(
                     }
                     direct_followups.append(info)
 
-    # 包装主干结果
+    # 包装扁平主干结果
     anchor_results = []
     for sc, q in anchors:
         anchor_results.append({
@@ -275,6 +429,16 @@ def search_bank(
             "tag": q.get("tag", ""),
         })
 
+    # 第三阶段：拓扑递进树重组 (Progressive Trees Assembly)
+    trees = assemble_progressive_trees(
+        scored_candidates=scored_items,
+        by_id=by_id,
+        score_map=score_map,
+        max_trees=5,
+        expand_hops=expand_hops if expand_hops > 1 else 2,
+        domain_filter=domain
+    )
+
     return {
         "query_preview": query[:80] + ("..." if len(query) > 80 else ""),
         "domain": domain or "ALL",
@@ -282,9 +446,11 @@ def search_bank(
         "total_followups": len(direct_followups),
         "total_boundary": len(boundary_cases),
         "total_recalled": len(anchor_results) + len(direct_followups) + len(boundary_cases),
+        "total_trees": len(trees),
         "tier1_anchors": anchor_results,
         "tier2_followups": direct_followups,
         "tier3_boundary": boundary_cases,
+        "progressive_trees": trees,
     }
 
 
@@ -295,14 +461,14 @@ def search_bank_partitioned(
     primary_k: int = 20,
     secondary_k: int = 10,
     tertiary_k: int = 5,
-    expand_hops: int = 1,
+    expand_hops: int = 2,
     items_path: str = DEFAULT_ITEMS_PATH,
 ) -> Dict[str, Any]:
     """
-    多板块自适应分桶召回：
+    多板块自适应分桶召回与拓扑递进树重组：
     1. 计算每个板块的综合契合度得分
     2. 自适应分配 K 额度（主战场 K=20，次要支撑 K=10，辅助 K=3~5）
-    3. 各板块独立召回并保持独立三层结构，避免多技术栈相互稀释
+    3. 各板块独立召回并重组成该板块专属的递进专题题树
     """
     if not os.path.exists(items_path):
         raise FileNotFoundError(f"题库主文件未找到: {items_path}")
@@ -340,9 +506,11 @@ def search_bank_partitioned(
     else:
         effective_quotas = {"A_AGENT": primary_k}
 
-    # 各板块独立召回
+    # 各板块独立召回与递进树重组
     buckets: Dict[str, Dict[str, Any]] = {}
     total_recalled_all = 0
+    all_trees = []
+
     for d, k in effective_quotas.items():
         if k <= 0:
             continue
@@ -355,21 +523,25 @@ def search_bank_partitioned(
         )
         buckets[d] = res
         total_recalled_all += res["total_recalled"]
+        for tr in res.get("progressive_trees", []):
+            all_trees.append(tr)
 
     return {
         "query_preview": query[:80] + ("..." if len(query) > 80 else ""),
         "domain_scores": {d: round(s, 1) for d, s in domain_scores.items()},
         "effective_quotas": effective_quotas,
         "total_recalled_all_domains": total_recalled_all,
+        "total_trees_all_domains": len(all_trees),
         "buckets": buckets,
+        "all_progressive_trees": all_trees,
     }
 
 
-def format_cli_output(result: Dict[str, Any]) -> str:
-    """格式化报告：支持单板块或多板块分桶呈现"""
+def format_cli_output(result: Dict[str, Any], show_trees: bool = True) -> str:
+    """格式化报告：支持视觉递进树与三层指标结构"""
     lines = []
     lines.append("=" * 76)
-    lines.append(f"【题库轻量分层检索与拓扑图谱报告】")
+    lines.append(f"【题库轻量分层检索与拓扑递进树报告】")
     lines.append(f"检索输入摘要: {result['query_preview']}")
     lines.append("=" * 76)
 
@@ -385,53 +557,72 @@ def format_cli_output(result: Dict[str, Any]) -> str:
         for d, res in result["buckets"].items():
             name = DOMAIN_NAMES.get(d, d)
             lines.append("\n" + "#" * 76)
-            lines.append(f"### 【板块分桶】: {name} (主干初筛 K={len(res['tier1_anchors'])})")
+            lines.append(f"### 【板块分桶】: {name}")
             lines.append("#" * 76)
 
-            lines.append("\n🎯 一、 核心主干题（Core Anchors）:")
-            for i, a in enumerate(res["tier1_anchors"], 1):
-                lines.append(f"  {i}. [{a['id']}] 得分: {a['score']} | 深度: {a['depth']}/5 | 流派: {a['minor']}")
-                lines.append(f"     题干: {a['text']}")
+            trees = res.get("progressive_trees", [])
+            if show_trees and trees:
+                lines.append(f"\n🌲 专题递进题目树 (Progressive Question Trees，共 {len(trees)} 组连环考点):")
+                for t in trees:
+                    anc = t["anchor"]
+                    lines.append("\n" + "┌" + "─" * 72 + "┐")
+                    lines.append(f"│ 专题树 {t['tree_id']}: {t['theme']} (综合热度: {t['tree_score']})")
+                    lines.append("├" + "─" * 72 + "┤")
+                    if t["prereqs"]:
+                        lines.append("│ ├── 破冰前置 (Prerequisites):")
+                        for p in t["prereqs"]:
+                            lines.append(f"│ │     [{p['id']}] (d{p['depth']}): {p['text']}")
+                    lines.append(f"│ 🎯 核心主干 (Core Anchor):")
+                    lines.append(f"│       [{anc['id']}] (d{anc['depth']} | 得分 {anc['score']}): {anc['text']}")
+                    if t["followups"]:
+                        lines.append("│ ├── 递进深挖 (Progressive Follow-ups):")
+                        for f in t["followups"]:
+                            lines.append(f"│ │     [{f['id']}] (d{f['depth']}): {f['text']}")
+                    if t["boundaries"]:
+                        lines.append("│ └── 极限防线 (Boundary & Defense):")
+                        for b in t["boundaries"]:
+                            lines.append(f"│       [{b['id']}] (d{b['depth']}): {b['text']}")
+                    lines.append("└" + "─" * 72 + "┘")
 
-            if res["tier2_followups"]:
-                lines.append(f"\n🔍 二、 直接追问题（Direct Follow-ups，共 {len(res['tier2_followups'])} 题）:")
-                for i, c in enumerate(res["tier2_followups"][:8], 1):
-                    lines.append(f"  {i}. [{c['id']}] 来源: {c['source_id']} ({c['relation_type']}) | 深度: {c['depth']}/5")
-                    lines.append(f"     追问: {c['text']}")
-                if len(res["tier2_followups"]) > 8:
-                    lines.append(f"     ... 其余 {len(res['tier2_followups']) - 8} 道追问题已在图谱池中就绪")
-
-            if res["tier3_boundary"]:
-                lines.append(f"\n💡 三、 边界与防御延伸题（Boundary & Edge Cases，共 {len(res['tier3_boundary'])} 题）:")
-                for i, b in enumerate(res["tier3_boundary"][:4], 1):
-                    lines.append(f"  {i}. [{b['id']}] 来源: {b['source_id']} | 深度: {b['depth']}/5")
-                    lines.append(f"     题干: {b['text']}")
+            lines.append(f"\n📊 板块初筛概览: 核心主干 {len(res['tier1_anchors'])} 题 | 级联追问 {len(res['tier2_followups'])} 题 | 边界防御 {len(res['tier3_boundary'])} 题")
 
         lines.append("\n" + "=" * 76)
-        lines.append(f"📊 全板块汇总: 跨 {len(result['buckets'])} 个板块共召回 {result['total_recalled_all_domains']} 道立体定制题（主干完备 + 追问级联 + 边界防线）")
+        lines.append(f"📊 全板块汇总: 跨 {len(result['buckets'])} 个板块共召回 {result['total_recalled_all_domains']} 道定制题，重组成 {result.get('total_trees_all_domains', 0)} 棵完整专题递进树")
         lines.append("=" * 76)
         return "\n".join(lines)
 
     # 单板块结果呈现
-    lines.append(f"\n🎯 【第一层：核心主干题（Core Anchors）】（板块: {result.get('domain', 'ALL')}）:")
+    trees = result.get("progressive_trees", [])
+    if show_trees and trees:
+        lines.append(f"\n🌲 专题递进题目树 (Progressive Question Trees，共 {len(trees)} 组连环考点):")
+        for t in trees:
+            anc = t["anchor"]
+            lines.append("\n" + "┌" + "─" * 72 + "┐")
+            lines.append(f"│ 专题树 {t['tree_id']}: {t['theme']} (综合热度: {t['tree_score']})")
+            lines.append("├" + "─" * 72 + "┤")
+            if t["prereqs"]:
+                lines.append("│ ├── 破冰前置 (Prerequisites):")
+                for p in t["prereqs"]:
+                    lines.append(f"│ │     [{p['id']}] (d{p['depth']}): {p['text']}")
+            lines.append(f"│ 🎯 核心主干 (Core Anchor):")
+            lines.append(f"│       [{anc['id']}] (d{anc['depth']} | 得分 {anc['score']}): {anc['text']}")
+            if t["followups"]:
+                lines.append("│ ├── 递进深挖 (Progressive Follow-ups):")
+                for f in t["followups"]:
+                    lines.append(f"│ │     [{f['id']}] (d{f['depth']}): {f['text']}")
+            if t["boundaries"]:
+                lines.append("│ └── 极限防线 (Boundary & Defense):")
+                for b in t["boundaries"]:
+                    lines.append(f"│       [{b['id']}] (d{b['depth']}): {b['text']}")
+            lines.append("└" + "─" * 72 + "┘")
+
+    lines.append(f"\n🎯 核心主干初筛列表（板块: {result.get('domain', 'ALL')}）:")
     if not result["tier1_anchors"]:
         lines.append("  (未找到匹配的主干题，请检查查询词或放宽分类条件)")
     else:
         for i, a in enumerate(result["tier1_anchors"], 1):
             lines.append(f"  {i}. [{a['id']}] 得分: {a['score']} | 深度: {a['depth']}/5 | 流派: {a['minor']}")
             lines.append(f"     题干: {a['text']}")
-
-    if result["tier2_followups"]:
-        lines.append(f"\n🔍 【第二层：直接追问题（Direct Follow-ups）】:")
-        for i, c in enumerate(result["tier2_followups"], 1):
-            lines.append(f"  {i}. [{c['id']}] 来源: {c['source_id']} ({c['relation_type']}) | 深度: {c['depth']}/5 | 流派: {c['minor']}")
-            lines.append(f"     追问: {c['text']}")
-
-    if result["tier3_boundary"]:
-        lines.append(f"\n💡 【第三层：边界与防御延伸题（Boundary & Edge Cases）】:")
-        for i, b in enumerate(result["tier3_boundary"], 1):
-            lines.append(f"  {i}. [{b['id']}] 来源: {b['source_id']} | 深度: {b['depth']}/5 | 流派: {b['minor']}")
-            lines.append(f"     题干: {b['text']}")
 
     lines.append("\n" + "=" * 76)
     lines.append(f"📊 汇总结构: 核心主干 {result['total_anchors']} 题 + 级联追问 {result['total_followups']} 题 + 边界防御 {result['total_boundary']} 题 = 共 {result['total_recalled']} 道结构化定制题")
@@ -440,7 +631,7 @@ def format_cli_output(result: Dict[str, Any]) -> str:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="题库轻量级分层检索与图谱级联引擎")
+    parser = argparse.ArgumentParser(description="题库轻量级分层检索与拓扑递进树重组引擎")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--query", "-q", help="检索查询语句或技术关键词（面向简历/对话模式）")
     group.add_argument("--file", "-f", help="项目文档路径（如 README.md 或 项目画像.md，面向代码全貌模式）")
@@ -451,7 +642,8 @@ def main():
     parser.add_argument("--minor", "-m", help="过滤细分流派（如 '8.工程落地'）")
     parser.add_argument("--depth", type=int, choices=[1, 2, 3, 4, 5], help="指定题目深度")
     parser.add_argument("--top", "-k", type=int, default=10, help="主干题目初筛池上限 (默认 10)")
-    parser.add_argument("--expand", "-e", type=int, default=1, choices=[0, 1], help="是否进行图谱拓扑扩散追问 (0=关闭, 1=开启)")
+    parser.add_argument("--expand", "-e", type=int, default=2, help="图谱拓扑扩散步数 (0=关闭, 1=1跳, 2=2跳深入追问，默认 2)")
+    parser.add_argument("--flat", action="store_true", help="仅显示平铺三层列表，不渲染递进专题树")
     parser.add_argument("--json", action="store_true", help="以 JSON 格式输出供 Agent 程序化调用")
     parser.add_argument("--path", default=DEFAULT_ITEMS_PATH, help="指定 items.json 路径")
 
@@ -503,7 +695,7 @@ def main():
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
-        print(format_cli_output(result))
+        print(format_cli_output(result, show_trees=not args.flat))
 
 
 if __name__ == "__main__":
