@@ -47,6 +47,21 @@ version: 2.1.0
    - **八股补充**：项目内作答含四_八股段（如 JeecgBoot）时，可穿插 Java 八股
 4. 模式：严格（直接问，无提示）/ 学习（先给 30 秒概念提示再问）
 
+## 面试靶场（Interview Arena）与提示词持久化（防失忆机制）
+
+在长时间的多轮深挖（Grilling）交互中，长对话历史极易冲淡 Agent 初始考题记忆。本 Skill 支持一键初始化独立洁净靶场：
+
+1. **一键建场**：
+   ```bash
+   python3 scripts/setup_arena.py --repo /path/to/target_repo [--name <name>] [--query "<关键词>"] [--top 3] [--force]
+   ```
+2. **靶场核心要素（interview-mock-skill/arenas/<name>/）**：
+   - `project_repo/`：软链接目标代码库，Agent 可穿透实时 `grep`、`read_file` 查阅源码行号核验证据，原代码库 100% 洁净零污染；
+   - `project_ref/`：软链接已有项目档案（`match.json`、`项目内作答.md`），作为标准答案与评测基准；
+   - `CLAUDE.md` / `GEMINI.md` / `AGENTS.md`：根目录系统提示词三件套，将本场固定考题大纲、四维打分模板、Grilling 触发纪律常驻锁定，防跨轮次失忆与目标漂移；
+   - `outputs/`：用于沉淀复盘纪要（`session_review.md`）与学习卡。
+3. **实战练习**：直接进入该靶场并启动 Agent（`cd arenas/<name> && claude` 或 `gemini`），Agent 自动继承全局指令，按大纲一题一问并打分。
+
 ## 问答循环（上下文预算：整场 ≤20K，默认 3 题/场，可加场）
 
 - 出题：从 `BANK_ROOT/items.json` 按 id 取题目原文（约 100 tokens），一次一题，问完等用户作答
