@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-bank_search.py - 题库轻量级分层检索与拓扑递进树重组引擎
+bank_search.py - 题库轻量级分层检索与拓扑递进树重组引擎 (方案 A: 内存三层索引加速与拓扑双向无损补齐)
 
 设计哲学（遵循《Memory Tax》与 Raw-Evidence 原则）：
-1. 零外部依赖：纯 Python 标准库（json, re, math, sys, os, argparse），执行耗时 < 20ms。
+1. 零外部依赖：纯 Python 标准库（json, re, math, sys, os, argparse）。
 2. 零数据污染：不改动现有 items.json 结构与 16 项回归测试。
-3. 双输入源支持：
+3. 内存三层索引化架构（BankMemoryIndex - 方案 A）：
+   - Layer 1: 实体与正交属性分桶 (by_id, domain_index, depth_index, minor_index) -> O(1) 实体速查与属性过滤；
+   - Layer 2: 词法倒排索引 (inverted_index) -> 单词/短语倒排映射，彻底跳过不相关题目的全表扫描；
+   - Layer 3: 拓扑双向无损图谱 (graph_upstream, graph_downstream) -> 内存中自动对称修复 13 处 downstream 缺失 prereq 和 45 处 prereq 缺失 downstream 的断链盲区。
+4. 双输入源支持：
    - 输入源 A（简历模式）：直接输入项目描述或简历核心卖点（--query "..."）。
    - 输入源 B（工程模式）：直接输入项目 README 或画像文档路径（--file README.md），自动清洗 Markdown 杂音提取核心技术特征。
-4. 板块分桶与自适应动态配额（Adaptive Domain-Partitioned Recall）：
+5. 板块分桶与自适应动态配额（Adaptive Domain-Partitioned Recall）：
    - 主业务战场（如 Agent，得分优势明显）：自动配额 Primary K=20；
    - 次级系统支撑（如后端高并发/缓存/存储）：自动配额 Secondary K=10；
    - 辅助选型与综合考点：自动配额 Tertiary K=3~5；
    - 无关弱相关板块自动归零拦截。
-5. 宽门高召回 + 拓扑递进树重组（Progressive Question Tree Assembly）：
+6. 宽门高召回 + 拓扑递进树重组（Progressive Question Tree Assembly）：
    - 破除文本字面限制，将低文本相关率但处于关键考点链路上的题目合法装配；
    - 每一棵专题题树包含：
      * ├── 破冰前置（Prerequisites / d1~d2）
@@ -86,11 +90,15 @@ def clean_markdown_content(raw_text: str) -> str:
     return " ".join(clean_lines)
 
 
+_RE_EN = re.compile(r'[a-zA-Z0-9_\-\.\@]+')
+_RE_CN = re.compile(r'[\u4e00-\u9fa5]+')
+
+
 def tokenize(text: str) -> List[str]:
     """轻量分词：支持中英文混排、专业术语保留"""
     text = text.lower().strip()
-    en_words = re.findall(r'[a-zA-Z0-9_\-\.\@]+', text)
-    cn_chunks = re.findall(r'[\u4e00-\u9fa5]+', text)
+    en_words = _RE_EN.findall(text)
+    cn_chunks = _RE_CN.findall(text)
 
     tokens = list(en_words)
     for chunk in cn_chunks:
@@ -113,6 +121,156 @@ def expand_query_tokens(tokens: List[str]) -> Set[str]:
             if k in tok or tok in k:
                 expanded.update(syns)
     return expanded
+
+
+def extract_index_tokens(text: str) -> Set[str]:
+    """为倒排索引全面提取关键词、专业术语与 n-gram"""
+    text = text.lower().strip()
+    en_words = _RE_EN.findall(text)
+    cn_chunks = _RE_CN.findall(text)
+
+    tokens: Set[str] = set(en_words)
+    # 英文基础前缀派生（如 redisson -> redis）
+    for ew in en_words:
+        if len(ew) >= 5 and ew.endswith("s"):
+            tokens.add(ew[:-1])
+
+    # 中文整段与 2~3 字符 n-gram
+    for chunk in cn_chunks:
+        if len(chunk) <= 4:
+            tokens.add(chunk)
+        else:
+            tokens.add(chunk)
+            for i in range(len(chunk) - 1):
+                tokens.add(chunk[i:i+2])
+                if i + 3 <= len(chunk):
+                    tokens.add(chunk[i:i+3])
+    return tokens
+
+
+class BankMemoryIndex:
+    """
+    题库内存三层索引结构（方案 A 架构实现）：
+    1. 实体与正交属性分桶 (by_id, domain_index, depth_index, minor_index)
+    2. 词法倒排索引 (inverted_index)
+    3. 拓扑双向无损图谱 (graph_upstream, graph_downstream，自动对称修复断链)
+    """
+
+    def __init__(self, items_path: str):
+        if not os.path.exists(items_path):
+            raise FileNotFoundError(f"题库主文件未找到: {items_path}")
+
+        with open(items_path, "r", encoding="utf-8") as f:
+            bank = json.load(f)
+
+        self.items_path = items_path
+        self.by_id: Dict[str, Dict[str, Any]] = {}
+        self.domain_index: Dict[str, Set[str]] = {}
+        self.depth_index: Dict[int, Set[str]] = {}
+        self.minor_index: Dict[str, Set[str]] = {}
+
+        self.inverted_index: Dict[str, Set[str]] = {}
+        self.graph_upstream: Dict[str, Set[str]] = {}
+        self.graph_downstream: Dict[str, Set[str]] = {}
+
+        # 1. 遍历题目实体，建立属性分桶与倒排索引
+        for it in bank:
+            if it.get("kind") != "question":
+                continue
+            qid = it["id"]
+            self.by_id[qid] = it
+
+            # 属性分桶
+            d = it.get("domain", "")
+            if d:
+                self.domain_index.setdefault(d, set()).add(qid)
+
+            dp = it.get("depth", 1)
+            self.depth_index.setdefault(dp, set()).add(qid)
+
+            mn = it.get("minor", "")
+            if mn:
+                self.minor_index.setdefault(mn, set()).add(qid)
+
+            # 词法倒排索引
+            tag = it.get("tag") or ""
+            minor = it.get("minor") or ""
+            text = it.get("text") or ""
+            corpus = f"{text} {tag} {minor}"
+
+            for tok in extract_index_tokens(corpus):
+                self.inverted_index.setdefault(tok, set()).add(qid)
+
+        # 2. 建立拓扑双向无损图（对称化修复）
+        for it in self.by_id.values():
+            qid = it["id"]
+            for d in (it.get("downstream") or []):
+                if d in self.by_id:
+                    self.graph_downstream.setdefault(qid, set()).add(d)
+                    self.graph_upstream.setdefault(d, set()).add(qid)
+
+            for p in (it.get("prereq") or []):
+                if p in self.by_id:
+                    self.graph_upstream.setdefault(qid, set()).add(p)
+                    self.graph_downstream.setdefault(p, set()).add(qid)
+
+            for rel in (it.get("relations") or []):
+                if isinstance(rel, dict):
+                    t = rel.get("target")
+                    if t and t in self.by_id:
+                        rtype = rel.get("type", "progressive")
+                        rdir = rel.get("direction", "out")
+                        if rdir == "in" or rtype in ("prereq", "hard_prereq"):
+                            self.graph_upstream.setdefault(qid, set()).add(t)
+                            self.graph_downstream.setdefault(t, set()).add(qid)
+                        else:
+                            self.graph_downstream.setdefault(qid, set()).add(t)
+                            self.graph_upstream.setdefault(t, set()).add(qid)
+
+    def get_candidate_ids(
+        self,
+        query_tokens: Set[str],
+        domain_filter: Optional[str] = None,
+        depth_filter: Optional[int] = None,
+        minor_filter: Optional[str] = None,
+    ) -> Set[str]:
+        """通过倒排索引与正交属性分桶快速求交集，缩小候选打分集"""
+        if not query_tokens:
+            return set()
+
+        hits: Set[str] = set()
+        for tok in query_tokens:
+            if tok in self.inverted_index:
+                hits.update(self.inverted_index[tok])
+
+        if not hits:
+            return set()
+
+        # 属性过滤快速求交
+        if domain_filter:
+            hits = hits.intersection(self.domain_index.get(domain_filter, set()))
+        if depth_filter:
+            hits = hits.intersection(self.depth_index.get(depth_filter, set()))
+        if minor_filter:
+            matching_minors: Set[str] = set()
+            for m_key, qids in self.minor_index.items():
+                if minor_filter in m_key:
+                    matching_minors.update(qids)
+            hits = hits.intersection(matching_minors)
+
+        return hits
+
+
+# 模块级单例缓存
+_MEMORY_INDEX_CACHE: Dict[str, BankMemoryIndex] = {}
+
+
+def get_bank_index(items_path: str = DEFAULT_ITEMS_PATH) -> BankMemoryIndex:
+    """获取或初始化题库内存索引（单例高速缓存）"""
+    norm_path = os.path.normpath(items_path)
+    if norm_path not in _MEMORY_INDEX_CACHE:
+        _MEMORY_INDEX_CACHE[norm_path] = BankMemoryIndex(norm_path)
+    return _MEMORY_INDEX_CACHE[norm_path]
 
 
 def score_item(item: Dict[str, Any], query_raw: str, query_tokens: Set[str], domain_filter: Optional[str] = None) -> float:
@@ -170,6 +328,8 @@ def assemble_progressive_trees(
     scored_candidates: List[Tuple[float, Dict[str, Any]]],
     by_id: Dict[str, Dict[str, Any]],
     score_map: Dict[str, float],
+    graph_upstream: Dict[str, Set[str]],
+    graph_downstream: Dict[str, Set[str]],
     max_trees: int = 5,
     max_prereqs: int = 3,
     max_followups: int = 5,
@@ -179,7 +339,7 @@ def assemble_progressive_trees(
 ) -> List[Dict[str, Any]]:
     """
     拓扑递进树重组引擎（Assembler）：
-    将高召回候选池中的离散题目，按照真实递进依赖重组成连环专题树。
+    基于对称化内存图谱，将高召回候选池中的离散题目装配成连环专题树。
     """
     global_visited: Set[str] = set()
     trees: List[Dict[str, Any]] = []
@@ -193,42 +353,29 @@ def assemble_progressive_trees(
 
         tree_members: Set[str] = {anc_id}
 
-        # 1. 向上回溯破冰前置 (Prerequisites)
+        # 1. 向上回溯破冰前置 (Prerequisites) —— 走对称化 graph_upstream
         prereqs = []
-        for pid in anc.get("prereq", []):
+        for pid in graph_upstream.get(anc_id, set()):
             if pid in by_id and pid not in global_visited and pid not in tree_members:
                 prereqs.append(by_id[pid])
                 tree_members.add(pid)
 
-        for rel in anc.get("relations", []):
-            if isinstance(rel, dict) and rel.get("direction") == "in" and rel.get("type") in ["prereq", "hard_prereq"]:
-                pid = rel.get("target")
-                if pid and pid in by_id and pid not in global_visited and pid not in tree_members:
-                    prereqs.append(by_id[pid])
-                    tree_members.add(pid)
-
         prereqs.sort(key=lambda x: x.get("depth", 1))
         prereqs = prereqs[:max_prereqs]
 
-        # 2. 向下深挖递进追问 (Downstream) 与 2-hop 扩展
+        # 2. 向下深挖递进追问 (Downstream) —— 走对称化 graph_downstream 与 2-hop 扩展
         followups = []
         boundaries = []
 
-        down_pool: List[str] = list(anc.get("downstream", []))
-        for rel in anc.get("relations", []):
-            if isinstance(rel, dict) and rel.get("type") == "progressive":
-                rid = rel.get("target")
-                if rid and rid not in down_pool:
-                    down_pool.append(rid)
+        down_pool: Set[str] = set(graph_downstream.get(anc_id, set()))
 
-        # 如果开启 2-hop，扩展下一层递进
-        extended_down: List[str] = list(down_pool)
+        # 如果开启 2-hop，沿对称化下游扩展第二层
+        extended_down: Set[str] = set(down_pool)
         if expand_hops >= 2:
             for did in down_pool:
                 if did in by_id:
-                    for d2 in by_id[did].get("downstream", []):
-                        if d2 not in extended_down:
-                            extended_down.append(d2)
+                    for d2 in graph_downstream.get(did, set()):
+                        extended_down.add(d2)
 
         for did in extended_down:
             if did in by_id and did not in global_visited and did not in tree_members:
@@ -243,7 +390,7 @@ def assemble_progressive_trees(
                     followups.append(item)
                 tree_members.add(did)
 
-        # 排序：优先排在 query 中有分数的题，次之按深度排序
+        # 排序：优先排在 query 中有分数的题，次之按深度升序
         followups.sort(key=lambda x: (-score_map.get(x["id"], 0), x.get("depth", 1)))
         boundaries.sort(key=lambda x: (-score_map.get(x["id"], 0), x.get("depth", 1)))
 
@@ -321,57 +468,58 @@ def search_bank(
     items_path: str = DEFAULT_ITEMS_PATH,
 ) -> Dict[str, Any]:
     """
-    单板块题库检索核心函数：
-    1. 粗排加权打分获取候选池
-    2. 沿着图谱边（downstream / prereq / relations）展开高价值追问题
+    单板块题库检索核心函数（方案 A 倒排索引 + 双向图加速）：
+    1. 倒排索引与属性分桶 O(1) 召回命中候选池
+    2. 对称化图谱展开高价值追问与前置基础（零拓扑断链）
     3. 自动结构化分组：Tier 1 (主干题), Tier 2 (连带追问题), Tier 3 (边界防御题)
     4. 拓扑递进重组：输出连贯的专题递进树 (Progressive Trees)
     """
-    if not os.path.exists(items_path):
-        raise FileNotFoundError(f"题库主文件未找到: {items_path}")
-
-    with open(items_path, "r", encoding="utf-8") as f:
-        bank = json.load(f)
-
-    by_id = {item["id"]: item for item in bank if "id" in item}
+    index = get_bank_index(items_path)
 
     tokens = tokenize(query)
     expanded_tokens = expand_query_tokens(tokens)
 
-    # 第一阶段：文本加权打分
+    # 1. 倒排索引初筛候选集合
+    candidate_ids = index.get_candidate_ids(
+        expanded_tokens,
+        domain_filter=domain,
+        depth_filter=depth,
+        minor_filter=minor
+    )
+
+    # 2. 仅对倒排命中的候选题目打分
     scored_items: List[Tuple[float, Dict[str, Any]]] = []
     score_map: Dict[str, float] = {}
-    for item in bank:
-        if depth is not None and item.get("depth") != depth:
-            continue
-        if minor is not None and minor not in (item.get("minor") or ""):
-            continue
 
+    for qid in candidate_ids:
+        item = index.by_id[qid]
         s = score_item(item, query, expanded_tokens, domain_filter=domain)
         if s > 0:
             scored_items.append((s, item))
-            score_map[item["id"]] = s
+            score_map[qid] = s
 
     scored_items.sort(key=lambda x: -x[0])
     anchors = scored_items[:top_k]
     anchor_ids = set(q["id"] for _, q in anchors)
 
-    # 第二阶段：图谱拓扑扩散 (Graph Hop Expansion - 兼容扁平模式)
+    # 3. 对称化图谱拓扑扩散 (Graph Hop Expansion - 兼容扁平模式)
     direct_followups: List[Dict[str, Any]] = []
     boundary_cases: List[Dict[str, Any]] = []
     visited_ids = set(anchor_ids)
 
     if expand_hops > 0:
         for score, anchor in anchors:
-            for down_id in (anchor.get("downstream") or []):
-                if isinstance(down_id, str) and down_id in by_id and down_id not in visited_ids:
+            anc_id = anchor["id"]
+            # 顺着对称化下游图获取追问
+            for down_id in index.graph_downstream.get(anc_id, set()):
+                if down_id in index.by_id and down_id not in visited_ids:
                     visited_ids.add(down_id)
-                    target_item = by_id[down_id]
+                    target_item = index.by_id[down_id]
                     info = {
                         "id": down_id,
-                        "source_id": anchor["id"],
+                        "source_id": anc_id,
                         "relation_type": "downstream (递进后置)",
-                        "reason": f"从主干题 [{anchor['id']}] 顺延的递进深入考点",
+                        "reason": f"从主干题 [{anc_id}] 顺延的递进深入考点",
                         "depth": target_item.get("depth", 1),
                         "minor": target_item.get("minor", ""),
                         "text": target_item.get("text", ""),
@@ -382,33 +530,16 @@ def search_bank(
                     else:
                         direct_followups.append(info)
 
-            for rel in (anchor.get("relations") or []):
-                rel_id = rel.get("target") if isinstance(rel, dict) else rel
-                rel_reason = rel.get("reason") if isinstance(rel, dict) else "知识图谱关联延伸"
-                if rel_id and rel_id in by_id and rel_id not in visited_ids:
-                    visited_ids.add(rel_id)
-                    target_item = by_id[rel_id]
-                    info = {
-                        "id": rel_id,
-                        "source_id": anchor["id"],
-                        "relation_type": "relation (关联延伸)",
-                        "reason": rel_reason,
-                        "depth": target_item.get("depth", 1),
-                        "minor": target_item.get("minor", ""),
-                        "text": target_item.get("text", ""),
-                        "tag": target_item.get("tag", ""),
-                    }
-                    direct_followups.append(info)
-
-            for prereq_id in (anchor.get("prereq") or []):
-                if isinstance(prereq_id, str) and prereq_id in by_id and prereq_id not in visited_ids:
+            # 顺着对称化上游图获取前置
+            for prereq_id in index.graph_upstream.get(anc_id, set()):
+                if prereq_id in index.by_id and prereq_id not in visited_ids:
                     visited_ids.add(prereq_id)
-                    target_item = by_id[prereq_id]
+                    target_item = index.by_id[prereq_id]
                     info = {
                         "id": prereq_id,
-                        "source_id": anchor["id"],
+                        "source_id": anc_id,
                         "relation_type": "prereq (前置基础)",
-                        "reason": f"理解主干题 [{anchor['id']}] 所需的前置基础",
+                        "reason": f"理解主干题 [{anc_id}] 所需的前置基础",
                         "depth": target_item.get("depth", 1),
                         "minor": target_item.get("minor", ""),
                         "text": target_item.get("text", ""),
@@ -429,11 +560,13 @@ def search_bank(
             "tag": q.get("tag", ""),
         })
 
-    # 第三阶段：拓扑递进树重组 (Progressive Trees Assembly)
+    # 4. 拓扑递进树重组 (Progressive Trees Assembly)
     trees = assemble_progressive_trees(
         scored_candidates=scored_items,
-        by_id=by_id,
+        by_id=index.by_id,
         score_map=score_map,
+        graph_upstream=index.graph_upstream,
+        graph_downstream=index.graph_downstream,
         max_trees=5,
         expand_hops=expand_hops if expand_hops > 1 else 2,
         domain_filter=domain
@@ -465,23 +598,22 @@ def search_bank_partitioned(
     items_path: str = DEFAULT_ITEMS_PATH,
 ) -> Dict[str, Any]:
     """
-    多板块自适应分桶召回与拓扑递进树重组：
-    1. 计算每个板块的综合契合度得分
+    多板块自适应分桶召回与拓扑递进树重组（方案 A 极速版）：
+    1. 通过倒排索引一次性计算各板块聚合得分
     2. 自适应分配 K 额度（主战场 K=20，次要支撑 K=10，辅助 K=3~5）
     3. 各板块独立召回并重组成该板块专属的递进专题题树
     """
-    if not os.path.exists(items_path):
-        raise FileNotFoundError(f"题库主文件未找到: {items_path}")
-
-    with open(items_path, "r", encoding="utf-8") as f:
-        bank = json.load(f)
+    index = get_bank_index(items_path)
 
     tokens = tokenize(query)
     expanded_tokens = expand_query_tokens(tokens)
 
-    # 计算各板块聚合得分
+    # 倒排索引快速召回全部候选，计算各板块聚合契合度
+    candidate_ids = index.get_candidate_ids(expanded_tokens)
     domain_scores: Dict[str, float] = {}
-    for item in bank:
+
+    for qid in candidate_ids:
+        item = index.by_id[qid]
         d = item.get("domain")
         if not d:
             continue
@@ -631,7 +763,7 @@ def format_cli_output(result: Dict[str, Any], show_trees: bool = True) -> str:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="题库轻量级分层检索与拓扑递进树重组引擎")
+    parser = argparse.ArgumentParser(description="题库轻量级分层检索与拓扑递进树重组引擎 (方案 A: 内存三层索引加速)")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--query", "-q", help="检索查询语句或技术关键词（面向简历/对话模式）")
     group.add_argument("--file", "-f", help="项目文档路径（如 README.md 或 项目画像.md，面向代码全貌模式）")

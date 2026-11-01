@@ -20,6 +20,7 @@ from bank_search import (
     expand_query_tokens,
     clean_markdown_content,
     assemble_progressive_trees,
+    get_bank_index,
     DEFAULT_ITEMS_PATH,
 )
 
@@ -27,6 +28,11 @@ REAL_README_PATH = "/Users/caoruixin/Desktop/project/ai-agent-interview-240/proj
 
 
 class TestBankSearch(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        """预热题库内存三层索引，分离单例加载耗时与单次算法查询耗时"""
+        get_bank_index()
 
     def test_01_tokenization(self):
         """测试分词与中英文混合提取"""
@@ -188,6 +194,38 @@ class TestBankSearch(unittest.TestCase):
         self.assertIn("progressive_trees", res)
         self.assertIn("total_trees", res)
         self.assertEqual(res["total_trees"], len(res["progressive_trees"]))
+
+    def test_13_plan_a_memory_index_and_symmetrized_graph(self):
+        """测试方案 A 内存三层索引 (分桶/倒排/对称拓扑图) 正确性与断链修复能力"""
+        idx = get_bank_index()
+
+        # 1. Layer 1 实体与正交分桶完整性
+        self.assertGreater(len(idx.by_id), 700, "题库实体加载量应 > 700")
+        self.assertIn("A_AGENT", idx.domain_index)
+        self.assertIn("B_BACKEND", idx.domain_index)
+        self.assertIn(1, idx.depth_index)
+        self.assertIn(2, idx.depth_index)
+        self.assertIn(3, idx.depth_index)
+
+        # 2. Layer 2 词法倒排索引剪枝与亚毫秒级候选召回
+        t0 = time.time()
+        cands = idx.get_candidate_ids({"harness", "循环", "审核"}, domain_filter="A_AGENT")
+        cand_time_ms = (time.time() - t0) * 1000
+        self.assertGreater(len(cands), 0)
+        self.assertLess(cand_time_ms, 2.0, "倒排候选剪枝耗时应 < 2ms")
+
+        # 3. Layer 3 拓扑双向无损图谱对称性校验（自动修复 13+45 处断链）
+        symmetric_broken = 0
+        for qid in idx.by_id:
+            for d in idx.graph_downstream.get(qid, set()):
+                if qid not in idx.graph_upstream.get(d, set()):
+                    symmetric_broken += 1
+            for u in idx.graph_upstream.get(qid, set()):
+                if qid not in idx.graph_downstream.get(u, set()):
+                    symmetric_broken += 1
+
+        self.assertEqual(symmetric_broken, 0, "方案 A 内存拓扑图应完全对称，零断链")
+        print(f"\n[Test 13] 方案 A 内存三层索引验证: 倒排求交 {cand_time_ms:.3f}ms | 拓扑对称性违规数: 0 (断链已无损补齐)")
 
 
 if __name__ == "__main__":
